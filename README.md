@@ -16,6 +16,8 @@ With this library, roboticists can model robotic `FEATURES`, create `MODEL` conf
 
 4. C++ 11 or higher
 
+5. [nlohmann](https://github.com/nlohmann/json) C++ library for reading JSON
+
 ## Installation
 
 Go to your workspace project, type catkin_make and press enter on your keyboard.
