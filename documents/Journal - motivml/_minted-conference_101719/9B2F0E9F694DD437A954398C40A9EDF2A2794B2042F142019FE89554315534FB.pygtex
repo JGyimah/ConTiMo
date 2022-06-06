@@ -1,0 +1,10 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+
+\PYG{p}{\PYGZob{}}
+\PYG{+w}{    }\PYG{n+nt}{\PYGZdq{}id\PYGZdq{}}\PYG{p}{:}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}F0\PYGZdq{}}\PYG{p}{,}
+\PYG{+w}{    }\PYG{n+nt}{\PYGZdq{}props\PYGZdq{}}\PYG{p}{:}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{        }\PYG{n+nt}{\PYGZdq{}mode\PYGZdq{}}\PYG{p}{:}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}Static\PYGZdq{}}\PYG{p}{,}
+\PYG{+w}{        }\PYG{n+nt}{\PYGZdq{}time\PYGZdq{}}\PYG{p}{:}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}Early\PYGZdq{}}
+\PYG{+w}{    }\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

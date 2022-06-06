@@ -1,19 +1,43 @@
 <?xml version="1.0"?>
 <package format="2">
   <name>motivml_ros</name>
-  <version>0.0.0</version>
-  <description>The motivml_ros package</description>
+  <version>0.0.1</version>
+  <description>The MoTiVML package</description>
 
   <!-- One maintainer tag required, multiple allowed, one person per tag -->
   <!-- Example:  -->
   <!-- <maintainer email="jane.doe@example.com">Jane Doe</maintainer> -->
-  <maintainer email="jtg@todo.todo">jtg</maintainer>
+  <maintainer email="jude.gyimah87@gmail.com">Jude Gyimah</maintainer>
 
 
   <!-- One license tag required, multiple allowed, one license per tag -->
   <!-- Commonly used license strings: -->
   <!--   BSD, MIT, Boost Software License, GPLv2, GPLv3, LGPLv2.1, LGPLv3 -->
-  <license>TODO</license>
+  <license>
+
+    MIT License
+
+    Copyright (c) 2022 Jude Gyimah
+
+    Permission is hereby granted, free of charge, to any person obtaining a copy
+    of this software and associated documentation files (the "Software"), to deal
+    in the Software without restriction, including without limitation the rights
+    to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+    copies of the Software, and to permit persons to whom the Software is
+    furnished to do so, subject to the following conditions:
+
+    The above copyright notice and this permission notice shall be included in all
+    copies or substantial portions of the Software.
+
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+    SOFTWARE.
+
+  </license>
 
 
   <!-- Url tags are optional, but multiple are allowed, one per tag -->
@@ -25,7 +49,7 @@
   <!-- Author tags are optional, multiple are allowed, one per tag -->
   <!-- Authors do not have to be maintainers, but could be -->
   <!-- Example: -->
-  <!-- <author email="jane.doe@example.com">Jane Doe</author> -->
+  <author email="jude.gyimah87@gmail.com">Jude Gyimah</author>
 
 
   <!-- The *depend tags are used to specify dependencies -->
