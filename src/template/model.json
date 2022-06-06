@@ -1,0 +1,85 @@
+{
+    "id": "root_feature",
+    "name": "Car",
+    "group": "",
+    "isMandatory": true,
+    "isSelected": true,
+    "sub": [
+            {
+                "id": "F0",
+                "name": "transmission",
+                "constraints": {
+                    "featuresIncluded": [],
+                    "featuresExcluded": [],
+                    "bindingTimeAllowed":"Early",
+                    "bindingModeAllowed":"Static"
+                },
+                "group": "OR",
+                "isMandatory": false,
+                "sub":[
+                    {
+                        "id": "F1",
+                        "name": "auto",
+                        "constraints": {
+                            "featuresIncluded": ["F4"],
+                            "featuresExcluded": ["F2"],
+                            "bindingTimeAllowed":"Any",
+                            "bindingModeAllowed":"Static"
+                        },
+                        "group": "XOR",
+                        "isMandatory": false,
+                        "sub":[
+                            {
+                                "id": "F4",
+                                "name": "Gearbox",
+                                "constraints": {
+                                    "featuresIncluded": [],
+                                    "featuresExcluded": [],
+                                    "bindingTimeAllowed":"Early",
+                                    "bindingModeAllowed":"Static"
+                                },
+                                "group": "XOR",
+                                "isMandatory": false
+                            },
+                            {
+                                "id": "F5",
+                                "name": "clutch",
+                                "constraints": {
+                                    "featuresIncluded": [],
+                                    "featuresExcluded": [],
+                                    "bindingTimeAllowed":"Early",
+                                    "bindingModeAllowed":"Static"
+                                },
+                                "group": "XOR",
+                                "isMandatory": false
+                            }
+                        ]
+                    },
+                    {
+                        "id": "F2",
+                        "name": "manual",
+                        "constraints": {
+                            "featuresIncluded": ["F5", "F4"],
+                            "featuresExcluded": ["F1"],
+                            "bindingTimeAllowed":"Any",
+                            "bindingModeAllowed":"Static"
+                        },
+                        "group": "XOR",
+                        "isMandatory": false
+                    }
+                ]
+            },
+            {
+                "id": "F3",
+                "name": "aircon",
+                "constraints": {
+                    "featuresIncluded": [],
+                    "featuresExcluded": [],
+                    "bindingTimeAllowed":"Early",
+                    "bindingModeAllowed":"Any"
+                },
+                "group": "XOR",
+                "isMandatory": false
+            }        
+    ]
+}

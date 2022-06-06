@@ -1,0 +1,340 @@
+{
+    "id": "root_feature",
+    "name": "RobotExampleTwo",
+    "group": "",
+    "isMandatory": true,
+    "isSelected": true,
+    "sub": [
+      {
+        "id": "ctrllayer",
+        "name": "ControlLayer",
+        "constraints": {
+            "featuresIncluded": [],
+            "featuresExcluded": [],
+            "bindingTimeAllowed":"Early",
+            "bindingModeAllowed":"Static"
+        },
+        "group": "OR",
+        "isMandatory": false,
+        "sub":[
+            {
+                "id": "lclzatn",
+                "name": "Localisation",
+                "constraints": {
+                    "featuresIncluded": [],
+                    "featuresExcluded": [],
+                    "bindingTimeAllowed":"Early",
+                    "bindingModeAllowed":"Static"
+                },
+                "group": "OR",
+                "isMandatory": false,
+                "sub":[
+                    {
+                        "id": "amcl",
+                        "name": "AMCL",
+                        "constraints": {
+                            "featuresIncluded": [],
+                            "featuresExcluded": [],
+                            "bindingTimeAllowed":"Early",
+                            "bindingModeAllowed":"Static"
+                        },
+                        "group": "OR",
+                        "isMandatory": false,
+                        "sub":[
+                            {
+                                "id": "amclros",
+                                "name": "AMCLROS",
+                                "constraints": {
+                                    "featuresIncluded": [],
+                                    "featuresExcluded": [],
+                                    "bindingTimeAllowed":"Early",
+                                    "bindingModeAllowed":"Static"
+                                },
+                                "group": "OR",
+                                "isMandatory": false
+                            }
+                        ]
+                    },
+                    {
+                        "id": "slam",
+                        "name": "SLAM",
+                        "constraints": {
+                            "featuresIncluded": [],
+                            "featuresExcluded": [],
+                            "bindingTimeAllowed":"Early",
+                            "bindingModeAllowed":"Static"
+                        },
+                        "group": "OR",
+                        "isMandatory": false,
+                        "sub":[
+                            {
+                                "id": "hectorslam",
+                                "name": "HectorSLAM",
+                                "constraints": {
+                                    "featuresIncluded": [],
+                                    "featuresExcluded": [],
+                                    "bindingTimeAllowed":"Early",
+                                    "bindingModeAllowed":"Static"
+                                },
+                                "group": "OR",
+                                "isMandatory": false
+                            },
+                            {
+                                "id": "orbslam",
+                                "name": "OrbSLAM",
+                                "constraints": {
+                                    "featuresIncluded": [],
+                                    "featuresExcluded": [],
+                                    "bindingTimeAllowed":"Early",
+                                    "bindingModeAllowed":"Static"
+                                },
+                                "group": "OR",
+                                "isMandatory": false
+                            },
+                            {
+                                "id": "kartoslam",
+                                "name": "KartoSLAM",
+                                "constraints": {
+                                    "featuresIncluded": [],
+                                    "featuresExcluded": [],
+                                    "bindingTimeAllowed":"Early",
+                                    "bindingModeAllowed":"Static"
+                                },
+                                "group": "OR",
+                                "isMandatory": false
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "detexec",
+                "name": "DetectionExecutor",
+                "constraints": {
+                    "featuresIncluded": [],
+                    "featuresExcluded": [],
+                    "bindingTimeAllowed":"Early",
+                    "bindingModeAllowed":"Static"
+                },
+                "group": "OR",
+                "isMandatory": false
+            }
+        ]
+      },
+      {
+        "id": "disinfmgtlayer",
+        "name": "DisinfectionManagementLayer",
+        "constraints": {
+            "featuresIncluded": [],
+            "featuresExcluded": [],
+            "bindingTimeAllowed":"Early",
+            "bindingModeAllowed":"Static"
+        },
+        "group": "OR",
+        "isMandatory": false,
+        "sub":[
+            {
+                "id": "irrad",
+                "name": "Irradiation",
+                "constraints": {
+                    "featuresIncluded": [],
+                    "featuresExcluded": [],
+                    "bindingTimeAllowed":"Early",
+                    "bindingModeAllowed":"Static"
+                },
+                "group": "OR",
+                "isMandatory": false,
+                "sub":[
+                    {
+                        "id": "uvemm",
+                        "name": "UVEmmiter",
+                        "constraints": {
+                            "featuresIncluded": [],
+                            "featuresExcluded": [],
+                            "bindingTimeAllowed":"Early",
+                            "bindingModeAllowed":"Static"
+                        },
+                        "group": "OR",
+                        "isMandatory": false 
+                    },
+                    {
+                        "id": "intenreg",
+                        "name": "IntensityRegulator",
+                        "constraints": {
+                            "featuresIncluded": [],
+                            "featuresExcluded": [],
+                            "bindingTimeAllowed":"Early",
+                            "bindingModeAllowed":"Static"
+                        },
+                        "group": "OR",
+                        "isMandatory": false
+                    }
+                ]
+            }]
+      },
+      {
+        "id": "perceplayer",
+        "name": "PerceptionLlayer",
+        "constraints": {
+            "featuresIncluded": [],
+            "featuresExcluded": [],
+            "bindingTimeAllowed":"Early",
+            "bindingModeAllowed":"Static"
+        },
+        "group": "OR",
+        "isMandatory": false,
+        "sub":[
+            {
+                "id": "imgproc",
+                "name": "ImageProcessing",
+                "constraints": {
+                    "featuresIncluded": [],
+                    "featuresExcluded": [],
+                    "bindingTimeAllowed":"Early",
+                    "bindingModeAllowed":"Static"
+                },
+                "group": "OR",
+                "isMandatory": false,
+                "sub":[
+                    {
+                        "id": "tracn",
+                        "name": "Tracing",
+                        "constraints": {
+                            "featuresIncluded": [],
+                            "featuresExcluded": [],
+                            "bindingTimeAllowed":"Early",
+                            "bindingModeAllowed":"Static"
+                        },
+                        "group": "OR",
+                        "isMandatory": false,
+                        "sub":[
+                            {
+                                "id": "obtracn",
+                                "name": "ObjectTracking",
+                                "constraints": {
+                                    "featuresIncluded": [],
+                                    "featuresExcluded": [],
+                                    "bindingTimeAllowed":"Early",
+                                    "bindingModeAllowed":"Static"
+                                },
+                                "group": "OR",
+                                "isMandatory": false
+                            }]
+                    },
+                    {
+                        "id": "recogntn",
+                        "name": "Recognition",
+                        "constraints": {
+                            "featuresIncluded": [],
+                            "featuresExcluded": [],
+                            "bindingTimeAllowed":"Early",
+                            "bindingModeAllowed":"Static"
+                        },
+                        "group": "OR",
+                        "isMandatory": false,
+                        "sub":[
+                            {
+                                "id": "grecog",
+                                "name": "GestureRecognition",
+                                "constraints": {
+                                    "featuresIncluded": [],
+                                    "featuresExcluded": [],
+                                    "bindingTimeAllowed":"Early",
+                                    "bindingModeAllowed":"Static"
+                                },
+                                "group": "OR",
+                                "isMandatory": false
+                            },
+                            {
+                                "id": "orecog",
+                                "name": "ObjectRecognition",
+                                "constraints": {
+                                    "featuresIncluded": [],
+                                    "featuresExcluded": [],
+                                    "bindingTimeAllowed":"Early",
+                                    "bindingModeAllowed":"Static"
+                                },
+                                "group": "OR",
+                                "isMandatory": false
+                            }]
+                    },
+                    {
+                        "id": "matchn",
+                        "name": "Matching",
+                        "constraints": {
+                            "featuresIncluded": [],
+                            "featuresExcluded": [],
+                            "bindingTimeAllowed":"Early",
+                            "bindingModeAllowed":"Static"
+                        },
+                        "group": "OR",
+                        "isMandatory": false,
+                        "sub":[
+                            {
+                                "id": "seqentl",
+                                "name": "Sequential",
+                                "constraints": {
+                                    "featuresIncluded": [],
+                                    "featuresExcluded": [],
+                                    "bindingTimeAllowed":"Early",
+                                    "bindingModeAllowed":"Static"
+                                },
+                                "group": "OR",
+                                "isMandatory": false
+                            },
+                            {
+                                    "id": "prdictv",
+                                    "name": "Predictive",
+                                    "constraints": {
+                                        "featuresIncluded": [],
+                                        "featuresExcluded": [],
+                                        "bindingTimeAllowed":"Early",
+                                        "bindingModeAllowed":"Static"
+                                    },
+                                    "group": "OR",
+                                    "isMandatory": false
+                            }]
+                    }
+                ]
+            }]
+      },
+      {
+        "id": "missmanlayer",
+        "name": "MissionManagementLayer",
+        "constraints": {
+            "featuresIncluded": [],
+            "featuresExcluded": [],
+            "bindingTimeAllowed":"Early",
+            "bindingModeAllowed":"Static"
+        },
+        "group": "OR",
+        "isMandatory": false,
+        "sub":[
+            {
+                "id": "locmissman",
+                "name": "LocalMissionManager",
+                "constraints": {
+                    "featuresIncluded": [],
+                    "featuresExcluded": [],
+                    "bindingTimeAllowed":"Early",
+                    "bindingModeAllowed":"Static"
+                },
+                "group": "OR",
+                "isMandatory": false
+            },
+            {
+                "id": "comcollabman",
+                "name": "CommAndCollabManager",
+                "constraints": {
+                    "featuresIncluded": [],
+                    "featuresExcluded": [],
+                    "bindingTimeAllowed":"Early",
+                    "bindingModeAllowed":"Static"
+                },
+                "group": "OR",
+                "isMandatory": false
+            }
+        ]
+      }
+    ]
+}
