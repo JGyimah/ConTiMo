@@ -1,0 +1,4 @@
+{
+    "feature":["id","name","constraints","featuresIncluded","featuresExcluded","bindingTimeAllowed","bindingModeAllowed","group","isMandatory"],
+    "binding":["id","props","mode","time"]
+}

@@ -32,8 +32,8 @@ object must contain `featureIncluded`, `featureExcluded`, `bindingTimeAllowed`, 
 4. In the config.json file of your project, for every feature added in your model.json file, a corresponding configuration object must be added.
 NB: Each featue config object must have the keys `id` which references a feature ID in your model.json file, and `props.` The `props` attribute must contain `time` and `mode` attributes.
 
-5. Validate your model schema and constraints with the command `python motivml <project_directory_name>`
-6. Alternatively, you can also use the in-built command line interface. Launch the MoTiVML commannd line interface with the command `python mmconsole <project_directory_name>`
+5. Validate your model schema and constraints with the command `python motivml.py <project_directory_name>`
+6. Alternatively, you can also use the in-built command line interface. Launch the MoTiVML commannd line interface with the command `python mmconsole.py <project_directory_name>`
 7. In the MoTiVML commandline interface,  use the command `show <project_name>` to view a graphical representation of your project model.
  
 
