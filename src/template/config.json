@@ -1,46 +1,5 @@
 {
     "properties": [
-        {
-            "id": "F0",
-            "props": {
-                "time":"Early",
-                "mode": "Static"
-            }
-        },
-        {
-            "id": "F3",
-            "props": {
-                "time": "Early",
-                "mode": "Static"
-            }
-        },
-        {
-            "id": "F1",
-            "props": {
-                "time": "Late",
-                "mode": "Static"
-            }
-        },
-        {
-            "id": "F2",
-            "props": {
-                "time": "Late",
-                "mode": "Dynamic"
-            }
-        },
-        {
-            "id": "F4",
-            "props": {
-                "time": "Early",
-                "mode": "Dynamic"
-            }
-        },
-        {
-            "id": "F5",
-            "props": {
-                "time": "Early",
-                "mode": "Static"
-            }
-        }
+
     ]
 }

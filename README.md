@@ -47,5 +47,11 @@ If there are no syntax and symantic errors detected by the MoTiVML engine, sourc
 2. For each plugged in source code implementation, name the entrypoint file ccontaining the `main` function with the same name as the corresponding feature in your MoTiVML model.json file
 3. In the MoTiVML commandline interface,  use the command `run <feature_name>` to execute the feature source code.
 
+## Guideline Document
+For the purpose of providing an indepth explanation as to what functionalities exist within our library, as well as prerequisites and installation, we have provided a guideline artifact to provide key and detailed information on our library, its usage and its functionalities. To access our guideline document, click [here](https://github.com/SergioGarG/sera-extension/tree/master/documents/guidelineDoc/main.pdf)
+
 ## Publication
+To be updated soon
+
+## Website
 To be updated soon

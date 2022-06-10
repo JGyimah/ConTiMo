@@ -1,0 +1,189 @@
+{
+    "id": "root_feature",
+    "name": "SimpleBot",
+    "group": "",
+    "isMandatory": true,
+    "isSelected": true,
+    "sub": [
+      {
+        "id": "compcontrol",
+        "name": "ComponentControl",
+        "constraints": {
+            "featuresIncluded": [],
+            "featuresExcluded": [],
+            "bindingTimeAllowed":"Early",
+            "bindingModeAllowed":"Static"
+        },
+        "group": "OR",
+        "isMandatory": true,
+        "sub":[
+            {
+                "id": "localztn",
+                "name": "Localisation",
+                "constraints": {
+                    "featuresIncluded": [],
+                    "featuresExcluded": [],
+                    "bindingTimeAllowed":"Early",
+                    "bindingModeAllowed":"Static"
+                },
+                "group": "OR",
+                "isMandatory": true,
+                "sub":[
+                    {
+                        "id": "amcl",
+                        "name": "AMCL",
+                        "constraints": {
+                            "featuresIncluded": [],
+                            "featuresExcluded": [],
+                            "bindingTimeAllowed":"Early",
+                            "bindingModeAllowed":"Static"
+                        },
+                        "group": "XOR",
+                        "isMandatory": false,
+                        "sub":[
+                            {
+                                "id": "amclros",
+                                "name": "AmclRos",
+                                "constraints": {
+                                    "featuresIncluded": [],
+                                    "featuresExcluded": [],
+                                    "bindingTimeAllowed":"Early",
+                                    "bindingModeAllowed":"Static"
+                                },
+                                "group": "OR",
+                                "isMandatory": true
+                            }
+                        ]
+                    },
+                    {
+                        "id": "slam",
+                        "name": "SLAM",
+                        "constraints": {
+                            "featuresIncluded": [],
+                            "featuresExcluded": [],
+                            "bindingTimeAllowed":"Early",
+                            "bindingModeAllowed":"Static"
+                        },
+                        "group": "XOR",
+                        "isMandatory": false,
+                        "sub":[
+                            {
+                                "id": "hectorslam",
+                                "name": "HectorSLAM",
+                                "constraints": {
+                                    "featuresIncluded": [],
+                                    "featuresExcluded": ["kartoslam", "orbslam"],
+                                    "bindingTimeAllowed":"Late",
+                                    "bindingModeAllowed":"Dynamic"
+                                },
+                                "group": "XOR",
+                                "isMandatory": false
+                            },
+                            {
+                                "id": "kartoslam",
+                                "name": "KartoSLAM",
+                                "constraints": {
+                                    "featuresIncluded": [],
+                                    "featuresExcluded": ["orbslam", "hectorslam"],
+                                    "bindingTimeAllowed":"Late",
+                                    "bindingModeAllowed":"Dynamic"
+                                },
+                                "group": "XOR",
+                                "isMandatory": false
+                            },
+                            {
+                                "id": "orbslam",
+                                "name": "OrbSLAM",
+                                "constraints": {
+                                    "featuresIncluded": [],
+                                    "featuresExcluded": ["kartoslam", "hectorslam"],
+                                    "bindingTimeAllowed":"Late",
+                                    "bindingModeAllowed":"Dynamic"
+                                },
+                                "group": "XOR",
+                                "isMandatory": false
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "gestrec",
+                "name": "GestureRecognition",
+                "constraints": {
+                    "featuresIncluded": [],
+                    "featuresExcluded": [],
+                    "bindingTimeAllowed":"Early",
+                    "bindingModeAllowed":"Static"
+                },
+                "group": "OR",
+                "isMandatory": false,
+                "sub":[
+                    {
+                        "id": "hands",
+                        "name": "Hands",
+                        "constraints": {
+                            "featuresIncluded": [],
+                            "featuresExcluded": ["pointscloud"],
+                            "bindingTimeAllowed":"Late",
+                            "bindingModeAllowed":"Dynamic"
+                        },
+                        "group": "XOR",
+                        "isMandatory": false
+                    },
+                    {
+                        "id": "pointscloud",
+                        "name": "PointsCloud",
+                        "constraints": {
+                            "featuresIncluded": [],
+                            "featuresExcluded": ["hands"],
+                            "bindingTimeAllowed":"Late",
+                            "bindingModeAllowed":"Dynamic"
+                        },
+                        "group": "XOR",
+                        "isMandatory": false
+                    }
+                ]
+            },
+            {
+                "id": "motplannctrl",
+                "name": "MotionPlanningAndControl",
+                "constraints": {
+                    "featuresIncluded": [],
+                    "featuresExcluded": [],
+                    "bindingTimeAllowed":"Early",
+                    "bindingModeAllowed":"Static"
+                },
+                "group": "OR",
+                "isMandatory": true,
+                "sub":[
+                    {
+                        "id": "quick",
+                        "name": "Quick",
+                        "constraints": {
+                            "featuresIncluded": [],
+                            "featuresExcluded": ["optimised"],
+                            "bindingTimeAllowed":"Late",
+                            "bindingModeAllowed":"Dynamic"
+                        },
+                        "group": "XOR",
+                        "isMandatory": false
+                    },
+                    {
+                        "id": "optimised",
+                        "name": "Optimised",
+                        "constraints": {
+                            "featuresIncluded": [],
+                            "featuresExcluded": ["quick"],
+                            "bindingTimeAllowed":"Late",
+                            "bindingModeAllowed":"Dynamic"
+                        },
+                        "group": "XOR",
+                        "isMandatory": false
+                    }
+                ]
+            }
+        ]
+      }
+    ]
+}

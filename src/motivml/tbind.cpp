@@ -109,7 +109,7 @@ void generateAndSaveBindings(string projDir="template"){
     string currentDir = getCurrentDir();
 
     int motivmlpo = currentDir.find("motivml");
-    string outputFilePath = currentDir.substr(0, motivmlpo + 7)+ "\\" + projDir +"\\bindings.motivml";
+    string outputFilePath = currentDir.substr(0, motivmlpo + 11)+ "\\src\\" + "\\" + projDir +"\\bindings.motivml";
 
     bindingFile.open(outputFilePath);
     bindingFile << early_bindings;
