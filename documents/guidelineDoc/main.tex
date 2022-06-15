@@ -23,7 +23,7 @@
 \begin{document}
 
 \maketitle
-This is a guideline document for the MoTiVML language for modelling variability in robotic systems. This guideline document serves as a supporting artifact to the language as well as a form of verification for the language and its capabilities.
+This is a guideline document for the MoTiVML language. This guideline document assists end users in modelling variability in robotic systems. As a supporting artifact to the language,  this document serves as a form of verification for the MoTiVML language and its capabilities.
 
 \noindent\rule{17cm}{0.4pt}
 
@@ -38,12 +38,12 @@ This is a guideline document for the MoTiVML language for modelling variability 
 
 \section{Setup and Installation of MoTiVML}
 \begin{itemize}
-    \item Clone MoTiVML from \href{https://github.com/SergioGarG/sera-extension}{here} into catkin workspace.
-    \item Go the MoTiVML workspace project directory and build the cloned project by typing catkin\_make and press enter on your keyboard.
+    \item Clone MoTiVML from \href{https://github.com/SergioGarG/sera-extension}{here} into your catkin workspace.
+    \item Go the MoTiVML workspace project directory and build the cloned project with the command catkin\_make and press enter on your keyboard.
 \end{itemize}
 
 \section{How To}
-This section gives a step-by-step walkthrough of how MoTiVML can be used to instantiate a model/configuration, validate a model and can be linked with source code implementations. We also give a brief walkthrough of the MoTiVML console interface. Throughout our demonstrations in this guideline document, we will use a sample model of a robot that is shown in figure \ref{simplebot}. This graphical representation of a simple robot model will serve as our running example throughout this guideline document.
+This section gives a step-by-step walk-through of how MoTiVML can be used to instantiate a model or configuration, how it can be used to validate a model as well as the capability to link source code implementations with feature definitions. We also give a brief tutorial of our in-built MoTiVML console interface. Throughout our demonstrations in this guideline document, we use a sample model of a robotic system that is shown graphically in figure \ref{simplebot}. This graphical representation of a simple robot model will also serve as our running example throughout this document.
 
 \begin{figure}[H]
 	\caption{Graphical Model of a Simple Robot}
@@ -56,9 +56,9 @@ This section gives a step-by-step walkthrough of how MoTiVML can be used to inst
 \begin{itemize}
 	\item To create an instance of a model in MoTiVML, in the \textbf{src} folder of the cloned application, make a copy of the template folder provided and rename it to suit your preference.
 	
-	\item In your instance folder, there is a \textbf{model.json} with an existing root feature.
+	\item In your instance folder, there is a \textbf{model.json} with an existing root feature, wrapped in a object.
 	
-	\item The model can be extended by appending sub features to the root feature. You can add nested feature objects according to your preferences NB: Each feature specification must have the keys \textbf{id}, \textbf{name}, \textbf{constraints}, \textbf{group}, \textbf{isMandatory}. Likewise the constraints object must contain \textbf{featureIncluded}, \textbf{featureExcluded}, \textbf{bindingTimeAllowed}, \textbf{bindingModeAllowed}. Listing \ref{feat-schema} shows a demonstrated example of an extended MoTiVML model instance, for the feature model captured in Figure \ref{simplebot}.
+	\item The model definition can be extended by appending sub features to the root feature. You can add nested feature objects according to your preferences.Note that each feature specification must have attributes such as \textbf{id}, \textbf{name}, \textbf{constraints}, \textbf{group}, \textbf{isMandatory}. The constraints attribute must contain sub attributes \textbf{featureIncluded}, \textbf{featureExcluded}, \textbf{bindingTimeAllowed}, \textbf{bindingModeAllowed}. Listing \ref{feat-schema} shows a demonstrated example of an extended MoTiVML model instance, for the feature model captured in Figure \ref{simplebot}.
 	
 	\item The value of each feature attribute in a model must conform to strict type systems defined within MoTiVML. A list of all the attributes together with their expected values is provided below in Table \ref{tab:valueTypes}.
 	
@@ -83,8 +83,7 @@ This section gives a step-by-step walkthrough of how MoTiVML can be used to inst
 			\label{tab:valueTypes}
 	\end{table}
 	
-	\item To add a sub-feature to a feature, add the \textbf{sub} attribute to the feature and assign an array of sub-feature objects to it. However, the sub attribute is optional. Features that do not have sub-features can exist without a \textbf{sub} attribute.
-	
+	\item To add a sub-feature to a defined feature, add the \textbf{sub} attribute to the feature and assign an array of sub-feature objects to it. However, the sub attribute is optional. Features that do not have sub-features can exist without a \textbf{sub} attribute.
 	
 \end{itemize}
 
@@ -297,7 +296,7 @@ This section gives a step-by-step walkthrough of how MoTiVML can be used to inst
 \begin{itemize}
 	\item Again in your instance folder, there is a \textbf{config.json} with an empty \textbf{properties} array value.
 	
-	\item In the config.json file of your project, for every feature added in your model.json file, a corresponding configuration object must be added. NB: Each feature configuration object must have an \textbf{id} key which references a feature ID in your model.json file, and \textbf{props}. The \textbf{props} attribute must contain \textbf{time} and \textbf{mode} attributes.  Listing \ref{conf-schema} shows a MoTiVML configuration translation of the features present in Figure \ref{simplebot}.
+	\item In the config.json file of your project, for every feature added in your model.json file, a corresponding configuration object must be added. For each feature configuration object, there must be an \textbf{id} attribute which references the \textbf{id} of a feature in your model.json file. The \textbf{props} attribute must contain \textbf{time} and \textbf{mode} attributes.  Listing \ref{conf-schema} shows a MoTiVML configuration translation of the features present in Figure \ref{simplebot}.
 	
 	\item The values of each configuration attribute for your model must conform to strict type systems defined within MoTiVML. A list of all the configuration attributes together with their expected values is provided below in Table \ref{tab:confvalueTypes}.
 	
@@ -431,7 +430,7 @@ This section gives a step-by-step walkthrough of how MoTiVML can be used to inst
 	\label{conf-schema}
 \end{longlisting}
 \subsection{Validate a MoTiVML Model}
-To validate your model and its configuration, navigate to the \textbf{/src/motivml} directory and run the following command in the console:
+To validate your model and its configuration, navigate to the \textbf{/src/motivml} directory and run the following command in the ROS console:
 
 \begin{longlisting}
 	\caption{MoTiVML Validation Command}
@@ -450,7 +449,7 @@ To validate your model and its configuration, navigate to the \textbf{/src/motiv
 
 All models created in the MoTiVML language are validated on two distinct levels. i.e. syntactically and semantically. Syntactical validation has to do with feature and configuration schemas being evaluated for errors, while semantic validation has to do with modelling and binding constraints evaluation.
 
-To demonstrate this we evaluate our constructed model and configuration shown in Listing \ref{feat-schema} and \ref{conf-schema} and discuss the results accordingly. A careful observation of  the console output generated from the validation indicates the presence of an error. 
+To demonstrate this we evaluate our constructed model and configuration shown in Listing \ref{feat-schema} and \ref{conf-schema} and discuss the results accordingly. A careful observation of  the console output generated from the validation indicates the presence of zero errors. 
 
 When our in-built schema and constraint checker identify an error in either a model or a configuration, an error message is outputted to the console indicating where the error is located and why the language has flagged it as an error.
 
@@ -461,21 +460,21 @@ When our in-built schema and constraint checker identify an error in either a mo
 	\label{validation}
 \end{figure}
 
-Upon successful validation without any errors, a \textbf{bindings.motivml} file is generated in the project folder. This file contains features that are have been bound at compile time. At runtime, the \textbf{bindings.motivml} file is dynamically updated depending on which features are successfully bound or unbound.
+Upon successfully validating a model without any errors, a \textbf{bindings.motivml} file is generated in the corresponding project folder. This file contains features that are have been bound at compile time. At runtime, the \textbf{bindings.motivml} file is dynamically updated depending on which features are successfully bound or unbound.
 
 \subsection{Plug in Source Code Implementations of Model Features}
-In the event that there are no syntax and symantic errors detected by the MoTiVML engine, source code implementations of features can be implemented and executed. Source code implementation in both C++ and Python can be plugged in. A source code implementation can be plugged in by following the following steps:
+In the event that there are no syntax and semantic errors detected by the MoTiVML engine, source code implementations of features can be implemented and executed. With regards to attaching feature implementations, MoTiVML is language agnostic. This means that, source code implementation in both C++ and Python can be plugged in successfully. A source code implementation can be plugged in through following the following steps:
 
 \begin{itemize}
 	\item Extract, encapsulate and plug in your feature implementations into the featx directory
 	
-	\item For each plugged in source code implementation, name the entrypoint file containing the main function with the same name as the corresponding feature in your MoTiVML model.json file.
+	\item For each plugged in source code implementation, name the entrypoint file containing the main function of your implementation, with the same name as the corresponding feature in your MoTiVML model.json file.
 	
-	\item In the MoTiVML commandline interface, a number of commands can be executed to perform specific tasks.
+	\item In the MoTiVML command line interface, a number of commands can be executed to perform specific tasks.
 \end{itemize}
 
 \subsection{MoTiVML Console Interface}
-To add some interactivity to our variability modelling language, we have provided an in-built console interface for interacting with models and features.
+To add some interactivity to our variability modelling language, we have provided an in-built console interface for interacting with models and features through MoTiVML specific commands.
 
 To launch the MoTiVML console interface, navigate to the \textbf{/src/motivml} directory and run the following command in Listing \ref{console}:
 
@@ -494,7 +493,7 @@ To launch the MoTiVML console interface, navigate to the \textbf{/src/motivml} d
 	\label{console}
 \end{longlisting}
 
-Prior to the console interface being launched when the above command is run, the model and configuration of the \textbf{project\_directory\_name} specified in the command is compiled and validated. If there are no errors detected, the console interface is then launched successfully. 
+When the above command is run, the model and configuration defined in the \textbf{project\_directory\_name} is compiled and validated, prior to the console interface being launched. If there are no errors detected, the console interface is then launched successfully. 
 
 \begin{figure}[H]
 	\caption{Simplebot Console}
@@ -503,12 +502,12 @@ Prior to the console interface being launched when the above command is run, the
 	\label{consolelaunch}
 \end{figure}
 
-In Figure \ref{consolelaunch} we can observe the launched MoTiVML console. As highlighted in the figure above, the console prompt always bears the name of the project which was launched with the  console. For this reason, all MoTiVML console commands that are run will be affiliated with the model highlighted in the console prompt.
+In Figure \ref{consolelaunch} we can observe the launched MoTiVML console. As highlighted in the figure above, the console prompt always bears the name of the project which was launched with the console. For this reason, all MoTiVML console commands that are run will be affiliated with the model highlighted in the console prompt.
 
 \subsection{MoTiVML Console Commands}
 
 \begin{itemize}
-	\item \textbf{show $<parameter>$}: The show command is used to display graphically a user constructed model. This commands prints the hierarchical structure of a selected model while displaying details such as its mandatory status, group and binding mode. The show command takes a single parameter. This parameter can either be \textbf{all} or  \textbf{config}. \\
+	\item \textbf{show $<parameter>$}: The show command is used to display graphically a user constructed model. This command prints the hierarchical structure of a selected model while displaying details such as its mandatory status, group and binding mode. The show command takes a single parameter. This parameter can either be \textbf{all} or  \textbf{config}. \\
 	
 	The \textbf{show all} command only shows all selected features in the model tree. By default all features are selected when instantiated. Thus, this command shows every single feature in the model tree.
 	
@@ -519,7 +518,7 @@ In Figure \ref{consolelaunch} we can observe the launched MoTiVML console. As hi
 		\label{showall}
 	\end{figure}
 
-	The \textbf{show config} command only shows currently selected features. That is, unselected features i exclude from the output tree.
+	The \textbf{show config} command only shows currently selected or bound features. That is, unselected or unbound features in the model are excluded from the output tree.
 
 	\begin{figure}[H]
 		\caption{show config Command}
@@ -528,9 +527,9 @@ In Figure \ref{consolelaunch} we can observe the launched MoTiVML console. As hi
 		\label{showconfig}
 	\end{figure}
 
-	\item \textbf{run $<feature\_name>$}: The run command executes the source code implementation plugged into a model and linked to a feature in that model. This means that before the run command can be executed successfully, there must be an existing implementation in either C++ or python. The command only takes one parameter which is the name of the feature you wish run.
+	\item \textbf{run $<feature\_name>$}: The run command executes the source code implementation plugged into a model in connection to a defined feature. This means that before the run command can be executed successfully, there must be an existing source code implementation in either C++ or python that has been plugged into a model. The command only takes one parameter which is the name of the feature you wish run.
 	
-	C++ feature implementation require a compile step to be able to run them. That in the \textbf{src/motivml/featx/mbin} directory of our implementation, we save all C++ feature executables after compilation.
+	C++ feature implementations require a compile step to be able to run them. That in the \textbf{src/motivml/featx/mbin} directory of our implementation, we save all C++ feature executables after compilation and then proceed to run them.
 	
 	\item \textbf{exit}: The exit command shuts down the console interface and returns back to the original ROS console. The exit command also asks for a yes or no confirmation before proceeding. Figure \ref{exit} shows an exit command execution and output.
 	\begin{figure}[H]

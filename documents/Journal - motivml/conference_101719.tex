@@ -113,7 +113,7 @@ Furthermore, through the design science approach, this conclusive study provides
 \end{abstract}
 
 \begin{IEEEkeywords}
-variability management, service robots, robotics software engineering, domain specific Languages, feature reconfiguration, flexible feature binding
+variability modelling, service robots, robotics software engineering, domain specific languages, feature reconfiguration, flexible feature binding
 \end{IEEEkeywords}
 
 \section{Introduction}
@@ -154,6 +154,8 @@ In summary, our work provides a variability modelling language, in response to t
     \item \textit{The lack of a standardised variability modelling language: }The lack of a standardised variability modelling language for managing features centrally, modeling features together with their possible bindings and assuring model correctness with valid configurations. Various ad hoc mechanisms exist, but no standardized solution exists on how to manage variability within the robotics domain. For example in ROS, dynamic features can be realized using parameterization\foot{http://wiki.ros.org/Parameter\%20Server} or loadable ROS plugins.\foot{http://wiki.ros.org/pluginlib} Static features on the other hand, might need a preprocessor and some inclusion into the build system.
     
     \item \textit{The lack of guidelines for implementing variability management techniques in robotic systems:} Even though a plethora of techniques exist, there are no specific guidelines that detail which technique to use and how to use it within the robotics domain.
+    
+    To the best of our knowledge, open sourced ROS based applications lack some form of a comprehensive documentation in the form of usage guidelines that verify or provide proof that such robotic applications meet the specifications or requirements that define their capabilities.
     
     \item \textit{The lack of a variability management solution that addresses the complexity of engineering robotic systems: }A full-fledged robotic system is a complex system that consists of many modules. Whether single purpose or multi purpose, the versatility a robotic system offers in different scenarios, requires the integration of heterogeneous modules. Many of these modules that need to be integrated are developed by a diverse group of experts (e.g., electrical engineers, perception experts, control theorists, software engineers). This perceivable diversity complicates the integration, customisation, and maintainability of packages in robotic systems. These complications translate into complexity when it comes to engineering robotic applications.
 \end{enumerate}
@@ -236,7 +238,7 @@ Despite the fact that most of these languages share concepts, they also present 
 	\item C2: Covers a wide range of usage scenarios
 	\item C3: ROS compatible
 	\item C4: Can describe variability
-	\item C5: Abstract syntax supports variability management based on binding time and binding mode
+	\item C5: Abstract syntax supports variability modelling based on binding time and binding mode
 	\item C6: Enforces and evaluates modelling constraints.
 	\item C7: Implements binding time and binding mode as a variation mechanism.
 	\item C8: Provides implementation guidelines and mechanisms.
@@ -391,16 +393,17 @@ By realising our variability modelling language to implement binding time and bi
 \subsection{Correctness Evaluation}
 As a functional requirement of our language, end users have the ability to model robotic features, define configurations for each feature, and then apply such configurations to multiple scenarios. Configurations are typically an amalgamation of features, relationships and constraints. To assess the validity of configurations described with our language, we have implemented mechanisms that can be used to evaluate such user defined configurations. On a high level, our evaluation plan for our modelling language can be summarised as follows:
 \begin{enumerate}
-  \item Realise a mock-up example system of robots.
-  \item Specify configurations for each mock-up example.
-  \item Compile and validate both model and configuration syntax.
-  \item Run model and validate binding semantics and constraints.
+  \item Realise a mock-up of an example robotic system.
+  \item Define binding configurations for each mock-up example.
+  \item Plug in source code implementations of defined mock-up features.
+  \item Compile and validate model and configuration syntax and semantics.
+  \item Execute and test the model variability.
 \end{enumerate}
-For end users to be able to verify the correctness of their models, all models defined in our modelling language must be validated on multiple levels of correctness i.e. syntax and semantic correctness. 
+For stakeholders such as end users to be able to verify the correctness of their models, all models defined in our modelling language must be validated on multiple levels of correctness i.e. syntax and semantic correctness. 
 \begin{itemize}[label={}]
-  \item \textbf{Syntax Validation: }To effectively validate the syntax of our language, we validate the schema of both model objects and configuration objects. Schema validation in this sense refers to token validation and token value validation.
+  \item \textbf{Syntax Validation: }To effectively validate the syntax of our language, we validate the schema of both model objects and configuration objects. Schema validation in this sense refers to token and token state validation.
  
-  \item \textbf{Semantics Validation: } To validate the semantics of our language, we evaluate the correctness of configuration bindings in relation to the binding constraints specified. Furthermore, we evaluate the correctness of each configuration binding pair with respect to its implied effect on other features in the configuration space.
+  \item \textbf{Semantics Validation: } To validate the semantic implications of our language, we evaluate the correctness of configuration bindings in relation to the corresponding binding constraints specified. We also evaluate the correctness of each configuration binding pair with respect to its implied effect on other features in a given configuration space.
   
 \end{itemize}
 
@@ -458,7 +461,7 @@ fontsize=\footnotesize
 \end{listing}
 
 The configuration manager component of our library is made up of two parts. Namely, a binding semantics interpreter and a constraint checker. In general, variability management provides two main capabilities i.e. feature modelling and variation point definition and management. The binding semantics interpreter assimilates and displays the result of the interaction between the binding pairs of any pair of features. The constraint checker on the other hand parses the entire model definition to evaluate it for constraint violations in an attempt to validate user defined configurations with respect to the configuration space. Thus, the constraint checker enforces configuration rules that define the adaptability of configurations based on feature binding time and binding mode.
-The source code implementation manager encapsulates a plugin management interface which provides an integration point where end users can include source code implementations of modelled features into their configurations.
+The source code implementation manager encapsulates a plug-in management interface which provides an integration point where end users can include source code implementations of modelled features into their configurations.
 
 \begin{figure}[H]
 \caption{Architectural Overview of Variability Management Solution}
@@ -472,7 +475,7 @@ In designing our language, we clarified the key relevant aspects of the domain i
 
 During our domain analysis, we identified five standard questions which make up the core ideas and knowledge base upon which our language is built. 
     \begin{itemize}
-        \item \textbf{Purpose: } \textit{What is the purpose of the language?}\\
+        \item \textbf{Purpose: } \textit{What is the purpose of this language?}\\
         The purpose of our language is to provide roboticists with means and techniques for planning, designing, and implementing variability through mechanisms, that implement binding time and binding mode techniques.
         \item \textbf{Stakeholders: } \textit{Who are the key stakeholders and the intended users of the language?}\\ Our language targets a very diverse group of skilled professionals in the robotics domain who can be classified as end users. These stakeholders/end users include 
         \begin{enumerate*}[label=(\roman*)]
@@ -480,22 +483,22 @@ During our domain analysis, we identified five standard questions which make up 
             \item Developers: End users in charge of developing new features and implementing them into our framework.
             \item System Engineers: End users in charge of adapting the framework to the specific requirements of a customer.
         \end{enumerate*}
-        \item \textbf{Concepts: }\textit{What are the key domain concepts that users care about?}\\ From an end user perspective, concepts such as simplified feature modelling techniques, standardized configuration management techniques and flexible and customizable feature binding based on time and mode are key.
+        \item \textbf{Concepts: }\textit{What are the key domain concepts that targetted stakeholders care about?}\\ From an end user perspective, concepts such as simplified feature modelling techniques, standardized configuration management techniques and flexible and customizable feature binding based on time and mode are key.
         \item \textbf{Relations: }\textit{How are domain concepts related, and what are their relevant properties?}\\
         Properties that define the core user concepts of our language include:
         \begin{itemize}
             \item Every instance of a feature class is selected by default.
-            \item All features in a model are not defined as mandatory by default.
+            \item All features in a model are defined as mandatory by default upon instantiation.
             \item A parent feature may have zero or more child features.
-            \item A feature may have zero or more groups but a group must have two or more features to exist.
-            \item A group could be of an OR or XOR type.
+            \item A modelled feature may have zero or more groups but a group must have two or more features to exist.
+            \item A grouped set of features may belong to an OR or XOR group.
             \item A feature must have a binding time property which is set to \textit{Early} by default.
             \item A feature must have a binding mode property which is set to \textit{Static} by default.
-            \item Binding time properties of features can only exist in three states. i.e. \textit{Early, Late, Any}.
-            \item Binding mode properties of features can only exist in three states. i.e. \textit{Static, Dynamic, Any}.
+            \item A modelled feature's binding time property can only exist in three states. i.e. \textit{Early, Late, Any}.
+            \item A modelled feature's binding mode property can only exist in three states. i.e. \textit{Static, Dynamic, Any}.
         \end{itemize}
         \item \textbf{Examples: }\textit{What examples of language instances are available?}\\
-        None. Our language is built on novel principles crafted to effectively manage variability in the robotics domain.
+        To the best of our knowledge, no language designed to model variability in robotic systems using binding time and binding mode exists. Our language is built on novel principles crafted to effectively manage variability in ROS based robotic systems.
     \end{itemize}
     
 \subsection{Implementation}
@@ -599,12 +602,12 @@ fontsize=\footnotesize
 In our domain analysis we were able to understand key requirements relevant to our language implementation. Based on this understanding, we extended our mock up example in Figure \ref{ex1} and \ref{ex2} against our already established language requirements. Established language requirements include:
 \begin{enumerate}
     \item R1: End users can instantiate robotic models
-    \item R2: End users can create and feature instances to models
-    \item R3: End users can create model configurations
-    \item R4: End users can create and link configuration instances to feature instances
-    \item R5: End users can evaluate their models for syntactic, grammar and semantic correctness
+    \item R2: End users can create instances of features within models
+    \item R3: End users can create decoupled model configurations
+    \item R4: End users can create and link configurations to feature instances
+    \item R5: End users can evaluate models both syntactically and semantically
 \end{enumerate}
-Using the concrete textual syntax of our language highlighted in Listing \ref{feat-conc-text} and \ref{bind-conc-text}, we identified example syntax representations that fulfill all the requirements listed above. Table \ref{tab:reqext} captures a mapping of each requirement along with its example syntax representation, that justifies that a requirement has been fulfilled.
+Using the concrete textual syntax of our modelling language which we have highlighted in Listing \ref{feat-conc-text} and \ref{bind-conc-text}, we identified example syntax representations that fulfil all the requirements listed above. Table \ref{tab:reqext} captures a mapping of each requirement along with its example syntax representation, that justifies that a requirement has been fulfilled.
 
 \begin{table}[htbp]
 \caption{Extended Mock-up Examples Against Requirements}
@@ -859,9 +862,10 @@ Furthermore, our library design targets a wide array of skilled professionals in
 \subsection{The lack of mechanisms and guidelines for implementing variability management techniques in robotic systems}
 There have been some propositions in the area of managing variability in the robotics systems but none of them offer mechanisms and operational guidelines to assist domain stakeholders in understanding and using such languages. This scarcity is particularly prevalent in the ROS community. For this reason, more often than not, variability management is handled in an adhoc manner by experts in the robotics domain.
 
-To alleviate this lack, our variability management library ships with a comprehensive set of guidelines that explain the variation mechanism implemented in our library as well as usage guidelines for our language.
+To alleviate this lack, our variability modelling library ships with a comprehensive set of guidelines\foot{https://github.com/SergioGarG/sera-extension/tree/master/documents/guidelineDoc/main.pdf}
+offered as a supporting artifact that serves as verification for our variability modelling language. In this documentation, we verify that our language fulfils the requirements stated in our implementation, while providing demonstrated examples to prove it.
 
-Our guidelines are offered in the form of a comprehensive documentation for three main purposes. For the seamless advancement of robotic application development, to encourage the standard practice of building and maintaining open source robot applications and last but not least, to encourage transparency and reproducibility of relevant and useful robotic applications. Currently, this is lacking amongst developed robotic applications that are open sourced. Thus, in addition to this seminal study, we offer such guidelines.
+We deem guideline documentations as an integral part of robotics application development, for three main reasons. Namely, for the seamless advancement of robotic application development, to encourage the standard practice of building and maintaining open source robot applications and last but not least, to encourage transparency and reproducibility of relevant and useful robotic applications. Currently, this is lacking amongst open sourced robotic applications. Thus, in addition to this seminal study, we offer such a guideline document.
 
 In addition to this, we have also identified and implemented mechanisms in this study, that can be used to model variability in any robotic system.
 
