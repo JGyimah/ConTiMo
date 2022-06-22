@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.6.3)  21 JUN 2022 18:14
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.6.3)  22 JUN 2022 11:22
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1089,7 +1089,7 @@ n / tree / master / documents /
  []
 
 [15]
-Underfull \hbox (badness 1874) in paragraph at lines 907--908
+Underfull \hbox (badness 1874) in paragraph at lines 905--906
 []\OT1/ptm/m/n/8 R. H. Bour-gonjon, ``Em-bed-ded Sys-tems in Con-sumer Prod-uct
 s,''
  []
@@ -1112,7 +1112,7 @@ runsystem(del conference_101719.pyg)...executed.
 Here is how much of TeX's memory you used:
  21943 strings out of 478614
  431032 string characters out of 2852938
- 765446 words of memory out of 3000000
+ 765473 words of memory out of 3000000
  39643 multiletter control sequences out of 15000+600000
  513618 words of font info for 112 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1129,7 +1129,7 @@ pfb><C:/Program Files/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files
 /MiKTeX/fonts/type1/urw/times/utmbi8a.pfb><C:/Program Files/MiKTeX/fonts/type1/
 urw/times/utmr8a.pfb><C:/Program Files/MiKTeX/fonts/type1/urw/times/utmri8a.pfb
 >
-Output written on conference_101719.pdf (16 pages, 1853939 bytes).
+Output written on conference_101719.pdf (16 pages, 1854078 bytes).
 PDF statistics:
  136 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
