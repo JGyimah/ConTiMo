@@ -303,11 +303,11 @@ For binding time, an early binding time implies that a feature is loaded or unlo
 
 For both binding time and binding mode, our variability modelling language supports an "Any" binding type which implies that a given time binding attribute of a feature can assume both an early and a late value and a binding mode attribute can assume both a static and dynamic value
 
-Within the feature modelling capability of our language, the variability of any given feature can be modelled as follows:
+Within the feature modelling capability of our language, the variability of any given feature can be modelled and configured within the following binding scope:
 
 \begin{itemize}
     
-    \item \textbf{Static Early: } Static Early implies that a feature that cannot be unloaded when loaded and vice versa, is loaded (or unloaded) at compile time. 
+    \item \textbf{Static Early: } Static Early binding implies that a feature that cannot be unloaded when loaded and vice versa, is loaded (or unloaded) at compile time. 
     
     \item \textbf{Static Late: } Static Late implies that a feature that cannot be unloaded when loaded and vice versa, is loaded (or unloaded) at runtime.
     
@@ -641,7 +641,7 @@ Using the concrete textual syntax of our modelling language which we have highli
 \end{table}
 
 \subsubsection{Identifying Language Tokens}
-From a lexical standpoint, our language possesses a defined set of legal or permissible tokens. These tokens form part of a key-value pair production. Tokens can be identified and extracted from the key-value pair attributes that make up a feature in our language representation of a feature model. Table \ref{tab:langlex} shows all identified tokens together with their corresponding regular expressions that define their legal or valid lexical structures.
+From a lexical standpoint, our language possesses a defined set of legal or permissible tokens. These tokens form part of a key-value pair production. Tokens can be identified and extracted from the key-value pair attributes that make up a feature in our language representation of a feature model. Attribute keys serve as meta-data for the data held by attribute values. Table \ref{tab:langlex} shows all identified tokens together with their corresponding regular expressions that define their legal or valid lexical structures.
 
 For each identified token in our language, we translated a valid expression of it into a regular expression to demonstrate which valid forms of these token can exist in our language. Syntactically, features and their configurations in our language model attributes as key value pairs wrapped in an object. Table \ref{tab:langlex} capture our list of identified tokens mapped to their corresponding regular expression formalisms.
 
@@ -679,17 +679,17 @@ For each identified token in our language, we translated a valid expression of i
 \end{table}
 
 \subsubsection{Specifying Language Terminals}
-Considering the key-value paired nature of our language, its syntax can be described as a production consisting of a left-hand-side non-terminal, a colon (:) separator, followed by one or more right-hand-side sentences made up of varying forms of terminal and non-terminal symbols. Table \ref{tab:langlex} captures all terminal symbols present in our language.
+Our syntax can be described as a production consisting of a left-hand-side and right-hand-side attributes. For each attribute, on the left-hand-side, we have non-terminals that represent our language meta-data. On the right-hand-side, we can identify singular or grouped forms of terminal and non-terminal symbols in the form of data. Left-hand-sided and the right-hand-sided attributes are separated by a colon (:) and each model attribute is separated from the next by a comma(,). Table \ref{tab:langlex} captures all meta-data and data tokens that define our language.
 
 \subsubsection{Identifying Syntactic Categories Within Our Language}
-Our modelling language provides domain stakeholders with a means of instantiating a feature model, as well as the possibility of defining and configuring features. Within our language's concrete syntax, we can identify three distinct syntactic categories. These categories include:
+The modelling capability of our language provides domain stakeholders with a means of instantiating a feature model, as well as the possibility of defining and configuring features. Within our language's concrete syntax, we can identify three distinct syntactic categories. These categories include:
 \begin{enumerate}
     \item \textbf{featureDescriptionBlock:} This is made up of all feature attributes that are concerned with describing the general purpose of a feature. Although this category is not explicitly expressed in the textual formalism of a feature's schema, it can still be defined as a set of individual feature attributes which intuitively provide descriptive contexts to the functionality and purpose of a feature.
     \item \textbf{constraintsDefinitionBlock:} This is represented as a nested block of feature attributes that define the type constraints applicable to a feature as well as the set of possible constraint values that are valid for that feature.
     \item \textbf{bindingPropertiesBlock:} For every feature, there exists a corresponding configuration. Within the configuration of a feature exists a binding property block definition. The purpose of this binding property block is to allow domain stakeholders to configure binding time and binding mode attributes for each feature they define. These binding time and binding mode attribute definitions serve as the fundamental variation mechanism for each feature model.
 \end{enumerate}
  
-\subsubsection{Specifying Grammar Rules} By combining the terminals identified in Table \ref{tab:langlex} with the syntactic categories identified, we were able derive grammar productions for our language. The grammar rules for all three syntactic categories can be expressed as follows:\\
+\subsubsection{Specifying Grammar Rules} By combining the terminals identified in Table \ref{tab:langlex} with the syntactic categories identified, we were able derive grammar productions for our language. The grammar rules present in our language for all three syntactic categories can be expressed as follows:\\
 
 \begin{itemize}
 	\item[] featureDescriptionBlock $\longrightarrow$ '\{'\ 'id'\ ':'\ anumVal,\ 'name'\ ':'\ alphaVal,\ 'group'\ ':'\ alphaVal, 'isMandatory'\ ':'\ boolVal\ '\}' \\
@@ -839,9 +839,9 @@ As an extension to our modelling language, users do not only have the capability
 \section{Validation}
 For us to be able to thoroughly validate our language design and its implementation, we have to ensure that we are able to evaluate user generated artifacts realised with our variability modelling language. These artifacts can be identified as feature models and configurations. In doing so, we translated graphical representations of our mock-up examples in Figure \ref{ex1} and \ref{ex2} into model and configuration instances of our language. We then went on to validate the models and configurations for syntax and semantic correctness. Validation mechanisms used for syntax and semantic validation include a schema checker and a constraint checker. The schema checker is used to evaluate the schema of all modelled features and configurations, whereas a constraint checker handles the semantic evaluation of bindings defined within our mock-up examples.
 
-  \subsection{Schema Checker} Our library provides a schema checker which serves the purpose of validating the grammar and syntax rules of programs created with our language. Using our language, features and configurations can be modelled as key value pairs of objects. From a grammatical perspective, object keys are represented as tokens that are terminal in nature. Value tokens on the other hand are generated from a finite set of data types which are unique to each object attribute.
+  \subsection{Schema Checker} Our library provides a schema checker which serves the purpose of validating the grammar and syntax rules of programs created with our language. Using our language, features and configurations can be modelled as key-value pairs of objects. From a grammatical perspective, object keys are represented as tokens that are terminal in nature. Value tokens on the other hand are generated from a finite set of data types which are unique to each object attribute.
   
-  The operations of our schema checker can be classified into two categories. i.e. validating the feature schema and validating the configuration schema. Feature schema validation involves validating a feature definition for valid id, name, constraints, group and optional status tokens in a feature definition. The absence or misrepresentation of any of such tokens triggers an error which is translated into a console prompt.
+  The operations of our schema checker can be classified into two categories. i.e. validating the feature schema and validating the configuration schema. Feature schema validation involves validating a feature definition for valid id, name, constraints, group and optional status tokens in a feature definition. The absence or misrepresentation of any of such tokens triggers an error in the form of a console prompt.
   
   \subsection{Constraint Checker} Embedded within our library is another component referred to as the constraint checker. This component purposefully evaluates the semantic implications of each feature's constraints against its configuration settings, in the configuration space. Our constraint checker component operates by parsing feature models to validate two main types of semantics. The first is the set of configurations that have been defined within the scope of the constraints enforced. And the second is the validity of configuration binding pairs with respect to other binding pairs within a specific product line definition.
   
