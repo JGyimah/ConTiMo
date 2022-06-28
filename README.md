@@ -8,15 +8,15 @@ With this library, roboticists can model robotic `FEATURES`, create `MODEL` conf
 
 ## Prerequisites
 
-1. Ubuntu 20 LTS or higher
+1. The library was developed and tested on Ubuntu 20 LTS or higher
 
 2. [ROS](http://wiki.ros.org/ROS/Installation) installation. This application was developed and tested with ROS Neotic 1.15.9.
 
-3. [Python3](https://www.python.org/) installation
+3. This application supports [Python3](https://www.python.org/)
 
 4. C++ 11 or higher
 
-5. [nlohmann](https://github.com/nlohmann/json) C++ library for reading JSON
+5. This application is dependant on the [nlohmann](https://github.com/nlohmann/json) C++ library for reading JSON files.
 
 ## Installation
 
