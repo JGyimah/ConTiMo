@@ -18,6 +18,8 @@ With this library, roboticists can model robotic `FEATURES`, create `MODEL` conf
 
 5. This application is dependant on the [nlohmann](https://github.com/nlohmann/json) C++ library for reading JSON files.
 
+6. [Pluginlib](http://wiki.ros.org/pluginlib) 1.13.0
+
 ## Installation
 
 Go to your workspace project, type catkin_make and press enter on your keyboard.

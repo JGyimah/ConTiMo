@@ -1,4 +1,5 @@
 #include <windows.h>
+#include <cstdio>
 #include <string>
 #include <limits.h>
 #include <fstream>
@@ -39,16 +40,24 @@ void configurationIteration(nlohmann::json& configJsonData){
             
             string idStr = to_string(configObj["id"]);
             string timeStr = to_string(configObj["props"]["time"]);
+            string modeStr = to_string(configObj["props"]["mode"]);
 
-            transform(timeStr.begin(), timeStr.end(), timeStr.begin(), ::tolower);
-            timeStr.erase(std::remove(timeStr.begin(),timeStr.end(),'\"'),timeStr.end());
+            transform(timeStr.begin(), timeStr.end(), timeStr.begin(), ::tolower); // convert time string iterable to lower case
+            timeStr.erase(std::remove(timeStr.begin(),timeStr.end(),'\"'),timeStr.end()); // remove trailing newline character from time string
+
+            transform(modeStr.begin(), modeStr.end(), modeStr.begin(), ::tolower); // convert mode string iterable to lower case
+            modeStr.erase(std::remove(modeStr.begin(),modeStr.end(),'\"'),modeStr.end()); // remove trailing newline character from mode string
             
             const string EARLY_BINDING_TIME = "early";
+            const string STATIC_BINDING_MODE = "static";
 
-            if(timeStr == EARLY_BINDING_TIME){
+            if(timeStr == EARLY_BINDING_TIME || modeStr == STATIC_BINDING_MODE){
                 //only bind features with early binding time at this moment
                 idStr.erase(std::remove(idStr.begin(),idStr.end(),'\"'),idStr.end());
                 early_bindings += idStr + "\n";
+
+                //printf("%s %s binding for model completed\n", STATIC_BINDING_MODE, EARLY_BINDING_TIME);
+                cout <<"Feature ["+ idStr + "] selected" << endl;
             }
             
         }
@@ -119,9 +128,13 @@ void generateAndSaveBindings(string projDir="template"){
 
 int main(int argc, char* argv[]){
     #if COMPILE_TIME
+    //static early binding
     string projectName = argv[1];
     
     readConfiguration(getCurrentDir(), projectName);
     generateAndSaveBindings(projectName);
+    printf("Compile time exited successfully\n\n");
     #endif
+
+    return 0;
 }

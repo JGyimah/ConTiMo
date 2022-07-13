@@ -1,0 +1,11 @@
+<library path="lib/libmotivml_plugins">
+    <class type="motivml_plugins::Slam" base_class_type="plugin_base::PluginInterface">
+        <description>This is a slam plugin.</description>
+    </class>
+    <class type="motivml_plugins::Hands" base_class_type="plugin_base::PluginInterface">
+        <description>This is an hands plugin.</description>
+    </class>
+    <class type="motivml_plugins::Pointscloud" base_class_type="plugin_base::PluginInterface">
+        <description>This is an pointscloud plugin.</description>
+    </class>
+</library>

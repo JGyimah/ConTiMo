@@ -215,36 +215,38 @@ In their study, they reaffirmed the role in which models provide a means to chec
 \subsection{Managing Adaptation Complexity}
 Adaptive systems can be defined as systems that exercise variability to cope with changing system requirements. Adaptive systems support feature binding at runtime and are sometimes called dynamic Software Product Lines (DSPLs). DSPLs are usually built from coarse-grained components, which reduces the number of possible application scenarios. 
 
-As an extension of their previous studies on dynamic feature binding, Rosenmuller et al. \cite{tailor-spl}  conceptualised a feature-based adaptation mechanism that reduces the effort of computing an optimal configuration at runtime. 
+In a related study by Rosenmuller et al, \cite{fmod-lang-scenarios}, it was established that software product lines tend to increase in complexity when static and dynamic feature implementations are blended together. In such scenarios, it was discovered that implementation complexities exist in software product lines. Such implementation complexities are often due to the effect of cross-cutting features on each other.
 
-To do this effectively, they generate a DSPL from an SPL by statically selecting the features required for dynamic binding and generating a set of dynamic
-binding units. To be able to effectively support runtime adaptation of programs, they use a customizable framework, called FeatureAce\foot{https://sourceforge.net/projects/featurecpp/}. By including FeatureAce into a generated DSPL, they are able to compose features and modifying configurations at runtime.
+With regards to DSPLs, Rosenmuller et al, as an extension of their previous studies on dynamic feature binding, \cite{tailor-spl} conceptualised a feature-based adaptation mechanism that reduces the effort of computing optimal configurations at runtime.
 
-Learning points from this study share similar characteristics to our own study in many ways. First off, Rosenmuller et al\cite{tailor-spl} acknowledge the complexity that exists in software product lines and as such understand that variability can only be manage with an effective mechanism that can keep up with changing requirements, without having to deal with an overwhelming amount of overhead.
+This was done by generating a DSPL from an SPL, through static selection of features required for dynamic binding, and then generating a set of dynamic binding units from the select features. To be able to effectively support runtime adaptation of programs, Rosenmuller, Siegmund, Apel and Saake used a customizable framework, called FeatureAce\foot{https://sourceforge.net/projects/featurecpp/}. By including FeatureAce into a generated DSPL, they gained the capability to compose features and modify configurations at runtime.
 
- To remedy this problem they chose to use DSPLs composed out of SPLs that are combined into dynamic binding units which can be adapted at runtime. However, we decided to form variability mechanisms using binding time and binding mode as a means of adapting our configurations. The major difference here lies in the fact that our methods are novel and not so much focused on the quality of dynamic binding units. Rather we focus on the feasibility of the mechanism in practice.
+Learning points from these studies bear similarities with our own study in many ways. First off, Rosenmuller et al\cite{tailor-spl} acknowledge the complexity that exists in software product lines and as such understand that variability can only be manage with an effective mechanism that can keep up with changing requirements, without having to deal with an overwhelming amount of overhead; both functional and compositional.
+
+To remedy this problem they chose to use DSPLs composed out of SPLs that are combined into dynamic binding units which can be adapted at runtime. Similar to that, we decided to take the approach of leveraging variability mechanisms that implement binding time and binding mode as a means of adapting our configurations. The difference here lies in the fact that our methods are robust platform and language specific implementations for static, dynamic, early and late feature binding. In the context of this study, our approach does not focus so much on the quality of dynamic binding units. Rather we focus on the feasibility and usability of our mechanism in conjunction with our variability modelling language.
  
- \subsection{Feature-Modeling Languages}
-With the current set of feature-modeling languages that
-are available, Clafer,\foot{https://www.clafer.org/} Kconfig,\foot{https://www.kernel.org/doc/html/latest/kbuild/kconfig-language.html} and CDL\foot{http://www.cse.chalmers.se/~bergert/paper/cdl_semantics.pdf} appear to be quite popular amongst professionals in industry. Clafer is one of the most expressive feature modeling languages that unifies feature and class modeling. The notion of a feature and that of a class is unified into Clafer. Clafer offers types, constraints, and attributes. Clafer supports multi-level modeling and has well-specified semantics as well as rich tooling, including instance generation, configuration, and visualization. As a textual language, it has one of the simplest, expressive and most intuitive syntax out there today \cite{fmod-lang-scenarios}. The language is built on top of first order logic with quantifiers over basic entities combined with linear temporal logic \cite{clafer}.
+ \subsection{Feature Modelling Languages}
+Feature modelling---``{\em a concept within Feature-Oriented Domain Analysis (FODA)\cite{foda-tech-rep}; which presents an abstract means of representing commonalities and variabilities that exist between product line variants}'' has given rise to the design and implementation multiple feature modelling languages both in the software engineering and robotics software engineering domain.
+With the current set of feature modelling languages that
+are available, Clafer,\foot{https://www.clafer.org/} Kconfig,\foot{https://www.kernel.org/doc/html/latest/kbuild/kconfig-language.html} and CDL\foot{http://www.cse.chalmers.se/~bergert/paper/cdl_semantics.pdf} appear to be quite popular amongst industry professionals. Clafer is one of the most expressive feature modeling languages that unifies both feature and class modelling. The notion of features and classes are unified within the Clafer architecture. Clafer fundamentally offers types, constraints, and attributes. It supports multi-level modelling and has well-specified semantics, coupled with rich tooling that supports instance generation, configuration, and visualization. As a textual language, Clafer has one of the simplest, expressive and by far most intuitive syntax in industry today \cite{fmod-lang-scenarios}. The language is built on top of first order logic with quantifiers over basic entities combined with linear temporal logic \cite{clafer}.
 
-\textit{Kconfig} and \textit{CDL} are languages that have the capability to describe the variability of systems. Even though \textit{Kconfig} and \textit{CDL} share similar concepts, they were developed independently from each other, and independently from feature modeling languages with research origin \cite{vmir}. Kconfig and CDL are two of the most successful languages, primarily used in the systems software domain \cite{fmod-lang-scenarios}. 
+\textit{Kconfig} and \textit{CDL} are also example of popular languages that have the capability to describe the variability of systems expressively. Even though \textit{Kconfig} and \textit{CDL} share similar concepts, they were developed independently from each other, and independently from feature modelling languages with research origins \cite{vmir}. Kconfig and CDL are two of the most successful languages, primarily used in systems software engineering \cite{fmod-lang-scenarios}. 
 
-In a study conducted by Berger et al. \cite{fmod-lang-scenarios}, a feature modeling language that is intuitive, simple, and also expressive enough to cover a range of important usage scenarios must make provision for a base set of usage scenarios namely Exchange, Storage, Domain Modeling, Teaching and Learning, Mapping to implementation, Model generation, Benchmarking, and Analyses. These selected scenarios were derived from a large number of general usage scenarios elicited from researchers at a meeting during the Software Product Line Conference (SPLC) in September 2018 in Gothenburg.
+In a study conducted by Berger et al. \cite{fmod-lang-scenarios}, a feature modelling language that is intuitive, simple, and also expressive enough to cover a fair range of important usage scenarios must make provision for a base set of usage scenarios such as Exchange, Storage, Domain Modelling, Teaching and Learning, Mapping to implementation, Model generation, Benchmarking, and Analyses. These selected scenarios were derived from a large number of general usage scenarios elicited from researchers at a meeting during the Software Product Line Conference (SPLC) in September 2018 in Gothenburg.
 
-Despite the fact that most of these languages share concepts, they also present several limitations. These perceivable limitations have influenced our decision to propose yet another feature modelling language. In comparison to the others, our proposed language has been evaluated based on five characteristic properties. These characteristics properties confirm the relevance and novelty of our feature-modelling language with respect to others, in the robotics domain. The five characteristic properties include:
+Despite the fact that most of these languages share concepts, they also come with several limitations. These perceivable limitations have influenced our decision to propose yet another feature modelling language to address them. In comparison to the others, our proposed language has been evaluated based on five characteristic properties. These characteristics properties confirm the relevance and novelty of our feature-modelling language with respect to others, in the robotics domain. Such characteristic properties include:
 \begin{enumerate*}[label=(\roman*)]
 	\item C1: Expressiveness
-	\item C2: Covers a wide range of usage scenarios
-	\item C3: ROS compatible
-	\item C4: Can describe variability
-	\item C5: Abstract syntax supports variability modelling based on binding time and binding mode
-	\item C6: Enforces and evaluates modelling constraints.
-	\item C7: Implements binding time and binding mode as a variation mechanism.
-	\item C8: Provides implementation guidelines and mechanisms.
+	\item C2: Coverage of a wide range of usage scenarios
+	\item C3: ROS compatibility
+	\item C4: Ability to describe variability
+	\item C5: Abstract syntax support for variability modelling based on binding time and binding mode
+	\item C6: Ability to enforce and evaluate modelling constraints.
+	\item C7: Ability to implement time and mode binding as a variation mechanism.
+	\item C8: Provision of guidelines and mechanisms that implement variability.
 \end{enumerate*}
 
-Table \ref{tab:compfml} shows how our proposed feature modelling language compares to other languages with respect to our chosen characteristics.
+Table \ref{tab:compfml} shows how our proposed feature modelling language compares to other existing languages with respect to our chosen characteristics stated above.
 \begin{table}[htbp]
 \caption{Characteristic Comparison of Feature-Modelling Languages}
 \begin{center}
@@ -263,45 +265,49 @@ Table \ref{tab:compfml} shows how our proposed feature modelling language compar
 \end{center}
 \end{table}
 
-From Table \ref{tab:compfml} we can deduce that the ambition of our proposed feature modelling language differs from other existing languages. In that, we are providing a solution that is expressive and can describe variability, a solution that cover a wide range of usage scenarios by providing mechanisms ans guidelines, a solution that is compatible with the robot operating system, a solution that possesses an abstract syntax that supports variability management based on feature binding time and binding mode and finally a solution that enforces binding time and binding mode level constraints that can be evaluated for well-formedness and type correctness.
+From Table \ref{tab:compfml} we can deduce that the ambition of our proposed feature modelling language differs from other existing languages. In that, we are providing a solution that is not only expressive and can describe variability, but also a solution that cover a wide range of usage scenarios by providing implementation mechanisms and guidelines. We are also offering a solution that is compatible with the robot operating system and possesses an abstract syntax that supports variability management based on feature binding time and binding mode. Finally our variability modelling language enforces binding time and binding mode level constraints that can be evaluated for well-formedness and type correctness.
 
 \subsection{Variability-modelling Frameworks, Middleware, and Toolchains}
-Over the years many robotic component based frameworks and toolkits
-have emerged. These frameworks possess mechanisms for real-time execution, synchronous and asynchronous communication, control and data-flow flow management and system configuration. We provide a brief walkthrough of some of these frameworks, middleware and toolchains with regards to their influence on variability and system configuration.
+Over the years many component-based frameworks and toolkits that are robotics inclined
+have emerged. These frameworks possess mechanisms for real-time execution, synchronous and asynchronous communication, control and data-flow flow management and system configuration.
 
-When we talk of variability modelling frameworks, we cannot help but mention ROS, Orocos and SCA. These frameworks have the following features in common i.e., \begin{enumerate*}[label=(\roman*)]
+When it comes to variability modelling frameworks, ROS, Orocos and SCA stand out in terms of popularity, scale and ecosystem support. Fundamentally, these frameworks have the following features in common i.e., \begin{enumerate*}[label=(\roman*)]
 	\item They provide a component model, which defines a set of architectural
 elements (e.g. components, interfaces, connection) and the rules for
 composing them in order to build a component based systems \cite{lgherardi}.
 	\item They provide a runtime infrastructure, which is in charge of instantiating, connecting, configuring and activating the components that are part of the system.
 \end{enumerate*} 
-ROS and Orocos are tailored more to the robotics domain, while SCA leans more towards the idea of a service oriented architecture. As the years have rolled by, ROS has emerged as the de facto standard when it comes to robotic application development for several reasons.
+ROS and Orocos cater more to the robotics domain, while SCA leans more towards the idea of a service oriented architecture development. As the years have rolled by, ROS has emerged as the de facto standard when it comes to robotic application development for several reasons.
 
-By design, ROS favors a software development approach that consists of designing components, which implement common robotic functionalities. The strength of this approach lies in its capability to develop a large variety of control systems by composing reusable software building blocks in different ways. The drawback in this approach is the lack of support for the
-reuse of effective solutions to recurrent architectural design problems. Consequently, application developers and system integrators have always had to solve these difficult architectural design problems from scratch. The main challenge in all this lies in selecting, integrating, and configuring coherent sets of components that provide required functionalities, taking into account their mutual dependencies and architectural mismatches \cite{ros-ref}. As a potential remedy for this, \textit{Hyperflex} was developed.
+By design, ROS favours a software development approach that consists of designing components, which implement common robotic functionalities. The strength of this approach lies in its capability to develop a large variety of control systems by composing reusable software building blocks in different ways. The drawback in this approach is the lack of support for the
+reuse of effective solutions to recurrent architectural design problems. Consequently, application developers and system integrators have always had to solve such difficult architectural design problems from scratch. One of ROS's standout challenges can be observed when it comes selecting, integrating, and configuring coherent sets of components that provide required functionalities, taking into account their mutual dependencies and architectural mismatches \cite{ros-ref}. As a potential remedy for this, \textit{Hyperflex} was developed.
 
 \textit{HyperFlex} is a toolchain designed for developing software product lines for autonomous robots based on robotic component frameworks, such as ROS and Orocos.
 As a collection of Eclipse plugins implemented by means of the Eclipse Modeling Project, HyperFlex allows users to explicitly model the architecture of functional systems in terms of components, interfaces, connectors, and components wiring. Models of functional systems can be reused as a building blocks and hierarchically composed to build more complex systems and applications \cite{ros-ref}. HyperFlex uses feature model formalisms to symbolically represent the variability of a system together with the constraints that exist between variation points and variants that limit the set of valid configurations \cite{ros-ref}.
 
 Comparatively, the \textit{Hyperflex} solution in some ways, has similarities to our proposed solution, in terms of its variability management capabilities and ROS base. The difference however lies in the variation mechanism being implemented. While \textit{Hyperflex} is only concerned with the general attributes of a feature i.e. optional and mandatory, we go a step further to include and decouple binding time and binding mode attributes as our variation mechanism. Another standout difference that is noteworthy is the fact that \textit{Hyperflex} is presented as an eclipse plugin as opposed to our solution that is offered as a platform independent open-source library.
 
+Generally speaking, our variability management solution can be considered to be a framework that amalgamates a variability modelling language, a variability model validator and a source-code implementation builder. All these implemented components ensure feature model instantiation, validation and source-code integration.
+
 \subsection{Flexible Feature Binding}
-A plethora of binding techniques exist in Software Product Line Engineering. These binding techniques possess unique characteristics that set them apart from each other. Two of such techniques are time and mode binding. Time in the context of compile time or runtime and mode in terms of how static or dynamic a feature is allowed to be. In this scenario, feature flexibility can be achieved when these individual techniques are combined effectively to maximise each other's potential.
+A broad spectrum of binding techniques exist within Software Product Line Engineering. These binding techniques possess unique characteristics that distinguish them from each other. Two of such techniques are time and mode binding. Time in the context of compile time or runtime and mode in terms of how static or dynamic a feature is allowed to be. 
+
+By strategically combining both techniques, feature flexibility and customizability can be harnessed to enhance product line variants tremendously.
 
 \subsubsection{Time - Mode Binding Technique}
-Static and dynamic binding techniques are not new to software product lines. These binding forms provide a number of unique benefits when it comes to software product line design and implementation. 
+In a time - mode binding scenario, product line variants can be generated by composing modules of implemented features based on static, dynamic, early and late feature attributes. A static feature is one that is bound into a program before load time \cite{flex-feat-bind}. This implies that once a static feature is bound within a program, the feature cannot be rebound without rebuilding the entire program. That is, an activated feature cannot be deactivated any more and vice versa until the program containing the feature has stopped running. Examples of mechanisms that realize static binding include: C/C++ preprocessor and antenna\foot{http://antenna.sourceforge.net} \cite{flex-feat-bind}. Implementing this exclusively introduces a functional overhead where some features have the tendency of being loaded but never used.
 
-Utilising static or dynamic binding exclusively is often not feasible for several reasons. For example, static binding cannot be used when required features are not available or known at deployment time; as is the case for third-party extensions. To cope with the limitations of current implementation techniques, different approaches for static and dynamic binding are combined in practice.
+A dynamic binding mode on the other hand implies that variation points bound dynamically in a software product line can be altered on demand. However, this usually generates some overhead in terms of resource consumption and performance through an increase in binary size and execution time. Examples of mechanisms that realize dynamic binding include: FeatureIDE's runtime parameters\foot{https://featureide.github.io} and ROS pluginlib\foot{http://wiki.ros.org/pluginlib)} from ROS's ecosystem \cite{flex-feat-bind}.
 
-A combination of both binding techniques can improve performance while providing flexibility and customizability. Additionally, supporting different binding times based on the same implementation mechanism simplifies Software Product Line development and maintenance \cite{flex-feat-bind}.
+Static and dynamic binding techniques are not new concepts when it comes to software product lines. These binding forms provide a number of unique benefits when it comes to software product line design and implementation. 
 
-A static feature binding mode implies that once a feature is bound, the feature cannot be rebound. That is, an activated feature cannot be deactivated any more and vice versa. Examples of mechanisms that realize static binding include: C preprocessor, antenna\foot{http://antenna.sourceforge.net} \cite{flex-feat-bind}.
+According to a study conducted by Marko Rosenmüller et al, utilising static or dynamic binding exclusively, often restricts the applicability of product line variants generated in a given instance \cite{flex-feat-bind}. For example, static binding cannot be used when required features in a variant are not available or known at deployment time; as is the case for third-party extensions. 
 
-A dynamic binding mode on the other hand implies that variation points bound dynamically in a software product line can be altered, however this usually entails an overhead in terms of resource consumption and performance. Examples of mechanisms that realize dynamic binding include: FeatureIDE's runtime parameters\foot{https://featureide.github.io} and ROS pluginlib\foot{http://wiki.ros.org/pluginlib)} from ROS's ecosystem \cite{flex-feat-bind}.
+In order to decrease some of the restrictions highlighted by Rosenmüller, different approaches for combining static and dynamic binding have been suggested to retain customizability and flexibility with a minimum amount of runtime overhead. Additionally, the practice of supporting different binding times based on the same implementation mechanism simplifies Software Product Line development and maintenance \cite{flex-feat-bind}.
 
-For binding time, an early binding time implies that a feature is loaded or unloaded at compile time while a late binding time implies that a feature is loaded or unloaded at runtime.
+At binding time, an early binding classification implies that a feature is loaded or unloaded at compile time while a late binding classification implies that a feature is loaded or unloaded at runtime.
 
-For both binding time and binding mode, our variability modelling language supports an "Any" binding type which implies that a given time binding attribute of a feature can assume both an early and a late value and a binding mode attribute can assume both a static and dynamic value
+For both time and mode binding, our proposed variability modelling language supports an "Any" binding type which implies that a given time binding attribute of a feature can assume both an early and a late value and a binding mode attribute can assume both a static and dynamic binding value.
 
 Within the feature modelling capability of our language, the variability of any given feature can be modelled and configured within the following binding scope:
 
@@ -328,9 +334,9 @@ Within the feature modelling capability of our language, the variability of any 
 \end{itemize}
 
 \section{Methods}
-Our research method of choice in this study is the design science methodology. The design science paradigm is deeply rooted in the engineering sciences. Design science generally offers a problem-solving paradigm that seeks to create innovations that define the ideas, practices, technical capabilities, and products through which analysis, design, implementation, management, and information system usage can be effectively and efficiently accomplished  \cite{des-res}. Figure \ref{methover} provides a layered and well defined overview of the empirical steps we took to create artifacts that rely on existing theories that are applied, tested, modified, and extended through experience, creativity, intuition, and problem solving in this study. 
+Our research method of choice in this study is the design science methodology. We chose the design science paradigm due to its deep roots in engineering science. In that, design science generally offers a problem-solving paradigm that seeks to create innovations that define the ideas, practices, technical capabilities, and products through which analysis, design, implementation, management, and information system usage can be effectively and efficiently accomplished  \cite{des-res}. Figure \ref{methover} provides a layered and well defined overview of the empirical steps we took to create artifacts that rely on existing theories that are applied, tested, modified, and extended through experience, creativity, intuition, and problem solving in this study.
 
-Our language design and implementation methodology, can be broken down into a number of distinct phases. These include domain analysis, abstract syntax definition, concrete syntax extraction, static semantics implementation, development and evaluation. These phases were performed iteratively in a synergy where outputs from each phase served as input for subsequent phases. In our domain analysis phase, we clarified implementation requirements from sources such as domain experts and relevant documentation. Based on our findings, we conceived the abstract syntax and expressed it with meta-models. Subsequently, we established the concrete syntax of our language in both graphical and textual formats. Our resultant concrete syntax, together with the static semantics of our configuration logic were transformed into a ROS compatible library. Finally we evaluated our implementation based on its novelty, correctness and realizability.
+Our language design and implementation methodology, can be broken down into a number of distinct phases. These include domain analysis, abstract syntax definition, concrete syntax derivation, static semantics implementation, development and evaluation. These phases were performed iteratively in synergy where outputs from each phase served as input for subsequent phases. In our domain analysis phase, we clarified implementation requirements from sources such as domain experts and relevant documentation. Based on our findings, we conceived the abstract syntax and expressed it with meta-models. Subsequently, we established the concrete syntax of our language in both graphical and textual formats. Our resultant concrete syntax, together with the static semantics of our configuration logic were transformed into a ROS compatible library. Finally we evaluated our implementation based on its novelty, correctness and realizability.
 
 \begin{figure}[H]
 \caption{Methodology Overview}
@@ -341,6 +347,7 @@ Our language design and implementation methodology, can be broken down into a nu
 
 \subsection{Performing Domain Analysis}
 Prior to developing formalisms for our language, we identified key concepts that are relevant to the domain in which our language would be used i.e. variability management in the robotics. We also identified and clarified the purpose of our language as well as the stakeholders our language is targetting. Finally, we identified all the relations between our gathered domain concepts which we derived from  from both stakeholders and relevant documentation, by studying the properties of our domain concepts.
+
 \subsection{Implementation}
 In our language implementation step, we define the capabilities of our language based on prior knowledge from our domain analysis and then conceived both the both graphical and textual forms our language, to represent the syntactic structure of our language tokens. Graphically, we used feature models to define and model features of robot examples. On an abstract level, we used class diagrams to model the capabilities present in our language.
 
@@ -410,9 +417,9 @@ For stakeholders such as end users to be able to verify the correctness of their
 
 \section{Results}
 \subsection{Architectural Overview}
-MoTiVML is a lightweight variability modelling language structurally based on the Javascript Object Notation (JSON)\foot{https://www.json.org/json-en.html} and implemented as a domain specific language of Python. Architecturally, our language consists of three modular components. These components include a syntax manager, a configuration manager, a source code implementation manager. As shown in Figure \ref{arch-over} all these components are encapsulated and offered as a ROS compatible library.
+MoTiVML is a lightweight variability modelling language which is structurally based on the Javascript Object Notation (JSON)\foot{https://www.json.org/json-en.html} and implemented as a domain specific language of Python. Architecturally, this language consists of three modular components. These include a syntax manager, a configuration manager, a source code implementation manager. As shown in Figure \ref{arch-over} all these components are encapsulated and offered as an open sourced ROS compatible library.
 
-The syntax manager component embodies all implementations related to language tokens, as well as its lexical and syntactical schemas. Tokens represent the legal keywords or lexemes that are permissible in our language. There are two schema representations present in MoTiVML; a feature schema and a configuration schema. Language schemas are simply represented as an object of tokens mapped to selected data structures. Listing \ref{feat-schema} and \ref{bind-schema} show samples of a feature schema and a configuration schema respectively.
+The syntax manager component contains all implementations related to language tokens, as well as the language's lexical and syntactical schemas. Tokens represent the legal keywords or lexemes that are permissible in our language. There are two schema representations present in MoTiVML; a feature schema and a configuration schema. Language schemas are simply represented as an object of tokens mapped to selected data structures. Listing \ref{feat-schema} and \ref{bind-schema} show samples of a feature and configuration schema respectively.
 
 \begin{listing}
 \caption{Feature Schema}
@@ -682,11 +689,11 @@ For each identified token in our language, we translated a valid expression of i
 Our syntax can be described as a production consisting of a left-hand-side and right-hand-side attributes. For each attribute, on the left-hand-side, we have non-terminals that represent our language meta-data. On the right-hand-side, we can identify singular or grouped forms of terminal and non-terminal symbols in the form of data. Left-hand-sided and the right-hand-sided attributes are separated by a colon (:) and each model attribute is separated from the next by a comma(,). Table \ref{tab:langlex} captures all meta-data and data tokens that define our language.
 
 \subsubsection{Identifying Syntactic Categories Within Our Language}
-The modelling capability of our language provides domain stakeholders with a means of instantiating a feature model, as well as the possibility of defining and configuring features. Within our language's concrete syntax, we can identify three distinct syntactic categories. These categories include:
+The modelling capability of our language provides domain stakeholders with a means of instantiating a feature model, as well as the possibility of defining and configuring features. Within our language's concrete syntax, one implicit and two explicit syntactic categories can be identified. These categories include:
 \begin{enumerate}
-    \item \textbf{featureDescriptionBlock:} This is made up of all feature attributes that are concerned with describing the general purpose of a feature. Although this category is not explicitly expressed in the textual formalism of a feature's schema, it can still be defined as a set of individual feature attributes which intuitively provide descriptive contexts to the functionality and purpose of a feature.
-    \item \textbf{constraintsDefinitionBlock:} This is represented as a nested block of feature attributes that define the type constraints applicable to a feature as well as the set of possible constraint values that are valid for that feature.
-    \item \textbf{bindingPropertiesBlock:} For every feature, there exists a corresponding configuration. Within the configuration of a feature exists a binding property block definition. The purpose of this binding property block is to allow domain stakeholders to configure binding time and binding mode attributes for each feature they define. These binding time and binding mode attribute definitions serve as the fundamental variation mechanism for each feature model.
+    \item \textbf{Feature Description Block:} This is made up of all feature attributes that are concerned with describing the general purpose of a feature. Although this category is not explicitly expressed in the textual formalism of a feature's schema, it can still be defined as a set of individual feature attributes which intuitively provide descriptive contexts to the functionality and purpose of a feature.
+    \item \textbf{Constraints Block:} This is represented as a nested block of feature attributes that define the type constraints applicable to a feature as well as the set of possible constraint values that are valid for that feature.
+    \item \textbf{Binding Properties (props) Block:} For every feature, there exists a corresponding configuration. Within the configuration of a feature exists a binding property block definition. The purpose of this binding property block is to allow domain stakeholders to configure binding time and binding mode attributes for each feature they define. These binding time and binding mode attribute definitions serve as the fundamental variation mechanism for each feature model.
 \end{enumerate}
  
 \subsubsection{Specifying Grammar Rules} By combining the terminals identified in Table \ref{tab:langlex} with the syntactic categories identified, we were able derive grammar productions for our language. The grammar rules present in our language for all three syntactic categories can be expressed as follows:\\
@@ -721,10 +728,10 @@ feature adaptations are determined by a binding time and binding mode combinatio
 \label{conmet}
 \end{figure}
 
-\subsubsection{Identifying Mechanisms That Realise Static and Dynamic Binding}
-Realising static and dynamic binding in robotic applications can be tricky due to programming language compatibility and limitations. For both static and dynamic binding, there are both C++ and Python mechanisms that can be used to realise them as shown in Table \ref{tab:realmecha}. However, integrating both the C++ preprocessor and ROS pluginlib into implementations may not be feasible due to language compatibility issues. Thus, to realise static and dynamic binding in a ROS based application, various mechanisms can be leveraged upon. As indicated in Table \ref{tab:realmecha} below, the C preprocessor, antenna, rosrun and roalaunch can be used to implement static binding while ROS pluginlib and ROS parameters can be used to implement dynamic binding.
+\subsubsection{Identifying Binding Mechanisms}
+Realising static, dynamic, early and late binding in robotic applications can be tricky due to minor conflicts when it comes to programming language compatibility. For both time and mode based binding, there are available ROS based C++ and Python mechanisms that can be used to realise them. 
 
-When it comes to time binding robotic features, again roslaunch and ROS parameters can be used to implement compile time binding, while ROS parameters can be used for runtime binding.
+In Table \ref{tab:realmecha}, we have highlighted some of such ROS based mechanisms which we used to realise static and dynamic binding in our application. These include, the C preprocessor or antenna\foot{http://antenna.sourceforge.net} that can be used to realise static binding, ROS pluginlib that can be used to realise dynamic binding and ROS parameters that can be used to realise both early and late time binding.
 
 \begin{table}[htbp]
 	\caption{Static and Dynamic Binding Mechanisms}
@@ -732,14 +739,36 @@ When it comes to time binding robotic features, again roslaunch and ROS paramete
 		\begin{tabular}{|c|c|}
 			\hline
 			Binding & Mechanisms  \\ \hline
-			Static & C preprocessor, antenna, rosrun, roslaunch \\ \hline
-			Dynamic &  ROS pluginlib, ROS parameters  \\ \hline
-			Early &  roslaunch, ROS parameters  \\ \hline
+			Static & C preprocessor, antenna \\ \hline
+			Dynamic &  ROS pluginlib  \\ \hline
+			Early &  ROS parameters  \\ \hline
 			Late &  ROS parameters  \\ \hline
 		\end{tabular}
 		\label{tab:realmecha}
 	\end{center}
 \end{table}
+
+
+\subsubsection{Implementing Binding Mechanisms}
+To provide roboticists with a SERA integrated solution that has the means
+and techniques to implement variability, we implemented and packaged binding mechanisms in the form of a framework within our solution. Binding mechanisms can be described as implementation techniques that provide our variability modelling language with variability realising capabilities. Model variation points implemented within our language, leverage such techniques by integrating ROS based feature source-code packages to evaluate static, dynamic, early and late binding techniques in user defined robotic programs.
+
+The binding mechanisms we chose to implement in our ROS application, are robust and standardised open source implementations that are compatible across a number of platforms. Figure \ref{mecha-compo} shows the component interaction between our variability modelling language and our robot builder component on ROS. To complement this, we have provided a brief description of our chosen mechanisms with respect to their functions below.
+
+\begin{figure}[H]
+	\caption{Binding Mechanisms Component Diagram}
+	\centering
+	\includegraphics[width=0.5\textwidth]{diagrams/mecha-compo.png}
+	\label{mecha-compo}
+\end{figure}
+
+\begin{itemize}
+	\item \textbf{Language Component: }
+	The language component of our variability management framework, enables domain stakeholder to translate feature models into MoTiVML object models where time and mode bindings can be defined with constraints. In addition to that, our language provides both a schema and constraint checker purposefully for validating user defined models for syntactic and semantic correctness respectively. Furthermore, the language component contains a parameter initializer which instantiates and initializes ROS parameters used by our framework to enforce time based binding.
+	\item \textbf{Robot Builder Component: }
+	The robot builder component of our framework provides interfaces through which source code implementations of registered features in our user defined models can be bound. For static features, the C++ preprocessor together with conditional statements are used to include feature classes into robot programs.  In the case of dynamic binding, ROS pluginlib library is used to register, encapsulate, export and load feature classes dynamically in addition to prebuilt feature classes in a given robot program. This component also reads from initialised ROS parameter to retrieve and classify program features into time based categories. 
+\end{itemize}
+
 
 \subsection{Static Semantics}
 In the compile time state of our variability modelling language, program syntax is evaluated based on internally established feature relationships and constraints that define the static semantics of our language.
@@ -797,15 +826,15 @@ The underlying logic of this language design requires the interaction of a featu
 \subsubsection{Constraining the Configuration Space}
 As part of our static semantics definition to effectively constrain the configuration space, it is relevant to enforce constraints on features. To do this, the following ground rules or pre-conditions were conceived as a fundamental basis for designing and developing our solution. We validate these constraints via an in-built constraint checker that parses configurations to identify constraint violations. The reasoning behind these constraints as well as their implied effects on configurations are discussed subsequently.
 \begin{itemize}
-    \item \textbf{Includes Constraint: }
+    \item \textbf{Inclusion Constraint: }
     More often than not, some robotic features tend to require others to function. Supposing there are two features \textbf{A} and \textbf{B}, \textbf{A} \textit{includes} \textbf{B} would imply that, if feature \textbf{A} is selected, feature \textbf{B} must also be to be selected.
     %% give examples
     
-    \item \textbf{Excludes Constraint: }
+    \item \textbf{Exclusion Constraint: }
     Some robotic features on the other hand do not require others to function We express this as an excludes constraint in our implementation. Again, supposing there are two features \textbf{A} and \textbf{B}, \textbf{A} \textit{excludes} \textbf{B} would imply that when feature \textbf{A} is selected, feature \textbf{B} cannot be selected and vice versa.
     
     
-    \item \textbf{Parent - Child Feature Constraint: }
+    \item \textbf{Sub Feature Constraint: }
     A static child feature cannot be a child of a dynamic parent. Allowing that form of inheritance would imply that an unloaded parent would create an orphan child feature. 
     
 
@@ -922,6 +951,8 @@ Software Product Lines,'' Fakultät für InformatikOtto-von-Guericke-Universitä
 \bibitem{pric-soft} T. Berger, A. Wasowski, ``Principles of Software Language Design,'' Chalmers $|$ University of Gothenburg, 2019.
 \bibitem{handb} M. Ramachandran, R. Atem de Carvalho, ``Handbook of Research on Software Engineering and Productivity Technologies: Implications of Globalization,'' SCOPUS, 2009.
 \bibitem{vmir} T. Berger, S. She, R. Lotufo, A. Wasowski, K. Czarnecki, ``Variability Modeling in the Real: A Perspective From the Operating Systems Domain,'' ACM, 2010.
+\bibitem{foda-tech-rep} K. C. Kang, S. Cohen, J. Hess, W. Nowak, and S. Peterson, ``Feature-Oriented Domain Analysis (FODA) Feasibility Study. Technical
+Report,'' CMU/SEI-90-TR-21. Carnegie-Mellon University, 1990.
 \end{thebibliography}
 \vspace{12pt}
 

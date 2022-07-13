@@ -38,7 +38,7 @@
         {
             "id": "amclros",
             "props": {
-                "time":"Early",
+                "time":"Late",
                 "mode":"Static"
             }
         },
@@ -46,7 +46,7 @@
             "id": "slam",
             "props": {
                 "time":"Early",
-                "mode":"Static"
+                "mode":"Dynamic"
             }
         },
         {

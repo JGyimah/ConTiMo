@@ -24,7 +24,7 @@ class Traverse(TypeChecking, ConstraintChecker):
                 return prop
 
     def parseModelSchema(self, modelObject, modelBindingObject, runningProject):
-        #TODO:Check number of occurances of schema meta-data tokens
+        print("## Validating Model")
         if "sub" in modelObject:
             print("--------------Parsing Model----------------")
             self.parseModelSubSchema(modelObject, modelBindingObject)
