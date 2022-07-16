@@ -23,7 +23,7 @@
 \begin{document}
 
 \maketitle
-This is a guideline document for the MoTiVML language. This guideline document assists end users in modelling variability in robotic systems. As a supporting artifact to the language,  this document serves as a form of verification for the MoTiVML language and its capabilities.
+This is a guideline document for the MoTiVML language. This guideline document assists end users in modelling variability in robotic systems as well as implementing the features they have defined in their models. As a supporting artifact to the language,  this document serves as a form of verification for the MoTiVML language and its capabilities.
 
 \noindent\rule{17cm}{0.4pt}
 
@@ -429,7 +429,8 @@ This section gives a step-by-step walk-through of how MoTiVML can be used to ins
 	\end{minted}
 	\label{conf-schema}
 \end{longlisting}
-\subsection{Validate a MoTiVML Model}
+
+\subsection{Standalone Model Validation}
 To validate your model and its configuration, navigate to the \textbf{/src/motivml} directory and run the following command in the ROS console:
 
 \begin{longlisting}
@@ -441,7 +442,7 @@ To validate your model and its configuration, navigate to the \textbf{/src/motiv
 		fontsize=\footnotesize
 		]{python}
 		
-		python motivml.py <project_directory_name>
+		python validator.py <project_directory_name>
 
 	\end{minted}
 \label{valcomm}
@@ -460,18 +461,145 @@ When our in-built schema and constraint checker identify an error in either a mo
 	\label{validation}
 \end{figure}
 
-Upon successfully validating a model without any errors, a \textbf{bindings.motivml} file is generated in the corresponding project folder. This file contains features that are have been bound at compile time. At runtime, the \textbf{bindings.motivml} file is dynamically updated depending on which features are successfully bound or unbound.
+%%Upon successfully validating a model without any errors, a \textbf{bindings.motivml} file is generated in the corresponding project folder. This file contains features that are have been bound at compile time. At runtime, the \textbf{bindings.motivml} file is dynamically updated depending on which features are successfully bound or unbound.
 
-\subsection{Plug in Source Code Implementations of Model Features}
-In the event that there are no syntax and semantic errors detected by the MoTiVML engine, source code implementations of features can be implemented and executed. With regards to attaching feature implementations, MoTiVML is language agnostic. This means that, source code implementation in both C++ and Python can be plugged in successfully. A source code implementation can be plugged in through following the following steps:
-
+\subsection{Implement a Statically Bound Feature}
+\subsubsection{Static Early}
 \begin{itemize}
-	\item Extract, encapsulate and plug in your feature implementations into the featx directory
+	\item Create a static class in the namespace \textbf{static\_integration} which inherits from the class \textbf{public static\_base::StaticInterface}. NB: The feature id in your model must match your class name. For Example:
 	
-	\item For each plugged in source code implementation, name the entrypoint file containing the main function of your implementation, with the same name as the corresponding feature in your MoTiVML model.json file.
+	\begin{longlisting}
+		\caption{Sample Static Early Class}
+		\begin{minted}[
+			framesep=2mm,
+			baselinestretch=1.2,
+			bgcolor=LightGray,
+			fontsize=\footnotesize
+			]{C}
+			
+			namespace static_integration{
+				
+				class MyStaticEarlyClass: public static_base::StaticInterface{
+					std::string feature_id = "my_unique_feature_id";
+					public:
+					MyStaticEarlyClass(){};
+					
+					void executeFeature(){
+						std::cout << "Hello My Feature!!" << std::endl;
+					};
+					
+				};
+				
+			};
+			
+		\end{minted}
+		\label{samplestaticearly}
+	\end{longlisting}
+	\item Set the class variable \textbf{feature\_id} to the same value as the \textbf{id} attribute in the MoTiVML model.
+	\item Add the following preprocessor include above your class to include the static base interface class your class will be inheriting from:
+	\begin{longlisting}
+		\caption{Class Inclusion}
+		\begin{minted}[
+			framesep=2mm,
+			baselinestretch=1.2,
+			bgcolor=LightGray,
+			fontsize=\footnotesize
+			]{C}
+			
+			#include "../include/motivml_ros/static_base.h"
+			
+		\end{minted}
+		\label{classinclude}
+	\end{longlisting}
+	\item Define a static early feature constant at the top of \textbf{plugin\_feature\_loader.cpp}. For Example
 	
-	\item In the MoTiVML command line interface, a number of commands can be executed to perform specific tasks.
+	\begin{longlisting}
+		\caption{Constant Definition}
+		\begin{minted}[
+			framesep=2mm,
+			baselinestretch=1.2,
+			bgcolor=LightGray,
+			fontsize=\footnotesize
+			]{C}
+			
+			#define UNKOWNFEATURE
+			
+		\end{minted}
+		\label{definepreproccomm}
+	\end{longlisting}
+	
+	\item In \textbf{static\_feature\_loader.h}, if the feature constant you created in the previous step is true, include your static class. See Listing \ref{includestatclass} as an example
+	\begin{longlisting}
+		\caption{Including Static Early}
+		\begin{minted}[
+			framesep=2mm,
+			baselinestretch=1.2,
+			bgcolor=LightGray,
+			fontsize=\footnotesize
+			]{C}
+			
+			#ifdef UNKOWNFEATURE
+			#include "../../featx/MyStaticClass.h"
+			#endif
+			
+		\end{minted}
+		\label{includestatclass}
+	\end{longlisting}
+
+	\item Extent the static early conditional block of the \textbf{callback\_load\_plugin\_features} method in \textbf{plugin\_feature\_loader.cpp} to run a method in your static early class.
+	
+	\item Run the \textbf{catkin\_make} command to build the project.
 \end{itemize}
+
+\subsubsection{Static Late}
+%% pluginlib steps with alteration guard
+\begin{itemize}
+	\item Create a static class in the namespace \textbf{static\_integration} which inherits from the class \textbf{public static\_base::StaticInterface}. NB: The feature id in your model must match your class name. For Example:
+	
+	\begin{longlisting}
+		\caption{Sample Static Late Class}
+		\begin{minted}[
+			framesep=2mm,
+			baselinestretch=1.2,
+			bgcolor=LightGray,
+			fontsize=\footnotesize
+			]{C}
+			
+			namespace static_integration{
+				
+				class MyStaticEarlyClass: public static_base::StaticInterface{
+					std::string feature_id = "my_unique_feature_id";
+					public:
+					MyStaticEarlyClass(){};
+					
+					void executeFeature(){
+						std::cout << "Hello My Feature!!" << std::endl;
+					};
+					
+				};
+				
+			};
+			
+		\end{minted}
+		\label{samplestaticlate}
+	\end{longlisting}
+	\item \textbf{Encapsulate Feature As Plugin}
+	\item \textbf{Register/Export Plugin}
+\end{itemize}
+
+\subsection{Implement a Dynamically Bound Feature}
+\subsubsection{Dynamic Early}
+\begin{itemize}
+	\item \textbf{Encapsulate Feature As Plugin}
+	\item \textbf{Register/Export Plugin}
+\end{itemize}
+
+\subsubsection{Dynamic Late}
+\begin{itemize}
+	\item \textbf{Encapsulate Feature As Plugin}
+	\item \textbf{Register/Export Plugin}
+\end{itemize}
+
 
 \subsection{MoTiVML Console Interface}
 To add some interactivity to our variability modelling language, we have provided an in-built console interface for interacting with models and features through MoTiVML specific commands.
@@ -526,10 +654,6 @@ In Figure \ref{consolelaunch} we can observe the launched MoTiVML console. As hi
 		\includegraphics[width=\columnwidth]{images/showconfig.png}
 		\label{showconfig}
 	\end{figure}
-
-	\item \textbf{run $<feature\_name>$}: The run command executes the source code implementation plugged into a model in connection to a defined feature. This means that before the run command can be executed successfully, there must be an existing source code implementation in either C++ or python that has been plugged into a model. The command only takes one parameter which is the name of the feature you wish run.
-	
-	C++ feature implementations require a compile step to be able to run them. That in the \textbf{src/motivml/featx/mbin} directory of our implementation, we save all C++ feature executables after compilation and then proceed to run them.
 	
 	\item \textbf{exit}: The exit command shuts down the console interface and returns back to the original ROS console. The exit command also asks for a yes or no confirmation before proceeding. Figure \ref{exit} shows an exit command execution and output.
 	\begin{figure}[H]
@@ -539,6 +663,12 @@ In Figure \ref{consolelaunch} we can observe the launched MoTiVML console. As hi
 		\label{exit}
 	\end{figure}
 \end{itemize}
+
+\begin{thebibliography}{9}
+	\bibitem{pluginlib}
+	\textit{"ROS Pluginlib Documentation,"} 
+	[Online] Available: http://wiki.ros.org/pluginlib.
+\end{thebibliography}
 
 \end{document}
 

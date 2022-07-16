@@ -16,9 +16,7 @@ With this library, roboticists can model robotic `FEATURES`, create `MODEL` conf
 
 4. C++ 11 or higher
 
-5. This application is dependant on the [nlohmann](https://github.com/nlohmann/json) C++ library for reading JSON files.
-
-6. [Pluginlib](http://wiki.ros.org/pluginlib) 1.13.0
+5. [Pluginlib](http://wiki.ros.org/pluginlib) 1.13.0
 
 ## Installation
 
@@ -36,18 +34,9 @@ object must contain `featureIncluded`, `featureExcluded`, `bindingTimeAllowed`, 
 4. In the config.json file of your project, for every feature added in your model.json file, a corresponding configuration object must be added.
 NB: Each featue config object must have the keys `id` which references a feature ID in your model.json file, and `props.` The `props` attribute must contain `time` and `mode` attributes.
 
-5. Validate your model schema and constraints with the command `python motivml.py <project_directory_name>`
+5. Validate your model schema and constraints with the standalone validator compoent which can be invoked with the command `python validator.py <project_directory_name>`
 6. Alternatively, you can also use the in-built command line interface. Launch the MoTiVML commannd line interface with the command `python mmconsole.py <project_directory_name>`
 7. In the MoTiVML commandline interface,  use the command `show <project_name>` to view a graphical representation of your project model.
- 
-
-### Plug in Source Code Implementations of `FEATURES`
-
-If there are no syntax and symantic errors detected by the MoTiVML engine, source code implementations of features can be implemented and executed. Source code implementation in both `C++` and `Python` can be plugged in
-
-1. Extract, encapsulate and plug in your feature implementations into the `featx` directory
-2. For each plugged in source code implementation, name the entrypoint file ccontaining the `main` function with the same name as the corresponding feature in your MoTiVML model.json file
-3. In the MoTiVML commandline interface,  use the command `run <feature_name>` to execute the feature source code.
 
 ## Guideline Document
 For the purpose of providing an indepth explanation as to what functionalities exist within our library, as well as prerequisites and installation, we have provided a guideline artifact to provide key and detailed information on our library, its usage and its functionalities. To access our guideline document, click [here](https://github.com/SergioGarG/sera-extension/tree/master/documents/guidelineDoc/main.pdf)

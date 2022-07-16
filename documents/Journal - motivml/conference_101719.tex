@@ -729,20 +729,21 @@ feature adaptations are determined by a binding time and binding mode combinatio
 \end{figure}
 
 \subsubsection{Identifying Binding Mechanisms}
-Realising static, dynamic, early and late binding in robotic applications can be tricky due to minor conflicts when it comes to programming language compatibility. For both time and mode based binding, there are available ROS based C++ and Python mechanisms that can be used to realise them. 
+Realising static, dynamic, early and late binding in robotic applications can be tricky due to minor conflicts when it comes to programming language compatibility. For both time and mode based binding, there are available ROS based C++ and Python mechanisms that can be used to realise them.
 
-In Table \ref{tab:realmecha}, we have highlighted some of such ROS based mechanisms which we used to realise static and dynamic binding in our application. These include, the C preprocessor or antenna\foot{http://antenna.sourceforge.net} that can be used to realise static binding, ROS pluginlib that can be used to realise dynamic binding and ROS parameters that can be used to realise both early and late time binding.
+In Table \ref{tab:realmecha}, we have highlighted some of such mechanisms which we used to realise each binding pair within our variability management technique. These include, the C preprocessor for static early, ROS pluginlib and ROS parameters for static late, and ROS pluginlib again for both dynamic early and dynamic late.
 
 \begin{table}[htbp]
 	\caption{Static and Dynamic Binding Mechanisms}
 	\begin{center}
 		\begin{tabular}{|c|c|}
 			\hline
-			Binding & Mechanisms  \\ \hline
-			Static & C preprocessor, antenna \\ \hline
-			Dynamic &  ROS pluginlib  \\ \hline
-			Early &  ROS parameters  \\ \hline
-			Late &  ROS parameters  \\ \hline
+			Binding Pair & Binding Mechanism \\ \hline
+			Static Early & C++ preprocessor \\ \hline
+			Static Late &  ROS Pluginlib + C++ Maps + ROS parameters  \\ \hline
+			Dynamic Early &  ROS pluginlib + ROS parameters  \\ \hline
+			Dynamic Late &  ROS pluginlib + ROS parameters  \\ \hline
+			
 		\end{tabular}
 		\label{tab:realmecha}
 	\end{center}
@@ -766,7 +767,7 @@ The binding mechanisms we chose to implement in our ROS application, are robust 
 	\item \textbf{Language Component: }
 	The language component of our variability management framework, enables domain stakeholder to translate feature models into MoTiVML object models where time and mode bindings can be defined with constraints. In addition to that, our language provides both a schema and constraint checker purposefully for validating user defined models for syntactic and semantic correctness respectively. Furthermore, the language component contains a parameter initializer which instantiates and initializes ROS parameters used by our framework to enforce time based binding.
 	\item \textbf{Robot Builder Component: }
-	The robot builder component of our framework provides interfaces through which source code implementations of registered features in our user defined models can be bound. For static features, the C++ preprocessor together with conditional statements are used to include feature classes into robot programs.  In the case of dynamic binding, ROS pluginlib library is used to register, encapsulate, export and load feature classes dynamically in addition to prebuilt feature classes in a given robot program. This component also reads from initialised ROS parameter to retrieve and classify program features into time based categories. 
+	The robot builder component of our framework is a ROS node that provides interfaces through which source code implementations of registered features in our user defined models can be bound. It listens for configuration commands from the MoTiVML language interface over a ROS topic. For statically bound features, the C++ preprocessor together with conditional statements are used to include or exclude feature classes to and from robot programs.  In the case of dynamic binding, the ROS pluginlib library is used to register, encapsulate, export and load feature classes dynamically into prebuilt robot program implementations. This component also reads from initialised ROS parameter to retrieve and classify program features into time based categories. 
 \end{itemize}
 
 
@@ -891,19 +892,19 @@ Moreover, our library design and implementation targets a wide array of skilled 
 \subsection{The lack of mechanisms and guidelines for implementing variability management techniques in robotic systems}
 There have been some propositions in the area of modelling variability in the robotics systems but none of them offer mechanisms together with operational guidelines to assist domain stakeholders in understanding and using such languages. This scarcity is particularly prevalent in the ROS community. For this reason, more often than not, variability management is handled in an adhoc manner by experts in the robotics domain.
 
-To alleviate this lack, our variability modelling library ships with a comprehensive set of guidelines\foot{https://github.com/SergioGarG/sera-extension/tree/master/documents/guidelineDoc/main.pdf}
-offered as a supporting artifact that serves as verification for our variability modelling language, as well as a means to demonstrate the results of this study. As a quick recap, this study aims to first and foremost, prove the feasibility of modelling variability in robotic systems using a feature's binding time and binding mode.  Thus in our accompanying documentation, we verify that our language fulfils the requirements stated in our implementation, while providing verifiable evidence through examples to prove this.
+To alleviate this lack, our variability modelling framework ships with a comprehensive set of guidelines\foot{https://github.com/SergioGarG/sera-extension/tree/master/documents/guidelineDoc/main.pdf}
+offered as a supporting artifact that serves as verification for our variability modelling language, as well as a means to demonstrate the results of this study. As a quick recap, this study aims to first and foremost, prove the feasibility of modelling variability in robotic systems using a feature's binding time and binding mode.  Thus in our accompanying documentation, we verify that our language fulfils the requirements stated in our implementation, while providing verifiable evidence through mechanism-driven examples to prove this.
 
 We deem guideline documentations as a necessary requirement in robotics application development, for three main reasons. These include, for the seamless advancement of robotic application development, to encourage the standard practice of building and maintaining open source robot applications and last but not least, to encourage transparency and reproducibility of relevant and useful robotic applications. Currently, this is lacking amongst open sourced robotic applications. Due to this lack, in addition to this seminal study, we offer such a guideline document.
 
-In addition to this, we have also identified and implemented mechanisms, that can be used to model variability in any robotic system. To verify the relevance of our language implementation guidelines and mechanisms, we realised mock up example of robots with feature instances that possess different binding time and binding mode configurations to demonstrate the simple, lightweight and easy to understand nature of our variability modelling language as well as the underlying mechanisms which are capable of supporting variability modelling and management.
+In addition to this, we have also identified and implemented mechanisms, that can be used to implement variability in any robotic system. To verify the relevance of our language implementation guidelines and mechanisms, we realised mock up example of robots with feature instances that possess different binding time and binding mode configurations to demonstrate the simple, lightweight and easy to understand nature of our variability modelling language as well as the underlying mechanisms which are capable of supporting variability modelling and management.
 
 \subsection{Complexity of Engineering Robotic Systems}
-Robotic systems are complex systems made up of complex applications integrated into one unified solution. Going by this premise, we can infer that the more a robotic system grows in functionality, the more the complexity of the system also grows. Modelling a complex system requires a modelling language that is both syntactically and semantically intuitive. Such a modelling language needs to be able to abstract irrelevant details from end users.
+Robotic systems are complex systems made up of complex application packages integrated into one unified solution. Going by this premise, we can infer that the more a robotic system grows in functionality, the more the internal complexity of the system also grows. Modelling a complex system requires a modelling language that is both syntactically and semantically intuitive. Such a modelling language needs to be able to abstract irrelevant details from end users. In the same vein, implementing a modelled robotic system requires mechanisms that are lightweight, robust and platform compatible.
 
-Likewise, in our modelling language, users have the capability of implementing features with their preferred binding time and binding mode configurations through the use of mechanisms and guidelines that we have provided in our language (\textit{RQ 3}). Syntax representations in our concrete syntax design demonstrate a close correlation between our user requirements and our language syntax. Furthermore, on a semantic level, through our abstract syntax representations, the configuration space can be understood in terms of configuration interactions within models.
+In our variability modelling framework, users have the capability of modelling and implementing robotic features with their preferred binding time and binding mode configurations through the use of mechanisms and guidelines that we have provided (\textit{RQ 3}). All of which are built on top of ROS which has become the de-facto standard when it comes to robotic application development. In the language component of our framework, syntax representations in our concrete syntax design demonstrate a close correlation between our user requirements and our language syntax. Furthermore, on a semantic level, through our abstract syntax representations, the configuration space has been well defined and analysed to understand configuration interactions between modelled features.
 
-Overall, all the above mentioned syntax and semantic architectural designs can be verified through in-built mechanisms that validate model implementations on a syntax and semantic level. These mechanisms namely, a schema checker and a constraint checker are designed to abstract the complexity of configuring valid models by parsing and validating model instances for correctness. 
+Overall, the above mentioned syntax and semantic architectural designs can be verified through in-built mechanisms that prove model and implementation validity on a syntax and semantic level. Last but not least, validation mechanisms, namely we have included a schema checker and a constraint checker which have been designed to abstract the complexity of configuring valid models by parsing and validating model instances for correctness.
 
 \section*{Acknowledgment}
 This journal draws inspiration from materials contributed by Sergio Garc\'{i}a, Claudio Menghi, Patrizio Pelliccione, Thorsten Berger and Rebekka Wohlrab. This study extends their work concerning SERA; A Self-adaptive dEcentralized Robotic Architecture for building autonomous, heterogeneous and collaborative robotic applications. 

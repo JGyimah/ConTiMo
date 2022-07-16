@@ -8,4 +8,7 @@
     <class type="motivml_plugins::Pointscloud" base_class_type="plugin_base::PluginInterface">
         <description>This is an pointscloud plugin.</description>
     </class>
+    <class type="static_integration::Amclros" base_class_type="static_base::StaticInterface">
+        <description>This is an amclros plugin.</description>
+    </class>
 </library>

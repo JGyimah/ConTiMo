@@ -48,10 +48,10 @@ void configurationIteration(nlohmann::json& configJsonData){
             transform(modeStr.begin(), modeStr.end(), modeStr.begin(), ::tolower); // convert mode string iterable to lower case
             modeStr.erase(std::remove(modeStr.begin(),modeStr.end(),'\"'),modeStr.end()); // remove trailing newline character from mode string
             
-            const string EARLY_BINDING_TIME = "early";
+            //const string EARLY_BINDING_TIME = "early";
             const string STATIC_BINDING_MODE = "static";
 
-            if(timeStr == EARLY_BINDING_TIME || modeStr == STATIC_BINDING_MODE){
+            if(modeStr == STATIC_BINDING_MODE){
                 //only bind features with early binding time at this moment
                 idStr.erase(std::remove(idStr.begin(),idStr.end(),'\"'),idStr.end());
                 early_bindings += idStr + "\n";

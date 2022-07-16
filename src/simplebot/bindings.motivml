@@ -1,8 +1,6 @@
-compcontrol
-localztn
+componentcontrol
+localisation
 gestrec
-motplannctrl
+motionplanningcontrol
 amcl
 amclros
-slam
-optimised

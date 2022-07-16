@@ -9,7 +9,7 @@ namespace motivml_plugins{
             Slam(){};
 
             void executeFeature(){
-                std::cout << "Slam [static] feature run successfully" << std::endl;
+                std::cout << "Slam feature run successfully" << std::endl;
             };
 
     };

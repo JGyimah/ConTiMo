@@ -7,5 +7,6 @@
 #include "../../featx/Slam.h"
 #include "../../featx/Hands.h"
 #include "../../featx/Pointscloud.h"
+#include "../../featx/Amclros.h"
 
 #endif

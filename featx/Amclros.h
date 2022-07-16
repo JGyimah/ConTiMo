@@ -1,13 +1,17 @@
 #include <iostream>
+#include "../include/motivml_ros/static_base.h"
 
-#define AMCLROS_STATIC_EARLY 0
-    
-class Amclros{
+namespace static_integration{
+
+    class Amclros: public static_base::StaticInterface{
         std::string feature_id = "amclros";
         public:
             Amclros(){};
 
             void executeFeature(){
-                std::cout << "Amclros [static] feature run successfully" << std::endl;
+                std::cout << "Hello Amclros!!" << std::endl;
             };
+
+    };
+
 };

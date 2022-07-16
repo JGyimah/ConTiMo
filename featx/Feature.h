@@ -1,3 +1,6 @@
+#ifndef MOTIVML_ROS__FEATURE_H_
+#define MOTIVML_ROS__FEATURE_H_
+
 #include <string>
 #include <vector>
 
@@ -15,3 +18,5 @@ class Feature{
     std::string group;
     bool isMandatory;
 };
+
+#endif

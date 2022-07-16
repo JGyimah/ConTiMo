@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.6.3)  5 JUL 2022 16:57
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.6.3)  16 JUL 2022 16:40
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -514,7 +514,7 @@ Overfull \hbox (13.94182pt too wide) in paragraph at lines 28--29
 [] 
  []
 
-<images/simpleBot.png, id=41, 564.1075pt x 275.0275pt>
+<images/simpleBot.png, id=61, 564.1075pt x 275.0275pt>
 File: images/simpleBot.png Graphic file (type png)
 <use images/simpleBot.png>
 Package pdftex.def Info: images/simpleBot.png  used on input line 51.
@@ -559,69 +559,96 @@ pygtex) [5]
 \openout3 = `main.pyg'.
 
 
-(_minted-main/C0A38E7E7F69222123D174880C7C2AAA8447DF9C2D5ED130E262CD4D9278E0D8.
+(_minted-main/F10C91DC428D1DAEF28DC8BF1ECDCAF38447DF9C2D5ED130E262CD4D9278E0D8.
 pygtex)
-<images/validate.png, id=83, 425.79076pt x 193.9245pt>
+<images/validate.png, id=103, 425.79076pt x 193.9245pt>
 File: images/validate.png Graphic file (type png)
 <use images/validate.png>
-Package pdftex.def Info: images/validate.png  used on input line 459.
+Package pdftex.def Info: images/validate.png  used on input line 460.
 (pdftex.def)             Requested size: 469.75502pt x 213.95082pt.
  [6]
 \openout3 = `main.pyg'.
 
 
+(_minted-main/B36668D3EA07D12A6700B4C659F95E2A7C4AB9D035CB81426C48597152E578CC.
+pygtex)
+\openout3 = `main.pyg'.
+
+
+(_minted-main/EC6E027FAFF3E18586E268978B55CDF57C4AB9D035CB81426C48597152E578CC.
+pygtex)
+\openout3 = `main.pyg'.
+
+
+(_minted-main/A8053BB3A51CEF1693DCFB40C1EB24777C4AB9D035CB81426C48597152E578CC.
+pygtex)
+\openout3 = `main.pyg'.
+
+ [7 <./images/validate.png>]
+(_minted-main/631052B4B5553B0742A75090D1CC5DEA7C4AB9D035CB81426C48597152E578CC.
+pygtex)
+\openout3 = `main.pyg'.
+
+
+(_minted-main/B36668D3EA07D12A6700B4C659F95E2A7C4AB9D035CB81426C48597152E578CC.
+pygtex)
+\openout3 = `main.pyg'.
+
+
 (_minted-main/5306BC6B5239DCE1326E5B0DE1E15D2C8447DF9C2D5ED130E262CD4D9278E0D8.
 pygtex)
-<images/console.png, id=90, 421.575pt x 207.174pt>
+<images/console.png, id=122, 421.575pt x 207.174pt>
 File: images/console.png Graphic file (type png)
 <use images/console.png>
-Package pdftex.def Info: images/console.png  used on input line 501.
+Package pdftex.def Info: images/console.png  used on input line 629.
 (pdftex.def)             Requested size: 469.75502pt x 230.85414pt.
- [7 <./images/validate.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 510--511
+ [8]
+Underfull \hbox (badness 10000) in paragraph at lines 638--639
 
  []
 
-<images/showall.png, id=99, 494.44725pt x 253.54726pt>
+<images/showall.png, id=130, 494.44725pt x 253.54726pt>
 File: images/showall.png Graphic file (type png)
 <use images/showall.png>
-Package pdftex.def Info: images/showall.png  used on input line 517.
+Package pdftex.def Info: images/showall.png  used on input line 645.
 (pdftex.def)             Requested size: 469.75502pt x 240.88785pt.
-<images/showconfig.png, id=100, 503.481pt x 168.02776pt>
+<images/showconfig.png, id=131, 503.481pt x 168.02776pt>
 File: images/showconfig.png Graphic file (type png)
 <use images/showconfig.png>
-Package pdftex.def Info: images/showconfig.png  used on input line 526.
+Package pdftex.def Info: images/showconfig.png  used on input line 654.
 (pdftex.def)             Requested size: 469.75502pt x 156.7744pt.
-[8 <./images/console.png> <./images/showall.png>]
-<images/exit.png, id=109, 248.127pt x 33.12375pt>
+[9 <./images/console.png> <./images/showall.png>]
+<images/exit.png, id=140, 248.127pt x 33.12375pt>
 File: images/exit.png Graphic file (type png)
 <use images/exit.png>
-Package pdftex.def Info: images/exit.png  used on input line 538.
+Package pdftex.def Info: images/exit.png  used on input line 662.
 (pdftex.def)             Requested size: 469.75502pt x 62.71033pt.
- [9 <./images/showconfig.png> <./images/exit.png>] (main.aux)
+ [10 <./images/showconfig.png> <./images/exit.png>] (main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: F91783193F9C1E50FB41739AB487F6BA;1746.
+(rerunfilecheck)             Checksum: 7CFABC8E3956A39296BCA74E51FE6B8F;2443.
 runsystem(del main.pyg)...executed.
 
  ) 
 Here is how much of TeX's memory you used:
- 15256 strings out of 478614
- 261480 string characters out of 2852938
- 642313 words of memory out of 3000000
- 33178 multiletter control sequences out of 15000+600000
- 474017 words of font info for 44 fonts, out of 8000000 for 9000
+ 15314 strings out of 478614
+ 264442 string characters out of 2852938
+ 642989 words of memory out of 3000000
+ 33207 multiletter control sequences out of 15000+600000
+ 474531 words of font info for 46 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 72i,10n,77p,666b,707s stack positions out of 10000i,1000n,20000p,200000b,80000s
+ 72i,10n,77p,666b,743s stack positions out of 10000i,1000n,20000p,200000b,80000s
  <C:\Users\kofig\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm
 1000.pk><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/
 Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program File
-s/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX/fon
-ts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX/fonts/type1/publ
-ic/amsfonts/cm/cmr17.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/c
-m/cmr5.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt8.pfb>
-Output written on main.pdf (9 pages, 200235 bytes).
+s/MiKTeX/fonts/type1/public/amsfonts/cm/cmitt10.pfb><C:/Program Files/MiKTeX/fo
+nts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX/fonts/type1/pu
+blic/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts
+/cm/cmr17.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb>
+<C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program 
+Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt8.pfb>
+Output written on main.pdf (10 pages, 233302 bytes).
 PDF statistics:
- 159 PDF objects out of 1000 (max. 8388607)
- 31 named destinations out of 1000 (max. 500000)
- 103 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 205 PDF objects out of 1000 (max. 8388607)
+ 44 named destinations out of 1000 (max. 500000)
+ 143 words of extra memory for PDF output out of 10000 (max. 10000000)
 

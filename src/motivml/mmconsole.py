@@ -58,16 +58,26 @@ class Mmconsole():
                 else:
                     #get command and run it
                     print("\n")
-                    if self.sanitizeCommand(cmdline)[0] == "use":
-                        cIdSetting = configValues.getProperties(self.sanitizeCommand(cmdline)[1], cObj)
+                    if self.sanitizeCommand(cmdline)[0] == "load" or self.sanitizeCommand(cmdline)[0] == "unload" or self.sanitizeCommand(cmdline)[0] == "dump":
+                        if self.sanitizeCommand(cmdline)[0] != "dump":
+                            cIdSetting = configValues.getProperties(self.sanitizeCommand(cmdline)[1], cObj)
                         
-                        msg = ConfigCommand()
-                        msg.command = self.sanitizeCommand(cmdline)[0]
-                        msg.featureid = self.sanitizeCommand(cmdline)[1]
-                        msg.btime = cIdSetting["props"]["time"]
-                        msg.bmode = cIdSetting["props"]["mode"]
-                        pub.publish(msg)
-                        rate.sleep()
+                        if(self.sanitizeCommand(cmdline)[0] == "dump"):
+                            msg = ConfigCommand()
+                            msg.command = self.sanitizeCommand(cmdline)[0]
+                            msg.featureid = "ALL"
+                            msg.btime = "N/A"
+                            msg.bmode = "N/A"
+                            pub.publish(msg)
+                            rate.sleep()
+                        else:
+                            msg = ConfigCommand()
+                            msg.command = self.sanitizeCommand(cmdline)[0]
+                            msg.featureid = self.sanitizeCommand(cmdline)[1]
+                            msg.btime = cIdSetting["props"]["time"]
+                            msg.bmode = cIdSetting["props"]["mode"]
+                            pub.publish(msg)
+                            rate.sleep()
                     else:
                         self.runCommand(self.sanitizeCommand(cmdline))
                     #print("\n")
@@ -123,7 +133,7 @@ if __name__=='__main__':
         #do schema pass to certify that there arent any errors in model
         if validityCheckResults == "valid":
             #Generate and save static early bindings
-            #language.main(sys.argv[1])
+            language.main(sys.argv[1])
             #Load server params
             language.initConfigParamServer(sys.argv[1])
             #begin model validation

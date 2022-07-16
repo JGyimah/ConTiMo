@@ -1,14 +1,14 @@
 {
     "properties": [
         {
-            "id": "compcontrol",
+            "id": "componentcontrol",
             "props": {
                 "time":"Early",
                 "mode":"Static"
             }
         },
         {
-            "id": "localztn",
+            "id": "localisation",
             "props": {
                 "time":"Early",
                 "mode":"Static"
@@ -22,7 +22,7 @@
             }
         },
         {
-            "id": "motplannctrl",
+            "id": "motionplanningcontrol",
             "props": {
                 "time":"Early",
                 "mode":"Static"
