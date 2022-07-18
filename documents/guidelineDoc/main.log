@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.6.3)  16 JUL 2022 16:40
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.6.3)  18 JUL 2022 10:40
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -414,7 +414,17 @@ runsystem(del main.aex)...executed.
 File: l3backend-pdftex.def 2022-04-20 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count314
 \l__pdf_internal_box=\box61
-) (main.aux)
+) (main.aux
+
+LaTeX Warning: Label `samplestaticlate' multiply defined.
+
+
+LaTeX Warning: Label `samplestaticlateinclude' multiply defined.
+
+
+LaTeX Warning: Label `pluginexport' multiply defined.
+
+)
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 23.
@@ -514,27 +524,27 @@ Overfull \hbox (13.94182pt too wide) in paragraph at lines 28--29
 [] 
  []
 
-<images/simpleBot.png, id=61, 564.1075pt x 275.0275pt>
+<images/simpleBot.png, id=53, 564.1075pt x 275.0275pt>
 File: images/simpleBot.png Graphic file (type png)
 <use images/simpleBot.png>
-Package pdftex.def Info: images/simpleBot.png  used on input line 51.
+Package pdftex.def Info: images/simpleBot.png  used on input line 52.
 (pdftex.def)             Requested size: 469.75502pt x 229.02814pt.
 [1
 
 {C:/Users/kofig/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map} <./images/sim
 pleBot.png (PNG copy)>]
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 67.
+(Font)              <7> on input line 68.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 67.
+(Font)              <5> on input line 68.
 
-Underfull \hbox (badness 1960) in paragraph at lines 72--72
+Underfull \hbox (badness 1960) in paragraph at lines 73--73
 []\OT1/cmr/m/n/10 Object con-tain-ing at-tributes \OT1/cmr/bx/n/10 fea-tureIn-c
 luded\OT1/cmr/m/n/10 , \OT1/cmr/bx/n/10 fea-ture-Ex-
  []
 
 Package hyperref Info: bookmark level for unknown listing defaults to 0 on inpu
-t line 92.
+t line 93.
 \openout3 = `main.pyg'.
 
 (_minted-main/default.pygstyle)
@@ -543,11 +553,11 @@ pygtex
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <8> not available
 (Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 4.
 ) [2]
-Underfull \vbox (badness 10000) detected at line 290
+Underfull \vbox (badness 10000) detected at line 291
  []
 
 
-Underfull \vbox (badness 10000) detected at line 290
+Underfull \vbox (badness 10000) detected at line 291
  []
 
 [3] [4]
@@ -561,10 +571,10 @@ pygtex) [5]
 
 (_minted-main/F10C91DC428D1DAEF28DC8BF1ECDCAF38447DF9C2D5ED130E262CD4D9278E0D8.
 pygtex)
-<images/validate.png, id=103, 425.79076pt x 193.9245pt>
+<images/validate.png, id=95, 425.79076pt x 193.9245pt>
 File: images/validate.png Graphic file (type png)
 <use images/validate.png>
-Package pdftex.def Info: images/validate.png  used on input line 460.
+Package pdftex.def Info: images/validate.png  used on input line 461.
 (pdftex.def)             Requested size: 469.75502pt x 213.95082pt.
  [6]
 \openout3 = `main.pyg'.
@@ -590,50 +600,94 @@ pygtex)
 \openout3 = `main.pyg'.
 
 
-(_minted-main/B36668D3EA07D12A6700B4C659F95E2A7C4AB9D035CB81426C48597152E578CC.
+(_minted-main/E329EE72CC73C0F9195309211521F33A7C4AB9D035CB81426C48597152E578CC.
+pygtex)
+\openout3 = `main.pyg'.
+
+
+(_minted-main/99ECE8A91717F0A797E81C2DD3EF66427C4AB9D035CB81426C48597152E578CC.
+pygtex)
+\openout3 = `main.pyg'.
+
+
+(_minted-main/12427804688BC457E2FA78CA0729FA827C4AB9D035CB81426C48597152E578CC.
+pygtex)
+\openout3 = `main.pyg'.
+
+
+(_minted-main/84FAE9C97261860E744F924C3FFEC08C57C2ED8CAC71DDCD3C62C2528F19F81C.
+pygtex)
+\openout3 = `main.pyg'.
+
+ [8]
+(_minted-main/7FCB86739282C21AED18EA557397A07D7C4AB9D035CB81426C48597152E578CC.
+pygtex)
+\openout3 = `main.pyg'.
+
+
+(_minted-main/691382A5B188D9D96CF365E72E6059C97C4AB9D035CB81426C48597152E578CC.
+pygtex)
+\openout3 = `main.pyg'.
+
+
+(_minted-main/3C36342FD2390FD5BF3E780348E2054F7C4AB9D035CB81426C48597152E578CC.
+pygtex)
+\openout3 = `main.pyg'.
+
+
+(_minted-main/4B31A65B220A84F49154870D0937998257C2ED8CAC71DDCD3C62C2528F19F81C.
 pygtex)
 \openout3 = `main.pyg'.
 
 
 (_minted-main/5306BC6B5239DCE1326E5B0DE1E15D2C8447DF9C2D5ED130E262CD4D9278E0D8.
 pygtex)
-<images/console.png, id=122, 421.575pt x 207.174pt>
+<images/console.png, id=125, 421.575pt x 207.174pt>
 File: images/console.png Graphic file (type png)
 <use images/console.png>
-Package pdftex.def Info: images/console.png  used on input line 629.
+Package pdftex.def Info: images/console.png  used on input line 756.
 (pdftex.def)             Requested size: 469.75502pt x 230.85414pt.
- [8]
-Underfull \hbox (badness 10000) in paragraph at lines 638--639
+ [9]
+Underfull \hbox (badness 10000) in paragraph at lines 764--765
 
  []
 
-<images/showall.png, id=130, 494.44725pt x 253.54726pt>
+<images/showall.png, id=136, 494.44725pt x 253.54726pt>
 File: images/showall.png Graphic file (type png)
 <use images/showall.png>
-Package pdftex.def Info: images/showall.png  used on input line 645.
+Package pdftex.def Info: images/showall.png  used on input line 771.
 (pdftex.def)             Requested size: 469.75502pt x 240.88785pt.
-<images/showconfig.png, id=131, 503.481pt x 168.02776pt>
+<images/showconfig.png, id=137, 503.481pt x 168.02776pt>
 File: images/showconfig.png Graphic file (type png)
 <use images/showconfig.png>
-Package pdftex.def Info: images/showconfig.png  used on input line 654.
+Package pdftex.def Info: images/showconfig.png  used on input line 780.
 (pdftex.def)             Requested size: 469.75502pt x 156.7744pt.
-[9 <./images/console.png> <./images/showall.png>]
-<images/exit.png, id=140, 248.127pt x 33.12375pt>
+[10 <./images/console.png> <./images/showall.png>]
+<images/exit.png, id=146, 248.127pt x 33.12375pt>
 File: images/exit.png Graphic file (type png)
 <use images/exit.png>
-Package pdftex.def Info: images/exit.png  used on input line 662.
+Package pdftex.def Info: images/exit.png  used on input line 788.
 (pdftex.def)             Requested size: 469.75502pt x 62.71033pt.
- [10 <./images/showconfig.png> <./images/exit.png>] (main.aux)
-Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 7CFABC8E3956A39296BCA74E51FE6B8F;2443.
+ [11 <./images/showconfig.png> <./images/exit.png>] (main.aux)
+
+LaTeX Warning: There were multiply-defined labels.
+
+
+Package rerunfilecheck Warning: File `main.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `main.out':
+(rerunfilecheck)             Before: 2DCF0C0ED4AD97E1C67848AFB03CAFCE;2176
+(rerunfilecheck)             After:  35B3A4862169CE69E2F7E28D06E2FAEB;2267.
 runsystem(del main.pyg)...executed.
 
  ) 
 Here is how much of TeX's memory you used:
- 15314 strings out of 478614
- 264442 string characters out of 2852938
- 642989 words of memory out of 3000000
- 33207 multiletter control sequences out of 15000+600000
+ 15372 strings out of 478614
+ 268846 string characters out of 2852938
+ 643771 words of memory out of 3000000
+ 33237 multiletter control sequences out of 15000+600000
  474531 words of font info for 46 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  72i,10n,77p,666b,743s stack positions out of 10000i,1000n,20000p,200000b,80000s
@@ -646,9 +700,9 @@ blic/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts
 /cm/cmr17.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb>
 <C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program 
 Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt8.pfb>
-Output written on main.pdf (10 pages, 233302 bytes).
+Output written on main.pdf (11 pages, 238568 bytes).
 PDF statistics:
- 205 PDF objects out of 1000 (max. 8388607)
- 44 named destinations out of 1000 (max. 500000)
- 143 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 211 PDF objects out of 1000 (max. 8388607)
+ 50 named destinations out of 1000 (max. 500000)
+ 127 words of extra memory for PDF output out of 10000 (max. 10000000)
 

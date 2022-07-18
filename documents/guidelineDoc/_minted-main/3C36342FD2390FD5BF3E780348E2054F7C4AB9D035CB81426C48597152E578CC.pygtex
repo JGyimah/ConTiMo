@@ -1,0 +1,5 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+
+\PYG{n}{PLUGINLIB\PYGZus{}EXPORT\PYGZus{}CLASS}\PYG{p}{(}\PYG{n}{motivml\PYGZus{}plugins}\PYG{o}{::}\PYG{n}{MyDynamicClass}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{plugin\PYGZus{}base}\PYG{o}{::}\PYG{n}{PluginInterface}\PYG{p}{)}
+
+\end{Verbatim}

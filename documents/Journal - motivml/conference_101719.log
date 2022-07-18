@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.6.3)  16 JUL 2022 12:07
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.6.3)  18 JUL 2022 10:20
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -914,9 +914,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 125--125
 
 
 ] [2]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [3]
+[3]
 Underfull \hbox (badness 10000) in paragraph at lines 199--199
 [][][]$\OT1/ptm/m/n/8 https : / / pdfcoee . com / kss -[] 55 -[] operating -[]
  and -[] programming -[] instructions -[]
@@ -1019,9 +1017,9 @@ File: omsptm.fd
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 702.
 
-Underfull \hbox (badness 4403) in paragraph at lines 702--703
+Underfull \hbox (badness 4686) in paragraph at lines 702--703
 []\OT1/ptm/m/n/10 featureDescriptionBlock $[][]\OMS/cmsy/m/n/10 !$ \OT1/ptm/m/n
-/10 '\OMS/cmsy/m/n/10 f\OT1/ptm/m/n/10 ' 'id' ':' anum-Val,
+/10 '\OMS/cmsy/m/n/10 f\OT1/ptm/m/n/10 ' 'id' ':' al-phaVal,
  []
 
 
@@ -1124,7 +1122,7 @@ runsystem(del conference_101719.pyg)...executed.
 Here is how much of TeX's memory you used:
  21952 strings out of 478614
  431250 string characters out of 2852938
- 762877 words of memory out of 3000000
+ 762845 words of memory out of 3000000
  39651 multiletter control sequences out of 15000+600000
  513618 words of font info for 112 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1141,7 +1139,7 @@ pfb><C:/Program Files/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files
 /MiKTeX/fonts/type1/urw/times/utmbi8a.pfb><C:/Program Files/MiKTeX/fonts/type1/
 urw/times/utmr8a.pfb><C:/Program Files/MiKTeX/fonts/type1/urw/times/utmri8a.pfb
 >
-Output written on conference_101719.pdf (17 pages, 1880861 bytes).
+Output written on conference_101719.pdf (17 pages, 1879562 bytes).
 PDF statistics:
  141 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

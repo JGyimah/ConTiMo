@@ -15,7 +15,9 @@
 #include "../../include/motivml_ros/static_base.h"
 #include "static_feature_loader.h"
 
+
 //dynamic early map of plugin objects
+std::vector<std::string> static_early_server_params;
 pluginlib::ClassLoader<plugin_base::PluginInterface> dynamic_plugin_loader("motivml_ros", "plugin_base::PluginInterface");
 pluginlib::ClassLoader<static_base::StaticInterface> static_plugin_loader("motivml_ros", "static_base::StaticInterface");
 std::map<std::string, boost::shared_ptr<plugin_base::PluginInterface>> dynamic_objects;
@@ -163,15 +165,21 @@ void callback_load_plugin_features(const motivml_ros::ConfigCommand& msg){
 
                 ROS_INFO("## Dumping All Bindings");
                 printf("\n----------------------------------------------------\n");
-                ROS_INFO("-- Static Late");
+                printf("-- Static");
                 printf("\n----------------------------------------------------\n");
                 std::map<std::string, boost::shared_ptr<static_base::StaticInterface>>::iterator statIter;
+                //static early dump
+                for(std::string seid: static_early_server_params){
+                    printf(seid.c_str());
+                    printf("\n");
+                }
+                //static late dump
                 for(statIter = static_late_objects.begin(); statIter != static_late_objects.end(); statIter++){
                     printf(statIter->first.c_str());
                     printf("\n");
                 }
                 printf("\n----------------------------------------------------\n");
-                ROS_INFO("-- Dynamic");
+                printf("-- Dynamic");
                 printf("\n----------------------------------------------------\n");
                 std::map<std::string, boost::shared_ptr<plugin_base::PluginInterface>>::iterator dyIter;
                 for(dyIter = dynamic_objects.begin(); dyIter != dynamic_objects.end(); dyIter++){
@@ -191,7 +199,11 @@ int main(int argc, char** argv){
 
     ros::init(argc, argv, "plugin_builder");
     ros::NodeHandle nh;
-    ROS_INFO("## Loading Static early");
+
+    //Read static early features
+    nh.getParam("/motivml/static_early", static_early_server_params);
+
+    ROS_INFO("## Loading Static");
 
     //load all features bound at static late
     ROS_INFO("## Initialising static late features");

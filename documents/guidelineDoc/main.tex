@@ -28,12 +28,13 @@ This is a guideline document for the MoTiVML language. This guideline document a
 \noindent\rule{17cm}{0.4pt}
 
 \label{guide:docs}
-\section{Prerequisites}
+\section{Prerequisites and Dependencies}
     \begin{itemize}
         \item Ubuntu 20.04.3 LTS and above
         \item ROS installation. This application was developed and tested with ROS Neotic 1.15.9.
         \item Python3 installation
         \item C++ 11 or higher
+        \item ROS Pluginlib
     \end{itemize}
 
 \section{Setup and Installation of MoTiVML}
@@ -466,7 +467,7 @@ When our in-built schema and constraint checker identify an error in either a mo
 \subsection{Implement a Statically Bound Feature}
 \subsubsection{Static Early}
 \begin{itemize}
-	\item Create a static class in the namespace \textbf{static\_integration} which inherits from the class \textbf{public static\_base::StaticInterface}. NB: The feature id in your model must match your class name. For Example:
+	\item In the \textbf{featx} directory, create a static class in the namespace \textbf{static\_integration} which inherits from the class \textbf{public static\_base::StaticInterface}. NB: The feature id in your model must match your class name. For Example:
 	
 	\begin{longlisting}
 		\caption{Sample Static Early Class}
@@ -554,7 +555,7 @@ When our in-built schema and constraint checker identify an error in either a mo
 \subsubsection{Static Late}
 %% pluginlib steps with alteration guard
 \begin{itemize}
-	\item Create a static class in the namespace \textbf{static\_integration} which inherits from the class \textbf{public static\_base::StaticInterface}. NB: The feature id in your model must match your class name. For Example:
+	\item In the \textbf{featx} directory, create a static class in the namespace \textbf{static\_integration} which inherits from the class \textbf{public static\_base::StaticInterface}. NB: The feature id in your model must match your class name. For Example:
 	
 	\begin{longlisting}
 		\caption{Sample Static Late Class}
@@ -567,7 +568,7 @@ When our in-built schema and constraint checker identify an error in either a mo
 			
 			namespace static_integration{
 				
-				class MyStaticEarlyClass: public static_base::StaticInterface{
+				class MyStaticLateClass: public static_base::StaticInterface{
 					std::string feature_id = "my_unique_feature_id";
 					public:
 					MyStaticEarlyClass(){};
@@ -583,22 +584,148 @@ When our in-built schema and constraint checker identify an error in either a mo
 		\end{minted}
 		\label{samplestaticlate}
 	\end{longlisting}
-	\item \textbf{Encapsulate Feature As Plugin}
-	\item \textbf{Register/Export Plugin}
+	\item Statically include the feature in the configuration by adding it to the \textbf{motivml\_plugins.h} file. For Example
+	
+	\begin{longlisting}
+		\caption{Sample Static Late Class}
+		\begin{minted}[
+			framesep=2mm,
+			baselinestretch=1.2,
+			bgcolor=LightGray,
+			fontsize=\footnotesize
+			]{C}
+			
+			#include "../../featx/MyStaticLateClass.h"
+			
+		\end{minted}
+		\label{samplestaticlateinclude}
+	\end{longlisting}
+	
+	\item To get the feature to be loaded at runtime, use pluginlib to export your class to the static interface. For example 
+	
+	\begin{longlisting}
+		\caption{Sample Static Late Class}
+		\begin{minted}[
+			framesep=2mm,
+			baselinestretch=1.2,
+			bgcolor=LightGray,
+			fontsize=\footnotesize
+			]{C}
+			
+			PLUGINLIB_EXPORT_CLASS(static_integration::MyStaticLateClass, static_base::StaticInterface)
+			
+		\end{minted}
+		\label{pluginexport}
+	\end{longlisting}
+	
+	\item Provide meta-date about your static late feature to pluginlib, by registering the exported class in the  \textbf{motivml\_plugins.xml} file stating the class name and description of your class. For example
+	
+	\begin{longlisting}
+		\caption{Sample Static Late Class}
+		\begin{minted}[
+			framesep=2mm,
+			baselinestretch=1.2,
+			bgcolor=LightGray,
+			fontsize=\footnotesize
+			]{xml}
+			
+			<class type="static_integration::MyStaticLateClass" base_class_type="static_base::StaticInterface">
+				<description>Description of class goes here</description>
+			</class>
+			
+		\end{minted}
+		\label{samplestaticlatedesc}
+	\end{longlisting}
+	
 \end{itemize}
 
 \subsection{Implement a Dynamically Bound Feature}
-\subsubsection{Dynamic Early}
 \begin{itemize}
-	\item \textbf{Encapsulate Feature As Plugin}
-	\item \textbf{Register/Export Plugin}
+	\item In the \textbf{featx} directory, create a static class in the namespace \textbf{static\_integration} which inherits from the class \textbf{public static\_base::StaticInterface}. NB: The feature id in your model must match your class name. For Example:
+	
+	\begin{longlisting}
+		\caption{Sample Dynamic Class}
+		\begin{minted}[
+			framesep=2mm,
+			baselinestretch=1.2,
+			bgcolor=LightGray,
+			fontsize=\footnotesize
+			]{C}
+			
+			namespace motivml_plugins{
+				
+				class MyDynamicClass: public plugin_base::PluginInterface{
+					std::string feature_id = "my_unique_feature_id";
+					public:
+					MyDynamicClass(){};
+					
+					void executeFeature(){
+						std::cout << "Hello My Feature!!" << std::endl;
+					};
+					
+				};
+				
+			};
+			
+		\end{minted}
+		\label{samplestaticlate}
+	\end{longlisting}
+
+	\item \textbf{Include Plugin}: Include the feature in the configuration by adding it to the \textbf{motivml\_plugins.h} file. For Example
+	
+	\begin{longlisting}
+		\caption{Sample Static Late Class}
+		\begin{minted}[
+			framesep=2mm,
+			baselinestretch=1.2,
+			bgcolor=LightGray,
+			fontsize=\footnotesize
+			]{C}
+			
+			#include "../../featx/MyDynamicClass.h"
+			
+		\end{minted}
+		\label{samplestaticlateinclude}
+	\end{longlisting}
+
+	\item \textbf{Encapsulate Feature As Plugin}: In order to allow a class to be dynamically loaded, it must be marked as an exported class. This is done through the special macro PLUGINLIB\_EXPORT\_CLASS  \cite{pluginlib}. For example
+	
+	\begin{longlisting}
+		\caption{Sample Dynamic Class Export}
+		\begin{minted}[
+			framesep=2mm,
+			baselinestretch=1.2,
+			bgcolor=LightGray,
+			fontsize=\footnotesize
+			]{C}
+			
+			PLUGINLIB_EXPORT_CLASS(motivml_plugins::MyDynamicClass, plugin_base::PluginInterface)
+			
+		\end{minted}
+		\label{pluginexport}
+	\end{longlisting}
+	
+	\item \textbf{Add Plugin Description: } The plugin description file is an XML file that serves to store all the important information about a plugin in a machine readable format. It contains information about the library the plugin is in, the name of the plugin, the type of the plugin, etc \cite{pluginlib}. Ihe plugin description file (motivml\_plugin.xml), would look something like this:
+	
+	\begin{longlisting}
+		\caption{Sample Static Late Class}
+		\begin{minted}[
+			framesep=2mm,
+			baselinestretch=1.2,
+			bgcolor=LightGray,
+			fontsize=\footnotesize
+			]{xml}
+			
+			<class type="motivml_plugins::MyDynamicClass" base_class_type="plugin_base::PluginInterface">
+				<description>Description of class goes here</description>
+			</class>
+			
+		\end{minted}
+		\label{sampledylatedesc}
+	\end{longlisting}
+	
 \end{itemize}
 
-\subsubsection{Dynamic Late}
-\begin{itemize}
-	\item \textbf{Encapsulate Feature As Plugin}
-	\item \textbf{Register/Export Plugin}
-\end{itemize}
 
 
 \subsection{MoTiVML Console Interface}
@@ -633,7 +760,6 @@ When the above command is run, the model and configuration defined in the \textb
 In Figure \ref{consolelaunch} we can observe the launched MoTiVML console. As highlighted in the figure above, the console prompt always bears the name of the project which was launched with the console. For this reason, all MoTiVML console commands that are run will be affiliated with the model highlighted in the console prompt.
 
 \subsection{MoTiVML Console Commands}
-
 \begin{itemize}
 	\item \textbf{show $<parameter>$}: The show command is used to display graphically a user constructed model. This command prints the hierarchical structure of a selected model while displaying details such as its mandatory status, group and binding mode. The show command takes a single parameter. This parameter can either be \textbf{all} or  \textbf{config}. \\
 	
@@ -662,6 +788,12 @@ In Figure \ref{consolelaunch} we can observe the launched MoTiVML console. As hi
 		\includegraphics[width=\columnwidth]{images/exit.png}
 		\label{exit}
 	\end{figure}
+
+	\item \textbf{load $<feature id>$}: The load command attempts to add a feature to the existing configuration. Once the feature is added successfully to the configuration, the feature is executed to show its existence.
+	
+	\item \textbf{unload $<feature id>$}:The unload command attempts to remove a feature from the existing configuration. Once the feature is removed successfully from the configuration, an output message is sent to the console. Like wise, if the unload attempt is unsuccessful, a prompt is printed in the console. 
+	
+	\item \textbf{dump}: The dump configuration command the ids of all features that have been bound in the configuration, in the form a categorised list as a console output.
 \end{itemize}
 
 \begin{thebibliography}{9}
