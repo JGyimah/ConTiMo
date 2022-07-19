@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.6.3)  18 JUL 2022 10:40
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.6.3)  18 JUL 2022 13:11
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -678,14 +678,14 @@ Package rerunfilecheck Warning: File `main.out' has changed.
 (rerunfilecheck)                or use package `bookmark'.
 
 Package rerunfilecheck Info: Checksums for `main.out':
-(rerunfilecheck)             Before: 2DCF0C0ED4AD97E1C67848AFB03CAFCE;2176
-(rerunfilecheck)             After:  35B3A4862169CE69E2F7E28D06E2FAEB;2267.
+(rerunfilecheck)             Before: 35B3A4862169CE69E2F7E28D06E2FAEB;2267
+(rerunfilecheck)             After:  AEB74C82B5701195CC16BF7E17D1E041;2983.
 runsystem(del main.pyg)...executed.
 
  ) 
 Here is how much of TeX's memory you used:
- 15372 strings out of 478614
- 268846 string characters out of 2852938
+ 15376 strings out of 478614
+ 268917 string characters out of 2852938
  643771 words of memory out of 3000000
  33237 multiletter control sequences out of 15000+600000
  474531 words of font info for 46 fonts, out of 8000000 for 9000
@@ -700,9 +700,9 @@ blic/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts
 /cm/cmr17.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb>
 <C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program 
 Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt8.pfb>
-Output written on main.pdf (11 pages, 238568 bytes).
+Output written on main.pdf (11 pages, 240548 bytes).
 PDF statistics:
- 211 PDF objects out of 1000 (max. 8388607)
- 50 named destinations out of 1000 (max. 500000)
+ 215 PDF objects out of 1000 (max. 8388607)
+ 54 named destinations out of 1000 (max. 500000)
  127 words of extra memory for PDF output out of 10000 (max. 10000000)
 

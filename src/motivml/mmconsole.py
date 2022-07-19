@@ -7,6 +7,11 @@ from motivml.motivml import Dsl
 from motivml.traverse import Traverse
 from motivml_ros.msg import ConfigCommand #custom ROS msg to store/transmit feature config object
 
+try:
+    import readline
+except ImportError:
+    import pyreadline as readline
+
 cmdexec = CmdExec()
 
 class Mmconsole():
@@ -14,6 +19,19 @@ class Mmconsole():
         self.runningConfig = ""
         self._modelTree = None
         self._configProps = None
+
+    def getListOfFeatureIds(self):
+        allProps = cmdexec.readConfigurationObject(self.runningConfig)
+        allIds = [prop['id'] for prop in allProps['properties']]
+        return allIds
+
+    def idCompleter(self, text, state):
+        fids = self.getListOfFeatureIds()
+        options = [fid for fid in fids if fid.startswith(text)]
+        if state < len(options):
+            return options[state]
+        else:
+            return None
 
     def runCommand(self, cmd):
         if cmd[0] == "show":
@@ -41,6 +59,10 @@ class Mmconsole():
         rospy.loginfo("DSL has been initialised")
         rate = rospy.Rate(2) #Publishing rate in Hertz
         pub = rospy.Publisher("/variability_command", ConfigCommand, queue_size=2)
+
+        #Autocomplete invokation
+        readline.parse_and_bind("tab: complete")
+        readline.set_completer(self.idCompleter)
 
         self.runningConfig = executedConfig[1]
         prepedPrompt = "MoTiVML:" + self.prepCmdPrompt()
