@@ -16,14 +16,14 @@
 % Create a new environment for breaking code listings across pages.
 \newenvironment{longlisting}{\captionsetup{type=listing}}{}
 
-\title{MoTiVML Guideline Document}
+\title{\underline{\textbf{MoTiVML Guideline Document}}}
 \author{}
 \date{}
 
 \begin{document}
 
 \maketitle
-This is a guideline document for the MoTiVML language. This guideline document assists end users in modelling variability in robotic systems as well as implementing the features they have defined in their models. As a supporting artifact to the language,  this document serves as a form of verification for the MoTiVML language and its capabilities.
+\textit{This is a guideline document for the MoTiVML language. This guideline document assists end users in modelling variability in robotic systems as well as implementing the features they have defined in their models. As a supporting artifact to the language,  this document serves as a form of verification for the MoTiVML language and its capabilities.}
 
 \noindent\rule{17cm}{0.4pt}
 
@@ -685,7 +685,7 @@ When our in-built schema and constraint checker identify an error in either a mo
 			#include "../../featx/MyDynamicClass.h"
 			
 		\end{minted}
-		\label{samplestaticlateinclude}
+		\label{sampstaticlateinclude}
 	\end{longlisting}
 
 	\item \textbf{Encapsulate Feature As Plugin}: In order to allow a class to be dynamically loaded, it must be marked as an exported class. This is done through the special macro PLUGINLIB\_EXPORT\_CLASS  \cite{pluginlib}. For example
@@ -796,10 +796,64 @@ In Figure \ref{consolelaunch} we can observe the launched MoTiVML console. As hi
 	\item \textbf{dump}: The dump configuration command the ids of all features that have been bound in the configuration, in the form a categorised list as a console output.
 \end{itemize}
 
-\subsection{Using the Framework}
-\subsubsection{Launch Parameter Server}
-\subsubsection{Launch User Interface}
-\subsubsection{Launch Plugin Interface}
+\section{Launching a Configuration in the Framework}
+After modelling your robot with MoTiVML and implementing all the modelled features, the robot configuration can be launched to simulate loading and unloading of features. To launch the configuration, the following steps must be performed in the exact sequence presented. 
+
+The output of all commands executed in the console interface can be viewed in the plugin manager console.
+\begin{enumerate}
+	\item \textbf{Launch Parameter Server: } To launch the server parameters responsible for dynamic binding, run the following command in your terminal/console. Using roslaunch, parameters for each binding combination are created on the ros parameter service\\\\
+	
+	\begin{longlisting}
+		\caption{Application ROS Parameters Launch Command}
+		\begin{minted}[
+			framesep=2mm,
+			baselinestretch=1.2,
+			bgcolor=LightGray,
+			fontsize=\footnotesize
+			]{python}
+			
+			roslaunch motivml_ros motivml.launch
+			
+		\end{minted}
+		\label{paramlaunch}
+	\end{longlisting}
+	
+	
+	\item \textbf{Launch User Interface: } The user interface needs to be launched next because in its start up sequence it generated all static features and binds them to the the already initialised ROS parameters. To this, run the following command in a separate console/terminal. To tun the command successfully, navigate to the "/src/motivml\_ros/src/motivml" directory of the project.\\\\
+	
+	\begin{longlisting}
+		\caption{Application Cole Interface Launch Command}
+		\begin{minted}[
+			framesep=2mm,
+			baselinestretch=1.2,
+			bgcolor=LightGray,
+			fontsize=\footnotesize
+			]{python}
+			
+			python mmconsole.py <project_name>
+			
+		\end{minted}
+		\label{ui}
+	\end{longlisting}
+
+	\item \textbf{Launch Plugin Manager Interface: } The plugin interface represents the live version of the robot configuration defined in your MoTiVML model instance. In here users can display all statically and dynamically bound features. Users can also observe the output of feature load and unload attempts. To launch this interface, run the following ROS command. \\\\
+	
+	\begin{longlisting}
+		\caption{Application Cole Interface Launch Command}
+		\begin{minted}[
+			framesep=2mm,
+			baselinestretch=1.2,
+			bgcolor=LightGray,
+			fontsize=\footnotesize
+			]{python}
+			
+			rosrun motivml_ros plugin_feature_loader
+			
+		\end{minted}
+		\label{ui}
+	\end{longlisting}
+	
+\end{enumerate}
 
 \begin{thebibliography}{9}
 	\bibitem{pluginlib}

@@ -1,0 +1,5 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+
+\PYG{n}{roslaunch} \PYG{n}{motivml\PYGZus{}ros} \PYG{n}{motivml}\PYG{o}{.}\PYG{n}{launch}
+
+\end{Verbatim}

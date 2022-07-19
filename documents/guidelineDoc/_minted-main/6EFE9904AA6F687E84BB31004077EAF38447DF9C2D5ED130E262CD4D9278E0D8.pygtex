@@ -1,0 +1,5 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+
+\PYG{n}{rosrun} \PYG{n}{motivml\PYGZus{}ros} \PYG{n}{plugin\PYGZus{}feature\PYGZus{}loader}
+
+\end{Verbatim}
