@@ -14,7 +14,7 @@ using namespace std;
 
 string early_bindings {""};
 
-void traverse(nlohmann::json& subArray){
+void traverse(nlohmann::json &subArray){
     if(subArray.is_object() && subArray.contains("id")){
        cout << subArray["id"] << endl;
        cout << "-----------------------------------" << endl;
@@ -31,7 +31,7 @@ void traverse(nlohmann::json& subArray){
         }
 }
 
-void configurationIteration(nlohmann::json& configJsonData){
+void configurationIteration(nlohmann::json &configJsonData){
 
     for(auto& configObj : configJsonData){
         if(configObj.is_array()){
@@ -48,10 +48,10 @@ void configurationIteration(nlohmann::json& configJsonData){
             transform(modeStr.begin(), modeStr.end(), modeStr.begin(), ::tolower); // convert mode string iterable to lower case
             modeStr.erase(std::remove(modeStr.begin(),modeStr.end(),'\"'),modeStr.end()); // remove trailing newline character from mode string
             
-            //const string EARLY_BINDING_TIME = "early";
-            const string STATIC_BINDING_MODE = "static";
+            const string EARLY_BINDING_TIME = "early";
+            //const string STATIC_BINDING_MODE = "static";
 
-            if(modeStr == STATIC_BINDING_MODE){
+            if(timeStr == EARLY_BINDING_TIME){
                 //only bind features with early binding time at this moment
                 idStr.erase(std::remove(idStr.begin(),idStr.end(),'\"'),idStr.end());
                 early_bindings += idStr + "\n";
@@ -130,8 +130,8 @@ int main(int argc, char* argv[]){
     #if COMPILE_TIME
     //static early binding
     string projectName = argv[1];
-    
     readConfiguration(getCurrentDir(), projectName);
+    //generate and save static bindings in custom .motvml file
     generateAndSaveBindings(projectName);
     printf("Compile time exited successfully\n\n");
     #endif

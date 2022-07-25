@@ -154,10 +154,10 @@ if __name__=='__main__':
         validityCheckResults = mmconsole.checkCommandValidity(sys.argv)
         #do schema pass to certify that there arent any errors in model
         if validityCheckResults == "valid":
-            #Generate and save static early bindings
-            language.main(sys.argv[1])
             #Load server params
             language.initConfigParamServer(sys.argv[1])
+            #Generate and save early bindings
+            language.main(sys.argv[1])
             #begin model validation
             schemaCheck.parseModelSchema(mmconsole._modelTree, mmconsole._configProps, sys.argv[1])
             if schemaCheck.excludesErrorCount == 0 and schemaCheck.includesErrorCount == 0 and schemaCheck.parentChildErrorCount == 0 and schemaCheck.bindingPropErrorCount == 0:

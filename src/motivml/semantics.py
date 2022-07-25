@@ -9,6 +9,7 @@ class Semantics():
     def includes(self, feature, contraintObject, boundFeatureList):
         if feature in boundFeatureList:
             if len(contraintObject["featuresIncluded"]) > 0:
+                #If there is a required feature missing from current bindings, throw error
                 featureNotInBoundList = list(filter(lambda x: x not in boundFeatureList, contraintObject["featuresIncluded"]))
                 for notIncluded in featureNotInBoundList:
                         self.includesErrorCount += 1
@@ -18,6 +19,7 @@ class Semantics():
     def excludes(self, feature, contraintObject, boundFeatureList):
         if feature in boundFeatureList:
             if len(contraintObject["featuresExcluded"]) > 0:
+                #If there is an incompatible feature present in current bindings, throw error
                 featureInBoundList = list(filter(lambda x: x in boundFeatureList, contraintObject["featuresExcluded"]))
                 for notExcluded in featureInBoundList:
                         self.excludesErrorCount += 1

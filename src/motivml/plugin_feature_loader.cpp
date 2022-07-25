@@ -45,7 +45,7 @@ void load_dynamic_early(){
         }
         
     }else{
-        ROS_INFO("*** No static late features found");
+        ROS_INFO("*** No dynamic early features found");
     }
 
 
@@ -77,6 +77,21 @@ void load_static_late(){
 
 }
 
+void load_static_late_feature(std::string &featurue_id){
+
+    std::string lowerFid = featurue_id;
+    lowerFid[0] = toupper(lowerFid[0]);
+    std::string instanceCreatString = "static_integration::"+ lowerFid;
+    try{
+        static_late_objects[featurue_id] = static_plugin_loader.createInstance(instanceCreatString);
+    }catch(pluginlib::PluginlibException& ex){
+        ROS_INFO("Static Late Plugin Instance Creation Error. Error: %s", ex.what());
+    }
+    std::string info_message = "## Static Late "+lowerFid+" has been bound";
+    ROS_INFO(info_message.c_str());
+
+}
+
 void callback_load_plugin_features(const motivml_ros::ConfigCommand& msg){
 
         ROS_INFO("Command: %s, Feature ID: %s, Time: %s, Mode: %s", msg.command.c_str(), msg.featureid.c_str(), msg.btime.c_str(), msg.bmode.c_str());
@@ -94,8 +109,6 @@ void callback_load_plugin_features(const motivml_ros::ConfigCommand& msg){
                 ROS_INFO("## Attempting to load feature %s", featureid);
 
                 if(bmode == "Static"){
-
-                    ROS_INFO("-- Static feature cannot be reloaded at runtime. Feature already loaded");
                     
                     if(btime == "Early"){
                         //instantiate and run
@@ -114,8 +127,9 @@ void callback_load_plugin_features(const motivml_ros::ConfigCommand& msg){
                         }
 
                     }else if(btime == "Late"){
-                        //find plugin instance and run
+                        //find plugin instance and run i.e loadable static feature at runtime but unloadable forever
                         ROS_INFO("## Found static late feature");
+                        load_static_late_feature(featureid);
                         static_late_objects[featureid]->executeFeature();
                         
                     }
@@ -204,10 +218,6 @@ int main(int argc, char** argv){
     nh.getParam("/motivml/static_early", static_early_server_params);
 
     ROS_INFO("## Loading Static");
-
-    //load all features bound at static late
-    ROS_INFO("## Initialising static late features");
-    load_static_late();
 
     //load all features bound at dynamic early
     ROS_INFO("## Initialising dynamic early features");

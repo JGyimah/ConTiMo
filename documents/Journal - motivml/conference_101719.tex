@@ -97,18 +97,18 @@ patrizio.pelliccione@gu.se}
 \maketitle
 
 \begin{abstract}
-Recent technological advancements have led to a growing demand for customized solutions, that can operate under non-deterministic conditions, with a high level of efficiency.
-In the wake of the current pandemic, industries have had to deal with unforeseen challenges in the form of labour, production and logistic deficits. These challenges have negatively impacted human-driven supply systems, due to incidental safety regulations and human resource depletion. Undeniably, these challenges have had a resounding effect across the global service industry and as such have compelled industries to devise alternative methods to alleviate them. One of such alternatives which has emerged and proven to be feasible and useful in practice, is the implementation and deployment of service robots.
+Modern technological advancements have led to a growing demand for customized solutions, that can operate under non-deterministic conditions, with a high level of efficiency.
+In the wake of the current pandemic, industries have had to deal with unforeseen challenges in the form of labour, production and logistical deficits. These incidental challenges have negatively affected human-driven supply systems, through enforced safety regulations and human resource depletion. Undeniably, these challenges have had a resounding effect across the global service industry; and as such, these industrial challenges have also compelled organisations to devise alternative methods to alleviate them. One of such alternatives which has emerged and proven to be useful and feasible, is the implementation and deployment of service robots.
 
 Service robots can be described as a category of robots that render specialised services to humans. Service robots are often designed to operate in highly heterogeneous environments in collaboration with humans, or other robots. Usually, the effective completion of tasks by a service robot may require a combination of specific sets of robotic capabilities. These inbuilt capabilities are more often than not driven by implementations known as robotic features.
 
-Valid combinations of robotic features to fit varying contexts, have the propensity to give rise to some level of variability---i.e., the ability of a software artifact to be changed to fit multiple contexts, environments, or purposes. This phenomenon, presents the need for a possible strategy that enables roboticists to adapt, customize or configure robotic applications in correspondence to different operational scenarios. This has also provided the much needed incentive to have an effective mechanism that allows domain experts to plan, design, and implement variability.
+Valid combinations of robotic features to fit varying contexts, have the propensity to give rise to some level of variability---i.e., the ability of a software artifact to be changed to fit multiple contexts, environments, or purposes. This adaptation demand, presents the need for a possible strategy that enables roboticists to customize or configure robotic applications in correspondence to different operational scenarios. This has also provided the much needed incentive to have an effective mechanism that allows domain experts to plan, design, and implement variability.
 
-As a possible solution to this, we present a technique that implements variability via a feature's binding time and binding mode. The implementation of this novel technique is offered as an extension to the Self-adaptive dEcentralized Robotic Architecture known as SERA. SERA, which is a decentralized reference architecture that supports autonomous, heterogeneous, and collaborative robotic application development lacks the innate capability to manage variability dynamically. This implies that, SERA and its ilk typically do not provide domain experts with the means and techniques required to manage variability effectively.
+As a possible solution to this, we present a technique that implements variability via a feature's binding time and binding mode. The implementation of this novel technique is offered as an extension to the Self-adaptive dEcentralized Robotic Architecture known as SERA. SERA, which is a decentralized reference architecture that supports autonomous, heterogeneous, and collaborative robotic application development, lacks the innate capability to manage variability dynamically. This implies that, SERA and its ilk typically do not provide domain experts with the means and techniques required to manage variability effectively.
 
-To solve this problem, we applied design science methods, to define example systems while studying their existing variabilities, all in an attempt to implement a variability modelling framework, that provides a language together with mechanisms, capable of managing variability with respect to a feature's binding time and mode. Our open source solution provides basic support for binding features, as well as evidence of the extensibility of robotics reference architectures, to support variability, in a domain where variability is typically performed in an ad hoc manner. That being said, this study is expected to alleviate extension complexities, increase binding flexibility, and provide mechanisms for managing variability in robotic systems.
+To solve this problem, we applied design science methods, in defining example systems while studying their existing variabilities; all in an attempt to implement a variability modelling framework, that provides a language together with mechanisms, capable of managing variability with respect to a feature's binding time and mode. In a domain where variability is typically performed in an ad hoc manner, our open source solution provides basic support for binding features together with verifiable evidence to prove the extensibility of reference architectures to support variability. That being said, this study is expected to ease extension complexities, increase binding flexibility, and provide mechanisms for managing variability in robotic systems.
 
-Furthermore, this study provides evidence to back the claim that our proposed variability management technique is novel, realizable, useful in practice and has the capability of assessing valid configurations.
+Furthermore, this research provides evidence to back the claim that our proposed variability management technique is novel, realizable, useful in practice and has the capability of assessing valid configurations.
 \end{abstract}
 
 \begin{IEEEkeywords}
@@ -118,69 +118,69 @@ variability modelling, service robots, robotics software engineering, domain spe
 \section{Introduction}
 \label{section:intro}
 %%general intro --start%%
-Service robots---``{\em a type of robot that performs useful tasks for humans or equipment excluding industrial automation applications}'' \foot{https://www.iso.org/standard/55890.html}---are gradually becoming an integral part of human existence. It is estimated that the service robotics industry will be valued at 24 billion US dollars by the year 2022.\foot{https://www.marketsandmarkets.com/Market-Reports/ivd-bric-market-198.html}
-According to the International Service Robot Association, service robots can be classified as machines that sense, think, and act to benefit or extend human capabilities and to increase human productivity \cite{serv-rob-his}. This implies service robots are sometimes conceived, built, and used as intermediate solutions to assist humans in performing daunting and repetitive tasks.
+Service robots---``{\em a type of robot mainly designed for personal or professional use that can performs useful tasks for humans or equipment}'' \foot{https://www.iso.org/standard/75539.html}---are gradually becoming an integral part of human existence. It is estimated that the global service robot industry will be valued at about 153 billion US dollars by the year 2030.\foot{https://www.alliedmarketresearch.com/service-robotics-market}
+According to the International Service Robot Association, service robots can be classified as machines that sense, think, and act to extend human capabilities or increase human productivity \cite{serv-rob-his}. This implies that service robots are often conceived, built, and used as intermediate solutions to assist humans in performing daunting and repetitive tasks.
 
-As cyber-physical systems, service robots are often designed to operate in highly heterogeneous environments in collaboration with either humans, other robots, or both. Practical implementations of such service robots include UVD's Model C \foot{https://www.uvd-robots.com} and PAL Robotics's TIAGo Base\foot{http://blog.pal-robotics.com/how-to-build-a-solution-for-fighting-coronavirus-using-the-tiago-base-robot/} 
-disinfection range of robots, which have been deployed in the fight against the spread of COVID-19, in areas such as shopping centers, airports, and hospitals across the globe.
+As cyber-physical systems, service robots are often designed to operate in highly heterogeneous environments in collaboration with humans, other robots, or both. Practical implementations of such service robots include UVD's Model C \foot{https://www.uvd-robots.com} and PAL Robotics's TIAGo Base\foot{http://blog.pal-robotics.com/how-to-build-a-solution-for-fighting-coronavirus-using-the-tiago-base-robot/} 
+disinfection range of robots, which have been deployed in the fight against the spread of COVID-19, in areas such as shopping centres, airports, and hospitals across the globe.
 
-In any given context of operation, a robot only needs a defined subset of core assets, otherwise referred to as features, that define the robot's capabilities. A feature can be classified as a logical unit of behavior defined by a set of functional and non-functional requirements \cite{feats}. Depending on the usage context, features may be selected or deselected as part of a configuration to drive a given set of capabilities. 
+In any given context of operation, a robot only needs a defined subset of core assets, otherwise referred to as features, that define the robot's capabilities. A feature can be classified as a logical unit of behaviour defined by a set of functional and non-functional requirements \cite{feats}. Depending on the usage context, features may be selected or deselected as part of a configuration to drive a given set of capabilities. 
 
-For example UVD's disinfection range of robots, operate by moving at a sufficient speed in a 360-degree fashion, while emitting enough UV-C ultraviolet light on relevant surfaces to eliminate viruses and bacteria. In doing so the UVD robot may make use of core assets such as navigation, obstacle detection, collision avoidance, disinfection, and teleoperation appropriately.
+For example UVD's disinfection range of robots, operate by moving at a sufficient speed in a 360-degree fashion, while emitting enough UV-C ultraviolet light onto relevant surfaces to eliminate viruses and bacteria. In doing so, a typical disinfection robot might make use of core assets such as navigation, obstacle detection, collision avoidance, disinfection, irradiation, and teleoperation when the necessity arises.
 
-Valid combinations of these core assets to match the operation of the robot in any given context gives rise to some level of variability in the robotic system. By definition, variability can be described as the ability of a core asset to adapt to usage in different product contexts that are within a product line scope \cite{variab}. The goal of managing variability is to create flexible, cost-effective and customisable core assets that are easy to build, extend and maintain.
+Valid combinations of such core assets to match a robot's operational context gives rise to some level of variability within the robotic system. By definition, variability can be described as the ability of a core asset to adapt to usage in different product contexts that are within a product line scope \cite{variab}. One of the goals of managing variability is to create flexible, cost-effective and customisable core assets that are easy to build, extend and maintain.
 
-Within a variability management context, all decisions on variability design are required to be communicated and documented for future use. As an important consequence, it has become necessary to have clear representations for variants, variation points, and mechanisms when realising variability. These said representations that manifest themselves in product lines are usually depicted with a reference architecture.
+Within a variability management context, all decisions on variability design are required to be communicated and documented for future use. As an important consequence, it has become necessary to have clear representations of variants, variation points, and mechanisms when realising variability. These said representations that manifest themselves in product lines are usually depicted with the aid of a reference architecture.
 
-A reference architecture which is essentially a predefined architectural pattern, or set of patterns, captures high-level designs of product line applications \cite{sple}. These patterns that define reference architectures, could be partially or completely instantiated, designed and proven for use in specific business and technical contexts, together with supporting artifacts \cite{ref-arch}.
+A reference architecture which is essentially a predefined architectural pattern, or set of patterns, is designed to capture high-level designs of product line applications \cite{sple}. These patterns that define reference architectures, could be partially or completely instantiated, designed and proven for use in specific business and technical contexts, together with supporting artifacts \cite{ref-arch}.
 
-In this study, we focus on extending the Self-adaptive dEcentralized Robotic Architecture (SERA) \cite{sera}. As an architecture for decentralized, collaborative, and autonomous robots, SERA was conceptualized and designed by Sergio Garc\'{i}a et al to support human-robot collaborations, as well as the adaptation and coordination of single and multi-robot systems in a decentralized fashion.
+In this study, we focus on extending the reference architecture known as the Self-adaptive dEcentralized Robotic Architecture (SERA) \cite{sera}. As an architecture for decentralized, collaborative, and autonomous robots, SERA was conceptualized and designed by Sergio Garc\'{i}a et al to support human-robot collaborations, as well as the adaptation and coordination of single and multi-robot systems in a decentralized fashion.
 
-The SERA architecture and its ilk typically do not support any standardised form of variability management. This is, however, not desirable in a complex, innovative and fast-paced domain such as robotics. Robots are usually mandated to operate in a variety of environments, which are often unpredictable and human-populated. To operate in such heterogeneous environments, robots possess many unique characteristics in the form of functional and non-functional capabilities, which are reusable in multiple operational contexts.
+SERA and others similar to it, typically do not support any standardised form of variability management. This is however not desirable in a complex, innovative and fast-paced domain such as robotics. Reason being that, robots are usually mandated to operate in a variety of environments, which are often unpredictable and human-populated. To operate in such heterogeneous environments, robots possess many unique characteristics in the form of functional and non-functional capabilities, which are reusable in multiple operational scenarios.
 
-Due to this, we deemed it necessary to extend the capabilities of SERA's pre-existing architecture to include variability management, with a high level of flexibility and customizability of robotic product line entities, to improve practices currently present in robotics applications development.
+Due to this, we deemed it necessary to extend the capabilities of SERA's pre-existing architecture to include variability management, with a high level of flexibility and customizability of robotic product line entities, to improve practices currently present in robotics applications design and development.
 
 This is particularly useful because, just like SERA, most known reference architectures, manage variability via ad hoc mechanisms. Such architectures often do not provide any means of controlling product entity bindings in a systematic way. In addition to this, they are also incapable of tracking and providing an overview of product entity commonalities and variabilities together with their dependencies consistently \cite{var-mod-ind}.
 
 One of the fundamental concepts of adaptable software architectures is their ability to establish an overview of understanding, by systematically modelling the adaptation space using representations such as feature models, while having dedicated techniques to match such adaptations.
 
-Our overall goal in this study is to provide roboticists with a variability modelling framework that has the means and techniques for planning, designing, and implementing variability. We achieve this by introducing techniques that realize variability. These techniques, typically referred to as variability mechanisms, comprise of a means for modelling variability such as feature models, and techniques that implement variation points within the feature models. \cite{var-mod-ind}.
+Our overall goal in this study is to provide roboticists with a variability modelling framework that has the means and techniques for planning, designing, and implementing variability. We achieve this by introducing techniques that realize variability. These techniques, typically referred to as variability mechanisms, comprise of a means for modelling variability such as feature models, and techniques that implement variation points within modelled features. \cite{var-mod-ind}.
 
-The solution we offer in this study, contributes a novel technique for implementing variation points in robotic systems via a feature's binding time and binding mode. Time and mode bindings are implemented as an extension to feature models \cite{flex-feat-bind}, where binding time is defined as either compile time or runtime, while binding mode is defined as either static or dynamic. Usually, the semantics of such an implementation can be potentially complex, since valid feature reconfigurations are not only constrained by dependencies, but also rely on valid binding combinations that exist amongst dependent features.
+The solution offered in this study, contributes a novel technique for implementing variation points in robotic systems via a feature's binding time and binding mode. Time and mode bindings are implemented as an extension to feature models \cite{flex-feat-bind}, where binding time is defined as either compile time or runtime, while binding mode may be static or dynamic. Usually, the semantics of such an implementation can be potentially complex, since valid feature reconfigurations are not only constrained by dependencies, but also rely on valid binding combinations that exist amongst dependent features.
 
-In summary, our work provides a variability modelling language, in response to the following domain challenges:
+In summary, our research work provides a variability modelling framework, in response to the following domain challenges:
 \begin{enumerate}
     \item \textit{The lack of a standard variability modelling framework for robotic system design and development: }The lack of a variability modelling framework that can model features together with their possible bindings, implement them, and above all, one that can ensure model validity and correctness. Various ad hoc mechanisms can be identified in different implementations. However, none of these solutions posses the required capabilities for flexible and customizable modelling, implementation and validation.
     
-    \item \textit{The lack of mechanisms and guidelines for implementing variability management techniques in robotic systems:} Even though a plethora of techniques exist, there are no specific guidelines that detail which technique to use and how to use it within the robotics domain.
+    \item \textit{The lack of mechanisms and guidelines for implementing variability management techniques in robotic systems:} Even though a plethora of techniques exist, there aren't any precise guidelines that detail how to integrate and use them to design viable robot configurations.
     
-    To the best of our knowledge, open sourced ROS based applications lack a comprehensive set of usage guidelines that verify or provide proof that such robotic applications meet the specifications or requirements that define their capabilities.
+    To the best of our knowledge, ROS based open sourced applications in general, lack a comprehensive set of usage guidelines that verify or provide proof that such robotic applications meet the specifications or requirements that define their capabilities.
     
-    In a domain like robotics which is relatively new and rapidly expanding, when it comes to implementing variability mechanisms, there is no streamlined and platform specific means of doing so. In many cases, robotic application developers resort to ad hoc means of implementing variability.
+    In a domain like robotics which is relatively new and rapidly advancing, when it comes to implementing variability mechanisms, there seems to be no streamlined and platform specific means of doing so. In many cases, robotic application developers resort to undocumented ad hoc methods of implementing variability.
     
-    \item \textit{The lack of a variability management solution that addresses the complexity of engineering robotic systems: }A full-fledged robotic system is a complex system that consists of many modules. Whether single or multi purpose, the versatility a robotic system offered in different scenarios, requires the integration of heterogeneous modules. Many of these modules that need to be integrated are developed by a diverse group of experts (e.g., electrical engineers, perception experts, control theorists, software engineers). This perceivable diversity complicates the integration, customisation, and maintainability of packages in robotic systems. These complications translate into complexity when it comes to engineering robotic applications.
+    \item \textit{The lack of a variability management solution that addresses the complexity of engineering robotic systems: }A full-fledged robotic system is a complex system that consists of many modules. Whether single or multi purpose, the versatility a robotic system offers in different scenarios, requires the integration of heterogeneous modules. Many of these modules that need to be integrated are often developed by a diverse group of experts (e.g., electrical engineers, perception experts, control theorists, software engineers). This perceivable diversity complicates the integration, customisation, and maintainability of packages in the robotics sphere. These complications translate into complexity when it comes to collaboratively engineering robotic applications.
 \end{enumerate}
 
 In realising a solution such as ours, a key requirement was to keep it as lightweight as possible without requiring new tooling; all the while maintaining a decent level of abstraction. Thus, we relied on the design science approach which was empirically guided by the following research questions.
 \begin{itemize}
      \item \textbf{RQ 1: }\emph{What are example instances of feature realizations with different binding modes and times in a ROS-based robotic system?}
      
-     Example instances of feature realisations can be derived from example systems of service robots. Depending on their operational domain, these example systems may possess different sets of features that can be bound at different times and modes.
+     Example instances of feature realisations can be derived from example systems of service robots. Depending on their operational domain, these example systems may possess different sets of features that can be bound at different times and in different modes.
     
     \item \textbf{RQ 2: } \emph{How can a variability modelling language that allows modelling features together with their binding times and binding modes be designed?}
     
-    A variability modelling language that allows modeling features together with their binding times and binding modes can be designed by first of all clarifying the key relevant aspects of the language domain, through domain analysis. Based on that the abstract syntax, concrete syntax and static semantics of the language can be derived.
+    A variability modelling language that allows features to be modelled together with their binding times and modes can be designed by initially clarifying the key relevant aspects of the language domain, through domain analysis. Next, based on the domain analysis step, the abstract syntax, concrete syntax and static semantics of the language can be derived.
     
-    \item \textbf{RQ 3:} \emph{What mechanisms and guidelines can be used to implement features with different binding times and modes in a ROS-based robotic system?}
+    \item \textbf{RQ 3:} \emph{Which mechanisms and guidelines can be used to implement features with different binding times and modes in a ROS-based robotic system?}
     
-    Variability mechanisms are implementation techniques to realize variability. In our variability modelling language, we provide formalisms for modelling features based on the variant derivation concepts of feature models as well as a novel variation mechanism based on feature binding time and binding mode. We also provide guidelines for the above stated variability mechanisms in the form of a concise documentation to assist domain stakeholders in implementing custom models of their own.
+    Variability mechanisms are implementation techniques with the capability of realizing variability. In our language design, we provide formalisms for modelling features based on the variant derivation concepts of feature models, as well as a novel variation mechanism based on feature binding time and binding mode. We also provide guidelines in accordance with our implemented variability mechanisms in the form of a concise documentation to assist domain stakeholders in implementing and validating custom models of their own.
 \end{itemize}
 %% Research Questions --end%%
 
 \section{Literature Review}
-Determining valid feature configurations based on feature binding times and modes can be tricky and somewhat cumbersome. For this reason, there is the need for a common method or approach to deriving configurations, that alleviates some of such complexities. As an antecedent of such a standardised configuration generation method, provision must also be made for established dependencies and constraints that exist between features within configurations.
+Assessing valid feature configurations based on feature binding times and modes can be tricky and somewhat cumbersome. For this reason, there is the need for a common method or approach to deriving configurations, that eliminates some of such complexities. As an antecedent of such a standardised configuration generation method, provision must also be made for established dependencies and constraints that exist between features.
 
-A vast variety of key studies in the domain of robotic software engineering, architecture design and variability management served as inspiration to this study. The most prominent of these being SERA. SERA as a layered architecture that contains components that manage robotic system adaptations at different levels of abstraction was conceived by Sergio Garc\'{i}a et al. \cite{sera} to solve three distinct problems, namely:
+A vast variety of key studies in the domain of robotics software engineering, architecture design and variability management served as inspiration to this study. The most prominent of these being SERA. SERA as a layered architecture that contains components that manage robotic system adaptations at different levels of abstraction was conceived by Sergio Garc\'{i}a et al. \cite{sera} to solve three distinct problems, namely:
 \begin{enumerate*}[label=(\roman*)]
 	\item the lack of architectural models and methods in the production of software for robotic systems,
 	\item the absence of a common approach or strategy that might allow vendors to produce their own robots and deploy them within a team, and
@@ -188,54 +188,54 @@ A vast variety of key studies in the domain of robotic software engineering, arc
 \end{enumerate*}
 
 By communicating through well-defined interfaces, SERA has the ability to be implemented within a wide variety of projects. SERA's architecture can be realized using different middlewares and component frameworks related to robotics. This further emphasises the extensibility of its framework architecture in anticipation of future changes.
-That notwithstanding, SERA and architectures similar to it, seem to lack adaptation capabilities. More so, as an architecture for collaborative and autonomous systems, runtime adaptation in particular remains a top priority in SERA's operation due to the level of adaptation complexity that exists within the domain of collaborative autonomous systems. To cater for this capability gap, we have implemented an extension to the SERA's architecture, in the form of an open source framework, that offers a domain specific language(DSL) implemented in Python\foot{https://www.python.org/} together with robotics driven variability management mechanisms delivered in C++\foot{https://isocpp.org/}.
+That notwithstanding, SERA and architectures similar to it, seem to lack adaptation capabilities. More so, as an architecture for collaborative and autonomous systems, runtime adaptation in particular remains a top priority in SERA's operation due to the level of adaptation complexity that exists within the domain of collaborative autonomous systems. To cater for this capability gap, we have implemented an extension to SERA's architecture, in the form of an open source framework, that offers a domain specific language(DSL) implemented in Python\foot{https://www.python.org/} together with robotics driven variability management mechanisms delivered in C++\foot{https://isocpp.org/}.
 
 \subsection{Domain-Specific Languages}
 \textit{``A domain-specific language (DSL) is a programming language or executable specification language that offers, through appropriate notations and abstractions, expressive power focused on, and usually restricted to, a particular problem domain''} \cite{dsl}.
 
 Domain-Specific Languages (DSLs) are usually declarative. One of the key characteristic of DSLs is their focus on expressive power. They allow solutions to be expressed at the level of abstraction of the problem domain. For this reason, domain experts can understand, validate, modify, and often even develop DSL programs \cite{dsl}.
 
-Developing advanced robotic systems can be challenging as expertise from multiple domains need to be integrated conceptually and technically. Through domain-speciﬁc modeling, robotic concepts and notations can be modelled descriptively. This raises the level of abstraction and results in models that are easier to understand and validate. Furthermore, DSLs increase the level of automation, e.g., through code generation, while bridging the gap between modeling and implementation \cite{dsl-robo}. Besides automation of software development through code generation, there are several added benefits of DSLs. These include analysis, optimization, and most importantly the inclusion of non-developer stakeholders into the process of software creation.
+Developing advanced robotic systems can be challenging as expertise from multiple domains need to be integrated conceptually and technically. Through domain-speciﬁc modelling, robotic concepts and notations can be modelled descriptively. This raises the level of abstraction and results in models that are easier to understand and validate. Furthermore, DSLs increase the level of automation, e.g., through code generation, while bridging the gap between modelling and implementation \cite{dsl-robo}. Besides automation of software development through code generation, there are several added benefits of DSLs. These include analysis, optimization, and most importantly the inclusion of non-developer stakeholders into the process of software creation.
 
 Literally hundreds of DSLs are in existence. Of these, only a subset of them are described in software engineering or programming language literature. Some best-known examples are PIC\foot{https://dl.acm.org/doi/10.1145/872730.806459}, KRL\foot{https://pdfcoffee.com/kss-55-operating-and-programming-instructions-for-end-userspdf-pdf-free.html} and MARTe\foot{https://www.sciencedirect.com/topics/computer-science/domain-specific-modeling-language}.
 
-In this study, inspirational concepts that influenced our language's architectural design and implementation were sparsely drawn from existing DSLs, in our attempt to offer a user friendly yet intuitive language that possesses an optimum level of abstraction that fits the needs of multiple end users with varying skill sets. With dsl zoo \cite{dsl-robo} as our main reference point, annotated bibliographies of domain-specific languages in the area of robotics and automation technology were carefully reviewed. Examples of such DSLs include Mauve\foot{https://corlab.github.io/dslzoo/architectures-and-programming-subdomain.html#lesire2012mauve}, Robotml\foot{*#dhouib2012robotml}, LE\foot{*#gordillo1991high}, and eTaSL/eTC \foot{*#aertbelien2014etasl}.
+In this study, inspirational concepts that influenced our language's architectural design and implementation were sparsely drawn from existing DSLs, in our attempt to offer a user friendly yet intuitive language that possesses an optimum level of abstraction that fits the needs of multiple end users with varying skill sets. With dsl zoo \cite{dsl-robo} as our main reference point, annotated bibliographies of domain-specific languages in the area of robotics and automation technology were carefully reviewed. Examples of such DSLs we considered include Mauve\foot{https://corlab.github.io/dslzoo/architectures-and-programming-subdomain.html#lesire2012mauve}, Robotml\foot{*#dhouib2012robotml}, LE\foot{*#gordillo1991high}, and eTaSL/eTC \foot{*#aertbelien2014etasl}.
 
 \subsection{Runtime Adaptation}
-Run-time adaptation in modern day systems often involves some level of uncertainty. In modern software systems, handling uncertainty in advance is often not feasible and resource intensive. This implies that there may be the need to deal with uncertainty when the knowledge required becomes available. At run-time, robots need to manage huge amounts of different execution variants that can never be foreseen and completely pre-programmed and can thus not be analysed and checked entirely at compile time.
+Runtime adaptation in modern day systems often involves some level of uncertainty. In most software systems today, handling uncertainty in advance is often infeasible and resource intensive. This implies that there may be the need to deal with uncertainty when the knowledge required in that scenario becomes available. At runtime, robots need to manage large amounts of different execution variants that can neither be foreseen nor completely pre-programmed. Thus, these execution variants cannot be analysed and checked entirely at compile time.
 
-For this reason, Hochgeschwender et al. \cite{graph-mde} employed a model-driven approach. Their approach involves capturing domain knowledge explicitly in the form of domain models. The models which are described by domain-specific languages are needed to be somehow accessed by robots at runtime to take decisions for adaptation purposes. Granting robots access to the software-related models at runtime implies persistently storing the different notations and formats of DSLs, composing the various domain models, and querying over multiple domains at run time. Portions of the methods employed in the study to achieve adaptation align with our study in that resources relevant to the operation of a given robot are modeled using DSLs and stored. The stored models are accessed on demand at runtime, when binding information is available, for the sake of adapting the system to the changing environmental conditions.
+For this reason, Hochgeschwender et al. \cite{graph-mde} employed a model-driven approach which involves capturing domain knowledge explicitly in the form of domain models. Such models which are described by domain-specific languages are accessed by robots at runtime to take decisions for adaptation purposes. Granting robots access to software-related models at runtime implies that different notations and DSL formats are persistently stored; by composing various domain models; and queried over multiple domains at run time. Portions of the methods employed in Hochgeschwender's study to achieve adaptation, align with ours, in that, resources relevant to the operation of a given robot are modelled using DSLs and stored. Stored resource models are then accessed on demand at runtime, when binding information is available, for the sake of adapting the system to match changing environmental conditions.
 
-As mentioned previously, models are fundamental to the functioning of robots. Steck et al. \cite{model-centric} in their study provide in-depth insight into why models and a model-centric approach to robotics software design and implementation is important.
-In their study, they reaffirmed the role in which models provide a means to check the validity of desired configurations and parameterizations of robotic system components. A model-driven approach also feeds into the idea of making an implementation generic enough to be used by multiple platforms. This supports our choice to use feature models as a layer of abstraction over robotic components, where features can be bound with respect to time and mode, to realise runtime adaptation through the runtime reconfiguration of binding units extracted from valid combinations of features.
+As mentioned previously, models are fundamental to the functioning of robots. Steck et al. \cite{model-centric} provided an in-depth argument for why models and a model-centric approach to robotics software design and implementation is important.
+In their study, they reaffirmed the role in which models provide a means to check the validity of desired configurations and parametrizations of robotic system components. A model-driven approach also feeds into the narrative of making an implementation generic enough to be used by multiple platforms. This supports our choice to utilise feature models as an abstraction layer over robotic components, where features can be bound with respect to time and mode, to realise runtime adaptation through the runtime reconfiguration of binding units extracted from valid combinations of features.
 
- In our implementation, valid combinations are determined based on binding time and mode pairs attached to a given set of user selected features. Similarly, Pinto et al. \cite{cont-aware} in the implementation of their middleware framework for context-aware applications, designed the framework to keep a record of policies that are fed with contextual information obtained by an agent (e.g., a robot) interacting with the environment. Actions tied to functions are triggered when the conditions surrounding a policy are satisfied. The policy set is dynamic in that it is updated in real time according the environmental changes experienced by the navigating agent.
+ In our implementation, valid combinations are determined based on binding time and mode pairs attached to a given set of user selected features. Similarly, Pinto et al. \cite{cont-aware} in implementing their middleware framework for context-aware applications, made provision to keep a record of policies that are fed with contextual information obtained by an agent (e.g., a robot) that interacts with the environment. Consequently, actions tied to functions are triggered when conditions surrounding a policy are satisfied. A policy set is dynamic in that it is updated in real time according the environmental changes experienced by the navigating agent.
  
- This train of thought aligns with design decisions made in the implementation of our framework where robotic features are assigned a specific binding mode and time by the user of the framework and this serves as the underlying policy with which the robot will determine how adaptive it can be with respect to the unloading and loading a feature.
+ This train of thought aligns well with design decisions we made in our framework implementation where robotic features are assigned a specific binding mode and time to serves as the underlying policy upon which robots will base their adaptations.
  
 \subsection{Managing Adaptation Complexity}
-Adaptive systems can be defined as systems that exercise variability to cope with changing system requirements. Adaptive systems support feature binding at runtime and are sometimes called dynamic Software Product Lines (DSPLs). DSPLs are usually built from coarse-grained components, which reduces the number of possible application scenarios. 
+Adaptive systems may be defined as systems that exercise variability to cope with changing system requirements. Adaptive systems that support feature binding at runtime and are sometimes referred to as dynamic Software Product Lines (DSPLs). DSPLs are usually built from coarse-grained components, which reduces the number of possible application scenarios.
 
-In a related study by Rosenmuller et al, \cite{fmod-lang-scenarios}, it was established that software product lines tend to increase in complexity when static and dynamic feature implementations are blended together. In such scenarios, it was discovered that implementation complexities exist in software product lines. Such implementation complexities are often due to the effect of cross-cutting features on each other.
+In a related study by Rosenmuller et al, \cite{fmod-lang-scenarios}, it was established that software product lines tend to increase in complexity when static and dynamic feature implementations are blended together. In such scenarios, it was discovered that implementation complexities exist in software product lines. Such internal complexities are often due to the effect cross-cutting features have on each other.
 
 With regards to DSPLs, Rosenmuller et al, as an extension of their previous studies on dynamic feature binding, \cite{tailor-spl} conceptualised a feature-based adaptation mechanism that reduces the effort of computing optimal configurations at runtime.
 
-This was done by generating a DSPL from an SPL, through static selection of features required for dynamic binding, and then generating a set of dynamic binding units from the select features. To be able to effectively support runtime adaptation of programs, Rosenmuller, Siegmund, Apel and Saake used a customizable framework, called FeatureAce\foot{https://sourceforge.net/projects/featurecpp/}. By including FeatureAce into a generated DSPL, they gained the capability to compose features and modify configurations at runtime.
+This was done by generating a DSPL from an SPL, through static selection of features required for dynamic binding, and then generating a set of dynamic binding units from the select features. To be able to effectively support runtime adaptation of programs, Rosenmuller, Siegmund, Apel and Saake integrated a customizable framework, called FeatureAce\foot{https://sourceforge.net/projects/featurecpp/}. By including FeatureAce into a generated DSPL, they gained the capability to compose features and modify configurations at runtime.
 
-Learning points from these studies bear similarities with our own study in many ways. First off, Rosenmuller et al\cite{tailor-spl} acknowledge the complexity that exists in software product lines and as such understand that variability can only be manage with an effective mechanism that can keep up with changing requirements, without having to deal with an overwhelming amount of overhead; both functional and compositional.
+Learning points from these studies bear similarities with our own study in many ways. First off, Rosenmuller et al\cite{tailor-spl} acknowledged the complexity that exists within software product lines and as such understood that variability can only be managed with an effective mechanism that can keep up with changing requirements, without having to deal with an overwhelming amount of overhead that comes with it; be it functional or compositional.
 
-To remedy this problem they chose to use DSPLs composed out of SPLs that are combined into dynamic binding units which can be adapted at runtime. Similar to that, we decided to take the approach of leveraging variability mechanisms that implement binding time and binding mode as a means of adapting our configurations. The difference here lies in the fact that our methods are robust platform and language specific implementations for static, dynamic, early and late feature binding. In the context of this study, our approach does not focus so much on the quality of dynamic binding units. Rather we focus on the feasibility and usability of our mechanism in conjunction with our variability modelling language.
+To remedy this problem they chose to use DSPLs composed out of SPLs that are combined into dynamic binding units. In line with that, we decided to take the approach of leveraging variability mechanisms that implement binding time and binding mode as a means of adapting our configurations. The difference here lies in the fact that our methods are robust platform and language specific implementations for static, dynamic, early and late feature binding. In the context of this study, our approach does not focus so much on the quality of dynamic binding units. Rather we place emphasis on the feasibility and usability of our chosen mechanisms in conjunction with our variability modelling language.
  
  \subsection{Feature Modelling Languages}
-Feature modelling---``{\em a concept within Feature-Oriented Domain Analysis (FODA)\cite{foda-tech-rep}; which presents an abstract means of representing commonalities and variabilities that exist between product line variants}'' has given rise to the design and implementation multiple feature modelling languages both in the software engineering and robotics software engineering domain.
+Feature modelling---``{\em a concept within Feature-Oriented Domain Analysis (FODA)\cite{foda-tech-rep}; which presents an abstract means of representing commonalities and variabilities that exist between product line variants}'' has given rise to the design and implementation of multiple feature modelling languages both in the software engineering and robotics software engineering domain.
 With the current set of feature modelling languages that
-are available, Clafer,\foot{https://www.clafer.org/} Kconfig,\foot{https://www.kernel.org/doc/html/latest/kbuild/kconfig-language.html} and CDL\foot{http://www.cse.chalmers.se/~bergert/paper/cdl_semantics.pdf} appear to be quite popular amongst industry professionals. Clafer is one of the most expressive feature modeling languages that unifies both feature and class modelling. The notion of features and classes are unified within the Clafer architecture. Clafer fundamentally offers types, constraints, and attributes. It supports multi-level modelling and has well-specified semantics, coupled with rich tooling that supports instance generation, configuration, and visualization. As a textual language, Clafer has one of the simplest, expressive and by far most intuitive syntax in industry today \cite{fmod-lang-scenarios}. The language is built on top of first order logic with quantifiers over basic entities combined with linear temporal logic \cite{clafer}.
+are available, Clafer,\foot{https://www.clafer.org/} Kconfig,\foot{https://www.kernel.org/doc/html/latest/kbuild/kconfig-language.html} and CDL\foot{http://www.cse.chalmers.se/~bergert/paper/cdl_semantics.pdf} appear to be quite popular amongst industry professionals. Clafer is one of the most expressive feature modeling languages that unifies both feature and class modelling. The notion of features and classes are unified within the Clafer architecture. Clafer fundamentally offers types, constraints, and attributes. It supports multi-level modelling and has well-specified semantics, coupled with rich tooling that supports instance generation, configuration, and visualization. As a textual language, Clafer has one of the simplest, and by far the most intuitive syntax in industry today \cite{fmod-lang-scenarios}. The language is built on top of first order logic with quantifiers over basic entities combined with linear temporal logic \cite{clafer}.
 
-\textit{Kconfig} and \textit{CDL} are also example of popular languages that have the capability to describe the variability of systems expressively. Even though \textit{Kconfig} and \textit{CDL} share similar concepts, they were developed independently from each other, and independently from feature modelling languages with research origins \cite{vmir}. Kconfig and CDL are two of the most successful languages, primarily used in systems software engineering \cite{fmod-lang-scenarios}. 
+\textit{Kconfig} and \textit{CDL} are also examples of popular languages that have the capability to describe the variability of systems expressively. Even though \textit{Kconfig} and \textit{CDL} share similar concepts, they were developed independently from each other, and independently from feature modelling languages with research origins \cite{vmir}. Kconfig and CDL are two of the most successful languages, primarily used in systems software engineering \cite{fmod-lang-scenarios}. 
 
 In a study conducted by Berger et al. \cite{fmod-lang-scenarios}, a feature modelling language that is intuitive, simple, and also expressive enough to cover a fair range of important usage scenarios must make provision for a base set of usage scenarios such as Exchange, Storage, Domain Modelling, Teaching and Learning, Mapping to implementation, Model generation, Benchmarking, and Analyses. These selected scenarios were derived from a large number of general usage scenarios elicited from researchers at a meeting during the Software Product Line Conference (SPLC) in September 2018 in Gothenburg.
 
-Despite the fact that most of these languages share concepts, they also come with several limitations. These perceivable limitations have influenced our decision to propose yet another feature modelling language to address them. In comparison to the others, our proposed language has been evaluated based on five characteristic properties. These characteristics properties confirm the relevance and novelty of our feature-modelling language with respect to others, in the robotics domain. Such characteristic properties include:
+Despite the fact that most of these languages share similarities in some of their fundamental concepts, they also come with several limitations. These perceivable shortfalls have influenced our decision to propose yet another feature modelling language to address them. In comparison to the others, our proposed language has been evaluated based on eight characteristic properties. These characteristics properties confirm the relevance and novelty of our feature-modelling language with respect to others, in the robotics domain. Such characteristic properties include:
 \begin{enumerate*}[label=(\roman*)]
 	\item C1: Expressiveness
 	\item C2: Coverage of a wide range of usage scenarios
@@ -247,8 +247,8 @@ Despite the fact that most of these languages share concepts, they also come wit
 	\item C8: Provision of guidelines and mechanisms that implement variability.
 \end{enumerate*}
 
-Table \ref{tab:compfml} shows how our proposed feature modelling language compares to other existing languages with respect to our chosen characteristics stated above.
-\begin{table}[htbp]
+Table \ref{tab:compfml} shows how our proposed feature modelling language compares to other existing languages with respect to the chosen characteristics stated above.
+\begin{table}[H]
 \caption{Characteristic Comparison of Feature-Modelling Languages}
 \begin{center}
 \begin{tabular}{|c|c|c|c|c|c|c|c|c|}
@@ -266,7 +266,7 @@ Table \ref{tab:compfml} shows how our proposed feature modelling language compar
 \end{center}
 \end{table}
 
-From Table \ref{tab:compfml} we can deduce that the ambition of our proposed feature modelling language differs from other existing languages. In that, we are providing a solution that is not only expressive and can describe variability, but also a solution that cover a wide range of usage scenarios by providing implementation mechanisms and guidelines. We are also offering a solution that is compatible with the robot operating system and possesses an abstract syntax that supports variability management based on feature binding time and binding mode. Finally our variability modelling language enforces binding time and binding mode level constraints that can be evaluated for well-formedness and type correctness.
+From Table \ref{tab:compfml} we can deduce that the ambition of our proposed modelling language differs from other existing languages significantly. In that, we are providing a solution that is not only expressive and capable of describing variability, but also a solution that cover a wide range of usage scenarios by providing implementation mechanisms and guidelines. We are also offering a solution that is compatible with the robot operating system and possesses an abstract syntax that supports variability management based on feature binding time and binding mode. Finally our variability modelling language enforces binding time and binding mode level constraints that can be evaluated for well-formedness and type correctness.
 
 \subsection{Variability-modelling Frameworks, Middleware, and Toolchains}
 Over the years many component-based frameworks and toolkits that are robotics inclined
@@ -275,32 +275,32 @@ have emerged. These frameworks possess mechanisms for real-time execution, synch
 When it comes to variability modelling frameworks, ROS, Orocos and SCA stand out in terms of popularity, scale and ecosystem support. Fundamentally, these frameworks have the following features in common i.e., \begin{enumerate*}[label=(\roman*)]
 	\item They provide a component model, which defines a set of architectural
 elements (e.g. components, interfaces, connection) and the rules for
-composing them in order to build a component based systems \cite{lgherardi}.
-	\item They provide a runtime infrastructure, which is in charge of instantiating, connecting, configuring and activating the components that are part of the system.
+composing them in order to build a component based system \cite{lgherardi}.
+	\item They provide a runtime infrastructure, which is in charge of instantiating, connecting, configuring and activating system components.
 \end{enumerate*} 
 ROS and Orocos cater more to the robotics domain, while SCA leans more towards the idea of a service oriented architecture development. As the years have rolled by, ROS has emerged as the de facto standard when it comes to robotic application development for several reasons.
 
 By design, ROS favours a software development approach that consists of designing components, which implement common robotic functionalities. The strength of this approach lies in its capability to develop a large variety of control systems by composing reusable software building blocks in different ways. The drawback in this approach is the lack of support for the
-reuse of effective solutions to recurrent architectural design problems. Consequently, application developers and system integrators have always had to solve such difficult architectural design problems from scratch. One of ROS's standout challenges can be observed when it comes selecting, integrating, and configuring coherent sets of components that provide required functionalities, taking into account their mutual dependencies and architectural mismatches \cite{ros-ref}. As a potential remedy for this, \textit{Hyperflex} was developed.
+reuse of effective solutions to recurrent architectural design problems. Consequently, application developers and system integrators have always had to solve such difficult architectural design problems from scratch. One of ROS's standout challenges can be observed when it comes to selecting, integrating, and configuring coherent sets of components that provide required functionalities, taking into account their mutual dependencies and architectural mismatches \cite{ros-ref}. As a potential remedy for this, \textit{Hyperflex} was developed.
 
 \textit{HyperFlex} is a toolchain designed for developing software product lines for autonomous robots based on robotic component frameworks, such as ROS and Orocos.
 As a collection of Eclipse plugins implemented by means of the Eclipse Modeling Project, HyperFlex allows users to explicitly model the architecture of functional systems in terms of components, interfaces, connectors, and components wiring. Models of functional systems can be reused as a building blocks and hierarchically composed to build more complex systems and applications \cite{ros-ref}. HyperFlex uses feature model formalisms to symbolically represent the variability of a system together with the constraints that exist between variation points and variants that limit the set of valid configurations \cite{ros-ref}.
 
-Comparatively, the \textit{Hyperflex} solution in some ways, has similarities to our proposed solution, in terms of its variability management capabilities and ROS base. The difference however lies in the variation mechanism being implemented. While \textit{Hyperflex} is only concerned with the general attributes of a feature i.e. optional and mandatory, we go a step further to include and decouple binding time and binding mode attributes as our variation mechanism. Another standout difference that is noteworthy is the fact that \textit{Hyperflex} is presented as an eclipse plugin as opposed to our solution that is offered as a platform independent open-source library.
+Comparatively, the \textit{Hyperflex} solution in some ways, has similarities to our proposed solution, in terms of its variability management capabilities and ROS base. The difference however lies in the variation mechanism being implemented. While \textit{Hyperflex} is only concerned with the general attributes of a feature i.e. optional and mandatory, we go a step further to include and decouple binding time and binding mode attributes as our variation mechanism. Another standout difference that is noteworthy is the fact that \textit{Hyperflex} is presented as an eclipse plugin as opposed to our solution that is offered as a platform independent open-source framework.
 
-Comprehensively, our variability management solution can be considered to be a framework that amalgamates a variability modelling language and variability mechanisms implementations. Both of these implemented components ensure feature model instantiation, configuration, validation and feature source-code integration.
+Comprehensively, our variability management solution can be considered to be a framework that amalgamates a variability modelling language and variability mechanisms. Both of these implemented components ensure feature model instantiation, configuration, validation and feature source-code integration.
 
 \subsection{Flexible Feature Binding}
-A broad spectrum of binding techniques exist within Software Product Line Engineering. These binding techniques possess unique characteristics that distinguish them from each other. Two of such techniques are time and mode binding. Time in the context of compile time or runtime and mode in terms of how static or dynamic a feature is allowed to be. 
+A broad spectrum of binding techniques exist within Software Product Line Engineering. These binding techniques possess unique characteristics that set them apart from each other. Two of such techniques are time and mode binding. Time in the context of compile time or runtime and mode in terms of how static or dynamic a feature is allowed to be. 
 
 By strategically combining both techniques, feature flexibility and customizability can be harnessed to enhance product line variants tremendously.
 
 \subsubsection{Time - Mode Binding Technique}
-In a time - mode binding scenario, product line variants can be generated by composing modules of implemented features based on static, dynamic, early and late feature attributes. A static feature is one that is bound into a program before load time \cite{flex-feat-bind}. This implies that once a static feature is bound within a program, the feature cannot be rebound without rebuilding the entire program. That is, an activated feature cannot be deactivated any more and vice versa until the program containing the feature has stopped running. Examples of mechanisms that realize static binding include: C/C++ preprocessor and antenna\foot{http://antenna.sourceforge.net} \cite{flex-feat-bind}. Implementing this exclusively introduces a functional overhead where some features have the tendency of being loaded but never used.
+In a time - mode binding scenario, product line variants can be generated by composing modules of implemented features based on static, dynamic, early and late feature attributes. A static feature is one that is bound into a program before load time \cite{flex-feat-bind}. This implies that once a static feature is bound within a program, it cannot be rebound without rebuilding the entire program. That is, an activated feature cannot be deactivated any more and vice versa until the program containing the feature has stopped running. Examples of mechanisms that realize static binding include: C/C++ preprocessor and antenna\foot{http://antenna.sourceforge.net} \cite{flex-feat-bind}. Implementing this exclusively introduces a functional overhead where some features have the tendency of being loaded but never used.
 
 A dynamic binding mode on the other hand implies that variation points bound dynamically in a software product line can be altered on demand. However, this usually generates some overhead in terms of resource consumption and performance through an increase in binary size and execution time. Examples of mechanisms that realize dynamic binding include: FeatureIDE's runtime parameters\foot{https://featureide.github.io} and ROS pluginlib\foot{http://wiki.ros.org/pluginlib)} from ROS's ecosystem \cite{flex-feat-bind}.
 
-Static and dynamic binding techniques are not new concepts when it comes to software product lines. These binding forms provide a number of unique benefits when it comes to software product line design and implementation. 
+Static and dynamic binding concepts are not new when it comes to software product lines. These binding forms provide a number of unique benefits in software product line design and implementation. 
 
 According to a study conducted by Marko Rosenmüller et al, utilising static or dynamic binding exclusively, often restricts the applicability of product line variants generated in a given instance \cite{flex-feat-bind}. For example, static binding cannot be used when required features in a variant are not available or known at deployment time; as is the case for third-party extensions. 
 
@@ -308,7 +308,7 @@ In order to decrease some of the restrictions highlighted by Rosenmüller, diffe
 
 At binding time, an early binding classification implies that a feature is loaded or unloaded at compile time while a late binding classification implies that a feature is loaded or unloaded at runtime.
 
-For both time and mode binding, our proposed variability modelling language supports an "Any" binding type which implies that a given time binding attribute of a feature can assume both an early and a late value and a binding mode attribute can assume both a static and dynamic binding value.
+For both time and mode binding, our proposed variability modelling language supports an "Any" binding type which implies that at a given time (t), the binding attribute of a feature can assume both an early and a late value. Likewise at a given mode (m), a binding mode attribute can assume both a static and dynamic binding value.
 
 Within the feature modelling capability of our language, the variability of any given feature can be modelled and configured within the following binding scope:
 
@@ -335,7 +335,7 @@ Within the feature modelling capability of our language, the variability of any 
 \end{itemize}
 
 \section{Methods}
-Our research method of choice in this study is the design science methodology. We chose the design science paradigm due to its deep roots in engineering science. In that, design science generally offers a problem-solving paradigm that seeks to create innovations that define the ideas, practices, technical capabilities, and products through which analysis, design, implementation, management, and information system usage can be effectively and efficiently accomplished  \cite{des-res}. Figure \ref{methover} provides a layered and well defined overview of the empirical steps we took to create artifacts that rely on existing theories that are applied, tested, modified, and extended through experience, creativity, intuition, and problem solving in this study.
+Our research method of choice is the design science methodology. We chose the design science paradigm due to its deep roots in engineering science. In that, design science generally offers a problem-solving paradigm that seeks to create innovations that define the ideas, practices, technical capabilities, and products through which analysis, design, implementation, management, and information system usage can be effectively and efficiently accomplished  \cite{des-res}. Figure \ref{methover} provides a layered and well defined overview of the empirical steps we took to create artifacts that rely on existing theories that are applied, tested, modified, and extended through experience, creativity, intuition, and problem solving in this study.
 
 Our language design and implementation methodology, can be broken down into a number of distinct phases. These include domain analysis, abstract syntax definition, concrete syntax derivation, static semantics implementation, development and evaluation. These phases were performed iteratively in synergy where outputs from each phase served as input for subsequent phases. In our domain analysis phase, we clarified implementation requirements from sources such as domain experts and relevant documentation. Based on our findings, we conceived the abstract syntax and expressed it with meta-models. Subsequently, we established the concrete syntax of our language in both graphical and textual formats. Our resultant concrete syntax, together with the static semantics of our configuration logic were transformed into a ROS compatible library. Finally we evaluated our implementation based on its novelty, correctness and realizability.
 
@@ -422,7 +422,7 @@ MoTiVML is a lightweight variability modelling language which is structurally ba
 
 The syntax manager component contains all implementations related to language tokens, as well as the language's lexical and syntactical schemas. Tokens represent the legal keywords or lexemes that are permissible in our language. There are two schema representations present in MoTiVML; a feature schema and a configuration schema. Language schemas are simply represented as an object of tokens mapped to selected data structures. Listing \ref{feat-schema} and \ref{bind-schema} show samples of a feature and configuration schema respectively.
 
-\begin{listing}
+\begin{listing}[H]
 \caption{Feature Schema}
 \begin{minted}[
 framesep=2mm,
@@ -448,7 +448,7 @@ fontsize=\footnotesize
 \label{feat-schema}
 \end{listing}
 
-\begin{listing}
+\begin{listing}[H]
 \caption{Configuration Schema}
 \begin{minted}[
 framesep=2mm,
@@ -531,7 +531,7 @@ An important use case of our language is that, it can be used to develop mock up
     
 Furthermore, in our model refinement step, that aims at extending our mock-up examples against our requirements, we analyse the requirements associated with our language, justify if these requirements are met and then proceed to provide examples or evidence of said requirements that have been fulfilled.
 
-\begin{listing}
+\begin{listing}[H]
 \caption{Textual Sample of Features}
 \begin{minted}[
 framesep=2mm,
@@ -545,30 +545,23 @@ fontsize=\footnotesize
     "group": "",
     "isMandatory": true,
     "sub": [
-        {
-        "id": "F0",
-        "name": "ComponentControl",
-        "constraints": {
-        "featuresIncluded": [],
-        "featuresExcluded": [],
-        "bindingTimeAllowed":"Early",
-        "bindingModeAllowed":"Static"
-        },
-        "group": "OR",
-        "isMandatory": true
-        "sub":[
-            {
-            "id": "F1",
-            "name": "Localization",
-            "constraints": {
-            "featuresIncluded": [],
-            "featuresExcluded": [],
-            "bindingTimeAllowed":"Early",
-            "bindingModeAllowed":"Static"
-            },
-            "group": "",
-            "isMandatory": true
-            }]}]}
+	        {
+	        "id": "F0",
+	        "name": "ComponentControl",
+	        "constraints": {
+	        "featuresIncluded": [],
+	        "featuresExcluded": [],
+	        "bindingTimeAllowed":"Early",
+	        "bindingModeAllowed":"Static"
+	        },
+	        "group": "OR",
+	        "isMandatory": true
+	        "sub":[
+	            {
+	            "id": "F1",
+	            ...
+	            }
+	        ]}]}
 \end{minted}
 \label{feat-conc-text}
 \end{listing}
@@ -576,7 +569,7 @@ fontsize=\footnotesize
 All features present in our feature model specification posses binding time and binding mode configurations which can be used by our language to manage variability within a modelled robotic system. As indicated in our architectural design, configuration attributes are separated from feature attributes for the sole purpose of creating a clear distinction between configurable and no-configurable attributes. Listing
 \ref{bind-conc-text} captures a sample representation of the concrete textual syntax of a feature's configuration attributes.
 
-\begin{listing}
+\begin{listing}[H]
 \caption{Textual Sample of Feature Configurations}
 \begin{minted}[
 framesep=2mm,
@@ -617,7 +610,7 @@ In our domain analysis we were able to understand key requirements relevant to o
 \end{enumerate}
 Using the concrete textual syntax of our modelling language which we have highlighted in Listing \ref{feat-conc-text} and \ref{bind-conc-text}, we identified example syntax representations that fulfil all the requirements listed above. Table \ref{tab:reqext} captures a mapping of each requirement along with its example syntax representation, that justifies that a requirement has been fulfilled.
 
-\begin{table}[htbp]
+\begin{table}[H]
 \caption{Extended Mock-up Examples Against Requirements}
 \begin{center}
 \begin{tabular}{|c|c|}
@@ -653,7 +646,7 @@ From a lexical standpoint, our language possesses a defined set of legal or perm
 
 For each identified token in our language, we translated a valid expression of it into a regular expression to demonstrate which valid forms of these token can exist in our language. Syntactically, features and their configurations in our language model attributes as key value pairs wrapped in an object. Table \ref{tab:langlex} capture our list of identified tokens mapped to their corresponding regular expression formalisms.
 
-\begin{table}[htbp]
+\begin{table}[H]
 \caption{Language Tokens}
 \begin{center}
 \begin{tabular}{|c|c|c|}
@@ -734,7 +727,7 @@ Realising static, dynamic, early and late binding in robotic applications can be
 
 In Table \ref{tab:realmecha}, we have highlighted some of such mechanisms which we used to realise each binding pair within our variability management technique. These include, the C preprocessor for static early, ROS pluginlib and ROS parameters for static late, and ROS pluginlib again for both dynamic early and dynamic late.
 
-\begin{table}[htbp]
+\begin{table}[H]
 	\caption{Static and Dynamic Binding Mechanisms}
 	\begin{center}
 		\begin{tabular}{|c|c|}
@@ -780,11 +773,11 @@ The scope of our static semantics, which can be verified  at compile time, inclu
 \subsubsection{Describing the Configuration Space}
 As shown in the concrete syntax of our feature modelling language, every instance of a feature has a binding time and binding mode attribute. The effect of the interaction between feature binding attributes has a major effect on the configuration space. In addition, each feature possess dependencies and constraints that validate defined feature instances. With the aid of propositional logic, table \ref{tab:propmap} provides an outlook into the configuration space of model instances. Per the results displayed in table \ref{tab:propmap}, mandatory features exhibit a bidirectional logical relationship between features indicating that both features require each other in all instances in which they are implemented. Conversely, an optional feature indicates a unidirectional behavior between a parent and child feature, where a child feature may imply a parent feature but the parent feature on the other hand can exist without that child feature. For cross-functional constraints such as includes and excludes, includes translates to an implication constraint while excludes could be represented as  A $\Rightarrow$ $\neg$ B \ or \ $\neg$ (A $\land$ B).
 
-\begin{table}[htbp]
+\begin{table}[H]
 \caption{Propositional Logic Mapping for Feature Model Attributes}
 \begin{center}
 %\begin{tabular}{|c|c|c|}
-\begin{tabular}{|P{2.5cm}|P{2.5cm}|P{2.5cm}|}
+\begin{tabular}{|P{2cm}|P{2cm}|P{2cm}|}
 \hline
     Attribute Name & Feature Model Notation & Propositional Logic  \\ \hline
     Mandatory & 
@@ -884,21 +877,21 @@ By evaluating our variability modelling language with respect to the challenges 
 \subsection{Lack of a Standard Variability Modelling Framework}
 This challenge is addressed by the core mechanism that defines variation point implementations of models in our framework. In our light-weight architecture, features in a model can be modelled, configured and implemented based on different standards. Architecturally, both features and configurations are modelled separately with the intention of simplifying the modelling experience by decoupling configurations from features. This decoupled nature of models reduces complexity by separating concerns.
 
-Secondly, our variability modelling language is a ROS specific solution. In that, the entire language implementation is standard to ROS. The advantage here lies in ROS's set of software libraries and tools that provide a robust abstraction when building robotic applications. ROS ships with drivers, state-of-the-art algorithms and powerful developer tools that supports quick development and maintenance of robotic applications. Thus, providing a standardised platform for our variability modelling language to be built upon.
+Secondly, our variability modelling language is a ROS specific solution. In that, the entire language implementation is standard to ROS. The advantage here lies in ROS's language agnostic nature which consists of a set of software libraries and tools that provide a robust abstraction when building robotic applications. ROS ships with drivers, state-of-the-art algorithms and powerful developer tools that supports quick development and maintenance of robotic applications. Thus, providing a standardised platform for our variability modelling framework to be built upon.
 
-Our solution to this challenge ties directly into \textit{RQ 2} in Section \ref{section:intro} which asks the question of how a variability modelling language that allows features to be modelled together with their bindings can be designed. Where binding time and binding mode modelling guarantees flexibility and customizability in robotic system designs.
+Our solution to this standardisation challenge ties directly into \textit{RQ 2} in Section \ref{section:intro} which asks the question of how a variability modelling language that allows features to be modelled together with their bindings can be designed. Where binding time and binding mode modelling guarantees flexibility and customizability in robotic system designs.
 
-Moreover, our library design and implementation targets a wide array of skilled professionals in the robotics domain. Considering the contrast in skill level of domain experts, we were able to engineer our modelling language with a deep focus on usability to accommodate potential users from multiple backgrounds.
+Moreover, our library design and implementation targets a wide array of skilled professionals in the robotics domain. Considering the contrast in skill level of domain experts, we were able to engineer our framework with a deep focus on usability to accommodate potential users from diverse backgrounds.
 
 \subsection{The lack of mechanisms and guidelines for implementing variability management techniques in robotic systems}
 There have been some language propositions in the area of modelling variability in the robotics systems but none of them offer mechanisms together with operational guidelines to assist domain stakeholders in understanding and using such languages. This scarcity is particularly prevalent in the ROS community. Aside that, more often than not, variability management in itself, is handled in an adhoc manner by experts in the robotics domain.
 
-To alleviate this lack, our variability modelling framework ships with a comprehensive set of guidelines\foot{https://github.com/SergioGarG/sera-extension/tree/master/documents/guidelineDoc/main.pdf}
-offered as a supporting artifact that serves as verification for our variability modelling language, as well as a means to demonstrate the results of this study. As a quick recap, this study aims to first and foremost, prove the feasibility of modelling variability in robotic systems using a feature's binding time and binding mode.  Thus in our accompanying documentation, we verify that our language fulfils the requirements stated in our implementation, while providing verifiable evidence through mechanism-driven examples to prove this.
+To diminish this lack, our variability modelling framework ships with a comprehensive set of guidelines\foot{https://github.com/SergioGarG/sera-extension/tree/master/documents/guidelineDoc/main.pdf}
+offered as a supporting artifact that serves as verification for our variability modelling language and the framework as a whole, as well as a means to demonstrate the results of this study. As a quick recap, this study aims to first and foremost, prove the feasibility of modelling variability in robotic systems using a feature's binding time and binding mode.  Thus in our accompanying documentation, we verify that our language fulfils the requirements stated in our implementation, while providing verifiable evidence through mechanism-driven examples to prove this.
 
-We deem guideline documentations as a necessary requirement in robotics application development, for three main reasons. These include, for the seamless advancement of robotic application development, to encourage the standard practice of building and maintaining open source robot applications and last but not least, to encourage transparency and reproducibility of relevant and useful robotic applications. Currently, this is lacking amongst open sourced robotic applications in general. Due to this lack, in addition to this seminal study, we offer such a guideline document.
+We deem guideline documentations as a necessary requirement in robotics application development, for three main reasons. These include, for the seamless advancement of robotic application development, to encourage the standard practice of building and maintaining open source robot applications and last but not least, to encourage transparency and reproducibility of relevant and useful robotic applications. Currently, this is lacking amongst open sourced robotic applications in general. Due to this lack, we have provided a guideline document  in addition to this seminal study to supplement our implementation with the sole purpose of enhancing usability.
 
-In addition to this, we have also identified and implemented mechanisms, that can be used to implement variability in any robotic system. To verify the relevance of our language implementation guidelines and mechanisms, we realised mock up example of robots with feature instances that possess different binding time and binding mode configurations to demonstrate the simple, lightweight and easy to understand nature of our variability modelling language as well as the underlying mechanisms which are capable of supporting variability modelling and management.
+In addition to the guidelines, we have also identified and implemented mechanisms, that can be used to implement variability in any robotic system. To verify the relevance of our language implementation guidelines and mechanisms, we realised mock up example of robots with feature instances that possess different binding time and binding mode configurations to demonstrate the simple, lightweight and easy to understand nature of our variability modelling language as well as the underlying mechanisms which are capable of supporting variability modelling and management.
 
 \subsection{Complexity of Engineering Robotic Systems}
 Robotic systems are complex systems made up of complex application packages integrated into one unified solution. Going by this premise, we can infer that the more a robotic system grows in functionality, the more the internal complexity of the system also grows. Modelling a complex system requires a modelling language that is both syntactically and semantically intuitive. Such a modelling language needs to be able to abstract irrelevant details from end users. In the same vein, implementing a modelled robotic system requires mechanisms that are lightweight, robust and platform compatible.
