@@ -47,7 +47,28 @@ class Mmconsole():
 
     def prepCmdPrompt(self):
         return "["+self.runningConfig+"]>> "
+
+    def generateEarlyBindings(self, projectName):
+        configSettings = CmdExec()
+        cObj = configSettings.readConfigurationObject(projectName)
+        early_features = []
+        for feature in cObj["properties"]:
+            if feature["props"]["time"] == "Early":
+                early_features.append(feature["id"])
         
+        self.writeToBindingFile(early_features, projectName)
+
+    def writeToBindingFile(self, early_binding_list, pName):
+        projectsDir = os.path.dirname(os.path.abspath('.'))
+        mainProjPath = os.path.join(projectsDir, pName)
+        bindingsPath = os.path.join(mainProjPath, 'bindings.motivml')
+        try:
+            with open(bindingsPath, 'w') as f:
+                f.write('\n'.join(early_binding_list))
+            print("-- Early bindings generated successfully")
+        except:
+            print("Writing ids of early features threw an exception")
+
 
     def runConsoleInterface(self, executedConfig):
         configSettings = CmdExec()
@@ -157,7 +178,8 @@ if __name__=='__main__':
             #Load server params
             language.initConfigParamServer(sys.argv[1])
             #Generate and save early bindings
-            language.main(sys.argv[1])
+            mmconsole.generateEarlyBindings(sys.argv[1]) #py impl
+            #language.main(sys.argv[1]) #cpp impl
             #begin model validation
             schemaCheck.parseModelSchema(mmconsole._modelTree, mmconsole._configProps, sys.argv[1])
             if schemaCheck.excludesErrorCount == 0 and schemaCheck.includesErrorCount == 0 and schemaCheck.parentChildErrorCount == 0 and schemaCheck.bindingPropErrorCount == 0:

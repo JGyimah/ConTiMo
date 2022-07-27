@@ -337,7 +337,7 @@ Within the feature modelling capability of our language, the variability of any 
 \section{Methods}
 Our research method of choice is the design science methodology. We chose the design science paradigm due to its deep roots in engineering science. In that, design science generally offers a problem-solving paradigm that seeks to create innovations that define the ideas, practices, technical capabilities, and products through which analysis, design, implementation, management, and information system usage can be effectively and efficiently accomplished  \cite{des-res}. Figure \ref{methover} provides a layered and well defined overview of the empirical steps we took to create artifacts that rely on existing theories that are applied, tested, modified, and extended through experience, creativity, intuition, and problem solving in this study.
 
-Our language design and implementation methodology, can be broken down into a number of distinct phases. These include domain analysis, abstract syntax definition, concrete syntax derivation, static semantics implementation, development and evaluation. These phases were performed iteratively in synergy where outputs from each phase served as input for subsequent phases. In our domain analysis phase, we clarified implementation requirements from sources such as domain experts and relevant documentation. Based on our findings, we conceived the abstract syntax and expressed it with meta-models. Subsequently, we established the concrete syntax of our language in both graphical and textual formats. Our resultant concrete syntax, together with the static semantics of our configuration logic were transformed into a ROS compatible library. Finally we evaluated our implementation based on its novelty, correctness and realizability.
+Our language design and implementation methodology, can be broken down into a number of distinct phases. These include domain analysis, abstract syntax definition, concrete syntax derivation, static semantics implementation, system development and evaluation. These phases were performed iteratively in synergy where outputs from each phase served as input for subsequent phases. In our domain analysis phase, we clarified implementation requirements from sources such as domain experts and relevant documentation. Based on our findings, we conceived the abstract syntax and expressed it with meta-models. Subsequently, we established the concrete syntax of our language in both graphical and textual formats. Our resultant concrete syntax, together with the static semantics of our configuration logic were transformed into a ROS compatible implementation. Finally we evaluated our implementation based on its novelty, correctness and realizability.
 
 \begin{figure}[H]
 \caption{Methodology Overview}
@@ -347,10 +347,10 @@ Our language design and implementation methodology, can be broken down into a nu
 \end{figure}
 
 \subsection{Performing Domain Analysis}
-Prior to developing formalisms for our language, we identified key concepts that are relevant to the domain in which our language would be used i.e. variability management in the robotics. We also identified and clarified the purpose of our language as well as the stakeholders our language is targetting. Finally, we identified all the relations between our gathered domain concepts which we derived from  from both stakeholders and relevant documentation, by studying the properties of our domain concepts.
+Prior to developing formalisms for our language, we identified key concepts that are relevant to the domain in which our language would be used i.e. variability management in the robotics. We also identified and clarified the purpose of our language as well as the stakeholders our activities are targetting. Finally, we identified all the relations between our gathered domain concepts which we derived from both stakeholders and relevant documentation, by studying the properties of our domain concepts.
 
 \subsection{Implementation}
-In our language implementation step, we define the capabilities of our language based on prior knowledge from our domain analysis and then conceived both the both graphical and textual forms our language, to represent the syntactic structure of our language tokens. Graphically, we used feature models to define and model features of robot examples. On an abstract level, we used class diagrams to model the capabilities present in our language.
+In our language implementation step, we define the capabilities of our language based on prior knowledge from our domain analysis and then conceived both the graphical and textual forms our language, to represent the syntactic structure of our language tokens. Graphically, we used feature models to define and model features of robot examples. On an abstract level, we used class diagrams to describe the capabilities present in our language.
 
 \subsubsection{Defining the Abstract Syntax}
 In creating the abstract syntax of our language, we formalised prior knowledge gathered in our domain analysis step into models. These models, otherwise known as meta-models were then refined in multiple iterations to reflect the requirements that form the capabilities of our variability-modelling language with respect to the problem space. We followed the following concrete steps to realise the abstract syntax of our language.\begin{enumerate*}
@@ -362,54 +362,54 @@ In creating the abstract syntax of our language, we formalised prior knowledge g
 \end{enumerate*}
 
 \subsubsection{Defining the Concrete Syntax}
-The concrete syntax of our language is expressed both graphically and textually through feature models and JSON notation respectively. A major requirement of our implementation is to give potential users the expressive capability to create their own custom programs that will be in the form of robotic models. In that, end users of our domain specific language have the ability to implement their own feature models of example robots that are adaptable in varying contexts. In a graphical context, feature models of example systems were conceptualised and implemented with FeatureIDE\foot{https://featureide.github.io/} and then further translated into JSON notation made up of multiple intuitive and configurable attributes.
+The concrete syntax of our language is expressed both graphically and textually through feature models and JSON notation respectively. A major requirement of our implementation is to give potential users the expressive capability to create their own custom programs that will be in the form of modelled robotic features. In that, end users of our domain specific language have the ability to implement their own feature models of example robots that are adaptable in varying contexts. In a graphical context, feature models of example systems were conceptualised and implemented with FeatureIDE\foot{https://featureide.github.io/} and then further translated into JSON notation made up of multiple intuitive and configurable attributes.
 
 \subsection{Establishing the Static Semantics}
-After defining both the concrete and abstract syntax of our language, we proceeded to establish the static semantics of our language. The static semantics in this context, refers to the underlying rules that determine the validity of models and configurations that can be created with our language. Key aspects of the static semantics which we clarified and established include:
+After defining both the concrete and abstract syntax of our language, we proceeded to establish the static semantics of our language. The static semantics mentioned in this context, refers to the underlying rules that determine the validity of model variants that can be created with our language. Key aspects of the static semantics which we clarified and established include:
 \begin{enumerate}
     \item Outlining mechanisms that realise static and dynamic binding.
     \item Describing the configuration space that defines the configurability of our model instances.
-    \item Constraining the configuration space.
+    \item Constraining the configuration space to limit the scope of adaptability.
 \end{enumerate}
 
 \subsection{Development}
-In the development phase of our methodology, we utilised domain knowledge gathered from our domain analysis, concrete syntax definition, abstract syntax definition and static semantics as input to implement our domain specific language as a Python library. Our development approach can be summarized in the following steps:
+In the development phase of our methodology, we utilised domain knowledge gathered from our domain analysis, concrete syntax definition, abstract syntax definition and static semantics as input to implement our domain specific language of the Python programming language. Our development approach can be summarized in the following steps:
 \begin{enumerate}
     \item Gather system requirements by establishing the purpose of the language with regards to its functionality.
     \item Analyse requirements by transforming its specified textual functionalities into concrete functional and non-functional requirements.
     \item Establish design decisions such as the general architecture of the system, dependency management, choice of technologies and trade-offs, as well as implementation algorithms.
-    \item Realise designs with algorithms and data structures from Python. However, given the fact that this is a language agnostic solution, even though majority of the implementation was in Python, there were still some minor C++\foot{https://isocpp.org/} implementations.
-    \item Test system functionalities with both exploratory and unit tests by verifying test results against expected outputs.
+    \item Realise language designs with Python based algorithms and data structures. Likewise interfaces for integrating encapsulated feature implementations will be realised in  C++\foot{https://isocpp.org/}.
+    \item Test implementation by evaluating the interactions of all the various integrated system components.
  \end{enumerate}
  
 \subsection{Language Evaluation Overview}
-Evaluating our library means to assess our implementation from three main perspectives. These perspectives include \begin{enumerate*}[label=(\roman*)]
+Evaluating our language means to assess its implementation from three main perspectives. These perspectives include \begin{enumerate*}[label=(\roman*)]
 \item Correctness,
 \item Realizability and
 \item Novelty.
 \end{enumerate*}
 \begin{itemize}
-    \item \textbf{Correctness:} The validity of models and configurations created with our language alongside the implied effect of feature constraints is closely evaluated by both a schema checker and a constraint checker's ability to detect syntax and constraint violations and prompt the end user accordingly.
+    \item \textbf{Correctness:} The validity of models and configurations created with our language along with the implied effect of a model's feature constraints are closely evaluated by both a schema and a constraint checker, which operate by detecting syntax and constraint violations.
     
-    \item \textbf{Realizability:} Proof of realizability indicates that our binding technique which forms the core of our implemented variability mechanisms is feasible. This is quite relevant, given that modelling variability with feature binding time and binding mode has not yet been done. 
+    \item \textbf{Realizability:} Proof of realizability indicates that our binding technique which forms the core of our implemented variability mechanisms is feasible. This is quite relevant, given that modelling variability with feature binding time and binding mode has not yet been applied in robotics.
     
-    \item \textbf{Novelty:} The novelty of our work is assessed along the lines of the innovative and conceptual uniqueness that defines the binding technique of our variability mechanism. By comparative positioning our study with studies concerning artifacts found in a similar domain such as the one we find ourselves, we would be in a position to back our claim of novelty through research.
+    \item \textbf{Novelty:} The novelty of our work is assessed along the lines of the innovative and conceptual uniqueness that defines the binding technique of our variability mechanism. By comparative positioning our study with other studies from the robotics domain, we would be in a position to back our claim of novelty through research.
 \end{itemize}
 
-By realising our variability modelling language to implement binding time and binding mode mechanisms in a manner that fulfils our research objectives, we have automatically provided evidence that can be used to evaluate the realizability and novelty of our binding technique. In addition to this, we implemented a comprehensive evaluation plans to test for type and syntax correctness.
+By realising our variability modelling language to implement binding time and binding mode mechanisms in a manner that fulfils our research objectives, we were able to automatically provide proof of the realizability and novelty of our binding technique. In addition to this, a comprehensive evaluation plan was applied to test for type and syntax correctness.
 
 \subsection{Correctness Evaluation}
 As a functional requirement of our language, end users have the ability to model robotic features, define configurations for each feature, and then apply such configurations to multiple scenarios. Configurations are typically an amalgamation of features, relationships and constraints. To assess the validity of configurations described with our language, we have implemented mechanisms that can be used to evaluate the well-formedness of such user defined models and configurations. On a high level, our evaluation plan for our modelling language can be summarised as follows:
 \begin{enumerate}
-  \item Realise a mock-up of an example robotic system.
+  \item Realise mock-ups of example robotic systems.
   \item Define binding configurations for each mock-up example.
-  \item Plug in source code implementations of defined mock-up features.
-  \item Compile and validate model and configuration syntax and semantics.
-  \item Execute and test the model variability.
+  \item Encapsulate and plug in source code implementations of defined mock-up features.
+  \item Compile and validate the syntax and semantics of models and configurations.
+  \item Execute and test model variability.
 \end{enumerate}
-For stakeholders such as end users to be able to verify the correctness of their models, all models defined in our modelling language must be validated on multiple levels of correctness i.e. syntax and semantic correctness. 
+For stakeholders such as end users to be able to verify the correctness of their models, all modelled systems defined in our modelling language must be validated on multiple levels of correctness i.e. syntax and semantic correctness. 
 \begin{itemize}[label={}]
-  \item \textbf{Syntax Validation: }To effectively validate the syntax of our language, we validate the schema of both model objects and configuration objects. Schema validation in this sense refers to token and token state validation.
+  \item \textbf{Syntax Validation: }To effectively validate the syntax of our language, we evaluate the schema of both model and configuration objects. Schema validation in this sense refers to token and token state validation.
  
   \item \textbf{Semantics Validation: } To validate the semantic implications of our language, we evaluate the correctness of configuration bindings in relation to the corresponding binding constraints specified. We also evaluate the correctness of each configuration binding pair with respect to its implied effect on other features in a given configuration space.
   
@@ -418,7 +418,7 @@ For stakeholders such as end users to be able to verify the correctness of their
 
 \section{Results}
 \subsection{Architectural Overview}
-MoTiVML is a lightweight variability modelling language which is structurally based on the Javascript Object Notation (JSON)\foot{https://www.json.org/json-en.html} and implemented as a domain specific language of Python. Architecturally, this language consists of three modular components. These include a syntax manager, a configuration manager, a source code implementation manager. As shown in Figure \ref{arch-over} all these components are encapsulated and offered as an open sourced ROS compatible library.
+Our language, otherwise known as MoTiVML, is a lightweight variability modelling language which is structurally based on the Javascript Object Notation (JSON)\foot{https://www.json.org/json-en.html}, and implemented as a domain specific language of Python. Architecturally, this language consists of three modular components. These include a syntax manager, a configuration manager, a source code implementation manager. As shown in Figure \ref{arch-over}, all these components are encapsulated and offered as an open sourced ROS compatible framework.
 
 The syntax manager component contains all implementations related to language tokens, as well as the language's lexical and syntactical schemas. Tokens represent the legal keywords or lexemes that are permissible in our language. There are two schema representations present in MoTiVML; a feature schema and a configuration schema. Language schemas are simply represented as an object of tokens mapped to selected data structures. Listing \ref{feat-schema} and \ref{bind-schema} show samples of a feature and configuration schema respectively.
 
@@ -479,7 +479,7 @@ The source code implementation manager encapsulates a plug-in management interfa
 \end{figure}
 
 \subsection{Domain Analysis}
-In our language design, we clarified key concepts that are relevant to the domain context of our language. Furthermore, we identified design concepts and relationships that determine the type of programs which domain stakeholders will be capable of writing with our language. All the concepts and relationships we identified, were then formalized into a model, and iteratively refined to develop our language's abstract syntax.
+In our language design, we had to clarify key concepts that are relevant to the domain context of our language. Furthermore, we had to identify design concepts and relationships that determine the type of programs which domain stakeholders will be capable of writing with our language. All the concepts and relationships we identified, were then formalized into a model, and iteratively refined to develop our language's abstract syntax.
 
 During our domain analysis, we identified five standard questions which make up the core ideas and knowledge base that represents our language. 
     \begin{itemize}
@@ -761,7 +761,7 @@ The binding mechanisms we chose to implement in our ROS application, are robust 
 	\item \textbf{Language Component: }
 	The language component of our variability management framework, enables domain stakeholder to translate feature models into MoTiVML object models where time and mode bindings can be defined with constraints. In addition to that, our language provides both a schema and constraint checker purposefully for validating user defined models for syntactic and semantic correctness respectively. Furthermore, the language component contains a parameter initializer which instantiates and initializes ROS parameters used by our framework to enforce time based binding.
 	\item \textbf{Robot Builder Component: }
-	The robot builder component of our framework is a ROS node that provides interfaces through which source code implementations of registered features in our user defined models can be bound. It listens for configuration commands from the MoTiVML language interface over a ROS topic. For statically bound features, the C++ preprocessor together with conditional statements are used to include or exclude feature classes to and from robot programs.  In the case of dynamic binding, the ROS pluginlib library is used to register, encapsulate, export and load feature classes dynamically into prebuilt robot program implementations. This component also reads from initialised ROS parameter to retrieve and classify program features into time based categories. 
+	The robot builder component of our framework is a ROS node within our source code implementation manager, that provides interfaces through which class implementations of registered features in our user defined models can be bound. It listens for configuration commands from the MoTiVML language interface over a ROS topic. For statically bound features, the C++ preprocessor together with conditional statements are used to include or exclude feature classes to and from robot programs.  In the case of dynamic binding, the ROS pluginlib library is used to register, encapsulate, export and load feature classes dynamically into prebuilt robot programs. Finally, this component also reads from initialised ROS parameters to retrieve and classify program features into time based categories. 
 \end{itemize}
 
 

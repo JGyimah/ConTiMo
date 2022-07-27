@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.6.3)  25 JUL 2022 17:10
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.6.3)  27 JUL 2022 12:01
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -950,9 +950,13 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [7]
 [8 <./diagrams/methods.png>]
+Underfull \hbox (badness 2547) in paragraph at lines 421--422
+[]\OT1/ptm/m/n/10 Our lan-guage, oth-er-wise known as Mo-TiVML, is a
+ []
+
 \openout4 = `conference_101719.pyg'.
 
- (_minted-conference_101719/default.pygstyle)
+(_minted-conference_101719/default.pygstyle)
 (_minted-conference_101719/CB88025700C5AA9E4E0D650891E1626DA2794B2042F142019FE8
 9554315534FB.pygtex
 LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 1
@@ -1151,7 +1155,7 @@ pfb><C:/Program Files/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files
 /MiKTeX/fonts/type1/urw/times/utmbi8a.pfb><C:/Program Files/MiKTeX/fonts/type1/
 urw/times/utmr8a.pfb><C:/Program Files/MiKTeX/fonts/type1/urw/times/utmri8a.pfb
 >
-Output written on conference_101719.pdf (18 pages, 1881460 bytes).
+Output written on conference_101719.pdf (18 pages, 1881360 bytes).
 PDF statistics:
  144 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
