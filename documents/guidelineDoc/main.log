@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.6.3)  19 JUL 2022 08:48
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.6.3)  29 JUL 2022 09:17
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -725,7 +725,7 @@ runsystem(del main.pyg)...executed.
 Here is how much of TeX's memory you used:
  15406 strings out of 478614
  270704 string characters out of 2852938
- 644153 words of memory out of 3000000
+ 644148 words of memory out of 3000000
  33254 multiletter control sequences out of 15000+600000
  475453 words of font info for 49 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -738,7 +738,7 @@ nts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX/fonts/type1/pu
 blic/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts
 /cm/cmr5.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb
 ><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt8.pfb>
-Output written on main.pdf (12 pages, 236119 bytes).
+Output written on main.pdf (12 pages, 236418 bytes).
 PDF statistics:
  221 PDF objects out of 1000 (max. 8388607)
  58 named destinations out of 1000 (max. 500000)

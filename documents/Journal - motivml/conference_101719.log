@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.6.3)  27 JUL 2022 12:01
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.6.3)  29 JUL 2022 09:12
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -908,55 +908,57 @@ Underfull \hbox (badness 10000) in paragraph at lines 124--124
 
 
 ] [2]
-[3]
-Underfull \hbox (badness 10000) in paragraph at lines 200--200
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [3]
+Underfull \hbox (badness 10000) in paragraph at lines 202--202
 [][][]$\OT1/ptm/m/n/8 https : / / pdfcoee . com / kss -[] 55 -[] operating -[]
  and -[] programming -[] instructions -[]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 200--200
+Underfull \hbox (badness 10000) in paragraph at lines 202--202
 [][][]$\OT1/ptm/m/n/8 https : / / www . sciencedirect . com / topics / computer
  -[] science / domain -[] speci^^Lc -[]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 202--202
+Underfull \hbox (badness 10000) in paragraph at lines 204--204
 [][][]$\OT1/ptm/m/n/8 https : / / corlab . github . io / dslzoo / architectures
  -[] and -[] programming -[]
  []
 
-[4]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [5]
-Underfull \hbox (badness 10000) in paragraph at lines 271--271
+[4] [5]
+Underfull \hbox (badness 10000) in paragraph at lines 273--273
  \OT1/ptm/m/it/10 E. Variability-modelling Frame-works, Mid-dle-ware, and
  []
 
-[6]
-<diagrams/methods.png, id=31, 472.76625pt x 527.9725pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 293--293
+[][][]$\OT1/ptm/m/n/8 https : / / wiki . servicerobotik -[] ulm . de / about -[
+] smartsoft : robotic -[] behavior :
+ []
+
+[6] [7]
+<diagrams/methods.png, id=35, 472.76625pt x 527.9725pt>
 File: diagrams/methods.png Graphic file (type png)
 <use diagrams/methods.png>
-Package pdftex.def Info: diagrams/methods.png  used on input line 345.
+Package pdftex.def Info: diagrams/methods.png  used on input line 347.
 (pdftex.def)             Requested size: 258.0pt x 288.13004pt.
 
-Overfull \hbox (6.0pt too wide) in paragraph at lines 345--347
+Overfull \hbox (6.0pt too wide) in paragraph at lines 347--349
  [][] 
  []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [7]
 [8 <./diagrams/methods.png>]
-Underfull \hbox (badness 2547) in paragraph at lines 421--422
+Underfull \hbox (badness 2547) in paragraph at lines 423--424
 []\OT1/ptm/m/n/10 Our lan-guage, oth-er-wise known as Mo-TiVML, is a
  []
 
+[9]
 \openout4 = `conference_101719.pyg'.
 
-(_minted-conference_101719/default.pygstyle)
+ (_minted-conference_101719/default.pygstyle)
 (_minted-conference_101719/CB88025700C5AA9E4E0D650891E1626DA2794B2042F142019FE8
 9554315534FB.pygtex
 LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 1
@@ -968,35 +970,43 @@ File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 
 
 (_minted-conference_101719/9B2F0E9F694DD437A954398C40A9EDF2A2794B2042F142019FE8
-9554315534FB.pygtex) [9]
-<diagrams/arch-overview.png, id=46, 522.95375pt x 422.57875pt>
+9554315534FB.pygtex)
+<diagrams/arch-overview.png, id=44, 522.95375pt x 422.57875pt>
 File: diagrams/arch-overview.png Graphic file (type png)
 <use diagrams/arch-overview.png>
-Package pdftex.def Info: diagrams/arch-overview.png  used on input line 477.
+Package pdftex.def Info: diagrams/arch-overview.png  used on input line 479.
 (pdftex.def)             Requested size: 258.0pt x 208.48396pt.
 
-Overfull \hbox (6.0pt too wide) in paragraph at lines 477--479
+Overfull \hbox (6.0pt too wide) in paragraph at lines 479--481
  [][] 
  []
 
-[10 <./diagrams/arch-overview.png>]
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [10 <./diagrams/arch-overview.png>]
 <diagrams/ex1.png, id=51, 1588.93625pt x 232.87pt>
 File: diagrams/ex1.png Graphic file (type png)
 <use diagrams/ex1.png>
-Package pdftex.def Info: diagrams/ex1.png  used on input line 521.
-(pdftex.def)             Requested size: 252.0pt x 36.92949pt.
+Package pdftex.def Info: diagrams/ex1.png  used on input line 523.
+(pdftex.def)             Requested size: 464.39224pt x 85.3575pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
 <diagrams/ex2.png, id=52, 1233.60875pt x 232.87pt>
 File: diagrams/ex2.png Graphic file (type png)
 <use diagrams/ex2.png>
-Package pdftex.def Info: diagrams/ex2.png  used on input line 528.
-(pdftex.def)             Requested size: 252.0pt x 47.56808pt.
+Package pdftex.def Info: diagrams/ex2.png  used on input line 530.
+(pdftex.def)             Requested size: 464.39037pt x 85.3575pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
 \openout4 = `conference_101719.pyg'.
 
 
 (_minted-conference_101719/C6081AD35D5A2CB49FC01B291C8AC990A2794B2042F142019FE8
 9554315534FB.pygtex)
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
 \openout4 = `conference_101719.pyg'.
 
 
@@ -1004,49 +1014,44 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 9554315534FB.pygtex)
 Underfull \vbox (badness 3514) has occurred while \output is active []
 
- [11 <./diagrams/ex1.png (PNG copy)> <./diagrams/ex2.png (PNG copy)>]
-Overfull \hbox (3.65431pt too wide) in paragraph at lines 652--679
+ [11]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Overfull \hbox (3.65431pt too wide) in paragraph at lines 654--681
  [] 
  []
 
-[12]
-Underfull \hbox (badness 10000) in paragraph at lines 693--694
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [12 <./diagrams/ex1.png (PNG copy)> <./diagrams/ex2.png (PNG copy)>]
+Underfull \hbox (badness 10000) in paragraph at lines 695--696
 
  []
 
 LaTeX Font Info:    Trying to load font information for OMS+ptm on input line 6
-96.
+98.
 (C:\Program Files\MiKTeX\tex/latex/psnfss\omsptm.fd
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 696.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 698.
 
-Underfull \hbox (badness 4686) in paragraph at lines 696--697
+Underfull \hbox (badness 4686) in paragraph at lines 698--699
 []\OT1/ptm/m/n/10 featureDescriptionBlock $[][]\OMS/cmsy/m/n/10 !$ \OT1/ptm/m/n
 /10 '\OMS/cmsy/m/n/10 f\OT1/ptm/m/n/10 ' 'id' ':' al-phaVal,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 696--697
+Underfull \hbox (badness 10000) in paragraph at lines 698--699
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 698--699
+Underfull \hbox (badness 10000) in paragraph at lines 700--701
 []\OT1/ptm/m/n/10 constraintsDefinitionBlock $[][]\OMS/cmsy/m/n/10 !$ \OT1/ptm/
 m/n/10 con-straints: '\OMS/cmsy/m/n/10 f\OT1/ptm/m/n/10 '
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 698--699
-
- []
-
-
-Underfull \hbox (badness 2050) in paragraph at lines 700--701
-[]\OT1/ptm/m/n/10 bindingPropertiesBlock $[][]\OMS/cmsy/m/n/10 !$ \OT1/ptm/m/n/
-10 '\OMS/cmsy/m/n/10 f\OT1/ptm/m/n/10 ' 'time' ':' al-phaVal,
  []
 
 
@@ -1054,70 +1059,82 @@ Underfull \hbox (badness 10000) in paragraph at lines 700--701
 
  []
 
-<diagrams/feature.png, id=62, 9238.515pt x 5447.35126pt>
+
+Underfull \hbox (badness 2050) in paragraph at lines 702--703
+[]\OT1/ptm/m/n/10 bindingPropertiesBlock $[][]\OMS/cmsy/m/n/10 !$ \OT1/ptm/m/n/
+10 '\OMS/cmsy/m/n/10 f\OT1/ptm/m/n/10 ' 'time' ':' al-phaVal,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 702--703
+
+ []
+
+<diagrams/feature.png, id=61, 9238.515pt x 5447.35126pt>
 File: diagrams/feature.png Graphic file (type png)
 <use diagrams/feature.png>
-Package pdftex.def Info: diagrams/feature.png  used on input line 711.
+Package pdftex.def Info: diagrams/feature.png  used on input line 713.
 (pdftex.def)             Requested size: 258.0pt x 152.10919pt.
 
-Overfull \hbox (6.0pt too wide) in paragraph at lines 711--713
+Overfull \hbox (6.0pt too wide) in paragraph at lines 713--715
  [][] 
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-<diagrams/config.png, id=63, 8201.64125pt x 6135.92375pt>
+ [13]
+<diagrams/config.png, id=67, 8201.64125pt x 6135.92375pt>
 File: diagrams/config.png Graphic file (type png)
 <use diagrams/config.png>
-Package pdftex.def Info: diagrams/config.png  used on input line 721.
+Package pdftex.def Info: diagrams/config.png  used on input line 723.
 (pdftex.def)             Requested size: 258.0pt x 192.9643pt.
 
-Overfull \hbox (6.0pt too wide) in paragraph at lines 721--723
+Overfull \hbox (6.0pt too wide) in paragraph at lines 723--725
  [][] 
  []
 
-[13 <./diagrams/feature.png> <./diagrams/config.png>]
-<diagrams/mecha-compo.png, id=70, 703.62875pt x 372.39125pt>
+<diagrams/mecha-compo.png, id=68, 703.62875pt x 372.39125pt>
 File: diagrams/mecha-compo.png Graphic file (type png)
 <use diagrams/mecha-compo.png>
-Package pdftex.def Info: diagrams/mecha-compo.png  used on input line 756.
+Package pdftex.def Info: diagrams/mecha-compo.png  used on input line 758.
 (pdftex.def)             Requested size: 258.0pt x 136.54387pt.
 
-Overfull \hbox (6.0pt too wide) in paragraph at lines 756--758
+Overfull \hbox (6.0pt too wide) in paragraph at lines 758--760
  [][] 
  []
 
-<diagrams/mandatory.png, id=71, 30.1125pt x 57.21375pt>
+[14 <./diagrams/feature.png> <./diagrams/config.png> <./diagrams/mecha-compo.pn
+g>]
+<diagrams/mandatory.png, id=75, 30.1125pt x 57.21375pt>
 File: diagrams/mandatory.png Graphic file (type png)
 <use diagrams/mandatory.png>
-Package pdftex.def Info: diagrams/mandatory.png  used on input line 785.
+Package pdftex.def Info: diagrams/mandatory.png  used on input line 787.
 (pdftex.def)             Requested size: 28.45369pt x 34.14429pt.
-<diagrams/optional.png, id=72, 31.91925pt x 54.2025pt>
+<diagrams/optional.png, id=76, 31.91925pt x 54.2025pt>
 File: diagrams/optional.png Graphic file (type png)
 <use diagrams/optional.png>
-Package pdftex.def Info: diagrams/optional.png  used on input line 786.
+Package pdftex.def Info: diagrams/optional.png  used on input line 788.
 (pdftex.def)             Requested size: 28.45332pt x 34.14526pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [14 <./diagrams/mecha-compo.png>] [15 <./diagrams/mandatory.png> <./diagrams/o
-ptional.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 889--889
+ [15 <./diagrams/mandatory.png> <./diagrams/optional.png>] [16]
+Underfull \hbox (badness 10000) in paragraph at lines 891--891
 [][][]$\OT1/ptm/m/n/8 https : / / github . com / SergioGarG / sera -[] extensio
 n / tree / master / documents /
  []
 
-[16]
+
 Underfull \vbox (badness 2245) has occurred while \output is active []
 
-
-Underfull \hbox (badness 1874) in paragraph at lines 929--930
+ [17]
+Underfull \hbox (badness 1874) in paragraph at lines 938--939
 []\OT1/ptm/m/n/8 R. H. Bour-gonjon, ``Em-bed-ded Sys-tems in Con-sumer Prod-uct
 s,''
  []
 
-[17]
+[18]
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -1129,17 +1146,17 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[18
+[19
 
 ] (conference_101719.aux)
 runsystem(del conference_101719.pyg)...executed.
 
  ) 
 Here is how much of TeX's memory you used:
- 21952 strings out of 478614
- 431250 string characters out of 2852938
- 763098 words of memory out of 3000000
- 39651 multiletter control sequences out of 15000+600000
+ 21957 strings out of 478614
+ 431305 string characters out of 2852938
+ 762277 words of memory out of 3000000
+ 39656 multiletter control sequences out of 15000+600000
  513618 words of font info for 112 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,15n,94p,1203b,721s stack positions out of 10000i,1000n,20000p,200000b,80000s
@@ -1155,9 +1172,9 @@ pfb><C:/Program Files/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files
 /MiKTeX/fonts/type1/urw/times/utmbi8a.pfb><C:/Program Files/MiKTeX/fonts/type1/
 urw/times/utmr8a.pfb><C:/Program Files/MiKTeX/fonts/type1/urw/times/utmri8a.pfb
 >
-Output written on conference_101719.pdf (18 pages, 1881360 bytes).
+Output written on conference_101719.pdf (19 pages, 1885417 bytes).
 PDF statistics:
- 144 PDF objects out of 1000 (max. 8388607)
+ 148 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  58 words of extra memory for PDF output out of 10000 (max. 10000000)
 

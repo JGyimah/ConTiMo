@@ -102,7 +102,7 @@ In the wake of the current pandemic, industries have had to deal with unforeseen
 
 Service robots can be described as a category of robots that render specialised services to humans. Service robots are often designed to operate in highly heterogeneous environments in collaboration with humans, or other robots. Usually, the effective completion of tasks by a service robot may require a combination of specific sets of robotic capabilities. These inbuilt capabilities are more often than not driven by implementations known as robotic features.
 
-Valid combinations of robotic features to fit varying contexts, have the propensity to give rise to some level of variability---i.e., the ability of a software artifact to be changed to fit multiple contexts, environments, or purposes. This adaptation demand, presents the need for a possible strategy that enables roboticists to customize or configure robotic applications in correspondence to different operational scenarios. This has also provided the much needed incentive to have an effective mechanism that allows domain experts to plan, design, and implement variability.
+Valid combinations of robotic features to fit varying contexts, have the propensity to give rise to some level of variability---i.e., the ability of a software artifact to be changed to fit multiple contexts, environments, or purposes, in form of dynamic obstacles, noisy perceptions and random execution failures. This adaptation demand, presents the need for a possible strategy that enables roboticists to customize or configure robotic applications in correspondence to different operational scenarios. This has also provided the much needed incentive to have an effective mechanism that allows domain experts to plan, design, and implement variability.
 
 As a possible solution to this, we present a technique that implements variability via a feature's binding time and binding mode. The implementation of this novel technique is offered as an extension to the Self-adaptive dEcentralized Robotic Architecture known as SERA. SERA, which is a decentralized reference architecture that supports autonomous, heterogeneous, and collaborative robotic application development, lacks the innate capability to manage variability dynamically. This implies that, SERA and its ilk typically do not provide domain experts with the means and techniques required to manage variability effectively.
 
@@ -126,7 +126,7 @@ disinfection range of robots, which have been deployed in the fight against the 
 
 In any given context of operation, a robot only needs a defined subset of core assets, otherwise referred to as features, that define the robot's capabilities. A feature can be classified as a logical unit of behaviour defined by a set of functional and non-functional requirements \cite{feats}. Depending on the usage context, features may be selected or deselected as part of a configuration to drive a given set of capabilities. 
 
-For example UVD's disinfection range of robots, operate by moving at a sufficient speed in a 360-degree fashion, while emitting enough UV-C ultraviolet light onto relevant surfaces to eliminate viruses and bacteria. In doing so, a typical disinfection robot might make use of core assets such as navigation, obstacle detection, collision avoidance, disinfection, irradiation, and teleoperation when the necessity arises.
+For example UVD's disinfection range of robots, operate by moving at a sufficient speed in a 360-degree fashion, while emitting enough UV-C ultraviolet light onto relevant surfaces to eliminate viruses and bacteria. In doing so, a typical disinfection robot might make use of core assets such as navigation, obstacle detection, collision avoidance, disinfection, irradiation, and teleoperation when necessary.
 
 Valid combinations of such core assets to match a robot's operational context gives rise to some level of variability within the robotic system. By definition, variability can be described as the ability of a core asset to adapt to usage in different product contexts that are within a product line scope \cite{variab}. One of the goals of managing variability is to create flexible, cost-effective and customisable core assets that are easy to build, extend and maintain.
 
@@ -140,7 +140,9 @@ SERA and others similar to it, typically do not support any standardised form of
 
 Due to this, we deemed it necessary to extend the capabilities of SERA's pre-existing architecture to include variability management, with a high level of flexibility and customizability of robotic product line entities, to improve practices currently present in robotics applications design and development.
 
-This is particularly useful because, just like SERA, most known reference architectures, manage variability via ad hoc mechanisms. Such architectures often do not provide any means of controlling product entity bindings in a systematic way. In addition to this, they are also incapable of tracking and providing an overview of product entity commonalities and variabilities together with their dependencies consistently \cite{var-mod-ind}.
+This is particularly useful because, just like SERA, most known reference architectures, manage variability via ad hoc mechanisms. Sergio Garc\'{i}a \cite{var-mod-chall} together with a team of researchers, gathered EU, academic and industrial project experiences, that indicated that robotics industry stakeholders often relied on ad hoc strategies like clone\&own, configuration facilities of robotic frameworks and home grown configurators to manage variability.
+
+Reference architectures commonly rely on such ad hoc strategies because they do not inherently provide any means of controlling product entity bindings in a systematic way. In addition to this, they are also incapable of tracking and providing an overview of product entity commonalities and variabilities together with their dependencies consistently \cite{var-mod-ind}.
 
 One of the fundamental concepts of adaptable software architectures is their ability to establish an overview of understanding, by systematically modelling the adaptation space using representations such as feature models, while having dedicated techniques to match such adaptations.
 
@@ -150,15 +152,15 @@ The solution offered in this study, contributes a novel technique for implementi
 
 In summary, our research work provides a variability modelling framework, in response to the following domain challenges:
 \begin{enumerate}
-    \item \textit{The lack of a standard variability modelling framework for robotic system design and development: }The lack of a variability modelling framework that can model features together with their possible bindings, implement them, and above all, one that can ensure model validity and correctness. Various ad hoc mechanisms can be identified in different implementations. However, none of these solutions posses the required capabilities for flexible and customizable modelling, implementation and validation.
+    \item \textit{The lack of a standard variability modelling framework for robotic system design and development: }The lack of a variability modelling framework that can model different version of features together with their possible bindings, implement them, and above all, one that can ensure model validity and correctness. Various ad hoc mechanisms can be identified in different implementations where implementers try to enforce mechanisms in anticipation of possible occurrences in a robot's operating environment. However, none of these solutions posses the required capabilities for flexible and customizable modelling, implementation and validation. Rather, such ad hoc mechanisms tend to complicate the entire implementation due too their low level of reuse and complexity of extension and maintenance.
     
-    \item \textit{The lack of mechanisms and guidelines for implementing variability management techniques in robotic systems:} Even though a plethora of techniques exist, there aren't any precise guidelines that detail how to integrate and use them to design viable robot configurations.
+    \item \textit{The lack of mechanisms and guidelines for implementing variability management techniques in robotic systems:} Even though a plethora of ad hoc mechanisms exist, there aren't any precise guidelines that detail how to integrate and use them to design viable robot configurations. This can be attributed to the fact that, usually, implementations of variability mechanisms are included in robotic applications in the form of a pre-emptive contingency. For that matter, due to the non-deterministic nature of the contexts in which service robots are designed to operate in, these mechanisms fail to cater for all possible scenarios. And even in cases where they do, there are little to no guidelines to describe how they are implemented under the hood.
     
-    To the best of our knowledge, ROS based open sourced applications in general, lack a comprehensive set of usage guidelines that verify or provide proof that such robotic applications meet the specifications or requirements that define their capabilities.
+    To the best of our knowledge, ROS based open sourced applications in general, lack a comprehensive set of usage guidelines that verify or provide proof that such robotic applications meet the specifications or requirements that define their capabilities and how they do so.
     
-    In a domain like robotics which is relatively new and rapidly advancing, when it comes to implementing variability mechanisms, there seems to be no streamlined and platform specific means of doing so. In many cases, robotic application developers resort to undocumented ad hoc methods of implementing variability.
+    In a domain like robotics which is relatively new and rapidly advancing, when it comes to implementing variability mechanisms, there seems to be no streamlined and platform specific approach for doing so. In many cases, robotic application developers resort to undocumented ad hoc methods of implementing and managing variability.
     
-    \item \textit{The lack of a variability management solution that addresses the complexity of engineering robotic systems: }A full-fledged robotic system is a complex system that consists of many modules. Whether single or multi purpose, the versatility a robotic system offers in different scenarios, requires the integration of heterogeneous modules. Many of these modules that need to be integrated are often developed by a diverse group of experts (e.g., electrical engineers, perception experts, control theorists, software engineers). This perceivable diversity complicates the integration, customisation, and maintainability of packages in the robotics sphere. These complications translate into complexity when it comes to collaboratively engineering robotic applications.
+    \item \textit{The lack of a variability management solution that addresses the complexity of engineering robotic systems: }A full-fledged robotic system is a complex system that consists of many modules. Whether single or multi purpose, the versatility a robotic system offers in different scenarios, requires the integration of heterogeneous modules. Many of these modules that need to be integrated are often developed by a diverse group of experts (e.g., electrical engineers, perception experts, control theorists, software engineers). This perceivable diversity complicates the integration, customisation, and maintainability of packages in the robotics sphere. These complications translate into complexity when it comes to collaboratively engineering robotic applications. Furthermore, due to the low level of code reuse when it comes to implementing mechanisms, there is the likelihood of having dispersed implementations of mechanisms, that are expensive to maintain, that fulfil the same purpose.
 \end{enumerate}
 
 In realising a solution such as ours, a key requirement was to keep it as lightweight as possible without requiring new tooling; all the while maintaining a decent level of abstraction. Thus, we relied on the design science approach which was empirically guided by the following research questions.
@@ -270,7 +272,7 @@ From Table \ref{tab:compfml} we can deduce that the ambition of our proposed mod
 
 \subsection{Variability-modelling Frameworks, Middleware, and Toolchains}
 Over the years many component-based frameworks and toolkits that are robotics inclined
-have emerged. These frameworks possess mechanisms for real-time execution, synchronous and asynchronous communication, control and data-flow flow management and system configuration.
+have emerged. These frameworks possess mechanisms for real-time execution, synchronous and asynchronous communication, control and data-flow management and system configuration.
 
 When it comes to variability modelling frameworks, ROS, Orocos and SCA stand out in terms of popularity, scale and ecosystem support. Fundamentally, these frameworks have the following features in common i.e., \begin{enumerate*}[label=(\roman*)]
 	\item They provide a component model, which defines a set of architectural
@@ -287,6 +289,8 @@ reuse of effective solutions to recurrent architectural design problems. Consequ
 As a collection of Eclipse plugins implemented by means of the Eclipse Modeling Project, HyperFlex allows users to explicitly model the architecture of functional systems in terms of components, interfaces, connectors, and components wiring. Models of functional systems can be reused as a building blocks and hierarchically composed to build more complex systems and applications \cite{ros-ref}. HyperFlex uses feature model formalisms to symbolically represent the variability of a system together with the constraints that exist between variation points and variants that limit the set of valid configurations \cite{ros-ref}.
 
 Comparatively, the \textit{Hyperflex} solution in some ways, has similarities to our proposed solution, in terms of its variability management capabilities and ROS base. The difference however lies in the variation mechanism being implemented. While \textit{Hyperflex} is only concerned with the general attributes of a feature i.e. optional and mandatory, we go a step further to include and decouple binding time and binding mode attributes as our variation mechanism. Another standout difference that is noteworthy is the fact that \textit{Hyperflex} is presented as an eclipse plugin as opposed to our solution that is offered as a platform independent open-source framework.
+
+In a profound study conducted by Lotz et al\cite{man-runt-var-lotz}, functional and non-functional behaviour were modelled in an attempt to manage runtime variability in robotic systems. With the aid of two DSLs; namely SmartTCL\foot{https://wiki.servicerobotik-ulm.de/about-smartsoft:robotic-behavior:smarttcl} and VML\cite{vml}, their goal was to separate concerns when modelling variability both in operation and quality by having a dedicated DSL that handles action coordination modelling and another that deals with task fulfilment quality modelling. Similar to ours, Lotz's approach focuses on improving the general ad hoc method of managing variability in robotic systems due to its many pitfalls. However, the distinct divergence between the two, lies in their focus on flexibility and quality as opposed to our flexibility and customizability based approach.
 
 Comprehensively, our variability management solution can be considered to be a framework that amalgamates a variability modelling language and variability mechanisms. Both of these implemented components ensure feature model instantiation, configuration, validation and feature source-code integration.
 
@@ -313,7 +317,6 @@ For both time and mode binding, our proposed variability modelling language supp
 Within the feature modelling capability of our language, the variability of any given feature can be modelled and configured within the following binding scope:
 
 \begin{itemize}
-    
     \item \textbf{Static Early: } Static Early binding implies that a feature that cannot be unloaded when loaded and vice versa, is loaded (or unloaded) at compile time. 
     
     \item \textbf{Static Late: } Static Late implies that a feature that cannot be unloaded when loaded and vice versa, is loaded (or unloaded) at runtime.
@@ -331,7 +334,6 @@ Within the feature modelling capability of our language, the variability of any 
     \item \textbf{Any Late: }Dynamic Late implies that a feature that can be loaded and unloaded several times is bound at runtime time.
     
     \item \textbf{Any Any: } This implies that a feature can be bound either statically or dynamically at compile time or run time. 
-    
 \end{itemize}
 
 \section{Methods}
@@ -515,19 +517,19 @@ In our architectural implementation, configuration capabilities are decoupled fr
 \subsubsection{Developing Mock-up Examples}
 An important use case of our language is that, it can be used to develop mock up examples that demonstrate the language's expressiveness. In the context of our study, examples refer to modelled features of robot product lines. Figure \ref{ex1} and \ref{ex2} show graphical representations in the form of feature models, of our selected example systems i.e. service robots. For each feature present in a model, we can express it textually with tokens from our language as shown in Figure \ref{feat-conc-text} and \ref{bind-conc-text}. Inspiration for these examples were drawn from general utility robots and disinfection robot product lines such as TIAGo and UVD Model C.
     
-\begin{figure}[H]
+\begin{figure*}[h]
 \caption{Modelled Example One}
 \centering
-\includegraphics[width=\columnwidth]{diagrams/ex1.png}
+\includegraphics[width=0.9\textwidth,height=3cm]{diagrams/ex1.png}
 \label{ex1}
-\end{figure}
+\end{figure*}
 
-\begin{figure}[H]
+\begin{figure*}[h]
 \caption{Modelled Example Two}
 \centering
-\includegraphics[width=\columnwidth]{diagrams/ex2.png}
+\includegraphics[width=0.9\textwidth,height=3cm]{diagrams/ex2.png}
 \label{ex2}
-\end{figure}
+\end{figure*}
     
 Furthermore, in our model refinement step, that aims at extending our mock-up examples against our requirements, we analyse the requirements associated with our language, justify if these requirements are met and then proceed to provide examples or evidence of said requirements that have been fulfilled.
 
@@ -900,8 +902,15 @@ In our variability modelling framework, users have the capability of modelling a
 
 Overall, the above mentioned syntax and semantic architectural designs can be verified through in-built mechanisms that prove model and implementation validity on a syntax and semantic level. Last but not least, validation mechanisms which consist of a schema checker and a constraint checker which have been designed to abstract the complexity of configuring valid models by parsing and validating model instances for correctness have been included in the results of this study.
 
+\section{Conclusion and Future Work}
+In this paper we have presented a novel variability management technique which ensures flexible and customizable binding of robotic features. Our contribution is offered as an open source framework that consists of a variability modelling language and mechanisms, backed by a set of comprehensive guidelines. Thus, our main research goal was to prove the feasibility of adapting a robotic model, based on its specified binding time and binding mode configurations. 
+
+Looking into the future, we are hopeful of augmenting the work we have done in this research on both a functional and non-functional level. Functionally, it is our desire to integrate mission specification mechanisms that can trigger variability in an automated fashion into our framework. In doing so, the coverage of our variability management solution would be extended to enhance flexible and customizable feature re-configuration driven by mission specification.
+
+From a non-functional perspective, this focused more on feasibility rather than operational quality. In view of this, we plan to do some additional work in the area of robot execution performance refinements. Here, we will take a closer look at the quality of a robot's execution towards task fulfilment. This will be defined with regards to non-functional properties such as safety and task efficiency, in scenarios driven primarily by variable environmental occurrences and limited resources.
+
 \section*{Acknowledgment}
-This journal draws inspiration from materials contributed by Sergio Garc\'{i}a, Claudio Menghi, Patrizio Pelliccione, Thorsten Berger and Rebekka Wohlrab. This study extends their work concerning SERA; A Self-adaptive dEcentralized Robotic Architecture for building autonomous, heterogeneous and collaborative robotic applications. 
+This paper draws inspiration from materials contributed by Sergio Garc\'{i}a, Claudio Menghi, Patrizio Pelliccione, Thorsten Berger and Rebekka Wohlrab. This study extends their work concerning SERA; A Self-adaptive dEcentralized Robotic Architecture for building autonomous, heterogeneous and collaborative robotic applications.
 
 
 \begin{thebibliography}{00}
@@ -948,6 +957,10 @@ Software Product Lines,'' Fakultät für InformatikOtto-von-Guericke-Universitä
 \bibitem{vmir} T. Berger, S. She, R. Lotufo, A. Wasowski, K. Czarnecki, ``Variability Modeling in the Real: A Perspective From the Operating Systems Domain,'' ACM, 2010.
 \bibitem{foda-tech-rep} K. C. Kang, S. Cohen, J. Hess, W. Nowak, and S. Peterson, ``Feature-Oriented Domain Analysis (FODA) Feasibility Study. Technical
 Report,'' CMU/SEI-90-TR-21. Carnegie-Mellon University, 1990.
+\bibitem{man-runt-var-lotz} A. Lotz, J. F. Ingl\'{e}s-Romero, C. Vicente-Chicote and C. Schlegel, ``Managing Run-Time Variability in Robotics Software by Modeling Functional and Non-functional Behavior,'' LNBIP,volume 147. Springer, Berlin, Heidelberg, 2013.
+\bibitem{vml} S. Zschaler, P. S\'{a}nchez, J. Santos, M. Alf\'{e}rez, A. Rashid, L. Fuentes, A. Moreira, J. Ara\'{u}jo and U. Kulesza, ``VML* – A Family of Languages for Variability
+Management in Software Product Lines,'' Lecture Notes in Computer Science, vol 5969. Springer, Berlin, Heidelberg, 2009.
+\bibitem{var-mod-chall} S. Garc\'{i}a, D. Strüber,  D. Brugali, A. Di Fava, P. Schillinger, P. Pelliccione, and T. Berger, ``Variability Modeling of Service Robots: Experiences and Challenge,'' VAMOS. Leuven, Belgium, 2019.
 \end{thebibliography}
 \vspace{12pt}
 
