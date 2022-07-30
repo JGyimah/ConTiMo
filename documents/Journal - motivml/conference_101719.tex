@@ -154,11 +154,11 @@ In summary, our research work provides a variability modelling framework, in res
 \begin{enumerate}
     \item \textit{The lack of a standard variability modelling framework for robotic system design and development: }The lack of a variability modelling framework that can model different version of features together with their possible bindings, implement them, and above all, one that can ensure model validity and correctness. Various ad hoc mechanisms can be identified in different implementations where implementers try to enforce mechanisms in anticipation of possible occurrences in a robot's operating environment. However, none of these solutions posses the required capabilities for flexible and customizable modelling, implementation and validation. Rather, such ad hoc mechanisms tend to complicate the entire implementation due too their low level of reuse and complexity of extension and maintenance.
     
-    \item \textit{The lack of mechanisms and guidelines for implementing variability management techniques in robotic systems:} Even though a plethora of ad hoc mechanisms exist, there aren't any precise guidelines that detail how to integrate and use them to design viable robot configurations. This can be attributed to the fact that, usually, implementations of variability mechanisms are included in robotic applications in the form of a pre-emptive contingency. For that matter, due to the non-deterministic nature of the contexts in which service robots are designed to operate in, these mechanisms fail to cater for all possible scenarios. And even in cases where they do, there are little to no guidelines to describe how they are implemented under the hood.
+    \item \textit{The lack of standard mechanisms and guidelines for implementing variability management techniques in robotic systems:} Apart from the existence of a plethora of ad hoc strategies, there also a lack of useful guidelines that detail how to integrate and use a set of standard mechanisms to design and implement variability in robot configurations. The lack of a standardised set of mechanisms, can be attributed to the fact that, usually, implementations of variability mechanisms are included in robotic applications in the form of a pre-emptive contingency. For that matter, due to the non-deterministic nature of the contexts in which service robots are designed to operate in, these mechanisms fail to cater for all possible scenarios. And even in cases where they do, there are little to no guidelines to describe how they are implemented under the hood.
     
-    To the best of our knowledge, ROS based open sourced applications in general, lack a comprehensive set of usage guidelines that verify or provide proof that such robotic applications meet the specifications or requirements that define their capabilities and how they do so.
+    Additionally, to the best of our knowledge, ROS based open sourced applications in general, lack a comprehensive set of usage guidelines that verify or provide proof that such robotic applications meet the specifications or requirements that define their capabilities and how they do so.
     
-    In a domain like robotics which is relatively new and rapidly advancing, when it comes to implementing variability mechanisms, there seems to be no streamlined and platform specific approach for doing so. In many cases, robotic application developers resort to undocumented ad hoc methods of implementing and managing variability.
+    In a domain like robotics which is relatively new and rapidly advancing, when it comes to implementing variability mechanisms, there seems to be no streamlined and platform specific approach for doing so. In many cases, robotic application developers resort to undocumented ad hoc methods of implementing and managing variability that are neither reusable nor maintainable.
     
     \item \textit{The lack of a variability management solution that addresses the complexity of engineering robotic systems: }A full-fledged robotic system is a complex system that consists of many modules. Whether single or multi purpose, the versatility a robotic system offers in different scenarios, requires the integration of heterogeneous modules. Many of these modules that need to be integrated are often developed by a diverse group of experts (e.g., electrical engineers, perception experts, control theorists, software engineers). This perceivable diversity complicates the integration, customisation, and maintainability of packages in the robotics sphere. These complications translate into complexity when it comes to collaboratively engineering robotic applications. Furthermore, due to the low level of code reuse when it comes to implementing mechanisms, there is the likelihood of having dispersed implementations of mechanisms, that are expensive to maintain, that fulfil the same purpose.
 \end{enumerate}
@@ -344,7 +344,7 @@ Our language design and implementation methodology, can be broken down into a nu
 \begin{figure}[H]
 \caption{Methodology Overview}
 \centering
-\includegraphics[width=0.5\textwidth]{diagrams/methods.png}
+\includegraphics[keepaspectratio,height=9cm, width=12cm]{diagrams/methods.png}
 \label{methover}
 \end{figure}
 
@@ -428,20 +428,21 @@ The syntax manager component contains all implementations related to language to
 \caption{Feature Schema}
 \begin{minted}[
 framesep=2mm,
-baselinestretch=1.2,
+baselinestretch=1,
 bgcolor=LightGray,
-fontsize=\footnotesize
+fontsize=\footnotesize,
+showtabs=false,                  
+tabsize=2
 ]{Json}
 
     {
         "id": "F0",
         "name": "ComponentControl",
             "constraints": {
-            "featuresIncluded": [],
-            "featuresExcluded": [],
-            "bindingTimeAllowed":"Early",
-            "bindingModeAllowed":"Static"
-            },
+	            "featuresIncluded": [],
+	            "featuresExcluded": [],
+	            "bindingTimeAllowed":"Early",
+	            "bindingModeAllowed":"Static"},
         "group": "OR",
         "isMandatory": true
     }
@@ -454,9 +455,11 @@ fontsize=\footnotesize
 \caption{Configuration Schema}
 \begin{minted}[
 framesep=2mm,
-baselinestretch=1.2,
+baselinestretch=1,
 bgcolor=LightGray,
-fontsize=\footnotesize
+fontsize=\footnotesize,
+showtabs=false,                  
+tabsize=2
 ]{Json}
 
 {
@@ -537,9 +540,11 @@ Furthermore, in our model refinement step, that aims at extending our mock-up ex
 \caption{Textual Sample of Features}
 \begin{minted}[
 framesep=2mm,
-baselinestretch=1.2,
+baselinestretch=1,
 bgcolor=LightGray,
-fontsize=\footnotesize
+fontsize=\footnotesize,
+showtabs=false,                  
+tabsize=2
 ]{Json}
 {
     "id": "root_feature",
@@ -547,23 +552,24 @@ fontsize=\footnotesize
     "group": "",
     "isMandatory": true,
     "sub": [
-	        {
-	        "id": "F0",
+	        {"id": "F0",
 	        "name": "ComponentControl",
 	        "constraints": {
-	        "featuresIncluded": [],
-	        "featuresExcluded": [],
-	        "bindingTimeAllowed":"Early",
-	        "bindingModeAllowed":"Static"
-	        },
+		        "featuresIncluded": [],
+		        "featuresExcluded": [],
+		        "bindingTimeAllowed":"Early",
+		        "bindingModeAllowed":"Static"},
 	        "group": "OR",
 	        "isMandatory": true
 	        "sub":[
 	            {
 	            "id": "F1",
-	            ...
+	            "name": "..."
 	            }
-	        ]}]}
+	        ]
+        }
+    ]
+}
 \end{minted}
 \label{feat-conc-text}
 \end{listing}
@@ -575,27 +581,29 @@ All features present in our feature model specification posses binding time and 
 \caption{Textual Sample of Feature Configurations}
 \begin{minted}[
 framesep=2mm,
-baselinestretch=1.2,
+baselinestretch=1,
 bgcolor=LightGray,
-fontsize=\footnotesize
+fontsize=\footnotesize,
+showtabs=false,                  
+tabsize=2
 ]{Json}
 {
-"properties": [
-    {
-    "id": "F0",
-    "props": {
-        "mode": "Static",
-        "time": "Early"
-    }
-    },
-    {
-    "id": "F1",
-    "props": {
-        "mode": "Static",
-        "time": "Early"
-    }
-    }
-]
+	"properties": [
+	    {
+	    "id": "F0",
+	    "props": {
+	        "mode": "Static",
+	        "time": "Early"
+	    	}
+	    },
+	    {
+	    "id": "F1",
+	    "props": {
+	        "mode": "Static",
+	        "time": "Early"
+	    	}
+	    }
+	]
 }
 \end{minted}
 \label{bind-conc-text}
@@ -885,8 +893,8 @@ Our solution to this standardisation challenge ties directly into \textit{RQ 2} 
 
 Moreover, our library design and implementation targets a wide array of skilled professionals in the robotics domain. Considering the contrast in skill level of domain experts, we were able to engineer our framework with a deep focus on usability to accommodate potential users from diverse backgrounds.
 
-\subsection{The lack of mechanisms and guidelines for implementing variability management techniques in robotic systems}
-There have been some language propositions in the area of modelling variability in the robotics systems but none of them offer mechanisms together with operational guidelines to assist domain stakeholders in understanding and using such languages. This scarcity is particularly prevalent in the ROS community. Aside that, more often than not, variability management in itself, is handled in an adhoc manner by experts in the robotics domain.
+\subsection{The lack of mechanisms and guidelines for implementing variability management in robotic systems}
+There have been some variability modelling language propositions in robotics systems, but none of them offer standard mechanisms together with operational guidelines to assist domain stakeholders in understanding and using such languages. This scarcity is particularly prevalent in the ROS community. Besides this, variability management in itself, is often handled in an adhoc manner in the form of home grown configurators and the likes.
 
 To diminish this lack, our variability modelling framework ships with a comprehensive set of guidelines\foot{https://github.com/SergioGarG/sera-extension/tree/master/documents/guidelineDoc/main.pdf}
 offered as a supporting artifact that serves as verification for our variability modelling language and the framework as a whole, as well as a means to demonstrate the results of this study. As a quick recap, this study aims to first and foremost, prove the feasibility of modelling variability in robotic systems using a feature's binding time and binding mode.  Thus in our accompanying documentation, we verify that our language fulfils the requirements stated in our implementation, while providing verifiable evidence through mechanism-driven examples to prove this.
