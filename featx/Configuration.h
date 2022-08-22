@@ -4,7 +4,7 @@
 #include <string>
 #include "Feature.h"
 
-class Configuration: public Feature{
+class Configuration{
 
     std::string time;
     std::string mode;

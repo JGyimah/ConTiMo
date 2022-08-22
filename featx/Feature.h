@@ -3,6 +3,7 @@
 
 #include <string>
 #include <vector>
+#include "Configuration.h"
 
 class Feature{
     std::string id;
@@ -17,6 +18,8 @@ class Feature{
 
     std::string group;
     bool isMandatory;
+
+    Configuration configuration;
 };
 
 #endif
