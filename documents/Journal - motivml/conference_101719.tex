@@ -401,19 +401,19 @@ Evaluating our language means to assess its implementation from three main persp
 By realising our variability modelling language to implement binding time and binding mode mechanisms in a manner that fulfils our research objectives, we were able to automatically provide proof of the realizability and novelty of our binding technique. In addition to this, a comprehensive evaluation plan was applied to test for type and syntax correctness.
 
 \subsection{Correctness Evaluation}
-As a functional requirement of our language, end users have the ability to model robotic features, define configurations for each feature, and then apply such configurations to multiple scenarios. Configurations are typically an amalgamation of features, relationships and constraints. To assess the validity of configurations described with our language, we have implemented mechanisms that can be used to evaluate the well-formedness of such user defined models and configurations. On a high level, our evaluation plan for our modelling language can be summarised as follows:
+As a functional requirement of our language, end users will have the means to build programs by modelling robotic features, defining configuration bindings for all modelled features, and applying configurations to multiple scenarios through implemented mechanisms. Configurations are typically an amalgamation of features, relationships and constraints. To be able to assess the validity of user defined configurations described with our language, we have implemented mechanisms that can be used to evaluate the well-formedness of both models and configurations. A high level description of our framework evaluation plan can be summarised as follows:
 \begin{enumerate}
   \item Realise mock-ups of example robotic systems.
-  \item Define binding configurations for each mock-up example.
+  \item Define configuration bindings for each mock-up example.
   \item Encapsulate and plug in source code implementations of defined mock-up features.
   \item Compile and validate the syntax and semantics of models and configurations.
-  \item Execute and test model variability.
+  \item Execute and demonstrate model variability.
 \end{enumerate}
-For stakeholders such as end users to be able to verify the correctness of their models, all modelled systems defined in our modelling language must be validated on multiple levels of correctness i.e. syntax and semantic correctness. 
+For stakeholders to be able to verify the correctness of their models, all models and configurations defined with our modelling language must be validated on multiple levels of correctness i.e. syntax and semantic accuracy. 
 \begin{itemize}[label={}]
-  \item \textbf{Syntax Validation: }To effectively validate the syntax of our language, we evaluate the schema of both model and configuration objects. Schema validation in this sense refers to token and token state validation.
+  \item \textbf{Syntax Validation: }To effectively validate our language syntax, we evaluate the schemas of both model and configuration objects. Schema validation in this sense refers to token and token state validity.
  
-  \item \textbf{Semantics Validation: } To validate the semantic implications of our language, we evaluate the correctness of configuration bindings in relation to the corresponding binding constraints specified. We also evaluate the correctness of each configuration binding pair with respect to its implied effect on other features in a given configuration space.
+  \item \textbf{Semantics Validation: } In out attempt to validate the semantic implications of our language, we assess the correctness of configuration bindings in relation to the corresponding binding constraints specified. We also judge the correctness of each configuration binding pair with respect to its implied effect on other features in a given configuration space.
   
 \end{itemize}
 
@@ -711,7 +711,7 @@ The modelling capability of our language provides domain stakeholders with a mea
 \end{itemize}
 
 \subsubsection{Abstract Syntax Definition}
-The abstract syntax of any language refers to the logical representation of that language in memory. In Figure \ref{femet} and \ref{conmet} we provide an abstraction to the user interfaces of both a feature and a configuration objects in the form of class diagrams. Upon instantiation, a feature is selected by default. Every existing feature in a model must bear a unique \textit{ID} attribute which serves as a reference point for each feature throughout multiple points in our implementation. A feature bears a \textit{NAME} that describes its intended purpose and capability. 
+The abstract syntax of any language refers to the logical representation of that language in memory. In Figure \ref{femet} and \ref{conmet} we provide an abstraction to the user interfaces of both a feature and a configuration objects in the form of class diagrams. Upon instantiation, a feature is selected by default. By design, every modelled feature must bear a unique \textit{id} string attribute which serves as a reference point throughout multiple points in our implementation. Every feature bears a \textit{name} that describes its intended purpose and capability. 
 
 Furthermore, every feature has a set of constraints which define the scope of the feature in the model configuration space. Feature constraints are categorised into two main groups. i.e. cross functional constraints and binding property constraints.  Cross functional constraints refer to \textit{includes} and \textit{excludes} constraints while binding property constraints define the possible state values of binding time and binding mode attributes within configurations. A feature may contain an aggregation of sub-features. On the other hand, every feature is composed if a group, which may comprise of strictly two or more features.
 
@@ -723,7 +723,7 @@ Furthermore, every feature has a set of constraints which define the scope of th
 \end{figure}
 
 The configuration capabilities of a feature reflects the ability of the feature to be adapted to fit multiple contexts. Per our proposed variability management technique,
-feature adaptations are determined by a binding time and binding mode combination, specified or assigned based on end user preferences. Each configuration bears reference to an existing feature by way of an \textit{ID} attribute. For each feature, its multiplicity can be described as one or more. Thus, there can exist multiple configurations, provided these configurations are valid with respect to the feature constraints. In each encapsulated instance of a model, it can be observed in Figure \ref{conmet} that configurations are represented as feature compositions. Also, model, feature and configuration functionalities can be generalised into a single named element. 
+feature adaptations are determined by a binding time and binding mode combination, specified or assigned based on end user preferences. Each configuration bears reference to an existing feature by way of an \textit{id} attribute. For each feature, its multiplicity can be described as one or more. Thus, there can exist multiple configurations, provided these configurations are valid with respect to the feature constraints. In each encapsulated instance of a model, it can be observed in Figure \ref{conmet} that configurations are represented as feature compositions. Also, model, feature and configuration functionalities can be generalised into a single named element. 
 
 \begin{figure}[H]
 \caption{Configuration Meta Model}

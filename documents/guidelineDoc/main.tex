@@ -55,9 +55,9 @@ This section gives a step-by-step walk-through of how MoTiVML can be used to ins
 
 \subsection{Instantiate a MoTiVML Model}
 \begin{itemize}
-	\item To create an instance of a model in MoTiVML, in the \textbf{src} folder of the cloned application, make a copy of the template folder provided and rename it to suit your preference.
+	\item To create an instance of a model in MoTiVML, in the \textbf{src} folder of the cloned application, make a copy of the template folder provided and rename it to suit your product preference.
 	
-	\item In your instance folder, there is a \textbf{model.json} with an existing root feature, wrapped in a object.
+	\item In your new product instance folder, there is a \textbf{model.json} with an existing root feature, wrapped in a object.
 	
 	\item The model definition can be extended by appending sub features to the root feature. You can add nested feature objects according to your preferences.Note that each feature specification must have attributes such as \textbf{id}, \textbf{name}, \textbf{constraints}, \textbf{group}, \textbf{isMandatory}. The constraints attribute must contain sub attributes \textbf{featureIncluded}, \textbf{featureExcluded}, \textbf{bindingTimeAllowed}, \textbf{bindingModeAllowed}. Listing \ref{feat-schema} shows a demonstrated example of an extended MoTiVML model instance, for the feature model captured in Figure \ref{simplebot}.
 	
