@@ -3,7 +3,9 @@
 
 #include <string>
 #include <vector>
-#include "Configuration.h"
+
+enum BindingTimeAllowed{Early, Late, Any};
+enum BindingModeAllowed{Static, Dynamic, Any};
 
 class Feature{
     std::string id;
@@ -12,14 +14,12 @@ class Feature{
     struct contraints{
         std::vector<std::string> featuresIncluded;
         std::vector<std::string> featuresExcluded;
-        std::string bindingTimeAllowed;
-        std::string bindingModeAllowed;
+        BindingTimeAllowed bindingTimeAllowed{Early};
+        BindingModeAllowed bindingModeAllowed{Static};
     };
 
     std::string group;
     bool isMandatory;
-
-    Configuration configuration;
 };
 
 #endif

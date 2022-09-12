@@ -4,10 +4,10 @@
 #include <string>
 #include "Feature.h"
 
-class Configuration{
+class Configuration: public Feature{
 
-    std::string time;
-    std::string mode;
+    BindingTimeAllowed time{Early};
+    BindingModeAllowed mode{Static};
 
 };
 
