@@ -37,6 +37,15 @@
         \item ROS Pluginlib
     \end{itemize}
 
+\section{Framework Components}
+\begin{itemize}
+	\item Modeller
+	\item Configurator
+	\item Model visualizer
+	\item Syntax and semantics validator
+	\item Feature Plugin Interface
+\end{itemize}
+
 \section{Setup and Installation of MoTiVML}
 \begin{itemize}
     \item Clone MoTiVML from \href{https://github.com/SergioGarG/sera-extension}{here} into your catkin workspace.
@@ -431,8 +440,8 @@ This section gives a step-by-step walk-through of how MoTiVML can be used to ins
 	\label{conf-schema}
 \end{longlisting}
 
-\subsection{Standalone Model Validation}
-To validate your model and its configuration, navigate to the \textbf{/src/motivml} directory and run the following command in the ROS console:
+\subsection{Use the Standalone Model Validator Tool}
+The inbuilt motivml model validator tool aids in validating models together with their corresponding configurations. To validate your model and its configuration, navigate to the \textbf{/src/motivml} directory and run the following command in the ROS console:
 
 \begin{longlisting}
 	\caption{MoTiVML Validation Command}
@@ -761,9 +770,9 @@ In Figure \ref{consolelaunch} we can observe the launched MoTiVML console. As hi
 
 \subsection{MoTiVML Console Commands}
 \begin{itemize}
-	\item \textbf{show $<parameter>$}: The show command is used to display graphically a user constructed model. This command prints the hierarchical structure of a selected model while displaying details such as its mandatory status, group and binding mode. The show command takes a single parameter. This parameter can either be \textbf{all} or  \textbf{config}. \\
+	\item \textbf{show $<parameter>$}: The show command invokes the motivml model visualizer. The show command is used to display graphically a user constructed model. This command prints the hierarchical structure of a selected model while displaying details such as its mandatory status, group and binding mode. The show command takes a single parameter. This parameter can either be \textbf{all} or  \textbf{config}. \\
 	
-	The \textbf{show all} command only shows all selected features in the model tree. By default all features are selected when instantiated. Thus, this command shows every single feature in the model tree.
+	The \textbf{show all} command only visualizes all selected features that exist in a model tree. By default all features are selected when instantiated. Thus, this command shows every single feature in the model tree.
 	
 	\begin{figure}[H]
 		\caption{show all Command}
@@ -772,7 +781,7 @@ In Figure \ref{consolelaunch} we can observe the launched MoTiVML console. As hi
 		\label{showall}
 	\end{figure}
 
-	The \textbf{show config} command only shows currently selected or bound features. That is, unselected or unbound features in the model are excluded from the output tree.
+	The \textbf{show config} command only visualizes currently selected or bound features. That is, unselected or unbound features in the model are excluded from the visualizer output.
 
 	\begin{figure}[H]
 		\caption{show config Command}
@@ -785,7 +794,7 @@ In Figure \ref{consolelaunch} we can observe the launched MoTiVML console. As hi
 	\begin{figure}[H]
 		\caption{Exit Command}
 		\centering
-		\includegraphics[width=\columnwidth]{images/exit.png}
+		\includegraphics[width=8cm]{images/exit.png}
 		\label{exit}
 	\end{figure}
 
