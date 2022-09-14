@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.6.3)  13 SEP 2022 11:40
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.6.3)  14 SEP 2022 12:35
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -972,7 +972,7 @@ File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 
 (_minted-conference_101719/9B2F0E9F694DD437A954398C40A9EDF2A2794B2042F142019FE8
 9554315534FB.pygtex)
-Underfull \vbox (badness 7740) has occurred while \output is active []
+Underfull \vbox (badness 3503) has occurred while \output is active []
 
 <diagrams/arch-overview.png, id=44, 522.95375pt x 422.57875pt>
 File: diagrams/arch-overview.png Graphic file (type png)
@@ -1011,8 +1011,12 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 (_minted-conference_101719/B123D9739AD93A9D1ABA859758C5B548A2794B2042F142019FE8
-9554315534FB.pygtex) [12 <./diagrams/ex1.png (PNG copy)> <./diagrams/ex2.png (P
-NG copy)>]
+9554315534FB.pygtex)
+Overfull \hbox (13.72621pt too wide) in paragraph at lines 626--651
+ [] 
+ []
+
+[12 <./diagrams/ex1.png (PNG copy)> <./diagrams/ex2.png (PNG copy)>]
 Overfull \hbox (3.65431pt too wide) in paragraph at lines 662--689
  [] 
  []
@@ -1149,7 +1153,7 @@ runsystem(del conference_101719.pyg)...executed.
 Here is how much of TeX's memory you used:
  21959 strings out of 478614
  431350 string characters out of 2852938
- 762212 words of memory out of 3000000
+ 762210 words of memory out of 3000000
  39658 multiletter control sequences out of 15000+600000
  513618 words of font info for 112 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1166,7 +1170,7 @@ pfb><C:/Program Files/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files
 /MiKTeX/fonts/type1/urw/times/utmbi8a.pfb><C:/Program Files/MiKTeX/fonts/type1/
 urw/times/utmr8a.pfb><C:/Program Files/MiKTeX/fonts/type1/urw/times/utmri8a.pfb
 >
-Output written on conference_101719.pdf (19 pages, 1988485 bytes).
+Output written on conference_101719.pdf (19 pages, 1988452 bytes).
 PDF statistics:
  148 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
