@@ -4,12 +4,20 @@
 namespace static_integration{
 
     class MotionPlanningControl: public static_base::StaticInterface{
-        std::string feature_id = "motplannctrl";
+        
         public:
-            MotionPlanningControl(){};
+            MotionPlanningControl(){
+                Feature::setId("motplannctrl");
+                Feature::setName("MotionPlanningAndControl");
+                Feature::setGroup("OR");
+                Feature::setIsMandatory(true);
+
+                Configuration::setTimeBinding(Early);
+                Configuration::setModeBinding(Static);
+            }
 
             void executeFeature(){
-                std::cout << "Hello Motion Planning!!" << std::endl;
+                std::cout << Feature::getName() << "feature run successfully" << std::endl;
             };
 
     };

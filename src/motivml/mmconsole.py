@@ -5,7 +5,8 @@ import sys, os, json
 from motivml.cmdExec import CmdExec
 from motivml.motivml import Dsl
 from motivml.traverse import Traverse
-from motivml_ros.msg import ConfigCommand #custom ROS msg to store/transmit feature config object
+#custom ROS msg to store/transmit feature config object
+from motivml_ros.msg import ConfigCommand
 
 try:
     import readline

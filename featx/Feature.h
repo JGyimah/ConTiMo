@@ -4,22 +4,70 @@
 #include <string>
 #include <vector>
 
-enum BindingTimeAllowed{Early, Late, Any};
-enum BindingModeAllowed{Static, Dynamic, Any};
+namespace motivml_feature{
 
-class Feature{
-    std::string id;
-    std::string name;
+    enum BindingTimeAllowed{Early, Late, Any};
+    enum BindingModeAllowed{Static, Dynamic, Any};
 
-    struct contraints{
+    class Feature{
+    private:
+        std::string id;
+        std::string name;
+
         std::vector<std::string> featuresIncluded;
         std::vector<std::string> featuresExcluded;
         BindingTimeAllowed bindingTimeAllowed{Early};
         BindingModeAllowed bindingModeAllowed{Static};
-    };
 
-    std::string group;
-    bool isMandatory;
+        std::string group;
+        bool isMandatory;
+        std::vector<Feature> sub;
+
+    public:
+        Feature(){};
+
+        //setters
+        void setId(std::string id){
+            id = id;
+        }
+
+        void setName(std::string name){
+            name = name;
+        }
+
+        void setBindingTimeAllowed(BindingTimeAllowed bindingTimeAllowed){
+            bindingTimeAllowed = bindingTimeAllowed;
+        }
+
+        void setBindingModeAllowed(BindingModeAllowed bindingModeAllowed){
+            bindingModeAllowed = bindingModeAllowed;
+        }
+
+        void setGroup(std::string group){
+            group = group;
+        }
+
+        void setIsMandatory(bool isMandatoory){
+            isMandatoory = isMandatoory;
+        }
+
+        void setFeaturesIncluded(std::vector<std::string> inclusions){
+            for(std::string &included : inclusions){
+                featuresIncluded.push_back(included);
+            }
+        }
+
+        void setFeaturesExcluded(std::vector<std::string> exclusions){
+            for(std::string &excluded : exclusions){
+                featuresExcluded.push_back(excluded);
+            }
+        }
+
+        //getters
+        std::string getName(){
+            return name;
+        }
+    };
 };
 
 #endif

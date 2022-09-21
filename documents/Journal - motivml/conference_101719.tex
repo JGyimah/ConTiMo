@@ -829,10 +829,10 @@ The underlying logic of this language design requires the interaction of a featu
 \end{table}
 
 \subsubsection{Constraining the Configuration Space}
-As part of our static semantics definition to effectively constrain the configuration space, it is relevant to enforce constraints on features. To do this, the following ground rules or pre-conditions were conceived as a fundamental basis for designing and developing our solution. We validate these constraints via an in-built constraint checker that parses configurations to identify constraint violations. The reasoning behind these constraints as well as their implied effects on configurations are discussed subsequently.
+As part of our static semantics definition to confine our configuration space, we enforced a number of feature level constraints. To implement this, we conceived a number of ground rules or pre-conditions and enforced them as part of our modelled feature capabilities, to serve as our means of managing the scope of robot product lines that can be modelled with our solution. Additionally, we provide a means of validating a feature's constraint settings via an in-built constraint checker mechanism, that parses and interprets configuration attributes, to identify possible constraint violations. The different types of constraints that exist in our language, their purpose, together with their cumulative effect on each other, are described as follows.
 \begin{itemize}
     \item \textit{Inclusion Constraint: }
-    More often than not, some robotic features tend to require others to function. Supposing there are two features \textbf{A} and \textbf{B}, \textbf{A} \textit{includes} \textbf{B} would imply that, if feature \textbf{A} is selected, feature \textbf{B} must also be to be selected.
+    Otherwise referred to as an implies constraint, satisfies the condition that a given robotic feature tends to require others to function. For example, supposing there are two features \textbf{A} and \textbf{B}, \textbf{A} \textit{includes} \textbf{B} would imply that, if feature \textbf{A} is selected, feature \textbf{B} must also be to be selected.
     %% give examples
     
     \item \textit{Exclusion Constraint: }
@@ -840,7 +840,7 @@ As part of our static semantics definition to effectively constrain the configur
     
     
     \item \textit{Sub Feature Constraint: }
-    A static child feature cannot be a child of a dynamic parent. Allowing that form of inheritance would imply that an unloaded parent would create an orphan child feature. 
+    Given the fact that the capabilities specified in our abstract syntax definition supports a hierarchical parent-child relationship amongst modelled features, a feature with a \textit{static} mode cannot exist as a child of a \textit{dynamic} parent. Allowing that form of inheritance would imply that an unloaded parent feature would create an orphan child feature, leading to the phenomenon of unused features stuck in runtime. 
     
 
 \item \textit{Binding Property Constraints: }

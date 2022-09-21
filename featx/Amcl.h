@@ -4,12 +4,20 @@
 namespace static_integration{
 
     class Amcl: public static_base::StaticInterface{
-        std::string feature_id = "amcl";
+        
         public:
-            Amcl(){};
+            Amcl(){
+                Feature::setId("amcl");
+                Feature::setName("AMCL");
+                Feature::setGroup("XOR");
+                Feature::setIsMandatory(false);
+
+                Configuration::setTimeBinding(Early);
+                Configuration::setModeBinding(Static);
+            }
 
             void executeFeature(){
-                std::cout << "Hello Amcl!!" << std::endl;
+                std::cout << Feature::getName() << "feature run successfully" << std::endl;
             };
 
     };

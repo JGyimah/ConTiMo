@@ -4,12 +4,20 @@
 namespace motivml_plugins{
 
     class Slam: public plugin_base::PluginInterface{
-        std::string feature_id = "slam";
+        
         public:
-            Slam(){};
+            Slam(){
+                Feature::setId("slam");
+                Feature::setName("SLAM");
+                Feature::setGroup("XOR");
+                Feature::setIsMandatory(false);
+
+                Configuration::setTimeBinding(Early);
+                Configuration::setModeBinding(Static);
+            };
 
             void executeFeature(){
-                std::cout << "Slam feature run successfully" << std::endl;
+                std::cout << Feature::getName() << "feature run successfully" << std::endl;
             };
 
     };

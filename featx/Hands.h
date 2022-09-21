@@ -3,12 +3,23 @@
 
 namespace motivml_plugins{
 class Hands: public plugin_base::PluginInterface{
-        std::string feature_id = "hands";
+        private:
+            std::vector<std::string> ex{"pointscloud"};
+
         public:
-            Hands(){};
+            Hands(){
+                Feature::setId("hands");
+                Feature::setName("Hands");
+                Feature::setFeaturesExcluded(ex);
+                Feature::setGroup("XOR");
+                Feature::setIsMandatory(false);
+
+                Configuration::setTimeBinding(Late);
+                Configuration::setModeBinding(Dynamic);
+            };
 
             void executeFeature(){
-                std::cout << "Hands [dynamic] feature run successfully" << std::endl;
+                std::cout << Feature::getName() << "feature run successfully" << std::endl;
             };
 
     };

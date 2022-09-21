@@ -4,12 +4,20 @@
 namespace static_integration{
 
     class Amclros: public static_base::StaticInterface{
-        std::string feature_id = "amclros";
+        
         public:
-            Amclros(){};
+            Amclros(){
+                Feature::setId("amclros");
+                Feature::setName("AmclRos");
+                Feature::setGroup("OR");
+                Feature::setIsMandatory(true);
+
+                Configuration::setTimeBinding(Early);
+                Configuration::setModeBinding(Static);
+            };
 
             void executeFeature(){
-                std::cout << "Hello Amclros!!" << std::endl;
+                std::cout << Feature::getName() << "feature run successfully" << std::endl;
             };
 
     };

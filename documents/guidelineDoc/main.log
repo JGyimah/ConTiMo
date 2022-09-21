@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.6.3)  14 SEP 2022 10:36
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.6.3)  21 SEP 2022 11:29
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -653,36 +653,36 @@ pygtex)
 <images/console.png, id=141, 421.575pt x 207.174pt>
 File: images/console.png Graphic file (type png)
 <use images/console.png>
-Package pdftex.def Info: images/console.png  used on input line 766.
+Package pdftex.def Info: images/console.png  used on input line 764.
 (pdftex.def)             Requested size: 469.75502pt x 230.85414pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 774--775
+Underfull \hbox (badness 10000) in paragraph at lines 772--773
 
  []
 
 <images/showall.png, id=143, 494.44725pt x 253.54726pt>
 File: images/showall.png Graphic file (type png)
 <use images/showall.png>
-Package pdftex.def Info: images/showall.png  used on input line 781.
+Package pdftex.def Info: images/showall.png  used on input line 779.
 (pdftex.def)             Requested size: 469.75502pt x 240.88785pt.
 [10 <./images/console.png>]
 <images/showconfig.png, id=151, 503.481pt x 168.02776pt>
 File: images/showconfig.png Graphic file (type png)
 <use images/showconfig.png>
-Package pdftex.def Info: images/showconfig.png  used on input line 790.
+Package pdftex.def Info: images/showconfig.png  used on input line 788.
 (pdftex.def)             Requested size: 469.75502pt x 156.7744pt.
 <images/exit.png, id=153, 248.127pt x 33.12375pt>
 File: images/exit.png Graphic file (type png)
 <use images/exit.png>
-Package pdftex.def Info: images/exit.png  used on input line 798.
+Package pdftex.def Info: images/exit.png  used on input line 796.
 (pdftex.def)             Requested size: 227.62204pt x 30.38626pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 814--815
+Underfull \hbox (badness 10000) in paragraph at lines 812--813
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 814--815
+Underfull \hbox (badness 10000) in paragraph at lines 812--813
 
  []
 
@@ -692,12 +692,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 814--815
 
 (_minted-main/D5208CE01AA4DEA00F488B6C54D9EC158447DF9C2D5ED130E262CD4D9278E0D8.
 pygtex)
-Underfull \hbox (badness 10000) in paragraph at lines 832--833
+Underfull \hbox (badness 10000) in paragraph at lines 830--831
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 832--833
+Underfull \hbox (badness 10000) in paragraph at lines 830--831
 
  []
 
@@ -706,12 +706,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 832--833
 
 (_minted-main/89A1029D60E1A445E18B3B6E5C9280418447DF9C2D5ED130E262CD4D9278E0D8.
 pygtex)
-Underfull \hbox (badness 10000) in paragraph at lines 849--850
+Underfull \hbox (badness 10000) in paragraph at lines 847--848
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 849--850
+Underfull \hbox (badness 10000) in paragraph at lines 847--848
 
  []
 
@@ -744,7 +744,7 @@ nts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX/fonts/type1/pu
 blic/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts
 /cm/cmr5.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb
 ><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt8.pfb>
-Output written on main.pdf (12 pages, 237246 bytes).
+Output written on main.pdf (12 pages, 237261 bytes).
 PDF statistics:
  225 PDF objects out of 1000 (max. 8388607)
  59 named destinations out of 1000 (max. 500000)

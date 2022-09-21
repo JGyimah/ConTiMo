@@ -4,11 +4,24 @@
 #include <string>
 #include "Feature.h"
 
-class Configuration: public Feature{
+enum BindingTimes{Early, Late};
+enum BindingModes{Static, Dynamic};
 
-    BindingTimeAllowed time{Early};
-    BindingModeAllowed mode{Static};
+class Configuration: public motivml_feature::Feature{
+private:
+    BindingTimes time;
+    BindingModes mode;
 
+public:
+    Configuration(){}
+    
+    void setTimeBinding(BindingTimes time){
+        time = time;
+    }
+
+    void setModeBinding(BindingModes mode){
+        mode = mode;
+    }
 };
 
 #endif

@@ -459,9 +459,9 @@ The inbuilt motivml model validator tool aids in validating models together with
 \label{valcomm}
 \end{longlisting}
 
-All models created in the MoTiVML language are validated on two distinct levels. i.e. syntactically and semantically. Syntactical validation has to do with feature and configuration schemas being evaluated for errors, while semantic validation has to do with modelling and binding constraints evaluation.
+All models created in the MoTiVML language are validated on two distinct levels. i.e. syntax validation and semantic validation. Syntactical validation has to do with feature and configuration schemas being evaluated for errors, while semantic validation has to do with modelling and binding constraints evaluation.
 
-To demonstrate this we evaluate our constructed model and configuration shown in Listing \ref{feat-schema} and \ref{conf-schema} and discuss the results accordingly. A careful observation of  the console output generated from the validation indicates the presence of zero errors. 
+To demonstrate this we evaluate our constructed model and configuration shown in Listing \ref{feat-schema} and \ref{conf-schema} and discuss the results accordingly. A careful observation of  the console output generated from the validation indicates the presence of zero errors.
 
 When our in-built schema and constraint checker identify an error in either a model or a configuration, an error message is outputted to the console indicating where the error is located and why the language has flagged it as an error.
 
@@ -471,8 +471,6 @@ When our in-built schema and constraint checker identify an error in either a mo
 	\includegraphics[width=\columnwidth]{images/validate.png}
 	\label{validation}
 \end{figure}
-
-%%Upon successfully validating a model without any errors, a \textbf{bindings.motivml} file is generated in the corresponding project folder. This file contains features that are have been bound at compile time. At runtime, the \textbf{bindings.motivml} file is dynamically updated depending on which features are successfully bound or unbound.
 
 \subsection{Implement a Statically Bound Feature}
 \subsubsection{Static Early}
