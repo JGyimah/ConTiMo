@@ -718,7 +718,7 @@ To decouple relevant features necessary for binding a feature, our time and mode
 					std::vector<std::string> inc{"featureID_2"};
 					
 				public:
-					MyStaticEarlyClass(){
+					MyStaticLateClass(){
 						Feature::setId("xxxx");
 						Feature::setName("JohnDoe");
 						Feature::setFeaturesExcluded(ex);
@@ -811,7 +811,7 @@ To decouple relevant features necessary for binding a feature, our time and mode
 			baselinestretch=1.2,
 			bgcolor=LightGray,
 			fontsize=\footnotesize
-			]{C}
+			]{c++}
 			
 			namespace motivml_plugins{
 				
@@ -821,7 +821,7 @@ To decouple relevant features necessary for binding a feature, our time and mode
 					std::vector<std::string> inc{"featureID_2"};
 					
 				public:
-					MyStaticEarlyClass(){
+					MyDynamicClass(){
 						Feature::setId("xxxx");
 						Feature::setName("JohnDoe");
 						Feature::setFeaturesExcluded(ex);

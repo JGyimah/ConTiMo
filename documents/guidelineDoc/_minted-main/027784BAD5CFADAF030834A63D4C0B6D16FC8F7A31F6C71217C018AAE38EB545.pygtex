@@ -9,7 +9,7 @@
 \PYG{+w}{		}\PYG{n}{std}\PYG{o}{::}\PYG{n}{vector}\PYG{o}{\PYGZlt{}}\PYG{n}{std}\PYG{o}{::}\PYG{n}{string}\PYG{o}{\PYGZgt{}}\PYG{+w}{ }\PYG{n}{inc}\PYG{p}{\PYGZob{}}\PYG{l+s}{\PYGZdq{}featureID\PYGZus{}2\PYGZdq{}}\PYG{p}{\PYGZcb{};}
 
 \PYG{+w}{	}\PYG{k}{public}\PYG{o}{:}
-\PYG{+w}{		}\PYG{n}{MyStaticEarlyClass}\PYG{p}{()\PYGZob{}}
+\PYG{+w}{		}\PYG{n}{MyStaticLateClass}\PYG{p}{()\PYGZob{}}
 \PYG{+w}{			}\PYG{n}{Feature}\PYG{o}{::}\PYG{n}{setId}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}xxxx\PYGZdq{}}\PYG{p}{);}
 \PYG{+w}{			}\PYG{n}{Feature}\PYG{o}{::}\PYG{n}{setName}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}JohnDoe\PYGZdq{}}\PYG{p}{);}
 \PYG{+w}{			}\PYG{n}{Feature}\PYG{o}{::}\PYG{n}{setFeaturesExcluded}\PYG{p}{(}\PYG{n}{ex}\PYG{p}{);}

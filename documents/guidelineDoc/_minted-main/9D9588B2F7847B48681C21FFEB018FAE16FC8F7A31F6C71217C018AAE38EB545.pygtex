@@ -1,14 +1,14 @@
 \begin{Verbatim}[commandchars=\\\{\}]
 
-\PYG{n}{namespace}\PYG{+w}{ }\PYG{n}{motivml\PYGZus{}plugins}\PYG{p}{\PYGZob{}}
+\PYG{k}{namespace}\PYG{+w}{ }\PYG{n+nn}{motivml\PYGZus{}plugins}\PYG{p}{\PYGZob{}}
 
-\PYG{+w}{	}\PYG{n}{class}\PYG{+w}{ }\PYG{n}{MyDynamicClass}\PYG{o}{:}\PYG{+w}{ }\PYG{n}{public}\PYG{+w}{ }\PYG{n}{plugin\PYGZus{}base}\PYG{o}{::}\PYG{n}{PluginInterface}\PYG{p}{\PYGZob{}}
-\PYG{+w}{	}\PYG{n}{private}\PYG{o}{:}
+\PYG{+w}{	}\PYG{k}{class}\PYG{+w}{ }\PYG{n+nc}{MyDynamicClass}\PYG{o}{:}\PYG{+w}{ }\PYG{k}{public}\PYG{+w}{ }\PYG{n}{plugin\PYGZus{}base}\PYG{o}{::}\PYG{n}{PluginInterface}\PYG{p}{\PYGZob{}}
+\PYG{+w}{	}\PYG{k}{private}\PYG{o}{:}
 \PYG{+w}{		}\PYG{n}{std}\PYG{o}{::}\PYG{n}{vector}\PYG{o}{\PYGZlt{}}\PYG{n}{std}\PYG{o}{::}\PYG{n}{string}\PYG{o}{\PYGZgt{}}\PYG{+w}{ }\PYG{n}{ex}\PYG{p}{\PYGZob{}}\PYG{l+s}{\PYGZdq{}featureID\PYGZus{}1\PYGZdq{}}\PYG{p}{\PYGZcb{};}
 \PYG{+w}{		}\PYG{n}{std}\PYG{o}{::}\PYG{n}{vector}\PYG{o}{\PYGZlt{}}\PYG{n}{std}\PYG{o}{::}\PYG{n}{string}\PYG{o}{\PYGZgt{}}\PYG{+w}{ }\PYG{n}{inc}\PYG{p}{\PYGZob{}}\PYG{l+s}{\PYGZdq{}featureID\PYGZus{}2\PYGZdq{}}\PYG{p}{\PYGZcb{};}
 
-\PYG{+w}{	}\PYG{n}{public}\PYG{o}{:}
-\PYG{+w}{		}\PYG{n}{MyStaticEarlyClass}\PYG{p}{()\PYGZob{}}
+\PYG{+w}{	}\PYG{k}{public}\PYG{o}{:}
+\PYG{+w}{		}\PYG{n}{MyDynamicClass}\PYG{p}{()\PYGZob{}}
 \PYG{+w}{			}\PYG{n}{Feature}\PYG{o}{::}\PYG{n}{setId}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}xxxx\PYGZdq{}}\PYG{p}{);}
 \PYG{+w}{			}\PYG{n}{Feature}\PYG{o}{::}\PYG{n}{setName}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}JohnDoe\PYGZdq{}}\PYG{p}{);}
 \PYG{+w}{			}\PYG{n}{Feature}\PYG{o}{::}\PYG{n}{setFeaturesExcluded}\PYG{p}{(}\PYG{n}{ex}\PYG{p}{);}
