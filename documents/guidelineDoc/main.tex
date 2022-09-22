@@ -472,6 +472,125 @@ When our in-built schema and constraint checker identify an error in either a mo
 	\label{validation}
 \end{figure}
 
+\subsection{Feature Class Implementation}
+\begin{longlisting}
+	\caption{Implementation of MoTiVML Feature Class}
+	\begin{minted}[
+		framesep=2mm,
+		baselinestretch=1,
+		bgcolor=LightGray,
+		fontsize=\footnotesize
+		]{c++}
+		{
+			namespace motivml_feature{
+				
+				enum BindingTimeAllowed{Early, Late, Any};
+				enum BindingModeAllowed{Static, Dynamic, Any};
+				
+				class Feature{
+				private:
+					std::string id;
+					std::string name;
+					
+					std::vector<std::string> featuresIncluded;
+					std::vector<std::string> featuresExcluded;
+					BindingTimeAllowed bindingTimeAllowed{Early};
+					BindingModeAllowed bindingModeAllowed{Static};
+					
+					std::string group;
+					bool isMandatory;
+					std::vector<Feature> sub;
+					
+				public:
+					Feature(){};
+					
+					//setters
+					void setId(std::string id){
+						id = id;
+					}
+					
+					void setName(std::string name){
+						name = name;
+					}
+					
+					void setBindingTimeAllowed(BindingTimeAllowed bindingTimeAllowed){
+						bindingTimeAllowed = bindingTimeAllowed;
+					}
+					
+					void setBindingModeAllowed(BindingModeAllowed bindingModeAllowed){
+						bindingModeAllowed = bindingModeAllowed;
+					}
+					
+					void setGroup(std::string group){
+						group = group;
+					}
+					
+					void setIsMandatory(bool isMandatoory){
+						isMandatoory = isMandatoory;
+					}
+					
+					void setFeaturesIncluded(std::vector<std::string> inclusions){
+						for(std::string &included : inclusions){
+							featuresIncluded.push_back(included);
+						}
+					}
+					
+					void setFeaturesExcluded(std::vector<std::string> exclusions){
+						for(std::string &excluded : exclusions){
+							featuresExcluded.push_back(excluded);
+						}
+					}
+					
+					//getters
+					std::string getName(){
+						return name;
+					}
+				};
+			};
+			
+		}
+		\end{minted}
+	\label{feat-class}
+	
+\end{longlisting}
+
+The a capabilities of a MoTiVML feature are wrapped in a \textbf{motivml\_feature} name space with a set of private attributes abstracted through a bunch of getters and setters. Within a feature, we can identify both descriptive and constraint attributes, implemented using c++ constructs.
+
+\subsection{Configuration Class Implementation}
+
+\begin{longlisting}
+	\caption{Implementation of MoTiVML Configuration Class}
+	\begin{minted}[
+		framesep=2mm,
+		baselinestretch=1,
+		bgcolor=LightGray,
+		fontsize=\footnotesize
+		]{c++}
+		{
+			class Configuration: public motivml_feature::Feature{
+			private:
+				BindingTimes time;
+				BindingModes mode;
+				
+			public:
+				Configuration(){}
+				
+				void setTimeBinding(BindingTimes time){
+					time = time;
+				}
+				
+				void setModeBinding(BindingModes mode){
+					mode = mode;
+				}
+			};
+		}
+	\end{minted}
+	\label{config-class}
+	
+\end{longlisting}
+
+To decouple relevant features necessary for binding a feature, our time and mode binding attributes are encapsulated in a configuration class that inherits directly from our feature class. Just like we saw in the feature class structure, the binding time and bindimg mode date a hidden and abstracted with the help of getters and setters.
+
 \subsection{Implement a Statically Bound Feature}
 \subsubsection{Static Early}
 \begin{itemize}
@@ -484,17 +603,30 @@ When our in-built schema and constraint checker identify an error in either a mo
 			baselinestretch=1.2,
 			bgcolor=LightGray,
 			fontsize=\footnotesize
-			]{C}
+			]{c++}
 			
 			namespace static_integration{
 				
 				class MyStaticEarlyClass: public static_base::StaticInterface{
-					std::string feature_id = "my_unique_feature_id";
-					public:
-					MyStaticEarlyClass(){};
+				private:
+					std::vector<std::string> ex{"featureID_1"};
+					std::vector<std::string> inc{"featureID_2"};
+					
+				public:
+					MyStaticEarlyClass(){
+						Feature::setId("xxxx");
+						Feature::setName("JohnDoe");
+						Feature::setFeaturesExcluded(ex);
+						Feature::setFeaturesIncluded(inc);
+						Feature::setGroup("XOR");
+						Feature::setIsMandatory(false);
+						
+						Configuration::setTimeBinding(Early);
+						Configuration::setModeBinding(Static);
+					};
 					
 					void executeFeature(){
-						std::cout << "Hello My Feature!!" << std::endl;
+						std::cout << Feature::getName() << "feature run successfully" << std::endl;
 					};
 					
 				};
@@ -504,7 +636,10 @@ When our in-built schema and constraint checker identify an error in either a mo
 		\end{minted}
 		\label{samplestaticearly}
 	\end{longlisting}
-	\item Set the class variable \textbf{feature\_id} to the same value as the \textbf{id} attribute in the MoTiVML model.
+	\item Statically set the feature class attributes \textbf{id} to the same value as the \textbf{id} attribute in the MoTiVML model.
+	\item Set configuration binding time and binding mode to \textbf{Early} and \textbf{Static} respectively.
+	\item Set other class attributes to values of your choice that represent the feature you are implementing.
+	\item For all included and excluded features in relation to the said feature, add their ids to a vector and pass them to the setter for either inclusion or exclusion constraints.
 	\item Add the following preprocessor include above your class to include the static base interface class your class will be inheriting from:
 	\begin{longlisting}
 		\caption{Class Inclusion}
@@ -513,7 +648,7 @@ When our in-built schema and constraint checker identify an error in either a mo
 			baselinestretch=1.2,
 			bgcolor=LightGray,
 			fontsize=\footnotesize
-			]{C}
+			]{c++}
 			
 			#include "../include/motivml_ros/static_base.h"
 			
@@ -529,7 +664,7 @@ When our in-built schema and constraint checker identify an error in either a mo
 			baselinestretch=1.2,
 			bgcolor=LightGray,
 			fontsize=\footnotesize
-			]{C}
+			]{c++}
 			
 			#define UNKOWNFEATURE
 			
@@ -545,7 +680,7 @@ When our in-built schema and constraint checker identify an error in either a mo
 			baselinestretch=1.2,
 			bgcolor=LightGray,
 			fontsize=\footnotesize
-			]{C}
+			]{c++}
 			
 			#ifdef UNKOWNFEATURE
 			#include "../../featx/MyStaticClass.h"
@@ -572,17 +707,31 @@ When our in-built schema and constraint checker identify an error in either a mo
 			baselinestretch=1.2,
 			bgcolor=LightGray,
 			fontsize=\footnotesize
-			]{C}
+			]{c++}
 			
 			namespace static_integration{
 				
 				class MyStaticLateClass: public static_base::StaticInterface{
-					std::string feature_id = "my_unique_feature_id";
-					public:
-					MyStaticEarlyClass(){};
+					
+				private:
+					std::vector<std::string> ex{"featureID_1"};
+					std::vector<std::string> inc{"featureID_2"};
+					
+				public:
+					MyStaticEarlyClass(){
+						Feature::setId("xxxx");
+						Feature::setName("JohnDoe");
+						Feature::setFeaturesExcluded(ex);
+						Feature::setFeaturesIncluded(inc);
+						Feature::setGroup("XOR");
+						Feature::setIsMandatory(false);
+						
+						Configuration::setTimeBinding(Late);
+						Configuration::setModeBinding(Static);
+					};
 					
 					void executeFeature(){
-						std::cout << "Hello My Feature!!" << std::endl;
+						std::cout << Feature::getName() << "feature run successfully" << std::endl;
 					};
 					
 				};
@@ -592,6 +741,10 @@ When our in-built schema and constraint checker identify an error in either a mo
 		\end{minted}
 		\label{samplestaticlate}
 	\end{longlisting}
+	\item Statically set the feature class attributes \textbf{id} to the same value as the \textbf{id} attribute in the MoTiVML model.
+	\item Set configuration binding time and binding mode to \textbf{Late} and \textbf{Static} respectively.
+	\item Set other class attributes to values of your choice that represent the feature you are implementing.
+	\item For all included and excluded features in relation to the said feature, add their ids to a vector and pass them to the setter for either inclusion or exclusion constraints.
 	\item Statically include the feature in the configuration by adding it to the \textbf{motivml\_plugins.h} file. For Example
 	
 	\begin{longlisting}
@@ -663,14 +816,26 @@ When our in-built schema and constraint checker identify an error in either a mo
 			namespace motivml_plugins{
 				
 				class MyDynamicClass: public plugin_base::PluginInterface{
-					std::string feature_id = "my_unique_feature_id";
-					public:
-					MyDynamicClass(){};
+				private:
+					std::vector<std::string> ex{"featureID_1"};
+					std::vector<std::string> inc{"featureID_2"};
 					
-					void executeFeature(){
-						std::cout << "Hello My Feature!!" << std::endl;
+				public:
+					MyStaticEarlyClass(){
+						Feature::setId("xxxx");
+						Feature::setName("JohnDoe");
+						Feature::setFeaturesExcluded(ex);
+						Feature::setFeaturesIncluded(inc);
+						Feature::setGroup("XOR");
+						Feature::setIsMandatory(false);
+						
+						Configuration::setTimeBinding(Early);
+						Configuration::setModeBinding(Dynamic);
 					};
 					
+					void executeFeature(){
+						std::cout << Feature::getName() << "feature run successfully" << std::endl;
+					};
 				};
 				
 			};
@@ -679,6 +844,9 @@ When our in-built schema and constraint checker identify an error in either a mo
 		\label{samplestaticlate}
 	\end{longlisting}
 
+	\item Set configuration binding mode to \textbf{Dynamic} and binding time to either \textbf{Late} or \textbf{Early}.
+	\item Set other class attributes to values of your choice that represent the feature you are implementing.
+	\item For all included and excluded features in relation to the said feature, add their ids to a vector and pass them to the setter for either inclusion or exclusion constraints.
 	\item \textbf{Include Plugin}: Include the feature in the configuration by adding it to the \textbf{motivml\_plugins.h} file. For Example
 	
 	\begin{longlisting}
