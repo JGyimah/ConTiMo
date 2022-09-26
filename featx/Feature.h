@@ -51,13 +51,13 @@ namespace motivml_feature{
             isMandatoory = isMandatoory;
         }
 
-        void setFeaturesIncluded(std::vector<std::string> inclusions){
+        void setFeaturesIncluded(std::vector<std::string>& inclusions){
             for(std::string &included : inclusions){
                 featuresIncluded.push_back(included);
             }
         }
 
-        void setFeaturesExcluded(std::vector<std::string> exclusions){
+        void setFeaturesExcluded(std::vector<std::string>& exclusions){
             for(std::string &excluded : exclusions){
                 featuresExcluded.push_back(excluded);
             }
