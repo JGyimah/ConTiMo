@@ -11,7 +11,6 @@
 \usepackage{xcolor}
 \usepackage[hyphens,spaces,obeyspaces]{url}
 \usepackage{multirow}
-\usepackage{amsmath}
 \definecolor{LightGray}{gray}{0.9}
 %%personal macros --begin%%
 %%%%%%%%Useful macros for poof-reading, always copy-paste into your latex projects
@@ -310,7 +309,7 @@ According to a study conducted by Marko Rosenmüller et al, utilising static or 
 
 In order to decrease some of such restrictions highlighted by Rosenmüller, different approaches for combining static and dynamic binding have been suggested in multiple studies with the goal of retaining customizability and flexibility with a minimum amount of runtime overhead. Additionally, the practice of supporting different binding times based on the same implementation mechanism simplifies Software Product Line development and maintenance \cite{flex-feat-bind}. For instance, in our proposed technique, at binding time, an early binding classification implies that a feature is programmed to be loaded or unloaded at compile time while a late binding classification implies that a feature only allows runtime loading or unloading.
 
-For both time and mode binding, our proposed variability modelling language supports an "Any" binding type which implies that at a given time (t), the binding attribute of a feature can assume both an early and a late value. Likewise at any given mode (m), a binding mode attribute may assume both a static and dynamic binding value.
+For both time and mode binding, our proposed variability modelling language supports an implicit "Any" binding type. In that, the binding time attribute of a feature can reference both an early and a late binding time state. Likewise in the case of binding mode attributes, an "Any" binding type implies that a feature can be both static and dynamic.
 
 Within the feature modelling capability of our language, the variability of any given robotic feature can be modelled and configured within the following binding scope:
 
@@ -334,7 +333,7 @@ Within the feature modelling capability of our language, the variability of any 
     \item \textbf{Any Any: } This implies that a feature can be bound either statically or dynamically at compile time or run time. 
 \end{itemize}
 
-The set of binding pairs indicated above can be generated through an expansion of all possible binding time values combined with all possible binding mode values assigned to a feature. The resultant attribute pairs made up of nine combinations, provide a high-level overview of all possible binding states that exist within the configuration space of a given mobile service robot example. 
+The set of binding pairs indicated above can be generated through an expansion of all possible binding time values combined with all possible binding mode values assigned to a feature. The resultant attribute pairs made up of nine combinations of both implicit and explicit binding types, provide a high-level overview of all possible binding states that are likely to exist within the configuration space of a given mobile service robot example. 
 
 \section{Methods}
 Our research method of choice is the design science methodology. We chose the design science paradigm due to its deep roots in engineering science. In that, design science generally offers a problem-solving paradigm that seeks to create innovations that define the ideas, practices, technical capabilities, and products through which analysis, design, implementation, management, and information system usage can be effectively and efficiently accomplished  \cite{des-res}. Figure \ref{methover} provides a layered and well defined overview of the empirical steps we took to create artifacts that rely on existing theories that are applied, tested, modified, and extended through experience, creativity, intuition, and problem solving in this study.
@@ -753,12 +752,73 @@ In Table \ref{tab:realmecha}, we have highlighted some of such mechanisms which 
 	\end{center}
 \end{table}
 
-
 \subsubsection{Implementing Binding Mechanisms}
-To provide roboticists with a SERA integrated solution that has the means
-and techniques to implement variability, we implemented and packaged binding mechanisms in the form of a framework within our solution. Binding mechanisms can be described as implementation techniques that provide our variability modelling language with variability realising capabilities. Model variation points implemented within our language, leverage such techniques by integrating ROS based feature source-code packages to evaluate static, dynamic, early and late binding techniques in user defined robotic programs.
+Binding mechanisms are implementation techniques that provide our modelling language with the capability of variability. Modelled variation points of robots, that have been described and implemented with our language, leverage such variability techniques by integrating ROS based feature source-code packages into the framework in order to evaluate static, dynamic, early and late binding techniques in user defined programs.
 
-The binding mechanisms we chose to implement in our ROS application, are robust and standardised open source implementations that are compatible across a number of platforms. Figure \ref{mecha-compo} shows the component interaction between our variability modelling language and our robot builder component on ROS. To complement this, we have provided a brief description of our chosen mechanisms with respect to their functions below.
+The binding mechanisms present in our framework, were simulated with robust open source implementations that are compatible across a number of platforms. By utilising the capabilities of the C++ preprocessor and the ROS Pluginlib library, we were able to realise both static and dynamic feature binding.
+\begin{itemize}
+	\item \textbf{C++ Preprocessor for Static Binding:}
+	\begin{listing}[H]
+		\caption{Examples of Static Feature Inclusions}
+		\begin{minted}[
+			framesep=2mm,
+			baselinestretch=1,
+			bgcolor=LightGray,
+			fontsize=\footnotesize,
+			showtabs=false,                  
+			tabsize=1
+			]{cpp}
+			#ifdef AMCL
+			#include "../../featx/Amcl.h"
+			#endif
+			
+			#ifdef MTNPLNCTRL
+			#include "../../featx/MotionPlanningCtrl.h"
+			#endif
+			
+			#ifdef COMPCTRL
+			#include "../../featx/ComponentControl.h"
+			#endif
+		\end{minted}
+		\label{cpp-static}
+	\end{listing}
+
+Within our implementation, we have a designated static feature loader module that executes a series of conditional statements in the form of preprocessor directives to determine which features are to be included or excluded at compile time. As shown in Listing \ref{cpp-static} above, implemented feature classes \textit{Amcl.h}, \textit{MotionPlanningCtrl.h} and \textit{ComponentControl.h} will be included in our user program build if they are explicitly defined as part of the configuration. This mechanism exists strictly for static features that are loaded at compile time.
+
+For static feature loaded at runtime, we implemented a customised plugin-type mechanism which disallows changing a said feature after it has been loaded at runtime.
+
+\item \textbf{ROS Pluginlib for Dynamic Binding:}
+	\begin{listing}[H]
+		\caption{Examples of Dynamic Feature Plugins}
+		\begin{minted}[
+			framesep=2mm,
+			baselinestretch=1,
+			bgcolor=LightGray,
+			fontsize=\footnotesize,
+			showtabs=false,                  
+			tabsize=2,
+			breaklines
+			]{cpp}
+		PLUGINLIB_EXPORT_CLASS(motivml_plugins::Slam, plugin_base::PluginInterface)
+		
+		PLUGINLIB_EXPORT_CLASS(motivml_plugins::Hands, plugin_base::PluginInterface)
+		
+		PLUGINLIB_EXPORT_CLASS(
+		motivml_plugins::Pointscloud, plugin_base::PluginInterface)
+		
+		PLUGINLIB_EXPORT_CLASS(
+		static_integration::Amclros, static_base::StaticInterface)
+		\end{minted}
+		\label{pluginlib-dynamic}
+	\end{listing}
+
+To simulate dynamic binding in general, we used the ROS pluginlib mechanism to encapsulate feature classes as plugins. Our choice use ROS pluginlib was influenced by the fact that it is lightweight, robust, stable and easy to integrate as a third party library. In addition, it comes with a very intuitive documentation\foot{http://wiki.ros.org/pluginlib} backed by an active community of contributors.
+
+Listing \ref{pluginlib-dynamic} demonstrates how the ROS version of the pluginlib library is used to export classes that can later be consumed by programs as plugins.
+\end{itemize}
+\subsubsection{Integrating Binding Mechanisms Into Framework Components}
+To provide roboticists with a SERA integrated solution that has the means
+and techniques to implement variability, we integrated our implemented binding mechanisms on a component level into out framework solution.  Figure \ref{mecha-compo} shows the component interaction between our variability modelling language and our robot builder component on ROS. To complement this, we have provided a brief description of our chosen mechanisms with respect to their functions below.
 
 \begin{figure}[H]
 	\caption{Binding Mechanisms Component Diagram}
@@ -875,7 +935,7 @@ For us to be able to thoroughly validate our language design and its implementat
 
   \subsection{Schema Validation Tool} Our library provides a schema validation tool which certifies that the grammar and syntax rules of programs created with our language are structurally valid. Using our language, features and configurations can be conveniently modelled as key-value pairs of objects. Grammatically, a feature's object keys are represented as tokens that are not only terminal in nature, but also store meta-data on the features they represent. Value tokens on the other hand are generated from a finite set of data types which are unique to each object attribute present within a feature.
   
-  The operations of our in-built schema validation tool can be classified into two categories. i.e. feature schema validation and configuration schema validation. Feature schema validation demands that a feature's model meta-data is validated by checking for absent or misrepresented tokens. A configuration on the other hand is validated based on meta-data such as its \textbf{id}, \textbf{binding time} and \textbf{binding mode} properties. In both cases however, in the event of an absent or misrepresented token, an invalid schema error is triggered in the form of a console prompt, indicating the specific feature that bears the error.
+  The operations of our in-built schema validation tool can be classified into two categories. i.e. feature schema validation and configuration schema validation. Feature schema validation demands that a feature's model meta-data is validated by checking for absent or misrepresented tokens. A configuration on the other hand is validated based on meta-data such as its \textit{id}, \textit{binding time} and \textit{binding mode} properties. In both cases however, in the event of an absent or misrepresented token, an invalid schema error is triggered in the form of a console prompt, indicating the specific feature that bears the error.
   
   \subsection{Constraint Validation Tool} Embedded within our library is another component referred to as the constraint validator. This implementation, purposefully evaluates the semantic implications of each feature's constraints against its configuration settings, in the grand scheme of the configuration space. Our constraint validator tool, operates by parsing and interpreting feature models to validate two main types of semantics. The first is the set of configurations that have been defined within the scope of the constraints enforced. The second is the validity of configuration binding pairs with respect to other binding pairs within a specified product line definition.
   

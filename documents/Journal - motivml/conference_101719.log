@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.6.3)  25 SEP 2022 19:21
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.6.3)  10 OCT 2022 13:52
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -844,20 +844,20 @@ File: l3backend-pdftex.def 2022-04-20 L3 backend support: PDF output (pdfTeX)
 (conference_101719.aux)
 \openout1 = `conference_101719.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
 
 -- Lines per column: 56 (exact).
 (C:\Program Files\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
@@ -885,21 +885,21 @@ File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 Package todonotes Warning: The length marginparwidth is less than 2cm and will 
 most likely cause issues with the appearance of inserted todonotes. The issue c
 an be solved by adding a line like \setlength {\marginparwidth }{2cm} prior to 
-loading the todonotes package. on input line 64.
+loading the todonotes package. on input line 63.
 
 \c@lstlisting=\count364
-LaTeX Font Info:    Trying to load font information for U+msa on input line 97.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 96.
 
 (C:\Program Files\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 97.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 96.
 
 
 (C:\Program Files\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Underfull \hbox (badness 10000) in paragraph at lines 124--124
+Underfull \hbox (badness 10000) in paragraph at lines 123--123
 [][][]$\OT1/ptm/m/n/8 http : / / blog . pal -[] robotics . com / how -[] to -[]
  build -[] a -[] solution -[] for -[] ^^Lghting -[]
  []
@@ -909,30 +909,30 @@ Underfull \hbox (badness 10000) in paragraph at lines 124--124
 
 ] [2]
 [3]
-Underfull \hbox (badness 10000) in paragraph at lines 202--202
+Underfull \hbox (badness 10000) in paragraph at lines 201--201
 [][][]$\OT1/ptm/m/n/8 https : / / pdfcoee . com / kss -[] 55 -[] operating -[]
  and -[] programming -[] instructions -[]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 202--202
+Underfull \hbox (badness 10000) in paragraph at lines 201--201
 [][][]$\OT1/ptm/m/n/8 https : / / www . sciencedirect . com / topics / computer
  -[] science / domain -[] speci^^Lc -[]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 204--204
+Underfull \hbox (badness 10000) in paragraph at lines 203--203
 [][][]$\OT1/ptm/m/n/8 https : / / corlab . github . io / dslzoo / architectures
  -[] and -[] programming -[]
  []
 
 [4] [5]
-Underfull \hbox (badness 10000) in paragraph at lines 273--273
+Underfull \hbox (badness 10000) in paragraph at lines 272--272
  \OT1/ptm/m/it/10 E. Variability-modelling Frame-works, Mid-dle-ware, and
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 293--293
+Underfull \hbox (badness 10000) in paragraph at lines 292--292
 [][][]$\OT1/ptm/m/n/8 https : / / wiki . servicerobotik -[] ulm . de / about -[
 ] smartsoft : robotic -[] behavior :
  []
@@ -947,13 +947,13 @@ Underfull \vbox (badness 1024) has occurred while \output is active []
 <diagrams/methods.png, id=35, 472.76625pt x 527.9725pt>
 File: diagrams/methods.png Graphic file (type png)
 <use diagrams/methods.png>
-Package pdftex.def Info: diagrams/methods.png  used on input line 347.
+Package pdftex.def Info: diagrams/methods.png  used on input line 346.
 (pdftex.def)             Requested size: 229.29857pt x 256.0744pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [8 <./diagrams/methods.png>] [9]
-Underfull \hbox (badness 2547) in paragraph at lines 423--424
+Underfull \hbox (badness 2547) in paragraph at lines 422--423
 []\OT1/ptm/m/n/10 Our lan-guage, oth-er-wise known as Mo-TiVML, is a
  []
 
@@ -977,10 +977,10 @@ Underfull \vbox (badness 3503) has occurred while \output is active []
 <diagrams/arch-overview.png, id=44, 522.95375pt x 422.57875pt>
 File: diagrams/arch-overview.png Graphic file (type png)
 <use diagrams/arch-overview.png>
-Package pdftex.def Info: diagrams/arch-overview.png  used on input line 482.
+Package pdftex.def Info: diagrams/arch-overview.png  used on input line 481.
 (pdftex.def)             Requested size: 258.0pt x 208.48396pt.
 
-Overfull \hbox (6.0pt too wide) in paragraph at lines 482--484
+Overfull \hbox (6.0pt too wide) in paragraph at lines 481--483
  [][] 
  []
 
@@ -988,7 +988,7 @@ Overfull \hbox (6.0pt too wide) in paragraph at lines 482--484
 <diagrams/ex1.png, id=51, 1588.93625pt x 232.87pt>
 File: diagrams/ex1.png Graphic file (type png)
 <use diagrams/ex1.png>
-Package pdftex.def Info: diagrams/ex1.png  used on input line 526.
+Package pdftex.def Info: diagrams/ex1.png  used on input line 525.
 (pdftex.def)             Requested size: 464.39224pt x 85.3575pt.
 
 
@@ -997,7 +997,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 <diagrams/ex2.png, id=52, 1233.60875pt x 232.87pt>
 File: diagrams/ex2.png Graphic file (type png)
 <use diagrams/ex2.png>
-Package pdftex.def Info: diagrams/ex2.png  used on input line 533.
+Package pdftex.def Info: diagrams/ex2.png  used on input line 532.
 (pdftex.def)             Requested size: 464.39037pt x 85.3575pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -1012,67 +1012,67 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 (_minted-conference_101719/B123D9739AD93A9D1ABA859758C5B548A2794B2042F142019FE8
 9554315534FB.pygtex)
-Overfull \hbox (13.72621pt too wide) in paragraph at lines 626--651
+Overfull \hbox (13.72621pt too wide) in paragraph at lines 625--650
  [] 
  []
 
 [12 <./diagrams/ex1.png (PNG copy)> <./diagrams/ex2.png (PNG copy)>]
-Overfull \hbox (3.65431pt too wide) in paragraph at lines 662--689
+Overfull \hbox (3.65431pt too wide) in paragraph at lines 661--688
  [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 703--704
+Underfull \hbox (badness 10000) in paragraph at lines 702--703
 
  []
 
 LaTeX Font Info:    Trying to load font information for OMS+ptm on input line 7
-06.
+05.
 (C:\Program Files\MiKTeX\tex/latex/psnfss\omsptm.fd
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 706.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 705.
 
-Underfull \hbox (badness 4686) in paragraph at lines 706--707
+Underfull \hbox (badness 4686) in paragraph at lines 705--706
 []\OT1/ptm/m/n/10 featureDescriptionBlock $[][]\OMS/cmsy/m/n/10 !$ \OT1/ptm/m/n
 /10 '\OMS/cmsy/m/n/10 f\OT1/ptm/m/n/10 ' 'id' ':' al-phaVal,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 706--707
+Underfull \hbox (badness 10000) in paragraph at lines 705--706
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 708--709
+Underfull \hbox (badness 10000) in paragraph at lines 707--708
 []\OT1/ptm/m/n/10 constraintsDefinitionBlock $[][]\OMS/cmsy/m/n/10 !$ \OT1/ptm/
 m/n/10 con-straints: '\OMS/cmsy/m/n/10 f\OT1/ptm/m/n/10 '
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 708--709
+Underfull \hbox (badness 10000) in paragraph at lines 707--708
 
  []
 
 
-Underfull \hbox (badness 2050) in paragraph at lines 710--711
+Underfull \hbox (badness 2050) in paragraph at lines 709--710
 []\OT1/ptm/m/n/10 bindingPropertiesBlock $[][]\OMS/cmsy/m/n/10 !$ \OT1/ptm/m/n/
 10 '\OMS/cmsy/m/n/10 f\OT1/ptm/m/n/10 ' 'time' ':' al-phaVal,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 710--711
+Underfull \hbox (badness 10000) in paragraph at lines 709--710
 
  []
 
 <diagrams/feature.png, id=61, 9238.515pt x 5447.35126pt>
 File: diagrams/feature.png Graphic file (type png)
 <use diagrams/feature.png>
-Package pdftex.def Info: diagrams/feature.png  used on input line 721.
+Package pdftex.def Info: diagrams/feature.png  used on input line 720.
 (pdftex.def)             Requested size: 258.0pt x 152.10919pt.
 
-Overfull \hbox (6.0pt too wide) in paragraph at lines 721--723
+Overfull \hbox (6.0pt too wide) in paragraph at lines 720--722
  [][] 
  []
 
@@ -1083,53 +1083,68 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 <diagrams/config.png, id=67, 7912.56125pt x 6363.775pt>
 File: diagrams/config.png Graphic file (type png)
 <use diagrams/config.png>
-Package pdftex.def Info: diagrams/config.png  used on input line 731.
+Package pdftex.def Info: diagrams/config.png  used on input line 730.
 (pdftex.def)             Requested size: 258.0pt x 207.41257pt.
 
-Overfull \hbox (6.0pt too wide) in paragraph at lines 731--733
+Overfull \hbox (6.0pt too wide) in paragraph at lines 730--732
  [][] 
  []
 
-<diagrams/mecha-compo.png, id=68, 703.62875pt x 372.39125pt>
+\openout4 = `conference_101719.pyg'.
+
+
+(_minted-conference_101719/1581AA781B4DA02F3318A0705CC7E79BDECB3A99A7C9D9655A0C
+B61CD7D65844.pygtex
+LaTeX Font Info:    Font shape `OT1/pcr/m/it' in size <8> not available
+(Font)              Font shape `OT1/pcr/m/sl' tried instead on input line 2.
+) [14 <./diagrams/feature.png> <./diagrams/config.png>]
+\openout4 = `conference_101719.pyg'.
+
+runsystem(pygmentize -l cpp -f latex -P commandprefix=PYG -F tokenmerge -P stri
+pnl=False -o _minted-conference_101719/A006D9D2F0B1B70BAB0792DF17591509DECB3A99
+A7C9D9655A0CB61CD7D65844.pygtex conference_101719.pyg)...executed.
+
+
+(_minted-conference_101719/A006D9D2F0B1B70BAB0792DF17591509DECB3A99A7C9D9655A0C
+B61CD7D65844.pygtex)
+<diagrams/mecha-compo.png, id=74, 703.62875pt x 372.39125pt>
 File: diagrams/mecha-compo.png Graphic file (type png)
 <use diagrams/mecha-compo.png>
-Package pdftex.def Info: diagrams/mecha-compo.png  used on input line 766.
+Package pdftex.def Info: diagrams/mecha-compo.png  used on input line 826.
 (pdftex.def)             Requested size: 258.0pt x 136.54387pt.
 
-Overfull \hbox (6.0pt too wide) in paragraph at lines 766--768
+Overfull \hbox (6.0pt too wide) in paragraph at lines 826--828
  [][] 
  []
 
-[14 <./diagrams/feature.png> <./diagrams/config.png> <./diagrams/mecha-compo.pn
-g>]
-<diagrams/mandatory.png, id=75, 30.1125pt x 57.21375pt>
+[15 <./diagrams/mecha-compo.png>]
+<diagrams/mandatory.png, id=81, 30.1125pt x 57.21375pt>
 File: diagrams/mandatory.png Graphic file (type png)
 <use diagrams/mandatory.png>
-Package pdftex.def Info: diagrams/mandatory.png  used on input line 795.
+Package pdftex.def Info: diagrams/mandatory.png  used on input line 855.
 (pdftex.def)             Requested size: 28.45369pt x 34.14429pt.
-<diagrams/optional.png, id=76, 31.91925pt x 54.2025pt>
+<diagrams/optional.png, id=82, 31.91925pt x 54.2025pt>
 File: diagrams/optional.png Graphic file (type png)
 <use diagrams/optional.png>
-Package pdftex.def Info: diagrams/optional.png  used on input line 796.
+Package pdftex.def Info: diagrams/optional.png  used on input line 856.
 (pdftex.def)             Requested size: 28.45332pt x 34.14526pt.
- [15 <./diagrams/mandatory.png> <./diagrams/optional.png>] [16]
-Underfull \hbox (badness 1389) in paragraph at lines 896--897
+ [16 <./diagrams/mandatory.png> <./diagrams/optional.png>]
+Underfull \hbox (badness 1389) in paragraph at lines 956--957
 []\OT1/ptm/m/n/10 There have been some vari-abil-ity mod-elling lan-guage
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 898--898
+Underfull \hbox (badness 10000) in paragraph at lines 958--958
 [][][]$\OT1/ptm/m/n/8 https : / / github . com / SergioGarG / sera -[] extensio
 n / tree / master / documents /
  []
 
-[17]
-Underfull \hbox (badness 1874) in paragraph at lines 945--946
+[17] [18]
+Underfull \hbox (badness 1874) in paragraph at lines 1005--1006
 []\OT1/ptm/m/n/8 R. H. Bour-gonjon, ``Em-bed-ded Sys-tems in Con-sumer Prod-uct
 s,''
  []
 
-[18]
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -1141,35 +1156,38 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[19
+runsystem(del _minted-conference_101719\E39530DC156D91E155EFBE8BD273CD65DECB3A9
+9A7C9D9655A0CB61CD7D65844.pygtex)...executed.
 
-] (conference_101719.aux)
+[19] (conference_101719.aux)
 runsystem(del conference_101719.pyg)...executed.
 
  ) 
 Here is how much of TeX's memory you used:
- 21959 strings out of 478614
- 431350 string characters out of 2852938
- 760854 words of memory out of 3000000
- 39658 multiletter control sequences out of 15000+600000
- 513618 words of font info for 112 fonts, out of 8000000 for 9000
+ 21986 strings out of 478614
+ 433043 string characters out of 2852938
+ 760249 words of memory out of 3000000
+ 39676 multiletter control sequences out of 15000+600000
+ 514451 words of font info for 115 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,15n,94p,1299b,727s stack positions out of 10000i,1000n,20000p,200000b,80000s
+ 99i,15n,94p,1299b,917s stack positions out of 10000i,1000n,20000p,200000b,80000s
 {C:/Program Files/MiKTeX/fonts/enc/dvips/base/8r.enc}<C:/Program Files/MiKTeX
-/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX/fonts/type1/
-public/amsfonts/cm/cmr6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfont
-s/cm/cmr8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pf
-b><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Program
- Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files/MiKTeX
-/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX/fonts/type1/
-urw/courier/ucrb8a.pfb><C:/Program Files/MiKTeX/fonts/type1/urw/courier/ucrr8a.
-pfb><C:/Program Files/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files
-/MiKTeX/fonts/type1/urw/times/utmbi8a.pfb><C:/Program Files/MiKTeX/fonts/type1/
-urw/times/utmr8a.pfb><C:/Program Files/MiKTeX/fonts/type1/urw/times/utmri8a.pfb
->
-Output written on conference_101719.pdf (19 pages, 1944615 bytes).
+/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Program Files/MiKTeX/fonts/type1/
+public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfon
+ts/cm/cmr6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb
+><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program
+ Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Program Files/MiKTeX
+/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Program Files/MiKTeX/fonts/type1/
+public/amsfonts/cm/cmsy7.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfon
+ts/cm/cmsy8.pfb><C:/Program Files/MiKTeX/fonts/type1/urw/courier/ucrb8a.pfb><C:
+/Program Files/MiKTeX/fonts/type1/urw/courier/ucrr8a.pfb><C:/Program Files/MiKT
+eX/fonts/type1/urw/courier/ucrro8a.pfb><C:/Program Files/MiKTeX/fonts/type1/urw
+/times/utmb8a.pfb><C:/Program Files/MiKTeX/fonts/type1/urw/times/utmbi8a.pfb><C
+:/Program Files/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files/MiKTe
+X/fonts/type1/urw/times/utmri8a.pfb>
+Output written on conference_101719.pdf (19 pages, 1977232 bytes).
 PDF statistics:
- 148 PDF objects out of 1000 (max. 8388607)
+ 163 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  58 words of extra memory for PDF output out of 10000 (max. 10000000)
 
