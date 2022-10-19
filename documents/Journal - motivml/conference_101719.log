@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.6.3)  10 OCT 2022 13:52
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.6.3)  19 OCT 2022 12:18
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -941,9 +941,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 292--292
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [6]
-Underfull \vbox (badness 1024) has occurred while \output is active []
-
- [7]
+[7]
 <diagrams/methods.png, id=35, 472.76625pt x 527.9725pt>
 File: diagrams/methods.png Graphic file (type png)
 <use diagrams/methods.png>
@@ -1100,10 +1098,6 @@ LaTeX Font Info:    Font shape `OT1/pcr/m/it' in size <8> not available
 ) [14 <./diagrams/feature.png> <./diagrams/config.png>]
 \openout4 = `conference_101719.pyg'.
 
-runsystem(pygmentize -l cpp -f latex -P commandprefix=PYG -F tokenmerge -P stri
-pnl=False -o _minted-conference_101719/A006D9D2F0B1B70BAB0792DF17591509DECB3A99
-A7C9D9655A0CB61CD7D65844.pygtex conference_101719.pyg)...executed.
-
 
 (_minted-conference_101719/A006D9D2F0B1B70BAB0792DF17591509DECB3A99A7C9D9655A0C
 B61CD7D65844.pygtex)
@@ -1156,21 +1150,18 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-runsystem(del _minted-conference_101719\E39530DC156D91E155EFBE8BD273CD65DECB3A9
-9A7C9D9655A0CB61CD7D65844.pygtex)...executed.
-
 [19] (conference_101719.aux)
 runsystem(del conference_101719.pyg)...executed.
 
  ) 
 Here is how much of TeX's memory you used:
- 21986 strings out of 478614
- 433043 string characters out of 2852938
- 760249 words of memory out of 3000000
- 39676 multiletter control sequences out of 15000+600000
+ 21983 strings out of 478614
+ 432773 string characters out of 2852938
+ 760209 words of memory out of 3000000
+ 39674 multiletter control sequences out of 15000+600000
  514451 words of font info for 115 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,15n,94p,1299b,917s stack positions out of 10000i,1000n,20000p,200000b,80000s
+ 99i,15n,94p,1299b,919s stack positions out of 10000i,1000n,20000p,200000b,80000s
 {C:/Program Files/MiKTeX/fonts/enc/dvips/base/8r.enc}<C:/Program Files/MiKTeX
 /fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Program Files/MiKTeX/fonts/type1/
 public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfon
@@ -1185,7 +1176,7 @@ eX/fonts/type1/urw/courier/ucrro8a.pfb><C:/Program Files/MiKTeX/fonts/type1/urw
 /times/utmb8a.pfb><C:/Program Files/MiKTeX/fonts/type1/urw/times/utmbi8a.pfb><C
 :/Program Files/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files/MiKTe
 X/fonts/type1/urw/times/utmri8a.pfb>
-Output written on conference_101719.pdf (19 pages, 1977232 bytes).
+Output written on conference_101719.pdf (19 pages, 1977354 bytes).
 PDF statistics:
  163 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
