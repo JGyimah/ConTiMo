@@ -491,11 +491,11 @@ During our domain analysis phase, we identified five standard questions which ma
         The purpose of our language is to provide roboticists with means and techniques for planning, designing, and implementing variability through mechanisms, that implement binding time and binding mode techniques.
         \item \textbf{Stakeholders: } \textit{Who are the key stakeholders and the intended users of the language?}\\ Our language targets a very diverse group of skilled professionals in the robotics domain who can be classified as end users. These stakeholders/end users include 
         \begin{enumerate*}[label=(\roman*)]
-            \item Operators: End users with minimal training on the usage of our framework that the ability to operate robotic applications with pre-configured configurations.
-            \item Developers: End users in charge of developing new features and implementing them into our framework.
-            \item System Engineers: End users in charge of adapting the framework to the specific requirements of a customer.
+            \item Operators: End users with minimal training on the usage of our framework, but have the ability to operate robotic applications with pre-configured configurations.
+            \item Developers: End users in charge of developing, implementing and integrating new features into our framework.
+            \item System Engineers: End users in charge of adapting the framework to match the specific requirements of a customer.
         \end{enumerate*}
-        \item \textbf{Concepts: }\textit{What are the key domain concepts that targetted stakeholders care about?}\\ From an end user perspective, concepts such as simplified feature modelling techniques, standardized configuration management techniques and flexible and customizable feature binding based on time and mode are key.
+        \item \textbf{Concepts: }\textit{What are the key domain concepts that targetted stakeholders care about?}\\ From an end user perspective, concepts such as simplified feature modelling techniques, standardized configuration management techniques and flexible yet customizable feature binding based on time and mode are key.
         \item \textbf{Relations: }\textit{How are domain concepts related, and what are their relevant properties?}\\
         Properties that define the core user concepts of our language include:
         \begin{itemize}
@@ -510,7 +510,7 @@ During our domain analysis phase, we identified five standard questions which ma
             \item A modelled feature's binding mode property can only exist in three states. i.e. \textit{Static, Dynamic, Any}.
         \end{itemize}
         \item \textbf{Examples: }\textit{What examples of language instances are available?}\\
-        To the best of our knowledge, no language designed to model variability in robotic systems using binding time and binding mode exists. Our language is built on novel principles crafted to effectively manage variability in ROS based robotic systems.
+        To the best of our knowledge, no language designed to model variability in robotic systems, using binding time and binding mode exists. Our language is built on novel principles crafted to effectively manage variability in ROS-based robotic systems.
     \end{itemize}
     
 \subsection{Implementation}
@@ -651,9 +651,9 @@ Using the concrete textual syntax of our modelling language which we have highli
 \end{table}
 
 \subsubsection{Identifying Language Tokens}
-From a lexical standpoint, our language possesses a defined set of legal or permissible tokens. These tokens form part of a key-value pair production. Tokens can be identified and extracted from the key-value pair attributes that make up a feature in our language representation of a feature model. Attribute keys serve as meta-data for the data held by attribute values. Table \ref{tab:langlex} shows all identified tokens together with their corresponding regular expressions that define their legal or valid lexical structures.
+From a lexical standpoint, our language possesses a defined set of legal or permissible keywords referred to as tokens. These tokens form part of a key-value pair production. Tokens can be identified and extracted from the key-value pair attributes that make up a feature in our model and configuration representation. Attribute keys serve as meta-data for the data held by their corresponding values. Table \ref{tab:langlex} shows all identified tokens together with the regular expressions that define their legal or valid lexical structures.
 
-For each identified token in our language, we translated a valid expression of it into a regular expression to demonstrate which valid forms of these token can exist in our language. Syntactically, features and their configurations in our language model attributes as key value pairs wrapped in an object. Table \ref{tab:langlex} capture our list of identified tokens mapped to their corresponding regular expression formalisms.
+In Table \ref{tab:langlex}, for each identified token in our language, we translated a valid representation of it into a regular expression to demonstrate which valid forms of these token can exist in our language. Syntactically speaking, modelled features and their configurations, encapsulate key-value paired attributes as self-contained objects. Lastly, Table \ref{tab:langlex} also captures a list of generated terminal symbols that can be used in grammar production.
 
 \begin{table}[H]
 \caption{Language Tokens}
@@ -689,17 +689,17 @@ For each identified token in our language, we translated a valid expression of i
 \end{table}
 
 \subsubsection{Specifying Language Terminals}
-Our syntax can be described as a production consisting of a left-hand-side and right-hand-side attributes. For each attribute, on the left-hand-side, we have non-terminals that represent our language meta-data. On the right-hand-side, we can identify singular or grouped forms of terminal and non-terminal symbols in the form of data. Left-hand-sided and the right-hand-sided attributes are separated by a colon (:) and each model attribute is separated from the next by a comma(,). Table \ref{tab:langlex} captures all meta-data and data tokens that define our language.
+Our language's syntax can be described as a production consisting of left-hand-side and right-hand-side attributes. For each attribute, the left-hand-side consists of non-terminals that serve as language meta-data. On the right-hand-side however, we can identify singular or grouped forms of terminal and non-terminal symbols in the form of data. Left-hand-sided and the right-hand-sided attributes are separated by a colon (:) and each model attribute in turn is separated from the next by a comma(,). Table \ref{tab:langlex} captures all meta-data and data tokens that define our language.
 
 \subsubsection{Identifying Syntactic Categories Within Our Language}
-The modelling capability of our language provides domain stakeholders with a means of instantiating a feature model, as well as the possibility of defining and configuring features. Within our language's concrete syntax, one implicit and two explicit syntactic categories can be identified. These categories include:
+The modelling capability of our language provides domain stakeholders with a means of instantiating a feature model, as well as the possibility of defining and configuring features. Within our language's concrete syntax, one implicit and two explicit syntactic categories can be identified. These categorizations include:
 \begin{enumerate}
     \item \textit{Feature Description Block:} This is made up of all feature attributes that are concerned with describing the general purpose of a feature. Although this category is not explicitly expressed in the textual formalism of a feature's schema, it can still be defined as a set of individual feature attributes which intuitively provide descriptive contexts to the functionality and purpose of a feature.
     \item \textit{Constraints Block:} This is represented as a nested block of feature attributes that define the type constraints applicable to a feature as well as the set of possible constraint values that are valid for that feature.
     \item \textit{Binding Properties (props) Block:} For every feature, there exists a corresponding configuration. Within the configuration of a feature exists a binding property block definition. The purpose of this binding property block is to allow domain stakeholders to configure binding time and binding mode attributes for each feature they define. These binding time and binding mode attribute definitions serve as the fundamental variation mechanism for each feature model.
 \end{enumerate}
  
-\subsubsection{Specifying Grammar Rules} By combining the terminals identified in Table \ref{tab:langlex} with the syntactic categories identified, we were able derive grammar productions for our language. The grammar rules present in our language for all three syntactic categories can be expressed as follows:\\
+\subsubsection{Specifying Grammar Rules} By combining the terminals defined in Table \ref{tab:langlex} with the syntactic categories identified in the previous section, we were able derive grammar productions for our language. The grammar rules present in our language for all three syntactic categories can be expressed as follows:\\
 
 \begin{itemize}
 	\item[] featureDescriptionBlock $\longrightarrow$ '\{'\ 'id'\ ':'\ alphaVal,\ 'name'\ ':'\ alphaVal,\ 'group'\ ':'\ alphaVal, 'isMandatory'\ ':'\ boolVal\ '\}' \\
@@ -710,7 +710,7 @@ The modelling capability of our language provides domain stakeholders with a mea
 \end{itemize}
 
 \subsubsection{Abstract Syntax Definition}
-The abstract syntax of any language refers to the logical representation of that language in memory. In Figure \ref{femet} and \ref{conmet} we provide an abstraction to the user interfaces of both a feature and a configuration objects in the form of class diagrams. Upon instantiation, a feature is selected by default. By design, every modelled feature must bear a unique \textit{id} string attribute which serves as a reference point throughout multiple points in our implementation. Every feature bears a \textit{name} that describes its intended purpose and capability. 
+The abstract syntax of any language refers to the logical representation of that language in memory. In Figure \ref{femet} and \ref{conmet} we provide an abstraction to the user interfaces of both a feature and a configuration objects in the form of class diagrams. Upon instantiation, a feature is selected by default. By design, every modelled feature must bear a unique \textit{id} string attribute which serves as a reference point throughout multiple points in our implementation. Every feature bears a \textit{name} that describes its intended purpose and capability.
 
 Furthermore, every feature has a set of constraints which define the scope of the feature in the model configuration space. Feature constraints are categorised into two main groups. i.e. cross functional constraints and binding property constraints.  Cross functional constraints refer to \textit{includes} and \textit{excludes} constraints while binding property constraints define the possible state values of binding time and binding mode attributes within configurations. A feature may contain an aggregation of sub-features. On the other hand, every feature is composed if a group, which may comprise of strictly two or more features.
 

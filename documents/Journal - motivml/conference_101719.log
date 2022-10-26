@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.6.3)  19 OCT 2022 12:42
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.6.3)  26 OCT 2022 09:55
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1020,6 +1020,11 @@ Overfull \hbox (3.65431pt too wide) in paragraph at lines 661--688
  []
 
 
+Underfull \hbox (badness 1642) in paragraph at lines 702--703
+\OT1/ptm/m/n/10 in the pre-vi-ous sec-tion, we were able de-rive gram-mar
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 702--703
 
  []
@@ -1074,10 +1079,7 @@ Overfull \hbox (6.0pt too wide) in paragraph at lines 720--722
  [][] 
  []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [13]
+[13]
 <diagrams/config.png, id=67, 7912.56125pt x 6363.775pt>
 File: diagrams/config.png Graphic file (type png)
 <use diagrams/config.png>
@@ -1176,7 +1178,7 @@ eX/fonts/type1/urw/courier/ucrro8a.pfb><C:/Program Files/MiKTeX/fonts/type1/urw
 /times/utmb8a.pfb><C:/Program Files/MiKTeX/fonts/type1/urw/times/utmbi8a.pfb><C
 :/Program Files/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files/MiKTe
 X/fonts/type1/urw/times/utmri8a.pfb>
-Output written on conference_101719.pdf (19 pages, 1977334 bytes).
+Output written on conference_101719.pdf (19 pages, 1977494 bytes).
 PDF statistics:
  163 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
