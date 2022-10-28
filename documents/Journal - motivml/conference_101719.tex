@@ -732,20 +732,19 @@ feature adaptations are determined by a binding time and binding mode combinatio
 \end{figure}
 
 \subsubsection{Identifying Binding Mechanisms}
-Realising static, dynamic, early and late binding in robotic applications can be tricky due to minor conflicts when it comes to programming language compatibility. For both time and mode based binding, there are available ROS based C++ and Python mechanisms that can be used to realise them.
+Realising static, dynamic, early and late bindings in robotic applications can be tricky due to minor inconveniences related to compatibility. For both time and mode based binding, there are  ROS based implementations in both C++ and Python, that can be used to realise this.
 
-In Table \ref{tab:realmecha}, we have highlighted some of such mechanisms which we used to realise each binding pair within our variability management technique. These include, the C preprocessor for static early, ROS pluginlib and ROS parameters for static late, and ROS pluginlib again for both dynamic early and dynamic late.
+In Table \ref{tab:realmecha}, we have highlighted some of such implementations, otherwise known as mechanisms, which we used to realise all possible binding pairs found within our configuration space. These include, the C++ preprocessor for static, ROS pluginlib for dynamic and ROS parameters together with roslaunch for early and late binding.
 
 \begin{table}[H]
 	\caption{Static and Dynamic Binding Mechanisms}
 	\begin{center}
 		\begin{tabular}{|c|c|}
 			\hline
-			Binding Pair & Binding Mechanism \\ \hline
-			Static Early & C++ preprocessor \\ \hline
-			Static Late &  ROS Pluginlib, ROS parameters  \\ \hline
-			Dynamic Early &  ROS pluginlib, ROS parameters  \\ \hline
-			Dynamic Late &  ROS pluginlib  \\ \hline
+			Binding Type & Binding Mechanism \\ \hline
+			Static & C++ preprocessor \\ \hline
+			Dynamic &  ROS Pluginlib  \\ \hline
+			Early \& Late &  roslaunch , ROS parameters  \\ \hline
 			
 		\end{tabular}
 		\label{tab:realmecha}
@@ -753,9 +752,9 @@ In Table \ref{tab:realmecha}, we have highlighted some of such mechanisms which 
 \end{table}
 
 \subsubsection{Implementing Binding Mechanisms}
-Binding mechanisms are implementation techniques that provide our modelling language with the capability of variability. Modelled variation points of robots, that have been described and implemented with our language, leverage such variability techniques by integrating ROS based feature source-code packages into the framework in order to evaluate static, dynamic, early and late binding techniques in user defined programs.
+The binding mechanisms mentioned in Table \ref{tab:realmecha} serve as unique implementation techniques that provide our modelling framework with the capability to handle variability on an implementation level. In that, modelled variation points of robot instances that have been described and implemented with our framework, are able to leverage such techniques through ROS, to demonstrate static, dynamic, early and late binding of implemented features within all user defined programs.
 
-The binding mechanisms present in our framework, were simulated with robust open source implementations that are compatible across a number of platforms. By utilising the capabilities of the C++ preprocessor and the ROS Pluginlib library, we were able to realise both static and dynamic feature binding.
+Furthermore, these integrated mechanisms are robust open source implementations that are compatible across a number of platforms. Thus, by utilising their capabilities, we were able to create both flexible and customizable configuration properties through our feature bindings.
 \begin{itemize}
 	\item \textbf{C++ Preprocessor for Static Binding:}
 	\begin{listing}[H]
@@ -815,6 +814,8 @@ For static feature loaded at runtime, we implemented a customised plugin-type me
 To simulate dynamic binding in general, we used the ROS pluginlib mechanism to encapsulate feature classes as plugins. Our choice use ROS pluginlib was influenced by the fact that it is lightweight, robust, stable and easy to integrate as a third party library. In addition, it comes with a very intuitive documentation\foot{http://wiki.ros.org/pluginlib} backed by an active community of contributors.
 
 Listing \ref{pluginlib-dynamic} demonstrates how the ROS version of the pluginlib library is used to export classes that can later be consumed by programs as plugins.
+
+\item \textbf{ROS Params and roslaunch for Time Binding:} On the ROS parameter server of our application, a categorised set of lists containing all bindings of a given robot instance, is stored to be able to categorically load these features at specific points i time upon the execution of the \textit{roslaunch} command.
 \end{itemize}
 \subsubsection{Integrating Binding Mechanisms Into Framework Components}
 To provide roboticists with a SERA integrated solution that has the means

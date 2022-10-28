@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.6.3)  26 OCT 2022 09:55
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.6.3)  28 OCT 2022 15:25
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1103,40 +1103,46 @@ LaTeX Font Info:    Font shape `OT1/pcr/m/it' in size <8> not available
 
 (_minted-conference_101719/A006D9D2F0B1B70BAB0792DF17591509DECB3A99A7C9D9655A0C
 B61CD7D65844.pygtex)
-<diagrams/mecha-compo.png, id=74, 703.62875pt x 372.39125pt>
+<diagrams/mecha-compo.png, id=74, 703.62875pt x 432.61626pt>
 File: diagrams/mecha-compo.png Graphic file (type png)
 <use diagrams/mecha-compo.png>
-Package pdftex.def Info: diagrams/mecha-compo.png  used on input line 826.
-(pdftex.def)             Requested size: 258.0pt x 136.54387pt.
+Package pdftex.def Info: diagrams/mecha-compo.png  used on input line 827.
+(pdftex.def)             Requested size: 258.0pt x 158.62645pt.
 
-Overfull \hbox (6.0pt too wide) in paragraph at lines 826--828
+Overfull \hbox (6.0pt too wide) in paragraph at lines 827--829
  [][] 
  []
 
-[15 <./diagrams/mecha-compo.png>]
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [15 <./diagrams/mecha-compo.png>]
 <diagrams/mandatory.png, id=81, 30.1125pt x 57.21375pt>
 File: diagrams/mandatory.png Graphic file (type png)
 <use diagrams/mandatory.png>
-Package pdftex.def Info: diagrams/mandatory.png  used on input line 855.
+Package pdftex.def Info: diagrams/mandatory.png  used on input line 856.
 (pdftex.def)             Requested size: 28.45369pt x 34.14429pt.
 <diagrams/optional.png, id=82, 31.91925pt x 54.2025pt>
 File: diagrams/optional.png Graphic file (type png)
 <use diagrams/optional.png>
-Package pdftex.def Info: diagrams/optional.png  used on input line 856.
+Package pdftex.def Info: diagrams/optional.png  used on input line 857.
 (pdftex.def)             Requested size: 28.45332pt x 34.14526pt.
- [16 <./diagrams/mandatory.png> <./diagrams/optional.png>]
-Underfull \hbox (badness 1389) in paragraph at lines 956--957
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [16 <./diagrams/mandatory.png> <./diagrams/optional.png>] [17]
+Underfull \hbox (badness 1389) in paragraph at lines 957--958
 []\OT1/ptm/m/n/10 There have been some vari-abil-ity mod-elling lan-guage
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 958--958
+Underfull \hbox (badness 10000) in paragraph at lines 959--959
 [][][]$\OT1/ptm/m/n/8 https : / / github . com / SergioGarG / sera -[] extensio
 n / tree / master / documents /
  []
 
-[17] [18]
-Underfull \hbox (badness 1874) in paragraph at lines 1005--1006
+[18]
+Underfull \hbox (badness 1874) in paragraph at lines 1006--1007
 []\OT1/ptm/m/n/8 R. H. Bour-gonjon, ``Em-bed-ded Sys-tems in Con-sumer Prod-uct
 s,''
  []
@@ -1159,7 +1165,7 @@ runsystem(del conference_101719.pyg)...executed.
 Here is how much of TeX's memory you used:
  21983 strings out of 478614
  432773 string characters out of 2852938
- 760209 words of memory out of 3000000
+ 761755 words of memory out of 3000000
  39674 multiletter control sequences out of 15000+600000
  514451 words of font info for 115 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1178,7 +1184,7 @@ eX/fonts/type1/urw/courier/ucrro8a.pfb><C:/Program Files/MiKTeX/fonts/type1/urw
 /times/utmb8a.pfb><C:/Program Files/MiKTeX/fonts/type1/urw/times/utmbi8a.pfb><C
 :/Program Files/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files/MiKTe
 X/fonts/type1/urw/times/utmri8a.pfb>
-Output written on conference_101719.pdf (19 pages, 1977494 bytes).
+Output written on conference_101719.pdf (19 pages, 1977386 bytes).
 PDF statistics:
  163 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
