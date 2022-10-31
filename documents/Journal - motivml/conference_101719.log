@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.6.3)  28 OCT 2022 15:25
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.6.3)  31 OCT 2022 16:04
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1069,7 +1069,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 709--710
 
  []
 
-<diagrams/feature.png, id=61, 9238.515pt x 5447.35126pt>
+[13]
+<diagrams/feature.png, id=66, 9238.515pt x 5447.35126pt>
 File: diagrams/feature.png Graphic file (type png)
 <use diagrams/feature.png>
 Package pdftex.def Info: diagrams/feature.png  used on input line 720.
@@ -1079,7 +1080,6 @@ Overfull \hbox (6.0pt too wide) in paragraph at lines 720--722
  [][] 
  []
 
-[13]
 <diagrams/config.png, id=67, 7912.56125pt x 6363.775pt>
 File: diagrams/config.png Graphic file (type png)
 <use diagrams/config.png>
@@ -1184,7 +1184,7 @@ eX/fonts/type1/urw/courier/ucrro8a.pfb><C:/Program Files/MiKTeX/fonts/type1/urw
 /times/utmb8a.pfb><C:/Program Files/MiKTeX/fonts/type1/urw/times/utmbi8a.pfb><C
 :/Program Files/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files/MiKTe
 X/fonts/type1/urw/times/utmri8a.pfb>
-Output written on conference_101719.pdf (19 pages, 1977386 bytes).
+Output written on conference_101719.pdf (19 pages, 1977585 bytes).
 PDF statistics:
  163 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
