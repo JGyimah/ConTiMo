@@ -164,15 +164,15 @@ In summary, our research work provides a variability modelling framework, in res
 
 In realising a solution such as ours, a key requirement was to keep it as lightweight as possible without requiring new tooling; all the while maintaining a decent level of abstraction. Thus, we relied on the design science approach which was empirically guided by the following research questions.
 \begin{itemize}
-     \item \textbf{RQ 1: }\emph{What are example instances of feature realizations with different binding modes and times in a ROS-based robotic system?}
+     \item \textit{\textbf{RQ 1:}} \emph{What are example instances of feature realizations with different binding modes and times in a ROS-based robotic system?}
      
      Example instances of feature realisations can be derived from example systems of service robots. Depending on their operational domain, these example systems may possess different sets of features that can be bound at different times and in different modes.
     
-    \item \textbf{RQ 2: } \emph{How can a variability modelling language that allows modelling features together with their binding times and binding modes be designed?}
+    \item \textit{\textbf{RQ 2:}} \emph{How can a variability modelling language that allows modelling features together with their binding times and binding modes be designed?}
     
     A variability modelling language that allows features to be modelled together with their binding times and modes can be designed by initially clarifying the key relevant aspects of the language domain, through domain analysis. Next, based on the domain analysis step, the abstract syntax, concrete syntax and static semantics of the language can be derived.
     
-    \item \textbf{RQ 3:} \emph{Which mechanisms and guidelines can be used to implement features with different binding times and modes in a ROS-based robotic system?}
+    \item \textit{\textbf{RQ 3:}} \emph{Which mechanisms and guidelines can be used to implement features with different binding times and modes in a ROS-based robotic system?}
     
     Variability mechanisms are implementation techniques with the capability of realizing variability. In our language design, we provide formalisms for modelling features based on the variant derivation concepts of feature models, as well as a novel variation mechanism based on feature binding time and binding mode. We also provide guidelines in accordance with our implemented variability mechanisms in the form of a concise documentation to assist domain stakeholders in implementing and validating custom models of their own.
 \end{itemize}
@@ -314,23 +314,23 @@ For both time and mode binding, our proposed variability modelling language supp
 Within the feature modelling capability of our language, the variability of any given robotic feature can be modelled and configured within the following binding scope:
 
 \begin{itemize}
-    \item \textbf{Static Early: } Static Early binding implies that a feature that cannot be unloaded when loaded and vice versa, is loaded (or unloaded) at compile time. 
+    \item \textit{\textbf{Static Early:}} Static Early binding implies that a feature that cannot be unloaded when loaded and vice versa, is loaded (or unloaded) at compile time. 
     
-    \item \textbf{Static Late: } Static Late implies that a feature that cannot be unloaded when loaded and vice versa, is loaded (or unloaded) at runtime.
+    \item \textit{\textbf{Static Late:}} Static Late implies that a feature that cannot be unloaded when loaded and vice versa, is loaded (or unloaded) at runtime.
     
-    \item \textbf{Static Any: } This implies that based on feature's mode, the feature cannot be unloaded when loaded and vice versa.  
+    \item \textit{\textbf{Static Any:}} This implies that based on feature's mode, the feature cannot be unloaded when loaded and vice versa.  
     
-    \item \textbf{Dynamic Early: }Dynamic Early implies that a feature that can be loaded and unloaded several times is bound at compile time.
+    \item \textit{\textbf{Dynamic Early:}} Dynamic Early implies that a feature that can be loaded and unloaded several times is bound at compile time.
     
-    \item \textbf{Dynamic Late: }Dynamic Late implies that a feature that can be loaded and unloaded several times is bound at runtime time.
+    \item \textit{\textbf{Dynamic Late:}} Dynamic Late implies that a feature that can be loaded and unloaded several times is bound at runtime time.
     
-    \item \textbf{Dynamic Any: } This implies that a feature can be loaded and unloaded multiple times but has the potential to be bound either at compile time or runtime.
+    \item \textit{\textbf{Dynamic Any:}} This implies that a feature can be loaded and unloaded multiple times but has the potential to be bound either at compile time or runtime.
     
     \item \textbf{Any Early: }Dynamic Early implies that a feature that can be loaded and unloaded several times is bound at compile time.
     
-    \item \textbf{Any Late: }Dynamic Late implies that a feature that can be loaded and unloaded several times is bound at runtime time.
+    \item \textit{\textbf{Any Late:}} Dynamic Late implies that a feature that can be loaded and unloaded several times is bound at runtime time.
     
-    \item \textbf{Any Any: } This implies that a feature can be bound either statically or dynamically at compile time or run time. 
+    \item \textit{\textbf{Any Any:}} This implies that a feature can be bound either statically or dynamically at compile time or run time. 
 \end{itemize}
 
 The set of binding pairs indicated above can be generated through an expansion of all possible binding time values combined with all possible binding mode values assigned to a feature. The resultant attribute pairs made up of nine combinations of both implicit and explicit binding types, provide a high-level overview of all possible binding states that are likely to exist within the configuration space of a given mobile service robot example. 
@@ -390,11 +390,11 @@ Evaluating our language means to assess its implementation from three main persp
 \item Novelty.
 \end{enumerate*}
 \begin{itemize}
-    \item \textbf{Correctness:} The validity of models and configurations created with our language along with the implied effect of a model's feature constraints are closely evaluated by both a schema and a constraint checker, which operate by detecting syntax and constraint violations.
+    \item \textit{\textbf{Correctness:}} The validity of models and configurations created with our language along with the implied effect of a model's feature constraints are closely evaluated by both a schema and a constraint checker, which operate by detecting syntax and constraint violations.
     
-    \item \textbf{Realizability:} Proof of realizability indicates that our binding technique which forms the core of our implemented variability mechanisms is feasible. This is quite relevant, given that modelling variability with feature binding time and binding mode has not yet been applied in robotics.
+    \item \textit{\textbf{Realizability:}} Proof of realizability indicates that our binding technique which forms the core of our implemented variability mechanisms is feasible. This is quite relevant, given that modelling variability with feature binding time and binding mode has not yet been applied in robotics.
     
-    \item \textbf{Novelty:} The novelty of our work is assessed along the lines of the innovative and conceptual uniqueness that defines the binding technique of our variability mechanism. By comparative positioning our study with other studies from the robotics domain, we would be in a position to back our claim of novelty through research.
+    \item \textit{\textbf{Novelty:}} The novelty of our work is assessed along the lines of the innovative and conceptual uniqueness that defines the binding technique of our variability mechanism. By comparative positioning our study with other studies from the robotics domain, we would be in a position to back our claim of novelty through research.
 \end{itemize}
 
 By realising our variability modelling language to implement binding time and binding mode mechanisms in a manner that fulfils our research objectives, we were able to automatically provide proof of the realizability and novelty of our binding technique. In addition to this, a comprehensive evaluation plan was applied to test for type and syntax correctness.
@@ -410,9 +410,9 @@ As a functional requirement of our language, end users will have the means to bu
 \end{enumerate}
 For stakeholders to be able to verify the correctness of their models, all models and configurations defined with our modelling language must be validated on multiple levels of correctness i.e. syntax and semantic accuracy. 
 \begin{itemize}[label={}]
-  \item \textbf{Syntax Validation: }To effectively validate our language syntax, we evaluate the schemas of both model and configuration objects. Schema validation in this sense refers to token and token state validity.
+  \item \textit{\textbf{Syntax Validation:}} To effectively validate our language syntax, we evaluate the schemas of both model and configuration objects. Schema validation in this sense refers to token and token state validity.
  
-  \item \textbf{Semantics Validation: } In out attempt to validate the semantic implications of our language, we assess the correctness of configuration bindings in relation to the corresponding binding constraints specified. We also judge the correctness of each configuration binding pair with respect to its implied effect on other features in a given configuration space.
+  \item \textit{\textbf{Semantics Validation:}} In out attempt to validate the semantic implications of our language, we assess the correctness of configuration bindings in relation to the corresponding binding constraints specified. We also judge the correctness of each configuration binding pair with respect to its implied effect on other features in a given configuration space.
   
 \end{itemize}
 
@@ -487,16 +487,16 @@ In our language design, it was necessary for us to clarify key concepts that are
 
 During our domain analysis phase, we identified five standard questions which make up the core ideas and knowledge base that represents our language and its use. These questions can be categorised as follows:
     \begin{itemize}
-        \item \textbf{Purpose: } \textit{What is the purpose of this language?}\\
+        \item \textit{\textbf{Purpose:}} \textit{What is the purpose of this language?}\\
         The purpose of our language is to provide roboticists with means and techniques for planning, designing, and implementing variability through mechanisms, that implement binding time and binding mode techniques.
-        \item \textbf{Stakeholders: } \textit{Who are the key stakeholders and the intended users of the language?}\\ Our language targets a very diverse group of skilled professionals in the robotics domain who can be classified as end users. These stakeholders/end users include 
+        \item \textit{\textbf{Stakeholders:}} \textit{Who are the key stakeholders and the intended users of the language?}\\ Our language targets a very diverse group of skilled professionals in the robotics domain who can be classified as end users. These stakeholders/end users include 
         \begin{enumerate*}[label=(\roman*)]
-            \item Operators: End users with minimal training on the usage of our framework, but have the ability to operate robotic applications with pre-configured configurations.
-            \item Developers: End users in charge of developing, implementing and integrating new features into our framework.
-            \item System Engineers: End users in charge of adapting the framework to match the specific requirements of a customer.
+            \item \textit{\textbf{Operators:}} End users with minimal training on the usage of our framework, but have the ability to operate robotic applications with pre-configured configurations.
+            \item \textit{\textbf{Developers:}} End users in charge of developing, implementing and integrating new features into our framework.
+            \item \textit{\textbf{System Engineers:}} End users in charge of adapting the framework to match the specific requirements of a customer.
         \end{enumerate*}
-        \item \textbf{Concepts: }\textit{What are the key domain concepts that targetted stakeholders care about?}\\ From an end user perspective, concepts such as simplified feature modelling techniques, standardized configuration management techniques and flexible yet customizable feature binding based on time and mode are key.
-        \item \textbf{Relations: }\textit{How are domain concepts related, and what are their relevant properties?}\\
+        \item \textit{\textbf{Concepts:}} \textit{What are the key domain concepts that targetted stakeholders care about?}\\ From an end user perspective, concepts such as simplified feature modelling techniques, standardized configuration management techniques and flexible yet customizable feature binding based on time and mode are key.
+        \item \textit{\textbf{Relations:}} \textit{How are domain concepts related, and what are their relevant properties?}\\
         Properties that define the core user concepts of our language include:
         \begin{itemize}
             \item Every instance of a feature class is selected by default.
@@ -509,7 +509,7 @@ During our domain analysis phase, we identified five standard questions which ma
             \item A modelled feature's binding time property can only exist in three states. i.e. \textit{Early, Late, Any}.
             \item A modelled feature's binding mode property can only exist in three states. i.e. \textit{Static, Dynamic, Any}.
         \end{itemize}
-        \item \textbf{Examples: }\textit{What examples of language instances are available?}\\
+        \item \textit{\textbf{Examples:}} \textit{What examples of language instances are available?}\\
         To the best of our knowledge, no language designed to model variability in robotic systems, using binding time and binding mode exists. Our language is built on novel principles crafted to effectively manage variability in ROS-based robotic systems.
     \end{itemize}
     
@@ -756,11 +756,11 @@ The binding mechanisms mentioned in Table \ref{tab:realmecha} serve as unique im
 
 Furthermore, these integrated mechanisms are robust open source implementations that are compatible across a number of platforms. Thus, by utilising their capabilities, we were able to create both flexible and customizable configuration properties through our feature bindings.
 \begin{itemize}
-	\item \textbf{C++ Preprocessor for Static Binding:}
+	\item \textit{\textbf{C++ Preprocessor for Static Binding:}}
 	\begin{listing}[H]
 		\caption{Examples of Static Feature Inclusions}
 		\begin{minted}[
-			framesep=2mm,
+			framesep=1mm,
 			baselinestretch=1,
 			bgcolor=LightGray,
 			fontsize=\footnotesize,
@@ -786,7 +786,7 @@ Within our implementation, we have a designated static feature loader module tha
 
 For static feature loaded at runtime, we implemented a customised plugin-type mechanism which disallows changing a said feature after it has been loaded at runtime.
 
-\item \textbf{ROS Pluginlib for Dynamic Binding:}
+\item \textit{\textbf{ROS Pluginlib for Dynamic Binding:}}
 	\begin{listing}[H]
 		\caption{Examples of Dynamic Feature Plugin Implementations}
 		\begin{minted}[
@@ -815,7 +815,7 @@ To simulate dynamic binding in general, we used the ROS pluginlib mechanism to e
 
 Listing \ref{pluginlib-dynamic} demonstrates how the ROS version of the pluginlib library is used to export classes that can later be consumed by programs as plugins.
 
-\item \textbf{ROS Params and roslaunch for Time Binding:} On the ROS parameter server of our application, a categorised set of lists containing all bindings of a given robot instance, is stored to be able to categorically load these features at specific points i time upon the execution of the \textit{roslaunch} command.
+\item \textit{\textbf{ROS Params and roslaunch for Time Binding:}} On the ROS parameter server of our application, categorised lists of bound features of a given robot instance, are stored to be able to categorically load them at specific points in time upon the execution of the \textit{roslaunch} command.
 \end{itemize}
 \subsubsection{Integrating Binding Mechanisms Into Framework Components}
 To provide roboticists with a SERA integrated solution that has the means
@@ -829,9 +829,9 @@ and techniques to implement variability, we integrated our implemented binding m
 \end{figure}
 
 \begin{itemize}
-	\item \textit{Language Component: }
+	\item \textit{\textbf{Language Component:}}
 	The language component of our variability management framework, enables domain stakeholder to translate feature models into MoTiVML object models where time and mode bindings can be defined with constraints. In addition to that, our language provides both a schema and constraint checker purposefully for validating user defined models for syntactic and semantic correctness respectively. Furthermore, the language component contains a parameter initializer which instantiates and initializes ROS parameters used by our framework to enforce time based binding.
-	\item \textit{Robot Builder Component: }
+	\item \textit{\textbf{Robot Builder Component:}}
 	The robot builder component of our framework is a ROS node within our source code implementation manager, that provides interfaces through which class implementations of registered features in our user defined models can be bound. It listens for configuration commands from the MoTiVML language interface over a ROS topic. For statically bound features, the C++ preprocessor together with conditional statements are used to include or exclude feature classes to and from robot programs.  In the case of dynamic binding, the ROS pluginlib library is used to register, encapsulate, export and load feature classes dynamically into prebuilt robot programs. Finally, this component also reads from initialised ROS parameters to retrieve and classify program features into time based categories. 
 \end{itemize}
 
@@ -892,19 +892,19 @@ The underlying logic of this language design requires the interaction of a featu
 \subsubsection{Constraining the Configuration Space}
 As part of our static semantics definition to confine our configuration space, we enforced a number of feature level constraints. To implement this, we conceived a number of ground rules or pre-conditions and enforced them as part of our modelled feature capabilities, to serve as our means of managing the scope of robot product lines that can be modelled with our solution. Additionally, we provide a means of validating a feature's constraint settings via an in-built constraint checker mechanism, that parses and interprets configuration attributes, to identify possible constraint violations. The different types of constraints that exist in our language, their purpose, together with their cumulative effect on each other, are described as follows.
 \begin{itemize}
-    \item \textit{Inclusion Constraint: }
+    \item \textit{\textbf{Inclusion Constraint:}}
     Otherwise referred to as an implies constraint, satisfies the condition that a given robotic feature tends to require others to function. For example, supposing there are two features \textbf{A} and \textbf{B}, \textbf{A} \textit{includes} \textbf{B} would imply that, if feature \textbf{A} is selected, feature \textbf{B} must also be to be selected.
     %% give examples
     
-    \item \textit{Exclusion Constraint: }
+    \item \textit{\textbf{Exclusion Constraint:}}
     Some robotic features on the other hand do not require others to function We express this as an excludes constraint in our implementation. Again, supposing there are two features \textbf{A} and \textbf{B}, \textbf{A} \textit{excludes} \textbf{B} would imply that when feature \textbf{A} is selected, feature \textbf{B} cannot be selected and vice versa.
     
     
-    \item \textit{Sub Feature Constraint: }
+    \item \textit{\textbf{Sub Feature Constraint:}}
     Given the fact that the capabilities specified in our abstract syntax definition supports a hierarchical parent-child relationship amongst modelled features, a feature with a \textit{static} mode cannot exist as a child of a \textit{dynamic} parent. Allowing that form of inheritance would imply that an unloaded parent feature would create an orphan child feature, leading to the phenomenon of unused features stuck in runtime. 
     
 
-\item \textit{Binding Property Constraints: }
+\item \textit{\textbf{Binding Property Constraints:}}
 As shown in our feature meta-model, the binding time and binding mode attributes of a feature are constrained to a set of valid inputs. By defining a set of valid binding time and mode input values, we are able to constrain the main feature attributes of user defined feature model instances.
 
 \begin{table}[htbp]
@@ -921,9 +921,9 @@ As shown in our feature meta-model, the binding time and binding mode attributes
 \end{table}
 
 \begin{itemize}
-    \item \textit{Binding Time:} The binding time attribute of a feature can assume three distinct values. Binding times can be set to \textit{early}, \textit{late} or \textit{any}. This means that features can either be strictly bound at compile time, strictly bound at runtime or can alternate between compile time and runtime state values.
+    \item \textit{\textbf{Binding Time:}} The binding time attribute of a feature can assume three distinct values. Binding times can be set to \textit{early}, \textit{late} or \textit{any}. This means that features can either be strictly bound at compile time, strictly bound at runtime or can alternate between compile time and runtime state values.
     
-    \item \textit{Binding Mode:} The binding mode attribute of a feature can assume three distinct values as well. It can either have a \textit{static}, \textit{dynamic} or an \textit{any} value. This implies that a feature can either be strictly static, strictly dynamic or in the case of an \textit{any}, a feature can alternate between static and dynamic mode states.
+    \item \textit{\textbf{Binding Mode:}} The binding mode attribute of a feature can assume three distinct values as well. It can either have a \textit{static}, \textit{dynamic} or an \textit{any} value. This implies that a feature can either be strictly static, strictly dynamic or in the case of an \textit{any}, a feature can alternate between static and dynamic mode states.
 \end{itemize}
 
 \end{itemize}
