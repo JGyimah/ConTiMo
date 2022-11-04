@@ -45,4 +45,5 @@ For the purpose of providing an indepth explanation as to what functionalities e
 To be updated soon
 
 ## Website
-To be updated soon
+Click [here](https://sites.google.com/view/sled-dsl/home) to visit website.
+

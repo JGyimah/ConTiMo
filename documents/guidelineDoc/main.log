@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.6.3)  22 SEP 2022 10:59
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.6.3)  4 NOV 2022 09:44
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -617,26 +617,6 @@ pygtex)
 pygtex)
 \openout3 = `main.pyg'.
 
-runsystem(for ^%i in (python.exe python.bat python.cmd) do set > main.aex <nul:
- /p x=^%~$PATH:i>> main.aex)...executed.
-
-runsystem(del main.aex)...executed.
-
-runsystem(python -c "import sys; import os; import textwrap; from io import ope
-n; fname = os.path.expanduser(os.path.expandvars(\"main.pyg\")); f = open(fname
-, \"r\", encoding=\"UTF8\") if os.path.isfile(fname) else None; t = f.readlines
-() if f is not None else None; t_opt = t if t is not None else []; f.close() if
- f is not None else None; tmpfname = os.path.expanduser(os.path.expandvars(\"ma
-in.pyg\")); f = open(tmpfname, \"w\", encoding=\"UTF8\") if t is not None else 
-None; fvstartnum = 0; fvstopnum = -1; s = max(0, fvstartnum-1); e = min(s, fvst
-opnum if fvstopnum > 0 else len(t_opt)); [f.write(textwrap.dedent(\"\".join(x))
-) for x in (t_opt[0:s], t_opt[s:e], t_opt[e:]) if x and t is not None]; f.close
-() if t is not None else os.remove(tmpfname);")...executed.
-
-runsystem(pygmentize -l c++ -f latex -P commandprefix=PYG -F tokenmerge -P stri
-pnl=False -o _minted-main/027784BAD5CFADAF030834A63D4C0B6D16FC8F7A31F6C71217C01
-8AAE38EB545.pygtex main.pyg)...executed.
-
  [9]
 (_minted-main/027784BAD5CFADAF030834A63D4C0B6D16FC8F7A31F6C71217C018AAE38EB545.
 pygtex)
@@ -749,11 +729,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1015--1016
 
 
 (_minted-main/6EFE9904AA6F687E84BB31004077EAF38447DF9C2D5ED130E262CD4D9278E0D8.
-pygtex)
-runsystem(del _minted-main\FBDA59C09C547E0879DC1F6052F215E216FC8F7A31F6C71217C0
-18AAE38EB545.pygtex)...executed.
-
- [14] (main.aux)
+pygtex) [14] (main.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
@@ -763,13 +739,13 @@ runsystem(del main.pyg)...executed.
 
  ) 
 Here is how much of TeX's memory you used:
- 15438 strings out of 478614
- 272328 string characters out of 2852938
+ 15434 strings out of 478614
+ 272058 string characters out of 2852938
  643079 words of memory out of 3000000
- 33272 multiletter control sequences out of 15000+600000
+ 33269 multiletter control sequences out of 15000+600000
  475453 words of font info for 49 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 72i,10n,77p,666b,751s stack positions out of 10000i,1000n,20000p,200000b,80000s
+ 72i,10n,77p,666b,736s stack positions out of 10000i,1000n,20000p,200000b,80000s
  <C:\Users\kofig\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm
 1000.pk><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/
 Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program File
