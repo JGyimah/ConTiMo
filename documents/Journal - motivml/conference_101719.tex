@@ -200,9 +200,7 @@ Domain-Specific Languages (DSLs) are usually declarative. One of the key charact
 
 Developing advanced robotic systems can be challenging as expertise from multiple domains need to be integrated conceptually and technically. Through domain-speciﬁc modelling, robotic concepts and notations can be modelled descriptively. This raises the level of abstraction and results in models that are easier to understand and validate. Furthermore, DSLs increase the level of automation, e.g., through code generation, while bridging the gap between modelling and implementation \cite{dsl-robo}. Besides automation of software development through code generation, there are several added benefits of DSLs. These include analysis, optimization, and most importantly the inclusion of non-developer stakeholders into the process of software creation.
 
-Literally hundreds of DSLs are in existence. Of these, only a subset of them are described in software engineering or programming language literature. Some best-known examples are PIC\foot{https://dl.acm.org/doi/10.1145/872730.806459}, KRL\foot{https://pdfcoffee.com/kss-55-operating-and-programming-instructions-for-end-userspdf-pdf-free.html} and MARTe\foot{https://www.sciencedirect.com/topics/computer-science/domain-specific-modeling-language}.
-
-In this study, inspirational concepts that influenced our language's architectural design and implementation were sparsely drawn from existing DSLs, in our attempt to offer a user friendly yet intuitive language that possesses an optimum level of abstraction that fits the needs of multiple end users with varying skill sets. With dsl zoo \cite{dsl-robo} as our main reference point, annotated bibliographies of domain-specific languages in the area of robotics and automation technology were carefully reviewed. Examples of such DSLs we considered include Mauve\foot{https://corlab.github.io/dslzoo/architectures-and-programming-subdomain.html#lesire2012mauve}, Robotml\foot{*#dhouib2012robotml}, LE\foot{*#gordillo1991high}, and eTaSL/eTC \foot{*#aertbelien2014etasl}.
+Literally hundreds of DSLs are in existence. However, only a subset of them are described in software engineering or programming language literature. Inspirational concepts that influenced our language's architectural design and implementation were sparsely drawn from existing DSLs, in our attempt to offer a user friendly yet intuitive language that possesses an optimum level of abstraction that fits the needs of multiple end users with varying skill sets. With dsl zoo \cite{dsl-robo} as our main reference point, annotated bibliographies of domain-specific languages in the area of robotics and automation technology were carefully reviewed. Examples of such DSLs we considered include Mauve\foot{https://corlab.github.io/dslzoo/architectures-and-programming-subdomain.html#lesire2012mauve}, Robotml\foot{*#dhouib2012robotml}, LE\foot{*#gordillo1991high}, and eTaSL/eTC \foot{*#aertbelien2014etasl}.
 
 \subsection{Runtime Adaptation}
 Runtime adaptation in modern day systems often involves some level of uncertainty. In most software systems today, handling uncertainty in advance is often infeasible and resource intensive. This implies that there may be the need to deal with uncertainty when the knowledge required in that scenario becomes available. At runtime, robots need to manage large amounts of different execution variants that can neither be foreseen nor completely pre-programmed. Thus, these execution variants cannot be analysed and checked entirely at compile time.
@@ -309,7 +307,7 @@ Static and dynamic binding concepts are not new when it comes to software produc
 
 According to a study conducted by Marko Rosenmüller et al, utilising static or dynamic binding exclusively, often restricts the applicability of product line variants generated in a given instance \cite{flex-feat-bind}. For example, static binding cannot be used when required features in a variant are not available or known at deployment time; as is the case for third-party extensions. 
 
-In order to decrease some of such restrictions highlighted by Rosenmüller, different approaches for combining static and dynamic binding have been suggested in multiple studies with the goal of retaining customizability and flexibility with a minimum amount of runtime overhead. Additionally, the practice of supporting different binding times based on the same implementation mechanism simplifies Software Product Line development and maintenance \cite{flex-feat-bind}. For instance, in our proposed technique, at binding time, an early binding classification implies that a feature is programmed to be loaded or unloaded at compile time while a late binding classification implies that a feature only allows runtime loading or unloading.
+To decrease some of such restrictions, different approaches for combining static and dynamic binding have been proposed in multiple studies with the goal of retaining customizability and flexibility with a minimum amount of runtime overhead. Additionally, the practice of supporting different binding times based on the same implementation mechanism simplifies Software Product Line development and maintenance \cite{flex-feat-bind}. For instance, in our proposed technique, at binding time, an early binding classification implies that a feature is programmed to be loaded or unloaded at compile time while a late binding classification implies that a feature only allows runtime loading or unloading.
 
 For both time and mode binding, our proposed variability modelling technique supports an implicit "Any" binding type. In that, the binding time attribute of a feature can reference both an early and a late binding time state. Likewise in the case of binding mode attributes, an "Any" binding type implies that a feature can be both static and dynamic.
 
@@ -345,7 +343,7 @@ Our language design and implementation methodology, can be broken down into a nu
 \begin{figure}[H]
 \caption{Methodology Overview}
 \centering
-\includegraphics[keepaspectratio,height=9cm, width=12cm]{diagrams/methods.png}
+\includegraphics[keepaspectratio,height=9cm, width=11cm]{diagrams/methods.png}
 \label{methover}
 \end{figure}
 
@@ -414,16 +412,16 @@ For stakeholders to be able to verify the correctness of their models, all model
 \begin{itemize}[label={}]
   \item \textit{\textbf{Syntax Validation:}} To effectively validate our language syntax, we evaluate the schemas of both model and configuration objects. Schema validation in this sense refers to token and token state validity.
  
-  \item \textit{\textbf{Semantics Validation:}} In out attempt to validate the semantic implications of our language, we assess the correctness of configuration bindings in relation to the corresponding binding constraints specified. We also judge the correctness of each configuration binding pair with respect to its implied effect on other features in a given configuration space.
+  \item \textit{\textbf{Semantics Validation:}} In our attempt to validate the semantic implications of our language, we assess the correctness of configuration bindings in relation to the corresponding binding constraints specified. We also judge the correctness of each configuration binding pair with respect to its implied effect on other features in a given configuration space.
   
 \end{itemize}
 
 
 \section{Results}
 \subsection{Architectural Overview}
-Our language, otherwise known as MoTiVML, is a lightweight variability modelling language which is structurally based on the Javascript Object Notation (JSON)\foot{https://www.json.org/json-en.html}, and implemented as a domain specific language of the Python programming language. Architecturally, this language consists of three modular components. These include a syntax manager, a configuration manager and a source code implementation manager. As shown in Figure \ref{arch-over}, all these components are encapsulated and offered as an open sourced ROS compatible framework.
+Our language, otherwise known as MoTiVML, is a lightweight variability modelling language which is structurally based on the Javascript Object Notation (JSON)\foot{https://www.json.org/json-en.html}, and implemented as a domain specific language of the Python programming language. Architecturally, this language consists of three modular components. These include a syntax manager, a configuration manager and a source code implementation manager. As shown in Figure \ref{arch-over}, all these components are encapsulated and offered as an open-sourced ROS-compatible framework.
 
-The syntax manager component contains all implementations related to language tokens, as well as the language's lexical and syntactical schemas. Tokens in this sense, represent the legal keywords or lexemes that are permissible in our language. There are two decoupled schema representations offered in MoTiVML; a feature schema and a configuration schema. Language schemas are simply represented as an object of tokens mapped to selected data structures. Listing \ref{feat-schema} and \ref{bind-schema} show samples of a feature and configuration schema respectively.
+The syntax manager component contains all implementations related to language tokens, as well as the language's lexical and syntactical schemas. Tokens in this sense, represent the legal keywords or lexemes that are permissible in our language. There are two decoupled schema representations offered in MoTiVML; a feature schema and a configuration schema. These are represented as collections of tokenized documents. Listing \ref{feat-schema} and \ref{bind-schema} show samples of a feature and configuration schema respectively.
 
 \begin{listing}[H]
 \caption{Feature Schema}
@@ -474,8 +472,8 @@ tabsize=2
 \label{bind-schema}
 \end{listing}
 
-The configuration manager component of our library is made up of two parts. Namely, a binding semantics interpreter and a constraint checker. In general, variability management provides two main capabilities i.e. feature modelling and variation point definition and management. The binding semantics interpreter assimilates and displays the result of the interaction between the assigned binding pairs of any collection of features. The constraint checker on the other hand parses the entire model definition of an example system, to evaluate it for constraint violations in an attempt to validate user defined configurations with respect to the configuration space. Thus, the constraint checker enforces configuration rules that define the adaptability of configurations based on feature binding time and binding mode.
-The source code implementation manager encapsulates a plug-in management interface which provides an integration point where end users can include source code implementations of modelled features into their configurations by wrapping them as self-contained plugins.
+The configuration manager component of our language library is made up of two parts. Namely, a binding semantics interpreter and a constraint checker. In general, variability management provides two main capabilities i.e. feature modelling and variation points definition. The binding semantics interpreter assimilates and displays the result of the interaction between the assigned binding pairs of any collection of features. The constraint checker on the other hand parses the entire model definition of a given example system, to evaluate it for constraint violations in an attempt to validate user-defined configurations with respect to the configuration space. Thus, the constraint checker enforces configuration rules that define the adaptability of configurations based on time and mode.
+The source code implementation manager encapsulates a plug-in management interface which provides an integration point where end users can include source code implementations of modelled features into their configurations by wrapping them as self-contained plug-ins.
 
 \begin{figure}[H]
 \caption{Architectural Overview of Variability Management Solution}
@@ -490,7 +488,7 @@ In our language design, it was necessary for us to clarify key concepts that are
 During our domain analysis phase, we identified five standard questions which make up the core ideas and knowledge base that represents our language and its use. These questions can be categorised as follows:
     \begin{itemize}
         \item \textit{\textbf{Purpose:}} \textit{What is the purpose of this language?}\\
-        The purpose of our language is to provide roboticists with means and techniques for planning, designing, and implementing variability through mechanisms, that implement binding time and binding mode techniques.
+        To provide roboticists with the means and techniques for planning, designing, and implementing variability through mechanisms, that implement binding time and binding mode techniques.
         \item \textit{\textbf{Stakeholders:}} \textit{Who are the key stakeholders and the intended users of the language?}\\ Our language targets a very diverse group of skilled professionals in the robotics domain who can be classified as end users. These stakeholders/end users include 
         \begin{enumerate*}[label=(\roman*)]
             \item \textit{\textbf{Operators:}} End users with minimal training on the usage of our framework, but have the ability to operate robotic applications with pre-configured configurations.
@@ -516,10 +514,10 @@ During our domain analysis phase, we identified five standard questions which ma
     \end{itemize}
     
 \subsection{Implementation}
-In our architectural implementation, configuration capabilities are decoupled from feature capabilities. This was done to primarily reduce duplication of non-configurable attributes, and to further separate concerns by detaching the main feature attributes that do not require end user manipulation from the ones that actually require it. Each set of decoupled configuration attributes references a corresponding feature by a unique \textit{ID} attribute.
+In our architectural implementation pattern, configuration capabilities are decoupled from that of a feature. This is to primarily reduce duplication of non-configurable attributes, and to further separate concerns. This separation is required to show that both components have clearly defined responsibilities. By detaching features from configurations, end users can model and configure their robots without having too deal with extraneous information. Furthermore, each set of decoupled configuration attributes references an existing feature by a unique \textit{ID} attribute.
 
 \subsubsection{Developing Mock-up Examples}
-An important use case of our language is that, it can be used to develop mock-up examples that demonstrate the language's expressiveness. In the context of our study, examples refer to modelled features of robot product lines. Figure \ref{ex1} and \ref{ex2} show graphical representations in the form of feature models, of our selected example systems i.e. service robots. For each feature present in a model, we can express it textually with tokens from our language as shown in Listing \ref{feat-conc-text} and \ref{bind-conc-text}. Inspiration for these examples were drawn from general utility robots and disinfection robot product lines such as TIAGo and UVD Model C.
+An important use case of our language is that, it can be used to develop mock-up examples that demonstrate our language's expressiveness. Within the context of this study, examples refer to modelled features of robot product lines. Figure \ref{ex1} and \ref{ex2} show graphical representations in the form of feature models, of selected example robots. Each feature present in these models, can be expressed textually with tokens from our language as shown in Listing \ref{feat-conc-text} and \ref{bind-conc-text}. Inspiration for these examples were drawn from general utility and disinfection robots such as TIAGo and UVD Model C.
     
 \begin{figure*}[h]
 \caption{Modelled Example One}
@@ -535,7 +533,7 @@ An important use case of our language is that, it can be used to develop mock-up
 \label{ex2}
 \end{figure*}
     
-Furthermore, in our model refinement step, that aims at extending our mock-up examples against our requirements, we analyse the requirements associated with our language, justify if these requirements are met and then proceed to provide examples or evidence of said requirements that have been fulfilled.
+Furthermore, in our model refinement step which aims to extend our mock-up examples against our requirements, we analyse the requirements associated with our language, justify them, and then proceed to provide evidence of said requirements that have been fulfilled.
 
 \begin{listing}[H]
 \caption{Textual Sample of Features}
@@ -575,8 +573,8 @@ tabsize=2
 \label{feat-conc-text}
 \end{listing}
 
-All features present in our feature model specification posses binding time and binding mode configurations which can be used by our language to manage variability within a modelled robotic system. As indicated in our architectural design, configuration collections are separated from feature collections for the sole purpose of decluttering model documents by abstracting configuration attributes from the main set of feature attributes. Listing
-\ref{bind-conc-text} captures a sample representation of the concrete textual syntax of feature configurations present in a given model. This consists of a collection of feature \textit{ids} together with their \textit{time} and \textit{mode} binding properties, derived from a separate collection of feature documents nested in the same order as their corresponding graphical feature model.
+All features present in our feature model specification posses binding time and binding mode configurations which can be used by our language to manage variability within a modelled robotic system. As indicated in our architectural design, configuration collections are separated from feature collections for the sole purpose of decluttering model documents and abstracting attributes that have distinct responsibilities from each other. Listing
+\ref{bind-conc-text} captures the format of a sample representation of the concrete textual syntax of feature configurations present in a given model. This consists of a collection of feature \textit{ids} together with their \textit{time} and \textit{mode} binding properties, derived from a separate collection of feature documents nested in the same order as their corresponding graphical feature model.
 
 \begin{listing}[H]
 \caption{Textual Sample of Feature Configurations}
@@ -729,7 +727,7 @@ feature adaptations are determined by a binding time and binding mode combinatio
 \begin{figure}[H]
 \caption{Configuration Meta Model}
 \centering
-\includegraphics[width=0.5\textwidth]{diagrams/config.png}
+\includegraphics[width=0.45\textwidth]{diagrams/config.png}
 \label{conmet}
 \end{figure}
 
