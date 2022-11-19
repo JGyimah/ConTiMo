@@ -157,7 +157,11 @@ In summary, our research work provides a variability modelling framework, in res
     
     \item \textit{The lack of standard mechanisms and guidelines for implementing variability management techniques in robotic systems:} Aside the existence of a plethora of ad-hoc strategies, there is also a lack of useful guidelines that detail how to integrate and use a set of standard mechanisms to design and implement variability in robot configurations. The lack of a standardised set of mechanisms, can be attributed to the fact that, usually, implementations of variability mechanisms are included in robotic applications in the form of pre-emptive contingencies. For that matter, due to the non-deterministic nature of the contexts in which service robots are designed to operate in, these mechanisms fail to cater for all possible scenarios. And even in cases where they do, there are little to no guidelines to describe how they are implemented under the hood.
     
-    Additionally, to the best of our knowledge, ROS-based open-sourced applications in general, lack a comprehensive set of usage guidelines that verify or provide proof that such robotic applications meet the specifications or requirements that define their capabilities and how they do so.
+    Additionally, to the best of our knowledge, ROS-based open-sourced applications in general, lack guidelines that
+    \begin{enumerate*}[label=(\roman*)]
+    	\item verify the specifications that define their capabilities and
+    	\item provide comprehensive coverage of the application and its platform, along with practical step-by-step usage of its functionalities.
+    \end{enumerate*}
     
     In a domain like robotics which is relatively new and rapidly advancing, when it comes to implementing variability mechanisms, there seems to be no streamlined and platform-specific approach for doing so. In many cases, robotic application developers resort to undocumented ad-hoc methods of implementing and managing variability that are neither reusable nor maintainable.
     
@@ -252,7 +256,7 @@ Table \ref{tab:compfml} shows how our proposed feature modelling language compar
 \begin{table}[H]
 \caption{Characteristic Comparison of Feature-Modelling Languages}
 \begin{center}
-\begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+\begin{tabular}{c c c c c c c c c}
 \hline
     Language & C1 & C2 & C3 & C4 & C5 & C6 & C7 & C8 \\ \hline
     PyFML & $\bullet$ & $\bullet$ &  &  & & $\bullet$ & &\\\hline
@@ -622,7 +626,7 @@ Using the concrete textual syntax of our modelling language which we have highli
 \begin{table}[H]
 \caption{Extended Mock-up Examples Against Requirements}
 \begin{center}
-\begin{tabular}{|c|c|}
+\begin{tabular}{c c}
 \hline
     Requirement & Example Syntax  \\ \hline
      R1 & \multirow{2}{*}{$\{"id":"root\_feature","name":"simpleBot",$}\\
@@ -658,7 +662,7 @@ In Table \ref{tab:langlex}, for each identified token in our language, we transl
 \begin{table}[H]
 \caption{Language Tokens}
 \begin{center}
-\begin{tabular}{|c|c|c|}
+\begin{tabular}{c c c}
 \hline
     Token & Regular Expression & Terminal Symbol \\\hline
                              id & 'id' & Id  \\\hline
@@ -739,7 +743,7 @@ In Table \ref{tab:realmecha}, we have highlighted some of such implementations, 
 \begin{table}[H]
 	\caption{Static and Dynamic Binding Mechanisms}
 	\begin{center}
-		\begin{tabular}{|c|c|}
+		\begin{tabular}{c c}
 			\hline
 			Binding Type & Binding Mechanism \\ \hline
 			Static & C++ preprocessor \\ \hline
@@ -752,7 +756,7 @@ In Table \ref{tab:realmecha}, we have highlighted some of such implementations, 
 \end{table}
 
 \subsubsection{Implementing Binding Mechanisms}
-The binding mechanisms mentioned in Table \ref{tab:realmecha} serve as unique techniques that provide our modelling framework with the capability to handle variability on an implementation level. In that, modelled variation points of robot instances that have been described and implemented with our framework, are able to leverage such techniques through ROS, to demonstrate static, dynamic, early and late binding of implemented features within all user defined programs.
+The binding mechanisms mentioned in Table \ref{tab:realmecha} serve as unique techniques that provide our modelling framework with the capability to handle variability on an implementation level. In that, modelled variation points of robot instances that have been described and implemented with our framework, are able to leverage such internal mechanisms within the development environment i.e. ROS, to demonstrate static, dynamic, early and late binding of implemented features within all user defined programs.
 
 Furthermore, these integrated mechanisms are highly optimised, robust and open source implementations that are compatible across a number of platforms. Thus, by utilising their capabilities, we were able to infuse both flexibility and customizability into our implemented feature bindings.\\
 \begin{itemize}
@@ -846,7 +850,7 @@ As shown in the concrete syntax of our feature modelling language, every instanc
 \caption{Propositional Logic Mapping for Feature Model Attributes}
 \begin{center}
 %\begin{tabular}{|c|c|c|}
-\begin{tabular}{|P{2cm}|P{2cm}|P{2cm}|}
+\begin{tabular}{P{2cm} P{2cm} P{2cm}}
 \hline
     Attribute Name & Feature Model Notation & Propositional Logic  \\ \hline
     Mandatory & 
@@ -865,7 +869,7 @@ The underlying logic of this language design requires the interaction of a featu
 \begin{table}[H]
 \caption{Feature Model Binding Semantics: \textbf{S = Static, E = Early, L = Late, D = Dynamic}}
 \begin{center}
-\begin{tabular}{|c|c|c|c|c|c|}
+\begin{tabular}{c c c c c c}
 \hline
     A & B & B $ \Rightarrow $ A & A $ \Rightarrow $ B & A $ \Leftrightarrow $ B \\\hline
          SE & SE & 1 & 1 & 1  \\ \hline
@@ -908,7 +912,7 @@ As shown in our feature meta-model, the binding time and binding mode attributes
 \begin{table}[htbp]
 \caption{Valid Binding Property Values}
 \begin{center}
-\begin{tabular}{|c|c|}
+\begin{tabular}{c c}
 \hline
     Binding Property & Allowed State Values  \\ \hline
     Binding Time & Early, Late, Any \\ \hline

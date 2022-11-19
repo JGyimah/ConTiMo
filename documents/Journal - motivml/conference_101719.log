@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.6.3)  15 NOV 2022 16:13
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.6.3)  19 NOV 2022 11:17
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -909,18 +909,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 125--125
 
 ] [2]
 [3]
-Underfull \hbox (badness 10000) in paragraph at lines 203--203
+Underfull \hbox (badness 10000) in paragraph at lines 207--207
 [][][]$\OT1/ptm/m/n/8 https : / / corlab . github . io / dslzoo / architectures
  -[] and -[] programming -[]
  []
 
 [4] [5]
-Underfull \hbox (badness 10000) in paragraph at lines 272--272
+Underfull \hbox (badness 10000) in paragraph at lines 276--276
  \OT1/ptm/m/it/10 E. Variability-modelling Frame-works, Mid-dle-ware, and
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 292--292
+Underfull \hbox (badness 10000) in paragraph at lines 296--296
 [][][]$\OT1/ptm/m/n/8 https : / / wiki . servicerobotik -[] ulm . de / about -[
 ] smartsoft : robotic -[] behavior :
  []
@@ -929,10 +929,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 292--292
 <diagrams/methods.png, id=35, 472.76625pt x 527.9725pt>
 File: diagrams/methods.png Graphic file (type png)
 <use diagrams/methods.png>
-Package pdftex.def Info: diagrams/methods.png  used on input line 346.
+Package pdftex.def Info: diagrams/methods.png  used on input line 350.
 (pdftex.def)             Requested size: 229.29857pt x 256.0744pt.
  [8 <./diagrams/methods.png>]
-Underfull \hbox (badness 2547) in paragraph at lines 422--423
+Underfull \hbox (badness 2547) in paragraph at lines 426--427
 []\OT1/ptm/m/n/10 Our lan-guage, oth-er-wise known as Mo-TiVML, is a
  []
 
@@ -955,10 +955,10 @@ File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 <diagrams/arch-overview.png, id=44, 522.95375pt x 422.57875pt>
 File: diagrams/arch-overview.png Graphic file (type png)
 <use diagrams/arch-overview.png>
-Package pdftex.def Info: diagrams/arch-overview.png  used on input line 481.
+Package pdftex.def Info: diagrams/arch-overview.png  used on input line 485.
 (pdftex.def)             Requested size: 258.0pt x 208.48396pt.
 
-Overfull \hbox (6.0pt too wide) in paragraph at lines 481--483
+Overfull \hbox (6.0pt too wide) in paragraph at lines 485--487
  [][] 
  []
 
@@ -966,7 +966,7 @@ Overfull \hbox (6.0pt too wide) in paragraph at lines 481--483
 <diagrams/ex1.png, id=51, 1588.93625pt x 232.87pt>
 File: diagrams/ex1.png Graphic file (type png)
 <use diagrams/ex1.png>
-Package pdftex.def Info: diagrams/ex1.png  used on input line 525.
+Package pdftex.def Info: diagrams/ex1.png  used on input line 529.
 (pdftex.def)             Requested size: 464.39224pt x 85.3575pt.
 
 
@@ -975,7 +975,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 <diagrams/ex2.png, id=52, 1233.60875pt x 232.87pt>
 File: diagrams/ex2.png Graphic file (type png)
 <use diagrams/ex2.png>
-Package pdftex.def Info: diagrams/ex2.png  used on input line 532.
+Package pdftex.def Info: diagrams/ex2.png  used on input line 536.
 (pdftex.def)             Requested size: 464.39037pt x 85.3575pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -993,58 +993,36 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [11]
-Overfull \hbox (13.72621pt too wide) in paragraph at lines 625--650
+Overfull \hbox (12.52623pt too wide) in paragraph at lines 629--654
  [] 
  []
 
 [12 <./diagrams/ex1.png (PNG copy)> <./diagrams/ex2.png (PNG copy)>]
-Overfull \hbox (3.65431pt too wide) in paragraph at lines 661--688
+Overfull \hbox (2.05434pt too wide) in paragraph at lines 665--692
  [] 
  []
 
 
-Underfull \hbox (badness 1642) in paragraph at lines 702--703
+Underfull \hbox (badness 1642) in paragraph at lines 706--707
 \OT1/ptm/m/n/10 in the pre-vi-ous sec-tion, we were able de-rive gram-mar
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 702--703
+Underfull \hbox (badness 10000) in paragraph at lines 706--707
 
  []
 
 LaTeX Font Info:    Trying to load font information for OMS+ptm on input line 7
-05.
+09.
 (C:\Program Files\MiKTeX\tex/latex/psnfss\omsptm.fd
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 705.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 709.
 
-Underfull \hbox (badness 4686) in paragraph at lines 705--706
+Underfull \hbox (badness 4686) in paragraph at lines 709--710
 []\OT1/ptm/m/n/10 featureDescriptionBlock $[][]\OMS/cmsy/m/n/10 !$ \OT1/ptm/m/n
 /10 '\OMS/cmsy/m/n/10 f\OT1/ptm/m/n/10 ' 'id' ':' al-phaVal,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 705--706
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 707--708
-[]\OT1/ptm/m/n/10 constraintsDefinitionBlock $[][]\OMS/cmsy/m/n/10 !$ \OT1/ptm/
-m/n/10 con-straints: '\OMS/cmsy/m/n/10 f\OT1/ptm/m/n/10 '
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 707--708
-
- []
-
-
-Underfull \hbox (badness 2050) in paragraph at lines 709--710
-[]\OT1/ptm/m/n/10 bindingPropertiesBlock $[][]\OMS/cmsy/m/n/10 !$ \OT1/ptm/m/n/
-10 '\OMS/cmsy/m/n/10 f\OT1/ptm/m/n/10 ' 'time' ':' al-phaVal,
  []
 
 
@@ -1052,13 +1030,35 @@ Underfull \hbox (badness 10000) in paragraph at lines 709--710
 
  []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 711--712
+[]\OT1/ptm/m/n/10 constraintsDefinitionBlock $[][]\OMS/cmsy/m/n/10 !$ \OT1/ptm/
+m/n/10 con-straints: '\OMS/cmsy/m/n/10 f\OT1/ptm/m/n/10 '
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 711--712
+
+ []
+
+
+Underfull \hbox (badness 2050) in paragraph at lines 713--714
+[]\OT1/ptm/m/n/10 bindingPropertiesBlock $[][]\OMS/cmsy/m/n/10 !$ \OT1/ptm/m/n/
+10 '\OMS/cmsy/m/n/10 f\OT1/ptm/m/n/10 ' 'time' ':' al-phaVal,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 713--714
+
+ []
+
 <diagrams/feature.png, id=61, 9238.515pt x 5447.35126pt>
 File: diagrams/feature.png Graphic file (type png)
 <use diagrams/feature.png>
-Package pdftex.def Info: diagrams/feature.png  used on input line 720.
+Package pdftex.def Info: diagrams/feature.png  used on input line 724.
 (pdftex.def)             Requested size: 258.0pt x 152.10919pt.
 
-Overfull \hbox (6.0pt too wide) in paragraph at lines 720--722
+Overfull \hbox (6.0pt too wide) in paragraph at lines 724--726
  [][] 
  []
 
@@ -1069,15 +1069,15 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 <diagrams/config.png, id=67, 7912.56125pt x 6363.775pt>
 File: diagrams/config.png Graphic file (type png)
 <use diagrams/config.png>
-Package pdftex.def Info: diagrams/config.png  used on input line 730.
+Package pdftex.def Info: diagrams/config.png  used on input line 734.
 (pdftex.def)             Requested size: 232.19843pt x 186.72957pt.
 
-Underfull \hbox (badness 3439) in paragraph at lines 757--759
+Underfull \hbox (badness 3439) in paragraph at lines 761--763
 []\OT1/ptm/m/n/10 Furthermore, these in-te-grated mech-a-nisms are highly
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 757--759
+Underfull \hbox (badness 10000) in paragraph at lines 761--763
 
  []
 
@@ -1089,7 +1089,7 @@ B61CD7D65844.pygtex
 LaTeX Font Info:    Font shape `OT1/pcr/m/it' in size <8> not available
 (Font)              Font shape `OT1/pcr/m/sl' tried instead on input line 2.
 )
-Underfull \hbox (badness 10000) in paragraph at lines 787--788
+Underfull \hbox (badness 10000) in paragraph at lines 791--792
 
  []
 
@@ -1099,27 +1099,27 @@ Underfull \hbox (badness 10000) in paragraph at lines 787--788
 
 (_minted-conference_101719/A006D9D2F0B1B70BAB0792DF17591509DECB3A99A7C9D9655A0C
 B61CD7D65844.pygtex)
-Underfull \hbox (badness 1616) in paragraph at lines 814--815
+Underfull \hbox (badness 1616) in paragraph at lines 818--819
 \OT1/ptm/m/n/10 as plu-g-ins. Our choice to use ROS plug-in-lib was
  []
 
 
-Underfull \hbox (badness 1983) in paragraph at lines 814--815
+Underfull \hbox (badness 1983) in paragraph at lines 818--819
 \OT1/ptm/m/n/10 highly op-ti-mised and easy to in-te-grate as a third
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 814--815
+Underfull \hbox (badness 10000) in paragraph at lines 818--819
 
  []
 
 <diagrams/mecha-compo.png, id=74, 703.62875pt x 432.61626pt>
 File: diagrams/mecha-compo.png Graphic file (type png)
 <use diagrams/mecha-compo.png>
-Package pdftex.def Info: diagrams/mecha-compo.png  used on input line 825.
+Package pdftex.def Info: diagrams/mecha-compo.png  used on input line 829.
 (pdftex.def)             Requested size: 258.0pt x 158.62645pt.
 
-Overfull \hbox (6.0pt too wide) in paragraph at lines 825--827
+Overfull \hbox (6.0pt too wide) in paragraph at lines 829--831
  [][] 
  []
 
@@ -1130,29 +1130,29 @@ Underfull \vbox (badness 7030) has occurred while \output is active []
 <diagrams/mandatory.png, id=81, 30.1125pt x 57.21375pt>
 File: diagrams/mandatory.png Graphic file (type png)
 <use diagrams/mandatory.png>
-Package pdftex.def Info: diagrams/mandatory.png  used on input line 854.
+Package pdftex.def Info: diagrams/mandatory.png  used on input line 858.
 (pdftex.def)             Requested size: 28.45369pt x 34.14429pt.
 <diagrams/optional.png, id=82, 31.91925pt x 54.2025pt>
 File: diagrams/optional.png Graphic file (type png)
 <use diagrams/optional.png>
-Package pdftex.def Info: diagrams/optional.png  used on input line 855.
+Package pdftex.def Info: diagrams/optional.png  used on input line 859.
 (pdftex.def)             Requested size: 28.45332pt x 34.14526pt.
 
 Underfull \vbox (badness 4416) has occurred while \output is active []
 
  [16 <./diagrams/mandatory.png> <./diagrams/optional.png>] [17]
-Underfull \hbox (badness 1389) in paragraph at lines 955--956
+Underfull \hbox (badness 1389) in paragraph at lines 959--960
 []\OT1/ptm/m/n/10 There have been some vari-abil-ity mod-elling lan-guage
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 957--957
+Underfull \hbox (badness 10000) in paragraph at lines 961--961
 [][][]$\OT1/ptm/m/n/8 https : / / github . com / SergioGarG / sera -[] extensio
 n / tree / master / documents /
  []
 
 [18]
-Underfull \hbox (badness 1874) in paragraph at lines 1010--1011
+Underfull \hbox (badness 1874) in paragraph at lines 1014--1015
 []\OT1/ptm/m/n/8 R. H. Bour-gonjon, ``Em-bed-ded Sys-tems in Con-sumer Prod-uct
 s,''
  []
@@ -1194,7 +1194,7 @@ eX/fonts/type1/urw/courier/ucrro8a.pfb><C:/Program Files/MiKTeX/fonts/type1/urw
 /times/utmb8a.pfb><C:/Program Files/MiKTeX/fonts/type1/urw/times/utmbi8a.pfb><C
 :/Program Files/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files/MiKTe
 X/fonts/type1/urw/times/utmri8a.pfb>
-Output written on conference_101719.pdf (19 pages, 1983050 bytes).
+Output written on conference_101719.pdf (19 pages, 1980538 bytes).
 PDF statistics:
  163 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

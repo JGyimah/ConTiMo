@@ -2,13 +2,13 @@
 
 ## Description
 
-An open source ROS based library that extends the capabilities of the [SERA](https://www.cse.chalmers.se/~bergert/paper/2018-icsa-sera.pdf) architecture to include variability management, with a high level of flexibility and customizability of robotic product line entities, while improving practices currently present in the robotics applications development domain.
+An open-source ROS-based framework that extends the capabilities of the [SERA](https://www.cse.chalmers.se/~bergert/paper/2018-icsa-sera.pdf) architecture to include variability management, with a high level of flexibility and customizability of robotic product line entities, while improving practices currently present in the robotics applications development domain.
 
-With this library, roboticists can model robotic `FEATURES`, create `MODEL` configurations using binding time and binding mode and plug in source code implementations for modelled `FEATURES`
+With this framework, roboticists can model robotic `FEATURES`, create `MODEL` configurations using binding time and binding mode and plug in source code implementations for modelled `FEATURES`
 
 ## Prerequisites
 
-1. The library was developed and tested on Ubuntu 20 LTS or higher
+1. This application was developed and tested on Ubuntu 20 LTS or higher
 
 2. [ROS](http://wiki.ros.org/ROS/Installation) installation. This application was developed and tested with ROS Neotic 1.15.9.
 
