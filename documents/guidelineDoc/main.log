@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.6.3)  19 NOV 2022 10:40
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.6.3)  25 NOV 2022 17:07
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -404,6 +404,7 @@ Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
 Package caption Info: listings package is loaded.
 )
+Package hyperref Info: Option `colorlinks' set `true' on input line 22.
 runsystem(for ^%i in (pygmentize.exe pygmentize.bat pygmentize.cmd) do set > ma
 in.aex <nul: /p x=^%~$PATH:i>> main.aex)...executed.
 
@@ -427,24 +428,24 @@ LaTeX Warning: Label `ui' multiply defined.
 )
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -480,7 +481,7 @@ LaTeX Font Info:    ... okay on input line 23.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring OFF on input line 23.
+Package hyperref Info: Link coloring ON on input line 30.
 (main.out) (main.out)
 \@outlinefile=\write5
 \openout5 = `main.out'.
@@ -514,38 +515,58 @@ Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <17.28> on input line 26.
+(Font)              <17.28> on input line 33.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 26.
+(Font)              <12> on input line 33.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 26.
+(Font)              <8> on input line 33.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 26.
+(Font)              <6> on input line 33.
 
-Overfull \hbox (13.94182pt too wide) in paragraph at lines 28--29
+Overfull \hbox (13.94182pt too wide) in paragraph at lines 33--36
 [] 
  []
 
-<images/simpleBot.png, id=69, 564.1075pt x 275.0275pt>
-File: images/simpleBot.png Graphic file (type png)
-<use images/simpleBot.png>
-Package pdftex.def Info: images/simpleBot.png  used on input line 62.
-(pdftex.def)             Requested size: 469.75502pt x 229.02814pt.
-[1
+
+Underfull \hbox (badness 10000) in paragraph at lines 33--36
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 33--36
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 33--36
+
+ []
+
+(main.toc
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 5.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 5.
+)
+\tf@toc=\write6
+\openout6 = `main.toc'.
+
+ [1
 
 {C:/Users/kofig/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 78.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 78.
-
-Underfull \hbox (badness 1960) in paragraph at lines 83--83
+<images/simpleBot.png, id=96, 564.1075pt x 275.0275pt>
+File: images/simpleBot.png Graphic file (type png)
+<use images/simpleBot.png>
+Package pdftex.def Info: images/simpleBot.png  used on input line 72.
+(pdftex.def)             Requested size: 469.75502pt x 229.02814pt.
+[2 <./images/simpleBot.png (PNG copy)>]
+Underfull \hbox (badness 1960) in paragraph at lines 93--93
 []\OT1/cmr/m/n/10 Object con-tain-ing at-tributes \OT1/cmr/bx/n/10 fea-tureIn-c
 luded\OT1/cmr/m/n/10 , \OT1/cmr/bx/n/10 fea-ture-Ex-
  []
 
 Package hyperref Info: bookmark level for unknown listing defaults to 0 on inpu
-t line 103.
+t line 113.
 \openout3 = `main.pyg'.
 
 (_minted-main/default.pygstyle)
@@ -553,43 +574,36 @@ t line 103.
 pygtex
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <8> not available
 (Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 4.
-) [2 <./images/simpleBot.png (PNG copy)>]
-Underfull \vbox (badness 10000) detected at line 301
+) [3]
+Underfull \vbox (badness 10000) detected at line 311
  []
 
 
-Underfull \vbox (badness 10000) detected at line 301
+Underfull \vbox (badness 10000) detected at line 311
  []
 
-[3]
-Underfull \vbox (badness 10000) detected at line 301
- []
-
-
-Underfull \vbox (badness 10000) detected at line 301
- []
-
-[4]
+[4] [5]
 \openout3 = `main.pyg'.
 
 
 (_minted-main/4B3F3AAE085F8AFF3D07AF1B5C388B02886E8BF5947941239D58B3A77EA7DB6A.
-pygtex) [5] [6]
+pygtex) [6]
 \openout3 = `main.pyg'.
 
 
 (_minted-main/F10C91DC428D1DAEF28DC8BF1ECDCAF38447DF9C2D5ED130E262CD4D9278E0D8.
 pygtex)
-<images/validate.png, id=115, 425.79076pt x 193.9245pt>
+<images/validate.png, id=133, 425.79076pt x 193.9245pt>
 File: images/validate.png Graphic file (type png)
 <use images/validate.png>
-Package pdftex.def Info: images/validate.png  used on input line 471.
+Package pdftex.def Info: images/validate.png  used on input line 481.
 (pdftex.def)             Requested size: 469.75502pt x 213.95082pt.
+ [7]
 \openout3 = `main.pyg'.
 
 
 (_minted-main/BB4CA291B73CD031CADB936E39D92CD916FC8F7A31F6C71217C018AAE38EB545.
-pygtex) [7 <./images/validate.png>]
+pygtex) [8 <./images/validate.png>]
 \openout3 = `main.pyg'.
 
 
@@ -599,7 +613,7 @@ pygtex)
 
 
 (_minted-main/3596667C4DE8623D62A4411600A1FD5016FC8F7A31F6C71217C018AAE38EB545.
-pygtex) [8]
+pygtex) [9]
 \openout3 = `main.pyg'.
 
 
@@ -617,9 +631,9 @@ pygtex)
 pygtex)
 \openout3 = `main.pyg'.
 
- [9]
+
 (_minted-main/027784BAD5CFADAF030834A63D4C0B6D16FC8F7A31F6C71217C018AAE38EB545.
-pygtex)
+pygtex) [10]
 \openout3 = `main.pyg'.
 
 
@@ -634,12 +648,12 @@ pygtex)
 
 
 (_minted-main/84FAE9C97261860E744F924C3FFEC08C57C2ED8CAC71DDCD3C62C2528F19F81C.
-pygtex) [10]
+pygtex)
 \openout3 = `main.pyg'.
 
 
 (_minted-main/9D9588B2F7847B48681C21FFEB018FAE16FC8F7A31F6C71217C018AAE38EB545.
-pygtex)
+pygtex) [11]
 \openout3 = `main.pyg'.
 
 
@@ -654,60 +668,59 @@ pygtex)
 
 
 (_minted-main/4B31A65B220A84F49154870D0937998257C2ED8CAC71DDCD3C62C2528F19F81C.
-pygtex) [11]
+pygtex)
 \openout3 = `main.pyg'.
 
 
 (_minted-main/5306BC6B5239DCE1326E5B0DE1E15D2C8447DF9C2D5ED130E262CD4D9278E0D8.
 pygtex)
-<images/console.png, id=159, 421.575pt x 207.174pt>
+<images/console.png, id=173, 421.575pt x 207.174pt>
 File: images/console.png Graphic file (type png)
 <use images/console.png>
-Package pdftex.def Info: images/console.png  used on input line 932.
+Package pdftex.def Info: images/console.png  used on input line 942.
 (pdftex.def)             Requested size: 469.75502pt x 230.85414pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 940--941
+ [12]
+Underfull \hbox (badness 10000) in paragraph at lines 950--951
 
  []
 
-<images/showall.png, id=161, 494.44725pt x 253.54726pt>
+<images/showall.png, id=184, 494.44725pt x 253.54726pt>
 File: images/showall.png Graphic file (type png)
 <use images/showall.png>
-Package pdftex.def Info: images/showall.png  used on input line 947.
+Package pdftex.def Info: images/showall.png  used on input line 957.
 (pdftex.def)             Requested size: 469.75502pt x 240.88785pt.
-[12 <./images/console.png>]
-<images/showconfig.png, id=169, 503.481pt x 168.02776pt>
+<images/showconfig.png, id=185, 503.481pt x 168.02776pt>
 File: images/showconfig.png Graphic file (type png)
 <use images/showconfig.png>
-Package pdftex.def Info: images/showconfig.png  used on input line 956.
+Package pdftex.def Info: images/showconfig.png  used on input line 966.
 (pdftex.def)             Requested size: 469.75502pt x 156.7744pt.
-<images/exit.png, id=171, 248.127pt x 33.12375pt>
+[13 <./images/console.png> <./images/showall.png>]
+<images/exit.png, id=195, 248.127pt x 33.12375pt>
 File: images/exit.png Graphic file (type png)
 <use images/exit.png>
-Package pdftex.def Info: images/exit.png  used on input line 964.
+Package pdftex.def Info: images/exit.png  used on input line 974.
 (pdftex.def)             Requested size: 227.62204pt x 30.38626pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 980--981
+Underfull \hbox (badness 10000) in paragraph at lines 990--991
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 980--981
+Underfull \hbox (badness 10000) in paragraph at lines 990--991
 
  []
 
-[13 <./images/showall.png> <./images/showconfig.png> <./images/exit.png>]
 \openout3 = `main.pyg'.
 
 
 (_minted-main/D5208CE01AA4DEA00F488B6C54D9EC158447DF9C2D5ED130E262CD4D9278E0D8.
 pygtex)
-Underfull \hbox (badness 10000) in paragraph at lines 998--999
+Underfull \hbox (badness 10000) in paragraph at lines 1008--1009
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 998--999
+Underfull \hbox (badness 10000) in paragraph at lines 1008--1009
 
  []
 
@@ -716,20 +729,21 @@ Underfull \hbox (badness 10000) in paragraph at lines 998--999
 
 (_minted-main/89A1029D60E1A445E18B3B6E5C9280418447DF9C2D5ED130E262CD4D9278E0D8.
 pygtex)
-Underfull \hbox (badness 10000) in paragraph at lines 1015--1016
+Underfull \hbox (badness 10000) in paragraph at lines 1025--1026
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1015--1016
+Underfull \hbox (badness 10000) in paragraph at lines 1025--1026
 
  []
 
+[14 <./images/showconfig.png> <./images/exit.png>]
 \openout3 = `main.pyg'.
 
 
 (_minted-main/6EFE9904AA6F687E84BB31004077EAF38447DF9C2D5ED130E262CD4D9278E0D8.
-pygtex) [14] (main.aux)
+pygtex) [15] (main.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
@@ -739,10 +753,10 @@ runsystem(del main.pyg)...executed.
 
  ) 
 Here is how much of TeX's memory you used:
- 15434 strings out of 478614
- 272058 string characters out of 2852938
- 643079 words of memory out of 3000000
- 33269 multiletter control sequences out of 15000+600000
+ 15444 strings out of 478614
+ 272215 string characters out of 2852938
+ 644516 words of memory out of 3000000
+ 33274 multiletter control sequences out of 15000+600000
  475453 words of font info for 49 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  72i,10n,77p,666b,736s stack positions out of 10000i,1000n,20000p,200000b,80000s
@@ -752,11 +766,12 @@ Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program File
 s/MiKTeX/fonts/type1/public/amsfonts/cm/cmitt10.pfb><C:/Program Files/MiKTeX/fo
 nts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX/fonts/type1/pu
 blic/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts
-/cm/cmr5.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb
-><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt8.pfb>
-Output written on main.pdf (14 pages, 246267 bytes).
+/cm/cmr17.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb>
+<C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program 
+Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt8.pfb>
+Output written on main.pdf (15 pages, 262374 bytes).
 PDF statistics:
- 245 PDF objects out of 1000 (max. 8388607)
- 65 named destinations out of 1000 (max. 500000)
+ 272 PDF objects out of 1000 (max. 8388607)
+ 67 named destinations out of 1000 (max. 500000)
  159 words of extra memory for PDF output out of 10000 (max. 10000000)
 

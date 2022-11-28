@@ -13,20 +13,29 @@
 	linenos=true,
 	autogobble,
 }
+
+\hypersetup{
+	colorlinks   = true, %Colours links instead of ugly boxes
+	urlcolor     = blue, %Colour for external hyperlinks
+	linkcolor    = blue, %Colour of internal links
+	citecolor   = red %Colour of citations
+}
 % Create a new environment for breaking code listings across pages.
 \newenvironment{longlisting}{\captionsetup{type=listing}}{}
 
-\title{\underline{\textbf{MoTiVML Guideline Document}}}
+\title{\underline{\textbf{MoTiVML} Guideline Document}}
 \author{}
 \date{}
 
 \begin{document}
 
 \maketitle
-\textit{This is a guideline document for the MoTiVML language and framework as a whole. This guideline document assists end users in modelling variability in robotic systems as well as implementing the features they have defined in their models. As a supporting artifact to the language,  this document serves as a form of verification for the MoTiVML language and its capabilities.}
+\textit{This is a guideline document for the MoTiVML language and framework as a whole. This guideline document assists end users in modelling variability in robotic systems as well as implementing the features they have defined in their models. As a supporting artifact to the language,  this document serves as a form of verification for the MoTiVML language and its capabilities.}\\
+\noindent\rule{17cm}{0.6pt}
+\\\\\\
+\tableofcontents
 
-\noindent\rule{17cm}{0.4pt}
-
+\newpage
 \label{guide:docs}
 \section{Prerequisites and Dependencies}
     \begin{itemize}
@@ -45,6 +54,7 @@
 	\item Model visualizer
 	\item Syntax and Semantics Validator
 	\item Feature Plugin Interface
+	\item MoTiVML Shell
 \end{itemize}
 
 \section{Setup and Installation of MoTiVML}
