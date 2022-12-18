@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.6.3)  28 NOV 2022 08:27
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.6.3)  18 DEC 2022 13:49
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -930,16 +930,31 @@ Underfull \hbox (badness 10000) in paragraph at lines 296--296
 File: diagrams/methods.png Graphic file (type png)
 <use diagrams/methods.png>
 Package pdftex.def Info: diagrams/methods.png  used on input line 350.
-(pdftex.def)             Requested size: 229.29857pt x 256.0744pt.
- [8 <./diagrams/methods.png>]
+(pdftex.def)             Requested size: 254.77057pt x 284.52086pt.
+
+Overfull \hbox (2.77057pt too wide) in paragraph at lines 350--352
+ [][] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [8 <./diagrams/methods.png>] [9]
 Underfull \hbox (badness 2547) in paragraph at lines 426--427
 []\OT1/ptm/m/n/10 Our lan-guage, oth-er-wise known as Mo-TiVML, is a
  []
 
-[9]
+<diagrams/arch-over-new.png, id=44, 778.70924pt x 327.624pt>
+File: diagrams/arch-over-new.png Graphic file (type png)
+<use diagrams/arch-over-new.png>
+Package pdftex.def Info: diagrams/arch-over-new.png  used on input line 431.
+(pdftex.def)             Requested size: 464.40121pt x 199.17545pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
 \openout4 = `conference_101719.pyg'.
 
- (_minted-conference_101719/default.pygstyle)
+(_minted-conference_101719/default.pygstyle)
 (_minted-conference_101719/2B32D0F2C5B25C103DB05804BF5B1FA1A2794B2042F142019FE8
 9554315534FB.pygtex
 LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 1
@@ -947,23 +962,17 @@ LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 1
  (C:\Program Files\MiKTeX\tex/latex/psnfss\ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 ))
+Underfull \vbox (badness 7168) has occurred while \output is active []
+
 \openout4 = `conference_101719.pyg'.
 
 
 (_minted-conference_101719/9B2F0E9F694DD437A954398C40A9EDF2A2794B2042F142019FE8
-9554315534FB.pygtex)
-<diagrams/arch-overview.png, id=44, 522.95375pt x 422.57875pt>
-File: diagrams/arch-overview.png Graphic file (type png)
-<use diagrams/arch-overview.png>
-Package pdftex.def Info: diagrams/arch-overview.png  used on input line 485.
-(pdftex.def)             Requested size: 258.0pt x 208.48396pt.
+9554315534FB.pygtex) [10]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Overfull \hbox (6.0pt too wide) in paragraph at lines 485--487
- [][] 
- []
-
-[10 <./diagrams/arch-overview.png>]
-<diagrams/ex1.png, id=51, 1588.93625pt x 232.87pt>
+ [11 <./diagrams/arch-over-new.png>]
+<diagrams/ex1.png, id=53, 1588.93625pt x 232.87pt>
 File: diagrams/ex1.png Graphic file (type png)
 <use diagrams/ex1.png>
 Package pdftex.def Info: diagrams/ex1.png  used on input line 529.
@@ -972,7 +981,7 @@ Package pdftex.def Info: diagrams/ex1.png  used on input line 529.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<diagrams/ex2.png, id=52, 1233.60875pt x 232.87pt>
+<diagrams/ex2.png, id=54, 1233.60875pt x 232.87pt>
 File: diagrams/ex2.png Graphic file (type png)
 <use diagrams/ex2.png>
 Package pdftex.def Info: diagrams/ex2.png  used on input line 536.
@@ -992,17 +1001,20 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 9554315534FB.pygtex)
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [11]
+
 Overfull \hbox (12.52623pt too wide) in paragraph at lines 629--654
  [] 
  []
 
-[12 <./diagrams/ex1.png (PNG copy)> <./diagrams/ex2.png (PNG copy)>]
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [12]
 Overfull \hbox (2.05434pt too wide) in paragraph at lines 665--692
  [] 
  []
 
-
+[13 <./diagrams/ex1.png (PNG copy)> <./diagrams/ex2.png (PNG copy)>]
 Underfull \hbox (badness 1642) in paragraph at lines 706--707
 \OT1/ptm/m/n/10 in the pre-vi-ous sec-tion, we were able de-rive gram-mar
  []
@@ -1052,7 +1064,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 713--714
 
  []
 
-<diagrams/feature.png, id=61, 9238.515pt x 5447.35126pt>
+<diagrams/feature.png, id=65, 9238.515pt x 5447.35126pt>
 File: diagrams/feature.png Graphic file (type png)
 <use diagrams/feature.png>
 Package pdftex.def Info: diagrams/feature.png  used on input line 724.
@@ -1062,16 +1074,15 @@ Overfull \hbox (6.0pt too wide) in paragraph at lines 724--726
  [][] 
  []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [13]
-<diagrams/config.png, id=67, 7912.56125pt x 6363.775pt>
+<diagrams/config.png, id=66, 7912.56125pt x 6363.775pt>
 File: diagrams/config.png Graphic file (type png)
 <use diagrams/config.png>
 Package pdftex.def Info: diagrams/config.png  used on input line 734.
 (pdftex.def)             Requested size: 232.19843pt x 186.72957pt.
 
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [14 <./diagrams/feature.png>]
 Underfull \hbox (badness 3439) in paragraph at lines 761--763
 []\OT1/ptm/m/n/10 Furthermore, these in-te-grated mech-a-nisms are highly
  []
@@ -1093,7 +1104,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 791--792
 
  []
 
-[14 <./diagrams/feature.png> <./diagrams/config.png>]
 \openout4 = `conference_101719.pyg'.
 
 
@@ -1113,46 +1123,32 @@ Underfull \hbox (badness 10000) in paragraph at lines 818--819
 
  []
 
-<diagrams/mecha-compo.png, id=74, 703.62875pt x 432.61626pt>
-File: diagrams/mecha-compo.png Graphic file (type png)
-<use diagrams/mecha-compo.png>
-Package pdftex.def Info: diagrams/mecha-compo.png  used on input line 829.
-(pdftex.def)             Requested size: 258.0pt x 158.62645pt.
+[15 <./diagrams/config.png>]
+Underfull \vbox (badness 2753) has occurred while \output is active []
 
-Overfull \hbox (6.0pt too wide) in paragraph at lines 829--831
- [][] 
- []
-
-
-Underfull \vbox (badness 7030) has occurred while \output is active []
-
- [15 <./diagrams/mecha-compo.png>]
-<diagrams/mandatory.png, id=81, 30.1125pt x 57.21375pt>
+<diagrams/mandatory.png, id=78, 30.1125pt x 57.21375pt>
 File: diagrams/mandatory.png Graphic file (type png)
 <use diagrams/mandatory.png>
-Package pdftex.def Info: diagrams/mandatory.png  used on input line 858.
+Package pdftex.def Info: diagrams/mandatory.png  used on input line 851.
 (pdftex.def)             Requested size: 28.45369pt x 34.14429pt.
-<diagrams/optional.png, id=82, 31.91925pt x 54.2025pt>
+<diagrams/optional.png, id=79, 31.91925pt x 54.2025pt>
 File: diagrams/optional.png Graphic file (type png)
 <use diagrams/optional.png>
-Package pdftex.def Info: diagrams/optional.png  used on input line 859.
+Package pdftex.def Info: diagrams/optional.png  used on input line 852.
 (pdftex.def)             Requested size: 28.45332pt x 34.14526pt.
-
-Underfull \vbox (badness 4416) has occurred while \output is active []
-
  [16 <./diagrams/mandatory.png> <./diagrams/optional.png>] [17]
-Underfull \hbox (badness 1389) in paragraph at lines 959--960
+Underfull \hbox (badness 1389) in paragraph at lines 952--953
 []\OT1/ptm/m/n/10 There have been some vari-abil-ity mod-elling lan-guage
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 961--961
+Underfull \hbox (badness 10000) in paragraph at lines 954--954
 [][][]$\OT1/ptm/m/n/8 https : / / github . com / SergioGarG / sera -[] extensio
 n / tree / master / documents /
  []
 
-[18]
-Underfull \hbox (badness 1874) in paragraph at lines 1014--1015
+[18] [19]
+Underfull \hbox (badness 1874) in paragraph at lines 1007--1008
 []\OT1/ptm/m/n/8 R. H. Bour-gonjon, ``Em-bed-ded Sys-tems in Con-sumer Prod-uct
 s,''
  []
@@ -1168,15 +1164,15 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[19] (conference_101719.aux)
+[20] (conference_101719.aux)
 runsystem(del conference_101719.pyg)...executed.
 
  ) 
 Here is how much of TeX's memory you used:
- 21984 strings out of 478614
- 432780 string characters out of 2852938
- 763300 words of memory out of 3000000
- 39674 multiletter control sequences out of 15000+600000
+ 21976 strings out of 478614
+ 432577 string characters out of 2852938
+ 759643 words of memory out of 3000000
+ 39667 multiletter control sequences out of 15000+600000
  515547 words of font info for 116 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,15n,94p,1299b,921s stack positions out of 10000i,1000n,20000p,200000b,80000s
@@ -1194,9 +1190,9 @@ eX/fonts/type1/urw/courier/ucrro8a.pfb><C:/Program Files/MiKTeX/fonts/type1/urw
 /times/utmb8a.pfb><C:/Program Files/MiKTeX/fonts/type1/urw/times/utmbi8a.pfb><C
 :/Program Files/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files/MiKTe
 X/fonts/type1/urw/times/utmri8a.pfb>
-Output written on conference_101719.pdf (19 pages, 1980968 bytes).
+Output written on conference_101719.pdf (20 pages, 1971427 bytes).
 PDF statistics:
  163 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 58 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 53 words of extra memory for PDF output out of 10000 (max. 10000000)
 
