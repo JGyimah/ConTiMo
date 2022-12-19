@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.6.3)  19 DEC 2022 09:01
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.6.3)  19 DEC 2022 16:54
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -926,25 +926,21 @@ Underfull \hbox (badness 10000) in paragraph at lines 296--296
  []
 
 [6] [7]
-<diagrams/methods.png, id=35, 472.76625pt x 527.9725pt>
-File: diagrams/methods.png Graphic file (type png)
-<use diagrams/methods.png>
-Package pdftex.def Info: diagrams/methods.png  used on input line 350.
-(pdftex.def)             Requested size: 254.77057pt x 284.52086pt.
-
-Overfull \hbox (2.77057pt too wide) in paragraph at lines 350--352
- [][] 
- []
+<diagrams/methods-new.png, id=35, 751.00575pt x 403.5075pt>
+File: diagrams/methods-new.png Graphic file (type png)
+<use diagrams/methods-new.png>
+Package pdftex.def Info: diagrams/methods-new.png  used on input line 350.
+(pdftex.def)             Requested size: 464.3926pt x 199.1673pt.
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+LaTeX Warning: `h' float specifier changed to `ht'.
 
- [8 <./diagrams/methods.png>] [9]
+[8] [9 <./diagrams/methods-new.png>]
 Underfull \hbox (badness 2547) in paragraph at lines 426--427
 []\OT1/ptm/m/n/10 Our lan-guage, oth-er-wise known as Mo-TiVML, is a
  []
 
-<diagrams/arch-over-new.png, id=44, 778.70924pt x 327.624pt>
+<diagrams/arch-over-new.png, id=42, 778.70924pt x 327.624pt>
 File: diagrams/arch-over-new.png Graphic file (type png)
 <use diagrams/arch-over-new.png>
 Package pdftex.def Info: diagrams/arch-over-new.png  used on input line 431.
@@ -962,7 +958,7 @@ LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 1
  (C:\Program Files\MiKTeX\tex/latex/psnfss\ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 ))
-Underfull \vbox (badness 7168) has occurred while \output is active []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 \openout4 = `conference_101719.pyg'.
 
@@ -972,7 +968,7 @@ Underfull \vbox (badness 7168) has occurred while \output is active []
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [11 <./diagrams/arch-over-new.png>]
-<diagrams/ex1.png, id=53, 1588.93625pt x 232.87pt>
+<diagrams/ex1.png, id=51, 1588.93625pt x 232.87pt>
 File: diagrams/ex1.png Graphic file (type png)
 <use diagrams/ex1.png>
 Package pdftex.def Info: diagrams/ex1.png  used on input line 529.
@@ -981,7 +977,7 @@ Package pdftex.def Info: diagrams/ex1.png  used on input line 529.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<diagrams/ex2.png, id=54, 1233.60875pt x 232.87pt>
+<diagrams/ex2.png, id=52, 1233.60875pt x 232.87pt>
 File: diagrams/ex2.png Graphic file (type png)
 <use diagrams/ex2.png>
 Package pdftex.def Info: diagrams/ex2.png  used on input line 536.
@@ -1064,7 +1060,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 713--714
 
  []
 
-<diagrams/feature.png, id=65, 9238.515pt x 5447.35126pt>
+<diagrams/feature.png, id=63, 9238.515pt x 5447.35126pt>
 File: diagrams/feature.png Graphic file (type png)
 <use diagrams/feature.png>
 Package pdftex.def Info: diagrams/feature.png  used on input line 724.
@@ -1074,7 +1070,7 @@ Overfull \hbox (6.0pt too wide) in paragraph at lines 724--726
  [][] 
  []
 
-<diagrams/config.png, id=66, 7912.56125pt x 6363.775pt>
+<diagrams/config.png, id=65, 7912.56125pt x 6363.775pt>
 File: diagrams/config.png Graphic file (type png)
 <use diagrams/config.png>
 Package pdftex.def Info: diagrams/config.png  used on input line 734.
@@ -1083,11 +1079,6 @@ Package pdftex.def Info: diagrams/config.png  used on input line 734.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [14 <./diagrams/feature.png>]
-Underfull \hbox (badness 2221) in paragraph at lines 763--765
-[]\OT1/ptm/m/n/10 As in-di-cated in Fig-ure 2[], fea-tures mod-elled on the
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 763--765
 
  []
@@ -1124,12 +1115,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 820--821
  []
 
 [15 <./diagrams/config.png>]
-<diagrams/mandatory.png, id=78, 30.1125pt x 57.21375pt>
+<diagrams/mandatory.png, id=77, 30.1125pt x 57.21375pt>
 File: diagrams/mandatory.png Graphic file (type png)
 <use diagrams/mandatory.png>
 Package pdftex.def Info: diagrams/mandatory.png  used on input line 853.
 (pdftex.def)             Requested size: 28.45369pt x 34.14429pt.
-<diagrams/optional.png, id=79, 31.91925pt x 54.2025pt>
+<diagrams/optional.png, id=78, 31.91925pt x 54.2025pt>
 File: diagrams/optional.png Graphic file (type png)
 <use diagrams/optional.png>
 Package pdftex.def Info: diagrams/optional.png  used on input line 854.
@@ -1168,8 +1159,8 @@ runsystem(del conference_101719.pyg)...executed.
  ) 
 Here is how much of TeX's memory you used:
  21976 strings out of 478614
- 432577 string characters out of 2852938
- 759793 words of memory out of 3000000
+ 432605 string characters out of 2852938
+ 759790 words of memory out of 3000000
  39667 multiletter control sequences out of 15000+600000
  515547 words of font info for 116 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1188,9 +1179,9 @@ eX/fonts/type1/urw/courier/ucrro8a.pfb><C:/Program Files/MiKTeX/fonts/type1/urw
 /times/utmb8a.pfb><C:/Program Files/MiKTeX/fonts/type1/urw/times/utmbi8a.pfb><C
 :/Program Files/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files/MiKTe
 X/fonts/type1/urw/times/utmri8a.pfb>
-Output written on conference_101719.pdf (20 pages, 1971566 bytes).
+Output written on conference_101719.pdf (20 pages, 2000769 bytes).
 PDF statistics:
- 163 PDF objects out of 1000 (max. 8388607)
+ 162 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  53 words of extra memory for PDF output out of 10000 (max. 10000000)
 

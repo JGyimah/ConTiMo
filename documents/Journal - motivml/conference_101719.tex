@@ -344,12 +344,12 @@ Our research method of choice is the design science methodology. We chose the de
 
 Our language design and implementation methodology, can be broken down into a number of distinct phases. These include domain analysis, abstract syntax definition, concrete syntax derivation, static semantics implementation, system development and evaluation. These phases were performed iteratively in synergy where outputs from each phase, served as input for subsequent phases. In our domain analysis phase, we clarified implementation requirements from sources such as domain experts and relevant documentation. Based on our findings, we conceived our abstract syntax and expressed it with meta-models. Subsequently, we established the concrete syntax of our language in both graphical and textual formats. Our resultant concrete syntax, together with the static semantics of our configuration logic were transformed into a ROS compatible implementation. Finally we evaluated our implementation based on its novelty, correctness and realizability.
 
-\begin{figure}[H]
+\begin{figure*}[h]
 \caption{Methodology Overview}
 \centering
-\includegraphics[keepaspectratio,height=10cm, width=11cm]{diagrams/methods.png}
+\includegraphics[height=7cm, width=0.9\textwidth]{diagrams/methods-new.png}
 \label{methover}
-\end{figure}
+\end{figure*}
 
 \subsection{Performing Domain Analysis}
 Prior to developing formalisms for our language, we identified key concepts that are relevant to the domain in which our language would be used i.e. variability management in the field of robotics. We also identified and clarified the purpose of our language as well as the stakeholders our activities are targetting. Finally, we identified all the relations between our gathered domain concepts which we derived from both stakeholders and relevant documentation, by studying the properties of our domain concepts.
@@ -540,7 +540,7 @@ An important use case of our language is that, it can be used to develop mock-up
 Furthermore, in our model refinement step which aims to extend our mock-up examples against our requirements, we analyse the requirements associated with our language, justify them, and then proceed to provide evidence of said requirements that have been fulfilled.
 
 \begin{listing}[H]
-\caption{Textual Sample of Features}
+\caption{Textual Sample of a Set of Features}
 \begin{minted}[
 framesep=2mm,
 baselinestretch=1,
@@ -581,7 +581,7 @@ All features present in our feature model specification posses binding time and 
 \ref{bind-conc-text} captures the format of a sample representation of the concrete textual syntax of feature configurations present in a given model. This consists of a collection of feature \textit{ids} together with their \textit{time} and \textit{mode} binding properties, derived from a separate collection of feature documents nested in the same order as their corresponding graphical feature model.
 
 \begin{listing}[H]
-\caption{Textual Sample of Feature Configurations}
+\caption{Textual Sample of a Set of Feature Configurations}
 \begin{minted}[
 framesep=2mm,
 baselinestretch=1,
@@ -760,7 +760,7 @@ The binding mechanisms mentioned in Table \ref{tab:realmecha} serve as unique te
 
 These integrated mechanisms are highly optimised, robust and open-sourced implementations that are compatible across a number of platforms. Thus, by utilising their capabilities, we were able to infuse both flexibility and customizability into our implemented feature bindings.
 
-As indicated in Figure \ref{arch-over}, features modelled on the language layer can in turn be implemented on the source-code implementation layer as feature classes that form part of an internal feature repository, capable of execution to demonstrate a preferred capability.\\
+Furthermore, as indicated in Figure \ref{arch-over}, features modelled on the language layer can in turn be implemented on the source-code implementation layer as feature classes that form part of an internal feature repository, connected to our implemented mechanisms through a set of interfaces.\\
 \begin{itemize}
 	\item \textit{\textbf{C++ Preprocessor for Static Binding:}}
 	\begin{listing}[H]
