@@ -347,7 +347,7 @@ Our language design and implementation methodology, can be broken down into a nu
 \begin{figure*}[h]
 \caption{Methodology Overview}
 \centering
-\includegraphics[height=8cm, width=0.9\textwidth]{diagrams/methods-new.png}
+\includegraphics[height=8cm, width=0.95\textwidth]{diagrams/methods-new.png}
 \label{methover}
 \end{figure*}
 
@@ -428,7 +428,7 @@ Our language, otherwise known as MoTiVML, is a lightweight variability modelling
 \begin{figure*}[h]
 	\caption{Architectural Overview of Framework Components}
 	\centering
-	\includegraphics[width=0.9\textwidth,height=7.5cm]{diagrams/arch-over-new.png}
+	\includegraphics[width=0.95\textwidth,height=7.5cm]{diagrams/arch-over-new.png}
 	\label{arch-over}
 \end{figure*}
 
@@ -738,7 +738,7 @@ feature adaptations are determined by a binding time and binding mode combinatio
 \subsubsection{Identifying Binding Mechanisms}
 Realising static, dynamic, early and late bindings in robotic applications can be tricky due to minor inconveniences related to compatibility. For both time and mode based binding, there optimised implementations in both C++ and ROS, that can be used to realise this.
 
-In Table \ref{tab:realmecha}, we have highlighted some of such implementations, otherwise known as mechanisms, which we used to realise all possible binding pairs found within our configuration space. These include, the C++ preprocessor for static, ROS pluginlib for dynamic and ROS parameters\foot{http://wiki.ros.org/rosparam} together with roslaunch\foot{http://wiki.ros.org/roslaunch} for early and late binding.
+In Table \ref{tab:realmecha}, we have highlighted some of such implementations, otherwise known as mechanisms, which we could potentially use to realise all possible binding pairs found within our configuration space. These include, the C++ preprocessor or antenna for static, ROS pluginlib for dynamic and ROS parameters\foot{http://wiki.ros.org/rosparam} together with roslaunch\foot{http://wiki.ros.org/roslaunch} for early and late binding.
 
 \begin{table}[H]
 	\caption{Static and Dynamic Binding Mechanisms}
@@ -746,10 +746,10 @@ In Table \ref{tab:realmecha}, we have highlighted some of such implementations, 
 		\begin{tabular}{c c}
 			\hline
 			Binding Type & Binding Mechanism \\ \hline
-			Static & C++ preprocessor \\ \hline
+			Static & C++ preprocessor, antenna \\ \hline
 			Dynamic &  ROS Pluginlib  \\ \hline
-			Early \& Late &  roslaunch , ROS parameters  \\ \hline
-			
+			Early &  roslaunch  and ROS parameters  \\ \hline
+			Late &  Virtual functions, roslaunch and ROS parameters  \\ \hline
 		\end{tabular}
 		\label{tab:realmecha}
 	\end{center}
@@ -774,15 +774,15 @@ Furthermore, as indicated in Figure \ref{arch-over}, features modelled on the la
 			tabsize=1
 			]{cpp}
 			#ifdef AMCL
-			#include "../../featx/Amcl.h"
+				#include "../../featx/Amcl.h"
 			#endif
 			
 			#ifdef MTNPLNCTRL
-			#include "../../featx/MotionPlanningCtrl.h"
+				#include "../../featx/MotionPlanningCtrl.h"
 			#endif
 			
 			#ifdef COMPCTRL
-			#include "../../featx/ComponentControl.h"
+				#include "../../featx/ComponentControl.h"
 			#endif
 		\end{minted}
 		\label{cpp-static}
@@ -821,6 +821,9 @@ To simulate dynamic binding in general, we used the ROS pluginlib package to enc
 
 \item \textit{\textbf{ROS Params and roslaunch for Time Binding:}} On the ROS parameter server of our application, categorised lists of bound features of a given robot instance, are stored to be able to categorically load them at specific points in time upon the execution of the \textit{roslaunch} command.
 \end{itemize}
+
+Virtual functions in C++ were also considered as a viable option for late binding. However, due to factors such as seamless ROS compatibility and high-level abstraction, other equally capable mechanisms were favoured ahead of it.
+
 \subsubsection{Integrating Binding Mechanisms Into Framework Components}
 To provide roboticists with a SERA integrated solution that has the means
 and techniques to implement variability, we integrated our implemented binding mechanisms on a component level into out framework solution.  Figure \ref{arch-over} shows the details of our application's landscape design together with the component interactions that exists between our variability modelling language tier and our robot builder tier. To elaborate more on this, we have provided a brief description of our chosen mechanisms with respect to their functions below.
@@ -980,7 +983,7 @@ Looking into the future, we are hopeful of applying both functional and non-func
 This study generally focuses on technique feasibility rather than operational quality. In view of this, we have identified that there is ample room for improvement in the area of robot execution performance refinements. Here, non-functional improvements in the quality of robot executions towards task fulfilment can be assessed and considered in future studies. This can be defined with regards to other non-functional properties such as safety and task efficiency, in scenarios driven mainly by spontaneous environmental occurrences and limited resources.
 
 \section*{Acknowledgment}
-This paper draws inspiration mainly from research materials contributed by Sergio Garc\'{i}a, Claudio Menghi, Patrizio Pelliccione, Thorsten Berger, and Rebekka Wohlrab. This study particularly extends their work concerning SERA; A Self-adaptive dEcentralized Robotic Architecture for building autonomous, heterogeneous and collaborative robotic applications.
+This paper mainly draws inspiration from research materials contributed by Sergio Garc\'{i}a, Claudio Menghi, Patrizio Pelliccione, Thorsten Berger, and Rebekka Wohlrab. This study particularly extends their work concerning SERA; A Self-adaptive dEcentralized Robotic Architecture for building autonomous, heterogeneous and collaborative robotic applications.
 
 \begin{thebibliography}{00}
 \bibitem{sera} S. Garc\'{i}a, C. Menghi, P. Pelliccione, T. Berger, and R. Wohlrab, ``An Architecture for Decentralized, Collaborative, and Autonomous Robots,'' in Proceedings - 2018 IEEE 15th ICSA, 2018.

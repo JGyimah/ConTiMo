@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.6.3)  27 DEC 2022 00:15
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.6.3)  5 JAN 2023 10:58
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -929,11 +929,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 296--296
  []
 
 [7]
-<diagrams/methods-new.png, id=35, 716.07526pt x 385.44pt>
+<diagrams/methods-new.png, id=35, 708.246pt x 375.20175pt>
 File: diagrams/methods-new.png Graphic file (type png)
 <use diagrams/methods-new.png>
 Package pdftex.def Info: diagrams/methods-new.png  used on input line 350.
-(pdftex.def)             Requested size: 464.39445pt x 227.61935pt.
+(pdftex.def)             Requested size: 490.21405pt x 227.62465pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -950,7 +950,7 @@ Underfull \hbox (badness 2547) in paragraph at lines 426--427
 File: diagrams/arch-over-new.png Graphic file (type png)
 <use diagrams/arch-over-new.png>
 Package pdftex.def Info: diagrams/arch-over-new.png  used on input line 431.
-(pdftex.def)             Requested size: 464.39737pt x 213.39635pt.
+(pdftex.def)             Requested size: 490.1992pt x 213.39635pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
@@ -1087,7 +1087,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 763--765
 \openout4 = `conference_101719.pyg'.
 
 
-(_minted-conference_101719/1581AA781B4DA02F3318A0705CC7E79BDECB3A99A7C9D9655A0C
+(_minted-conference_101719/B47902AF48F98E7BD046D220DC35A50EDECB3A99A7C9D9655A0C
 B61CD7D65844.pygtex
 LaTeX Font Info:    Font shape `OT1/pcr/m/it' in size <8> not available
 (Font)              Font shape `OT1/pcr/m/sl' tried instead on input line 2.
@@ -1097,10 +1097,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 793--794
  []
 
 \openout4 = `conference_101719.pyg'.
-
-runsystem(pygmentize -l cpp -f latex -P commandprefix=PYG -F tokenmerge -P stri
-pnl=False -o _minted-conference_101719/DC9C4C08798D4546501C79F0EA2368E2DECB3A99
-A7C9D9655A0CB61CD7D65844.pygtex conference_101719.pyg)...executed.
 
 
 (_minted-conference_101719/DC9C4C08798D4546501C79F0EA2368E2DECB3A99A7C9D9655A0C
@@ -1123,26 +1119,30 @@ Underfull \hbox (badness 10000) in paragraph at lines 820--821
 <diagrams/mandatory.png, id=77, 30.1125pt x 57.21375pt>
 File: diagrams/mandatory.png Graphic file (type png)
 <use diagrams/mandatory.png>
-Package pdftex.def Info: diagrams/mandatory.png  used on input line 852.
+Package pdftex.def Info: diagrams/mandatory.png  used on input line 855.
 (pdftex.def)             Requested size: 28.45369pt x 34.14429pt.
 <diagrams/optional.png, id=78, 31.91925pt x 54.2025pt>
 File: diagrams/optional.png Graphic file (type png)
 <use diagrams/optional.png>
-Package pdftex.def Info: diagrams/optional.png  used on input line 853.
+Package pdftex.def Info: diagrams/optional.png  used on input line 856.
 (pdftex.def)             Requested size: 28.45332pt x 34.14526pt.
- [16 <./diagrams/mandatory.png> <./diagrams/optional.png>] [17]
-Underfull \hbox (badness 1389) in paragraph at lines 953--954
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [16]
+[17 <./diagrams/mandatory.png> <./diagrams/optional.png>]
+Underfull \hbox (badness 1389) in paragraph at lines 956--957
 []\OT1/ptm/m/n/10 There have been some vari-abil-ity mod-elling lan-guage
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 955--955
+Underfull \hbox (badness 10000) in paragraph at lines 958--958
 [][][]$\OT1/ptm/m/n/8 https : / / github . com / SergioGarG / sera -[] extensio
 n / tree / master / documents /
  []
 
 [18] [19]
-Underfull \hbox (badness 1874) in paragraph at lines 1007--1008
+Underfull \hbox (badness 1874) in paragraph at lines 1010--1011
 []\OT1/ptm/m/n/8 R. H. Bour-gonjon, ``Em-bed-ded Sys-tems in Con-sumer Prod-uct
 s,''
  []
@@ -1158,18 +1158,15 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-runsystem(del _minted-conference_101719\A006D9D2F0B1B70BAB0792DF17591509DECB3A9
-9A7C9D9655A0CB61CD7D65844.pygtex)...executed.
-
 [20] (conference_101719.aux)
 runsystem(del conference_101719.pyg)...executed.
 
  ) 
 Here is how much of TeX's memory you used:
- 21978 strings out of 478614
- 432853 string characters out of 2852938
- 760799 words of memory out of 3000000
- 39668 multiletter control sequences out of 15000+600000
+ 21975 strings out of 478614
+ 432583 string characters out of 2852938
+ 760542 words of memory out of 3000000
+ 39666 multiletter control sequences out of 15000+600000
  515547 words of font info for 116 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,15n,94p,1319b,861s stack positions out of 10000i,1000n,20000p,200000b,80000s
@@ -1187,7 +1184,7 @@ eX/fonts/type1/urw/courier/ucrro8a.pfb><C:/Program Files/MiKTeX/fonts/type1/urw
 /times/utmb8a.pfb><C:/Program Files/MiKTeX/fonts/type1/urw/times/utmbi8a.pfb><C
 :/Program Files/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files/MiKTe
 X/fonts/type1/urw/times/utmri8a.pfb>
-Output written on conference_101719.pdf (20 pages, 1999335 bytes).
+Output written on conference_101719.pdf (20 pages, 1997684 bytes).
 PDF statistics:
  162 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
