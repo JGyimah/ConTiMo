@@ -114,7 +114,7 @@ This section gives a step-by-step walk-through of how MoTiVML can be used to ins
 	\begin{minted}[
 		framesep=1mm,
 		baselinestretch=1.2,
-		bgcolor=LightGray,
+		%bgcolor=LightGray,
 		fontsize=\footnotesize
 		]{Json}
 		
@@ -341,7 +341,7 @@ This section gives a step-by-step walk-through of how MoTiVML can be used to ins
 	\begin{minted}[
 		framesep=2mm,
 		baselinestretch=1,
-		bgcolor=LightGray,
+		%bgcolor=LightGray,
 		fontsize=\footnotesize
 		]{Json}
 		
@@ -457,11 +457,11 @@ The inbuilt motivml model validator tool aids in validating models together with
 \begin{longlisting}
 	\caption{MoTiVML Validation Command}
 	\begin{minted}[
-		framesep=2mm,
+		framesep=1mm,
 		baselinestretch=1,
-		bgcolor=LightGray,
+		%bgcolor=LightGray,
 		fontsize=\footnotesize
-		]{python}
+		]{Csh}
 		
 		python validator.py <project_directory_name>
 
@@ -486,9 +486,9 @@ When our in-built schema and constraint checker identify an error in either a mo
 \begin{longlisting}
 	\caption{Implementation of MoTiVML Feature Class}
 	\begin{minted}[
-		framesep=2mm,
+		framesep=1mm,
 		baselinestretch=1,
-		bgcolor=LightGray,
+		%bgcolor=LightGray,
 		fontsize=\footnotesize
 		]{c++}
 		{
@@ -571,9 +571,9 @@ The a capabilities of a MoTiVML feature are wrapped in a \textbf{motivml\_featur
 \begin{longlisting}
 	\caption{Implementation of MoTiVML Configuration Class}
 	\begin{minted}[
-		framesep=2mm,
+		framesep=1mm,
 		baselinestretch=1,
-		bgcolor=LightGray,
+		%bgcolor=LightGray,
 		fontsize=\footnotesize
 		]{c++}
 		{
@@ -609,9 +609,9 @@ To decouple relevant features necessary for binding a feature, our time and mode
 	\begin{longlisting}
 		\caption{Sample Static Early Class}
 		\begin{minted}[
-			framesep=2mm,
+			framesep=1mm,
 			baselinestretch=1.2,
-			bgcolor=LightGray,
+			%bgcolor=LightGray,
 			fontsize=\footnotesize
 			]{c++}
 			
@@ -654,9 +654,9 @@ To decouple relevant features necessary for binding a feature, our time and mode
 	\begin{longlisting}
 		\caption{Class Inclusion}
 		\begin{minted}[
-			framesep=2mm,
+			framesep=1mm,
 			baselinestretch=1.2,
-			bgcolor=LightGray,
+			%bgcolor=LightGray,
 			fontsize=\footnotesize
 			]{c++}
 			
@@ -670,9 +670,9 @@ To decouple relevant features necessary for binding a feature, our time and mode
 	\begin{longlisting}
 		\caption{Constant Definition}
 		\begin{minted}[
-			framesep=2mm,
+			framesep=1mm,
 			baselinestretch=1.2,
-			bgcolor=LightGray,
+			%bgcolor=LightGray,
 			fontsize=\footnotesize
 			]{c++}
 			
@@ -686,14 +686,14 @@ To decouple relevant features necessary for binding a feature, our time and mode
 	\begin{longlisting}
 		\caption{Including Static Early}
 		\begin{minted}[
-			framesep=2mm,
+			framesep=1mm,
 			baselinestretch=1.2,
-			bgcolor=LightGray,
+			%bgcolor=LightGray,
 			fontsize=\footnotesize
 			]{c++}
 			
 			#ifdef UNKOWNFEATURE
-			#include "../../featx/MyStaticClass.h"
+				#include "../../featx/MyStaticClass.h"
 			#endif
 			
 		\end{minted}
@@ -713,9 +713,9 @@ To decouple relevant features necessary for binding a feature, our time and mode
 	\begin{longlisting}
 		\caption{Sample Static Late Class}
 		\begin{minted}[
-			framesep=2mm,
+			framesep=1mm,
 			baselinestretch=1.2,
-			bgcolor=LightGray,
+			%bgcolor=LightGray,
 			fontsize=\footnotesize
 			]{c++}
 			
@@ -760,9 +760,9 @@ To decouple relevant features necessary for binding a feature, our time and mode
 	\begin{longlisting}
 		\caption{Sample Static Late Class}
 		\begin{minted}[
-			framesep=2mm,
+			framesep=1mm,
 			baselinestretch=1.2,
-			bgcolor=LightGray,
+			%bgcolor=LightGray,
 			fontsize=\footnotesize
 			]{C}
 			
@@ -777,9 +777,9 @@ To decouple relevant features necessary for binding a feature, our time and mode
 	\begin{longlisting}
 		\caption{Sample Static Late Class}
 		\begin{minted}[
-			framesep=2mm,
+			framesep=1mm,
 			baselinestretch=1.2,
-			bgcolor=LightGray,
+			%bgcolor=LightGray,
 			fontsize=\footnotesize
 			]{C}
 			
@@ -794,9 +794,9 @@ To decouple relevant features necessary for binding a feature, our time and mode
 	\begin{longlisting}
 		\caption{Sample Static Late Class}
 		\begin{minted}[
-			framesep=2mm,
+			framesep=1mm,
 			baselinestretch=1.2,
-			bgcolor=LightGray,
+			%bgcolor=LightGray,
 			fontsize=\footnotesize
 			]{xml}
 			
@@ -817,9 +817,9 @@ To decouple relevant features necessary for binding a feature, our time and mode
 	\begin{longlisting}
 		\caption{Sample Dynamic Class}
 		\begin{minted}[
-			framesep=2mm,
+			framesep=1mm,
 			baselinestretch=1.2,
-			bgcolor=LightGray,
+			%bgcolor=LightGray,
 			fontsize=\footnotesize
 			]{c++}
 			
@@ -862,9 +862,9 @@ To decouple relevant features necessary for binding a feature, our time and mode
 	\begin{longlisting}
 		\caption{Sample Static Late Class}
 		\begin{minted}[
-			framesep=2mm,
+			framesep=1mm,
 			baselinestretch=1.2,
-			bgcolor=LightGray,
+			%bgcolor=LightGray,
 			fontsize=\footnotesize
 			]{C}
 			
@@ -879,9 +879,9 @@ To decouple relevant features necessary for binding a feature, our time and mode
 	\begin{longlisting}
 		\caption{Sample Dynamic Class Export}
 		\begin{minted}[
-			framesep=2mm,
+			framesep=1mm,
 			baselinestretch=1.2,
-			bgcolor=LightGray,
+			%bgcolor=LightGray,
 			fontsize=\footnotesize
 			]{C}
 			
@@ -896,9 +896,9 @@ To decouple relevant features necessary for binding a feature, our time and mode
 	\begin{longlisting}
 		\caption{Sample Static Late Class}
 		\begin{minted}[
-			framesep=2mm,
+			framesep=1mm,
 			baselinestretch=1.2,
-			bgcolor=LightGray,
+			%bgcolor=LightGray,
 			fontsize=\footnotesize
 			]{xml}
 			
@@ -922,9 +922,9 @@ To launch the MoTiVML console interface, navigate to the \textbf{/src/motivml} d
 \begin{longlisting}
 	\caption{MoTiVML Console Launch Command}
 	\begin{minted}[
-		framesep=2mm,
+		framesep=1mm,
 		baselinestretch=1.2,
-		bgcolor=LightGray,
+		%bgcolor=LightGray,
 		fontsize=\footnotesize
 		]{python}
 		
@@ -992,9 +992,9 @@ The output of all commands executed in the console interface can be viewed in th
 	\begin{longlisting}
 		\caption{Application ROS Parameters Launch Command}
 		\begin{minted}[
-			framesep=2mm,
+			framesep=1mm,
 			baselinestretch=1.2,
-			bgcolor=LightGray,
+			%bgcolor=LightGray,
 			fontsize=\footnotesize
 			]{python}
 			
@@ -1010,9 +1010,9 @@ The output of all commands executed in the console interface can be viewed in th
 	\begin{longlisting}
 		\caption{Application Cole Interface Launch Command}
 		\begin{minted}[
-			framesep=2mm,
+			framesep=1mm,
 			baselinestretch=1.2,
-			bgcolor=LightGray,
+			%bgcolor=LightGray,
 			fontsize=\footnotesize
 			]{python}
 			
@@ -1027,9 +1027,9 @@ The output of all commands executed in the console interface can be viewed in th
 	\begin{longlisting}
 		\caption{Application Cole Interface Launch Command}
 		\begin{minted}[
-			framesep=2mm,
+			framesep=1mm,
 			baselinestretch=1.2,
-			bgcolor=LightGray,
+			%bgcolor=LightGray,
 			fontsize=\footnotesize
 			]{python}
 			

@@ -1,0 +1,5 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+
+python validator.py \PYGZlt{}project\PYGZus{}directory\PYGZus{}name\PYGZgt{}
+
+\end{Verbatim}

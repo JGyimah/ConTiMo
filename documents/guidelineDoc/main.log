@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.6.3)  18 DEC 2022 13:55
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.6.3)  6 JAN 2023 10:03
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -574,24 +574,16 @@ t line 113.
 pygtex
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <8> not available
 (Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 4.
-) [3]
-Underfull \vbox (badness 10000) detected at line 311
- []
-
-
-Underfull \vbox (badness 10000) detected at line 311
- []
-
-[4] [5]
+ [3] [4]) [5]
 \openout3 = `main.pyg'.
 
 
 (_minted-main/4B3F3AAE085F8AFF3D07AF1B5C388B02886E8BF5947941239D58B3A77EA7DB6A.
-pygtex) [6]
+pygtex [6])
 \openout3 = `main.pyg'.
 
 
-(_minted-main/F10C91DC428D1DAEF28DC8BF1ECDCAF38447DF9C2D5ED130E262CD4D9278E0D8.
+(_minted-main/F10C91DC428D1DAEF28DC8BF1ECDCAF3E9D1774D950876BC0E676DEDB274FE10.
 pygtex)
 <images/validate.png, id=133, 425.79076pt x 193.9245pt>
 File: images/validate.png Graphic file (type png)
@@ -603,7 +595,7 @@ Package pdftex.def Info: images/validate.png  used on input line 481.
 
 
 (_minted-main/BB4CA291B73CD031CADB936E39D92CD916FC8F7A31F6C71217C018AAE38EB545.
-pygtex) [8 <./images/validate.png>]
+pygtex [8 <./images/validate.png>])
 \openout3 = `main.pyg'.
 
 
@@ -627,7 +619,7 @@ pygtex)
 \openout3 = `main.pyg'.
 
 
-(_minted-main/631052B4B5553B0742A75090D1CC5DEA16FC8F7A31F6C71217C018AAE38EB545.
+(_minted-main/8D6AEC07C76205BD365FDD645948FC3E16FC8F7A31F6C71217C018AAE38EB545.
 pygtex)
 \openout3 = `main.pyg'.
 
@@ -679,28 +671,27 @@ File: images/console.png Graphic file (type png)
 <use images/console.png>
 Package pdftex.def Info: images/console.png  used on input line 942.
 (pdftex.def)             Requested size: 469.75502pt x 230.85414pt.
- [12]
+ [12 <./images/console.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 950--951
 
  []
 
-<images/showall.png, id=184, 494.44725pt x 253.54726pt>
+<images/showall.png, id=185, 494.44725pt x 253.54726pt>
 File: images/showall.png Graphic file (type png)
 <use images/showall.png>
 Package pdftex.def Info: images/showall.png  used on input line 957.
 (pdftex.def)             Requested size: 469.75502pt x 240.88785pt.
-<images/showconfig.png, id=185, 503.481pt x 168.02776pt>
+<images/showconfig.png, id=186, 503.481pt x 168.02776pt>
 File: images/showconfig.png Graphic file (type png)
 <use images/showconfig.png>
 Package pdftex.def Info: images/showconfig.png  used on input line 966.
 (pdftex.def)             Requested size: 469.75502pt x 156.7744pt.
-[13 <./images/console.png> <./images/showall.png>]
-<images/exit.png, id=195, 248.127pt x 33.12375pt>
+<images/exit.png, id=188, 248.127pt x 33.12375pt>
 File: images/exit.png Graphic file (type png)
 <use images/exit.png>
 Package pdftex.def Info: images/exit.png  used on input line 974.
 (pdftex.def)             Requested size: 227.62204pt x 30.38626pt.
-
+[13 <./images/showall.png> <./images/showconfig.png> <./images/exit.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 990--991
 
  []
@@ -738,12 +729,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 1025--1026
 
  []
 
-[14 <./images/showconfig.png> <./images/exit.png>]
 \openout3 = `main.pyg'.
 
 
 (_minted-main/6EFE9904AA6F687E84BB31004077EAF38447DF9C2D5ED130E262CD4D9278E0D8.
-pygtex) [15] (main.aux)
+pygtex) [14] (main.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
@@ -753,13 +743,13 @@ runsystem(del main.pyg)...executed.
 
  ) 
 Here is how much of TeX's memory you used:
- 15444 strings out of 478614
- 272215 string characters out of 2852938
- 644516 words of memory out of 3000000
- 33274 multiletter control sequences out of 15000+600000
+ 15446 strings out of 478614
+ 272286 string characters out of 2852938
+ 617294 words of memory out of 3000000
+ 33277 multiletter control sequences out of 15000+600000
  475453 words of font info for 49 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 72i,10n,77p,666b,736s stack positions out of 10000i,1000n,20000p,200000b,80000s
+ 72i,10n,77p,666b,849s stack positions out of 10000i,1000n,20000p,200000b,80000s
  <C:\Users\kofig\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm
 1000.pk><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/
 Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program File
@@ -769,9 +759,9 @@ blic/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts
 /cm/cmr17.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb>
 <C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program 
 Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt8.pfb>
-Output written on main.pdf (15 pages, 262374 bytes).
+Output written on main.pdf (14 pages, 260641 bytes).
 PDF statistics:
- 272 PDF objects out of 1000 (max. 8388607)
- 67 named destinations out of 1000 (max. 500000)
+ 267 PDF objects out of 1000 (max. 8388607)
+ 66 named destinations out of 1000 (max. 500000)
  159 words of extra memory for PDF output out of 10000 (max. 10000000)
 
