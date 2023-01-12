@@ -421,7 +421,7 @@ For stakeholders to be able to verify the correctness of their models, all model
 
 \section{Results}
 \subsection{Architectural Overview}
-Our language, otherwise known as MoTiVML, is a lightweight variability modelling language which is structurally based on the Javascript Object Notation (JSON)\foot{https://www.json.org/json-en.html}, and implemented as a domain specific language of the Python programming language. Architecturally, this language consists of three modular components. These include a syntax manager, a configuration manager and a source code implementation manager. As shown in Figure \ref{arch-over}, all these components are encapsulated and offered as an open-sourced ROS-compatible framework.
+Our language, otherwise known as MoTiVML, is a lightweight variability modelling language which is structurally based on the Javascript Object Notation (JSON)\foot{https://www.json.org/json-en.html}, and implemented as a domain specific language of the Python programming language. Architecturally, it consists of three modular components. These include a syntax manager, a configuration manager and a source code implementation manager. As shown in Figure \ref{arch-over}, all these components are collectively offered as an open-sourced ROS-compatible framework.
 
 \begin{figure*}[h]
 	\caption{Architectural Overview of Framework Components}
@@ -430,7 +430,7 @@ Our language, otherwise known as MoTiVML, is a lightweight variability modelling
 	\label{arch-over}
 \end{figure*}
 
-In there, the syntax manager component can be seen to contain all implementations related to language tokens, as well as the language's lexical and syntactical schemas. Tokens in this sense, represent the legal keywords or lexemes that are permissible in our language. There are two schema representations offered in MoTiVML; a feature schema and a configuration schema. Features modelled according to our feature schema design are nested within a model collection. All features possess a set of constraints embedded within their schema definitions. Likewise, uniquely identifiable feature configurations, modelled per our configuration schema, reside within a \textit{properties} collection as \textit{config} documents. For each product line design, a decoupled set of tokenized model and configuration collections can be associated with it. Listing \ref{feat-schema} and \ref{bind-schema} show example data model schemas of a feature and its configuration respectively.
+In there, the syntax manager can be seen to contain all implementations related to language tokens, as well as the language's lexical and syntactical schemas. Tokens in this sense, represent the legal keywords or lexemes that are permissible in our language. There are two schema representations offered in MoTiVML; a feature schema and a configuration schema. Features modelled according to our feature schema design are nested within a model collection. All such features possess a set of constraints embedded within their schema definitions. Likewise, uniquely identifiable feature configurations, modelled per our configuration schema, reside within a \textit{properties} collection as \textit{config} documents. For each product line design, a decoupled set of tokenized model and configuration collections can be associated with it. Listings \ref{feat-schema} and \ref{bind-schema} show example data model schemas of a feature and its configuration respectively.
 
 \begin{listing}[H]
 \caption{Feature Data Model Schema}
@@ -481,11 +481,11 @@ tabsize=2
 \label{bind-schema}
 \end{listing}
 
-The configuration manager component of our language library is made up of two parts. Namely, a binding semantics interpreter and a constraint checker. In general, variability management provides two main capabilities i.e. feature modelling and variation points definition. The binding semantics interpreter assimilates and displays the result of the interaction between the assigned binding pairs of any collection of features. The constraint checker on the other hand parses the entire model definition of a given example system, to evaluate it for constraint violations in an attempt to validate user-defined configurations with respect to the configuration space. Thus, the constraint checker enforces configuration rules that define the adaptability of configurations based on time-mode bindings.
-The source code implementation manager encapsulates a plug-in management interface which provides an integration point where end users can include source code implementations of modelled features into their configurations by wrapping them as self-contained plug-ins.
+ In general, variability management provides two main capabilities i.e. feature modelling and variation points definition. The configuration manager component of our language library is made up of two parts. Namely, a binding semantics interpreter and a constraint checker. The binding semantics interpreter assimilates and displays the result of the interaction found between the assigned binding pairs of any collection of features. The constraint checker on the other hand parses the entire model definition of a given example system, to evaluate it for constraint violations in an attempt to validate user-defined configurations with respect to the configuration space. Thus, the constraint checker enforces configuration rules that define the adaptability of all configurations based on time-mode bindings.
+The source code implementation manager consists of a plug-in management interface which provides an integration point where end users can include feature source code into their modelled configurations by wrapping them as self-contained plug-ins.
 
 \subsection{Domain Analysis}
-In our language design, we had to clarify key concepts that are relevant to the domain context of the language. Furthermore, we identified design concepts and relationships that determine the type of programs which domain stakeholders would be capable of building with our language. All the concepts and relationships we identified, were then formalized into a capability model, and iteratively refined to develop our language's abstract syntax.
+In our language design, we clarified core concepts that are key to the domain context of our language. Furthermore, we identified design concepts and relationships that determine the type of programs which domain stakeholders would be capable of building with our language. All these concepts and relationships were then formalized into a capability model, that was iteratively refined to develop our language's abstract syntax.
 
 During our domain analysis phase, we identified five standard questions which make up the core ideas and knowledge base that represents our language and its use. These questions can be categorised as follows:
     \begin{itemize}
@@ -519,7 +519,7 @@ During our domain analysis phase, we identified five standard questions which ma
 Configuration capabilities within our architectural implementation pattern are decoupled from that of a feature. This is to primarily make features easier to manage, reduce duplication of non-configurable attributes i.e. eliminate redundancy, and to further separate concerns. This separation is required to show that both components have clearly defined responsibilities. By detaching features from configurations, end users can model and configure their robots without having too deal with extraneous information. Furthermore, each set of decoupled configuration attributes references an existing feature by a unique \textit{ID} attribute.
 
 \subsubsection{Developing Mock-up Examples}
-An important use case of our language is that, it can be used to develop mock-up examples that demonstrate our language's expressiveness. Within the context of this study, examples refer to modelled features of robot product lines. Figure \ref{ex1} and \ref{ex2} show graphical representations in the form of feature models, of selected example robots. Each feature present in these models, can be expressed textually with tokens from our language as shown in Listing \ref{feat-conc-text} and \ref{bind-conc-text}. Inspiration for these examples were drawn from general utility and disinfection robots such as TIAGo and UVD Model C.
+An important use case of our language is that, it can be aid in developing mock-up examples that demonstrate our language's expressiveness. Within the context of this study, examples refer to modelled features of robot product lines. Figure \ref{ex1} and \ref{ex2} show graphical representations in the form of feature models, of selected example robots. Each feature present in these models, can be expressed textually with tokens from our language as shown in Listings \ref{feat-conc-text} and \ref{bind-conc-text}. Inspiration for these examples were drawn from general utility and disinfection robots such as TIAGo and UVD Model C.
     
 \begin{figure*}[h]
 \caption{Modelled Example One}
@@ -535,7 +535,7 @@ An important use case of our language is that, it can be used to develop mock-up
 \label{ex2}
 \end{figure*}
     
-Furthermore, in our model refinement step which aims to extend our mock-up examples against our requirements, we analyse the requirements associated with our language, justify them, and then proceed to provide evidence of said requirements that have been fulfilled.
+Furthermore, in our model refinement step which aims to extend our mock-up examples against our requirements, we analysed the requirements associated with our language, justified them, and then proceeded to provide evidence of said requirements that have been fulfilled.
 
 \begin{listing}[H]
 \caption{Textual Sample of a Set of Features}
@@ -575,10 +575,10 @@ tabsize=2
 \label{feat-conc-text}
 \end{listing}
 
-All features present in our feature model specification posses binding time and binding mode configurations which can be used by our language to manage variability within a modelled robotic system. As indicated in our architectural design, configuration collections are separated from feature collections for the sole purpose of decluttering model documents and abstracting attributes that have distinct responsibilities from each other. Listing
+All features present in our feature model specification posses binding time and binding mode configurations which can be used by our language to manage variability within a modelled instance of a robotic system. As indicated in our architectural design, configuration collections are separated from feature collections for the sole purpose of decluttering model documents and abstracting attributes that have distinct responsibilities from each other. Listing
 \ref{bind-conc-text} captures the format of a sample representation of the concrete textual syntax of feature configurations present in a given model. This consists of a collection of feature \textit{ids} together with their \textit{time} and \textit{mode} binding properties, derived from a separate collection of feature documents nested in the same order as their corresponding graphical feature model.
 
-\begin{listing}[H]
+\begin{listing}[h]
 \caption{Textual Sample of a Set of Feature Configurations}
 \begin{minted}[
 framesep=2mm,
@@ -611,7 +611,7 @@ tabsize=2
 \end{listing}
 
 \subsubsection{Extending Mock-up Examples Against Requirements}
-In our domain analysis we were able to understand key requirements relevant to our language's desired capabilities. Based on this understanding, we extended our mock-up examples in Figure \ref{ex1} and \ref{ex2} against our already established language requirements. Such established language requirements include:
+Based on our understanding of the domain from previous steps, we extended our mock-up examples in Figure \ref{ex1} and \ref{ex2} against our set of already established language requirements. These requirements are as follows:
 \begin{enumerate}
     \item R1: End users can instantiate robotic models.
     \item R2: End users can create instances of features within models.
@@ -619,7 +619,7 @@ In our domain analysis we were able to understand key requirements relevant to o
     \item R4: End users can define and link configurations to feature instances.
     \item R5: End users can evaluate models both syntactically and semantically.
 \end{enumerate}
-Using the concrete textual syntax of our modelling language which we have highlighted in Listing \ref{feat-conc-text} and \ref{bind-conc-text}, we identified example syntax representations that fulfil all the requirements listed above. Table \ref{tab:reqext} captures a mapping of each requirement along with its example syntax representation, that justifies that a requirement has been fulfilled.
+Using the concrete textual syntax of our modelling language highlighted in Listing \ref{feat-conc-text} and \ref{bind-conc-text} as a reference point, we identified and generated example syntax representations that fulfil all the requirements listed above. Table \ref{tab:reqext} captures a mapping of each stated requirement along with its corresponding example syntax representation, that justifies and fulfils that same requirement.
 
 \begin{table}[H]
 \caption{Extended Mock-up Examples Against Requirements}
@@ -657,7 +657,7 @@ The basic compositional unit of our language is an attribute. From a lexical sta
 
 In Table \ref{tab:langlex}, for each identified token in our language, we translated a valid representation of it into a regular expression to demonstrate which valid forms of these token can exist in our language. Syntactically speaking, modelled features and their configurations, encapsulate key-value paired attributes as self-contained objects. Lastly, Table \ref{tab:langlex} also captures a list of generated terminal symbols that can be used in grammar production.
 
-\begin{table}[H]
+\begin{table}[h]
 \caption{Language Tokens}
 \begin{center}
 \begin{tabular}{c c c}
@@ -933,7 +933,7 @@ As shown in our feature meta-model, the binding time and binding mode attributes
 As an extension to our modelling language, users not only have the capability of defining and modelling features but can also integrate source code implementations of modelled features into their programs. Through the language-agnostic interface we have provided, extracted source code implementations of modelled features, can be encapsulated and integrated into our framework, and in turn referenced based on mechanisms provided within our implementation.
 
 \section{Validation}
-For us to be able to thoroughly validate our language design and its implementation, we have to ensure that its possible to evaluate user-generated artefacts realised with our variability modelling language. These artefacts can be identified as feature models and configurations which contain both data and meta-data. To demonstrate this, we translated graphical representations of our mock-up examples in Figure \ref{ex1} and \ref{ex2} into model and configuration instances of our language. We then went on to validate these models and configurations for syntax and semantic correctness or well-formedness. Validation mechanisms used for syntax and semantic validation include schema and constraint validation tools. The schema validation tool is used to evaluate model schemas of all features and configurations, whereas the constraint validator handles the semantic evaluation of bindings defined within our mock-up examples.
+For us to be able to thoroughly validate our language design and its implementation, we have to ensure that its possible to evaluate user-generated artefacts realised with it. These artefacts can be identified as feature models and configurations which contain both data and meta-data. To demonstrate this, we translated graphical representations of our mock-up examples in Figure \ref{ex1} and \ref{ex2} into model and configuration instances of our language. We then went on to validate these models and configurations for syntax and semantic correctness or well-formedness. In-built validation mechanisms used by our language for syntax and semantic validation include both a schema and a constraint validation tool. The schema validation tool is used to evaluate model schemas of all features and configurations, whereas the constraint validator handles the semantic evaluation of bindings defined within our mock-up examples.
 
   \subsection{Schema Validation Tool} Our framework provides a schema validation tool that certifies that the grammar and syntax rules of programs created with our language are structurally valid. Using our language, features and configurations can be conveniently modelled as key-value pairs of objects. Grammatically, a feature's object keys are represented as tokens that are not only terminal in nature, but also store meta-data on the features they represent. Value tokens on the other hand are generated from a finite set of data types that are unique to each object attribute present within a feature.
   
@@ -987,6 +987,7 @@ This study generally focuses on technique feasibility rather than operational qu
 \section*{Acknowledgment}
 This paper mainly draws inspiration from research materials contributed by Sergio Garc\'{i}a, Claudio Menghi, Patrizio Pelliccione, Thorsten Berger, and Rebekka Wohlrab. This study particularly extends their work concerning SERA; A Self-adaptive dEcentralized Robotic Architecture for building autonomous, heterogeneous and collaborative robotic applications.
 
+\newpage
 \begin{thebibliography}{00}
 \bibitem{sera} S. Garc\'{i}a, C. Menghi, P. Pelliccione, T. Berger, and R. Wohlrab, ``An Architecture for Decentralized, Collaborative, and Autonomous Robots,'' in Proceedings - 2018 IEEE 15th ICSA, 2018.
 \bibitem{flex-feat-bind} M. Rosenmüller, N. Siegmund, S. Apel, and G. Saake, Flexible feature binding in Software Product Lines, Springer Science + Business Media, LLC 2011.
