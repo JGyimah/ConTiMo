@@ -17,7 +17,6 @@
 
 \PYG{+w}{			}\PYG{n}{std}\PYG{o}{::}\PYG{n}{string}\PYG{+w}{ }\PYG{n}{group}\PYG{p}{;}
 \PYG{+w}{			}\PYG{k+kt}{bool}\PYG{+w}{ }\PYG{n}{isMandatory}\PYG{p}{;}
-\PYG{+w}{			}\PYG{n}{std}\PYG{o}{::}\PYG{n}{vector}\PYG{o}{\PYGZlt{}}\PYG{n}{Feature}\PYG{o}{\PYGZgt{}}\PYG{+w}{ }\PYG{n}{sub}\PYG{p}{;}
 
 \PYG{+w}{		}\PYG{k}{public}\PYG{o}{:}
 \PYG{+w}{			}\PYG{n}{Feature}\PYG{p}{()\PYGZob{}\PYGZcb{};}
@@ -60,8 +59,12 @@
 \PYG{+w}{			}\PYG{p}{\PYGZcb{}}
 
 \PYG{+w}{			}\PYG{c+c1}{//getters}
-\PYG{+w}{			}\PYG{n}{std}\PYG{o}{::}\PYG{n}{string}\PYG{+w}{ }\PYG{n+nf}{getName}\PYG{p}{()\PYGZob{}}
+\PYG{+w}{			}\PYG{n}{std}\PYG{o}{::}\PYG{n}{string}\PYG{+w}{ }\PYG{n+nf}{getName}\PYG{p}{()}\PYG{+w}{ }\PYG{k}{const}\PYG{p}{\PYGZob{}}
 \PYG{+w}{				}\PYG{k}{return}\PYG{+w}{ }\PYG{n}{name}\PYG{p}{;}
+\PYG{+w}{			}\PYG{p}{\PYGZcb{}}
+
+\PYG{+w}{			}\PYG{n}{std}\PYG{o}{::}\PYG{n}{string}\PYG{+w}{ }\PYG{n+nf}{getId}\PYG{p}{()}\PYG{+w}{ }\PYG{k}{const}\PYG{p}{\PYGZob{}}
+\PYG{+w}{				}\PYG{k}{return}\PYG{+w}{ }\PYG{n}{id}\PYG{p}{;}
 \PYG{+w}{			}\PYG{p}{\PYGZcb{}}
 \PYG{+w}{		}\PYG{p}{\PYGZcb{};}
 \PYG{+w}{	}\PYG{p}{\PYGZcb{};}

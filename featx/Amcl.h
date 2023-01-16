@@ -1,23 +1,24 @@
 #include <iostream>
 #include "../include/motivml_ros/static_base.h"
+#include "Configuration.h"
 
 namespace static_integration{
 
     class Amcl: public static_base::StaticInterface{
         
         public:
+            Feature amcl;
             Amcl(){
-                Feature::setId("amcl");
-                Feature::setName("AMCL");
-                Feature::setGroup("XOR");
-                Feature::setIsMandatory(false);
+                amcl.setId("amcl");
+                amcl.setName("AMCL");
+                amcl.setGroup("XOR");
+                amcl.setIsMandatory(false);
 
-                Configuration::setTimeBinding(Early);
-                Configuration::setModeBinding(Static);
+                Configuration(amcl, Early, Static);
             }
 
             void executeFeature(){
-                std::cout << Feature::getName() << "feature run successfully" << std::endl;
+                std::cout << amcl.getName() << "feature run successfully" << std::endl;
             };
 
     };

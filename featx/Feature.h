@@ -21,7 +21,6 @@ namespace motivml_feature{
 
         std::string group;
         bool isMandatory;
-        std::vector<Feature> sub;
 
     public:
         Feature(){};
@@ -64,8 +63,12 @@ namespace motivml_feature{
         }
 
         //getters
-        std::string getName(){
+        std::string getName() const{
             return name;
+        }
+
+        std::string getId() const{
+            return id;
         }
     };
 };

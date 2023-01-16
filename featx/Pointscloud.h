@@ -1,24 +1,25 @@
 #include <iostream>
 #include "../include/motivml_ros/plugin_base.h"
+#include "Configuration.h"
 
 namespace motivml_plugins{
 class Pointscloud: public plugin_base::PluginInterface{
         private:
             std::vector<std::string> ex{"hands"};
         public:
+            Feature pcloud;
             Pointscloud(){
-                Feature::setId("pointscloud");
-                Feature::setName("PointsCloud");
-                Feature::setFeaturesExcluded(ex);
-                Feature::setGroup("XOR");
-                Feature::setIsMandatory(false);
+                pcloud.setId("pointscloud");
+                pcloud.setName("PointsCloud");
+                pcloud.setFeaturesExcluded(ex);
+                pcloud.setGroup("XOR");
+                pcloud.setIsMandatory(false);
 
-                Configuration::setTimeBinding(Late);
-                Configuration::setModeBinding(Dynamic);
+                Configuration(pcloud, Late, Dynamic);
             }
 
             void executeFeature(){
-                std::cout << Feature::getName() << "feature run successfully" << std::endl;
+                std::cout << pcloud.getName() << "feature run successfully" << std::endl;
             };
 
     };

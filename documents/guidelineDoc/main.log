@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.6.3)  6 JAN 2023 10:03
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.6.3)  16 JAN 2023 13:43
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -594,17 +594,17 @@ Package pdftex.def Info: images/validate.png  used on input line 481.
 \openout3 = `main.pyg'.
 
 
-(_minted-main/BB4CA291B73CD031CADB936E39D92CD916FC8F7A31F6C71217C018AAE38EB545.
+(_minted-main/F4B57352A67299C7EB5FEC8BE264A02616FC8F7A31F6C71217C018AAE38EB545.
 pygtex [8 <./images/validate.png>])
 \openout3 = `main.pyg'.
 
 
-(_minted-main/4103FB79F61E46A0FCAA7B94BCBCD90B16FC8F7A31F6C71217C018AAE38EB545.
+(_minted-main/45F5BB4C536395FBA6166DABCF1DF6B816FC8F7A31F6C71217C018AAE38EB545.
 pygtex)
 \openout3 = `main.pyg'.
 
 
-(_minted-main/3596667C4DE8623D62A4411600A1FD5016FC8F7A31F6C71217C018AAE38EB545.
+(_minted-main/78EF39C660320370EF6F851AA61A3AD716FC8F7A31F6C71217C018AAE38EB545.
 pygtex) [9]
 \openout3 = `main.pyg'.
 
@@ -624,7 +624,7 @@ pygtex)
 \openout3 = `main.pyg'.
 
 
-(_minted-main/027784BAD5CFADAF030834A63D4C0B6D16FC8F7A31F6C71217C018AAE38EB545.
+(_minted-main/301A4AE21E9B604F335D609C21B48B6F16FC8F7A31F6C71217C018AAE38EB545.
 pygtex) [10]
 \openout3 = `main.pyg'.
 
@@ -643,8 +643,28 @@ pygtex)
 pygtex)
 \openout3 = `main.pyg'.
 
+runsystem(for ^%i in (python.exe python.bat python.cmd) do set > main.aex <nul:
+ /p x=^%~$PATH:i>> main.aex)...executed.
 
-(_minted-main/9D9588B2F7847B48681C21FFEB018FAE16FC8F7A31F6C71217C018AAE38EB545.
+runsystem(del main.aex)...executed.
+
+runsystem(python -c "import sys; import os; import textwrap; from io import ope
+n; fname = os.path.expanduser(os.path.expandvars(\"main.pyg\")); f = open(fname
+, \"r\", encoding=\"UTF8\") if os.path.isfile(fname) else None; t = f.readlines
+() if f is not None else None; t_opt = t if t is not None else []; f.close() if
+ f is not None else None; tmpfname = os.path.expanduser(os.path.expandvars(\"ma
+in.pyg\")); f = open(tmpfname, \"w\", encoding=\"UTF8\") if t is not None else 
+None; fvstartnum = 0; fvstopnum = -1; s = max(0, fvstartnum-1); e = min(s, fvst
+opnum if fvstopnum > 0 else len(t_opt)); [f.write(textwrap.dedent(\"\".join(x))
+) for x in (t_opt[0:s], t_opt[s:e], t_opt[e:]) if x and t is not None]; f.close
+() if t is not None else os.remove(tmpfname);")...executed.
+
+runsystem(pygmentize -l c++ -f latex -P commandprefix=PYG -F tokenmerge -P stri
+pnl=False -o _minted-main/5ACDB8BA028EA24D6AF868C5BC97E2D316FC8F7A31F6C71217C01
+8AAE38EB545.pygtex main.pyg)...executed.
+
+
+(_minted-main/5ACDB8BA028EA24D6AF868C5BC97E2D316FC8F7A31F6C71217C018AAE38EB545.
 pygtex) [11]
 \openout3 = `main.pyg'.
 
@@ -669,35 +689,35 @@ pygtex)
 <images/console.png, id=173, 421.575pt x 207.174pt>
 File: images/console.png Graphic file (type png)
 <use images/console.png>
-Package pdftex.def Info: images/console.png  used on input line 942.
+Package pdftex.def Info: images/console.png  used on input line 940.
 (pdftex.def)             Requested size: 469.75502pt x 230.85414pt.
  [12 <./images/console.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 950--951
+Underfull \hbox (badness 10000) in paragraph at lines 948--949
 
  []
 
 <images/showall.png, id=185, 494.44725pt x 253.54726pt>
 File: images/showall.png Graphic file (type png)
 <use images/showall.png>
-Package pdftex.def Info: images/showall.png  used on input line 957.
+Package pdftex.def Info: images/showall.png  used on input line 955.
 (pdftex.def)             Requested size: 469.75502pt x 240.88785pt.
 <images/showconfig.png, id=186, 503.481pt x 168.02776pt>
 File: images/showconfig.png Graphic file (type png)
 <use images/showconfig.png>
-Package pdftex.def Info: images/showconfig.png  used on input line 966.
+Package pdftex.def Info: images/showconfig.png  used on input line 964.
 (pdftex.def)             Requested size: 469.75502pt x 156.7744pt.
 <images/exit.png, id=188, 248.127pt x 33.12375pt>
 File: images/exit.png Graphic file (type png)
 <use images/exit.png>
-Package pdftex.def Info: images/exit.png  used on input line 974.
+Package pdftex.def Info: images/exit.png  used on input line 972.
 (pdftex.def)             Requested size: 227.62204pt x 30.38626pt.
 [13 <./images/showall.png> <./images/showconfig.png> <./images/exit.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 990--991
+Underfull \hbox (badness 10000) in paragraph at lines 988--989
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 990--991
+Underfull \hbox (badness 10000) in paragraph at lines 988--989
 
  []
 
@@ -706,12 +726,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 990--991
 
 (_minted-main/D5208CE01AA4DEA00F488B6C54D9EC158447DF9C2D5ED130E262CD4D9278E0D8.
 pygtex)
-Underfull \hbox (badness 10000) in paragraph at lines 1008--1009
+Underfull \hbox (badness 10000) in paragraph at lines 1006--1007
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1008--1009
+Underfull \hbox (badness 10000) in paragraph at lines 1006--1007
 
  []
 
@@ -720,12 +740,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 1008--1009
 
 (_minted-main/89A1029D60E1A445E18B3B6E5C9280418447DF9C2D5ED130E262CD4D9278E0D8.
 pygtex)
-Underfull \hbox (badness 10000) in paragraph at lines 1025--1026
+Underfull \hbox (badness 10000) in paragraph at lines 1023--1024
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1025--1026
+Underfull \hbox (badness 10000) in paragraph at lines 1023--1024
 
  []
 
@@ -733,7 +753,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 1025--1026
 
 
 (_minted-main/6EFE9904AA6F687E84BB31004077EAF38447DF9C2D5ED130E262CD4D9278E0D8.
-pygtex) [14] (main.aux)
+pygtex)
+runsystem(del _minted-main\9D9588B2F7847B48681C21FFEB018FAE16FC8F7A31F6C71217C0
+18AAE38EB545.pygtex)...executed.
+
+ [14] (main.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
@@ -743,10 +767,10 @@ runsystem(del main.pyg)...executed.
 
  ) 
 Here is how much of TeX's memory you used:
- 15446 strings out of 478614
- 272286 string characters out of 2852938
+ 15450 strings out of 478614
+ 272556 string characters out of 2852938
  617294 words of memory out of 3000000
- 33277 multiletter control sequences out of 15000+600000
+ 33280 multiletter control sequences out of 15000+600000
  475453 words of font info for 49 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  72i,10n,77p,666b,849s stack positions out of 10000i,1000n,20000p,200000b,80000s
@@ -759,7 +783,7 @@ blic/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts
 /cm/cmr17.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb>
 <C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program 
 Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt8.pfb>
-Output written on main.pdf (14 pages, 260641 bytes).
+Output written on main.pdf (14 pages, 260666 bytes).
 PDF statistics:
  267 PDF objects out of 1000 (max. 8388607)
  66 named destinations out of 1000 (max. 500000)

@@ -509,7 +509,6 @@ When our in-built schema and constraint checker identify an error in either a mo
 					
 					std::string group;
 					bool isMandatory;
-					std::vector<Feature> sub;
 					
 				public:
 					Feature(){};
@@ -552,8 +551,12 @@ When our in-built schema and constraint checker identify an error in either a mo
 					}
 					
 					//getters
-					std::string getName(){
+					std::string getName() const{
 						return name;
+					}
+					
+					std::string getId() const{
+						return id;
 					}
 				};
 			};
@@ -579,20 +582,15 @@ The a capabilities of a MoTiVML feature are wrapped in a \textbf{motivml\_featur
 		{
 			class Configuration: public motivml_feature::Feature{
 			private:
+				std::string id;
 				BindingTimes time;
 				BindingModes mode;
-				
+			
 			public:
 				Configuration(){}
-				
-				void setTimeBinding(BindingTimes time){
-					time = time;
-				}
-				
-				void setModeBinding(BindingModes mode){
-					mode = mode;
-				}
-			};
+				Configuration(motivml_feature::Feature modelledFeature, BindingTimes timeSetting, BindingModes modeSetting)
+				:id{modelledFeature.getId()}, time{timeSetting}, mode{modeSetting}{}
+		};
 		}
 	\end{minted}
 	\label{config-class}
@@ -623,20 +621,20 @@ To decouple relevant features necessary for binding a feature, our time and mode
 					std::vector<std::string> inc{"featureID_2"};
 					
 				public:
+					Feature myStaticEarlyFeature;
 					MyStaticEarlyClass(){
-						Feature::setId("xxxx");
-						Feature::setName("JohnDoe");
-						Feature::setFeaturesExcluded(ex);
-						Feature::setFeaturesIncluded(inc);
-						Feature::setGroup("XOR");
-						Feature::setIsMandatory(false);
+						myStaticEarlyFeature.setId("xxxx");
+						myStaticEarlyFeature.setName("JohnDoe");
+						myStaticEarlyFeature.setFeaturesExcluded(ex);
+						myStaticEarlyFeature.setFeaturesIncluded(inc);
+						myStaticEarlyFeature.setGroup("XOR");
+						myStaticEarlyFeature.setIsMandatory(false);
 						
-						Configuration::setTimeBinding(Early);
-						Configuration::setModeBinding(Static);
+						Configuration(myStaticEarlyFeature, Early, Static);
 					};
 					
 					void executeFeature(){
-						std::cout << Feature::getName() << "feature run successfully" << std::endl;
+						std::cout << myStaticEarlyFeature.getName() << "feature run successfully" << std::endl;
 					};
 					
 				};
@@ -728,20 +726,20 @@ To decouple relevant features necessary for binding a feature, our time and mode
 					std::vector<std::string> inc{"featureID_2"};
 					
 				public:
+					Feature myStaticLateFeature;
 					MyStaticLateClass(){
-						Feature::setId("xxxx");
-						Feature::setName("JohnDoe");
-						Feature::setFeaturesExcluded(ex);
-						Feature::setFeaturesIncluded(inc);
-						Feature::setGroup("XOR");
-						Feature::setIsMandatory(false);
+						myStaticLateFeature.setId("xxxx");
+						myStaticLateFeature.setName("JohnDoe");
+						myStaticLateFeature.setFeaturesExcluded(ex);
+						myStaticLateFeature.setFeaturesIncluded(inc);
+						myStaticLateFeature.setGroup("XOR");
+						myStaticLateFeature.setIsMandatory(false);
 						
-						Configuration::setTimeBinding(Late);
-						Configuration::setModeBinding(Static);
+						Configuration(myStaticLateFeature, Late, Static);
 					};
 					
 					void executeFeature(){
-						std::cout << Feature::getName() << "feature run successfully" << std::endl;
+						std::cout << myStaticLateFeature.getName() << "feature run successfully" << std::endl;
 					};
 					
 				};
@@ -831,20 +829,20 @@ To decouple relevant features necessary for binding a feature, our time and mode
 					std::vector<std::string> inc{"featureID_2"};
 					
 				public:
+					Feature myDynamicEarlyFeature;
 					MyDynamicClass(){
-						Feature::setId("xxxx");
-						Feature::setName("JohnDoe");
-						Feature::setFeaturesExcluded(ex);
-						Feature::setFeaturesIncluded(inc);
-						Feature::setGroup("XOR");
-						Feature::setIsMandatory(false);
+						myDynamicEarlyFeature.setId("xxxx");
+						myDynamicEarlyFeature.setName("JohnDoe");
+						myDynamicEarlyFeature.setFeaturesExcluded(ex);
+						myDynamicEarlyFeature.setFeaturesIncluded(inc);
+						myDynamicEarlyFeature.setGroup("XOR");
+						myDynamicEarlyFeature.setIsMandatory(false);
 						
-						Configuration::setTimeBinding(Early);
-						Configuration::setModeBinding(Dynamic);
+						Configuration(myDynamicEarlyFeature, Early, Dynamic);
 					};
 					
 					void executeFeature(){
-						std::cout << Feature::getName() << "feature run successfully" << std::endl;
+						std::cout << myDynamicEarlyFeature.getName() << "feature run successfully" << std::endl;
 					};
 				};
 				

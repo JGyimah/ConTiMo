@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.6.3)  12 JAN 2023 16:03
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.6.3)  16 JAN 2023 12:36
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1072,13 +1072,13 @@ Overfull \hbox (6.0pt too wide) in paragraph at lines 722--724
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-<diagrams/config.png, id=65, 7912.56125pt x 6363.775pt>
+<diagrams/config.png, id=65, 8929.36pt x 5632.04124pt>
 File: diagrams/config.png Graphic file (type png)
 <use diagrams/config.png>
-Package pdftex.def Info: diagrams/config.png  used on input line 732.
-(pdftex.def)             Requested size: 232.19843pt x 186.72957pt.
+Package pdftex.def Info: diagrams/config.png  used on input line 733.
+(pdftex.def)             Requested size: 232.19843pt x 146.43822pt.
  [14 <./diagrams/feature.png> <./diagrams/config.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 761--763
+Underfull \hbox (badness 10000) in paragraph at lines 762--764
 
  []
 
@@ -1090,7 +1090,7 @@ B61CD7D65844.pygtex
 LaTeX Font Info:    Font shape `OT1/pcr/m/it' in size <8> not available
 (Font)              Font shape `OT1/pcr/m/sl' tried instead on input line 2.
 )
-Underfull \hbox (badness 10000) in paragraph at lines 793--794
+Underfull \hbox (badness 10000) in paragraph at lines 794--795
 
  []
 
@@ -1099,17 +1099,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 793--794
 
 (_minted-conference_101719/DC9C4C08798D4546501C79F0EA2368E2DECB3A99A7C9D9655A0C
 B61CD7D65844.pygtex)
-Underfull \hbox (badness 1616) in paragraph at lines 820--821
+Underfull \hbox (badness 1616) in paragraph at lines 821--822
 \OT1/ptm/m/n/10 as plu-g-ins. Our choice to use ROS plug-in-lib was
  []
 
 
-Underfull \hbox (badness 1983) in paragraph at lines 820--821
+Underfull \hbox (badness 1983) in paragraph at lines 821--822
 \OT1/ptm/m/n/10 highly op-ti-mised and easy to in-te-grate as a third
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 820--821
+Underfull \hbox (badness 10000) in paragraph at lines 821--822
 
  []
 
@@ -1117,26 +1117,26 @@ Underfull \hbox (badness 10000) in paragraph at lines 820--821
 <diagrams/mandatory.png, id=77, 30.1125pt x 57.21375pt>
 File: diagrams/mandatory.png Graphic file (type png)
 <use diagrams/mandatory.png>
-Package pdftex.def Info: diagrams/mandatory.png  used on input line 857.
+Package pdftex.def Info: diagrams/mandatory.png  used on input line 858.
 (pdftex.def)             Requested size: 28.45369pt x 34.14429pt.
 <diagrams/optional.png, id=78, 31.91925pt x 54.2025pt>
 File: diagrams/optional.png Graphic file (type png)
 <use diagrams/optional.png>
-Package pdftex.def Info: diagrams/optional.png  used on input line 858.
+Package pdftex.def Info: diagrams/optional.png  used on input line 859.
 (pdftex.def)             Requested size: 28.45332pt x 34.14526pt.
  [16 <./diagrams/mandatory.png> <./diagrams/optional.png>] [17]
-Underfull \hbox (badness 1389) in paragraph at lines 958--959
+Underfull \hbox (badness 1389) in paragraph at lines 959--960
 []\OT1/ptm/m/n/10 There have been some vari-abil-ity mod-elling lan-guage
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 960--960
+Underfull \hbox (badness 10000) in paragraph at lines 961--961
 [][][]$\OT1/ptm/m/n/8 https : / / github . com / SergioGarG / sera -[] extensio
 n / tree / master / documents /
  []
 
 [18] [19]
-Underfull \hbox (badness 1874) in paragraph at lines 1013--1014
+Underfull \hbox (badness 1874) in paragraph at lines 1014--1015
 []\OT1/ptm/m/n/8 R. H. Bour-gonjon, ``Em-bed-ded Sys-tems in Con-sumer Prod-uct
 s,''
  []
@@ -1159,7 +1159,7 @@ runsystem(del conference_101719.pyg)...executed.
 Here is how much of TeX's memory you used:
  21975 strings out of 478614
  432583 string characters out of 2852938
- 761402 words of memory out of 3000000
+ 761405 words of memory out of 3000000
  39666 multiletter control sequences out of 15000+600000
  515547 words of font info for 116 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1178,7 +1178,7 @@ eX/fonts/type1/urw/courier/ucrro8a.pfb><C:/Program Files/MiKTeX/fonts/type1/urw
 /times/utmb8a.pfb><C:/Program Files/MiKTeX/fonts/type1/urw/times/utmbi8a.pfb><C
 :/Program Files/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files/MiKTe
 X/fonts/type1/urw/times/utmri8a.pfb>
-Output written on conference_101719.pdf (20 pages, 1998453 bytes).
+Output written on conference_101719.pdf (20 pages, 2094608 bytes).
 PDF statistics:
  162 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

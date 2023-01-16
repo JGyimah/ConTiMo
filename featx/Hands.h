@@ -1,5 +1,6 @@
 #include <iostream>
 #include "../include/motivml_ros/plugin_base.h"
+#include "Configuration.h"
 
 namespace motivml_plugins{
 class Hands: public plugin_base::PluginInterface{
@@ -7,19 +8,19 @@ class Hands: public plugin_base::PluginInterface{
             std::vector<std::string> ex{"pointscloud"};
 
         public:
+            Feature hands;
             Hands(){
-                Feature::setId("hands");
-                Feature::setName("Hands");
-                Feature::setFeaturesExcluded(ex);
-                Feature::setGroup("XOR");
-                Feature::setIsMandatory(false);
+                hands.setId("hands");
+                hands.setName("Hands");
+                hands.setFeaturesExcluded(ex);
+                hands.setGroup("XOR");
+                hands.setIsMandatory(false);
 
-                Configuration::setTimeBinding(Late);
-                Configuration::setModeBinding(Dynamic);
+                Configuration(hands, Late, Dynamic);
             };
 
             void executeFeature(){
-                std::cout << Feature::getName() << "feature run successfully" << std::endl;
+                std::cout << hands.getName() << "feature run successfully" << std::endl;
             };
 
     };

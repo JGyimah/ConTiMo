@@ -1,23 +1,24 @@
 #include <iostream>
 #include "../include/motivml_ros/static_base.h"
+#include "Configuration.h"
 
 namespace static_integration{
 
     class ComponentControl: public static_base::StaticInterface{
        
         public:
+            Feature cctrl;
             ComponentControl(){
-                Feature::setId("compcontrol");
-                Feature::setName("ComponentControl");
-                Feature::setGroup("OR");
-                Feature::setIsMandatory(true);
+                cctrl.setId("compcontrol");
+                cctrl.setName("ComponentControl");
+                cctrl.setGroup("OR");
+                cctrl.setIsMandatory(true);
 
-                Configuration::setTimeBinding(Early);
-                Configuration::setModeBinding(Static);
+                Configuration(cctrl, Early, Static);
             }
 
             void executeFeature(){
-                std::cout << Feature::getName() << "feature run successfully" << std::endl;
+                std::cout << cctrl.getName() << "feature run successfully" << std::endl;
             };
 
     };

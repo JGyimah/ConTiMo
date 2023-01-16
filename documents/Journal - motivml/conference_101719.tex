@@ -712,9 +712,9 @@ The modelling capability of our language provides domain stakeholders with a mea
 \end{itemize}
 
 \subsubsection{Abstract Syntax Definition}
-The abstract syntax of any language refers to the logical representation of that language in memory. In Figure \ref{femet} and \ref{conmet} we provide an abstraction to the user interfaces of both a feature and a configuration objects in the form of class diagrams. In both meta-models, sets of capability related data pertaining to the same concerns were modelled together. Upon instantiation, a modelled robotic feature is selected by default. By design, every modelled feature must bear a unique string \textit{id} attribute which serves as a reference point in key aspects of our implementation. Every feature must also bear a \textit{name} attribute that describes its intended purpose and capability.
+The abstract syntax of any language refers to the logical representation of that language in memory. In Figure \ref{femet} and \ref{conmet} we provide abstractions to the user interfaces of both feature and configuration objects in the form of class diagrams. In both meta-models, sets of capability related data pertaining to the same concerns are modelled and encapsulated together. These related user-defined types can be instantiated with variable data values that conform to the requisite type assigned to the attribute in question. For instance, upon instantiation, a modelled robotic feature is selected by default. By design, every modelled feature must bear a unique string \textit{id} attribute which serves as a reference point in key aspects of our framework. Every feature must also bear a \textit{name} attribute that describes its intended purpose and capability.
 
-Furthermore, every modelled feature has a set of constraints which define the scope of the feature in the model configuration space. Feature constraints are categorised into two main groups. i.e. cross functional constraints and binding property constraints. Cross functional constraints refer to \textit{inclusion} and \textit{exclusion} constraints while binding property constraints define the possible state values of binding time and binding mode attributes within configurations. A feature may contain an aggregation of sub-features. On the other hand, every feature is composed of a group, which may comprise of strictly two or more features.
+Furthermore, every modelled feature has a set of constraints which define the scope of the feature in the model configuration space. Feature constraints are categorised into two main groups. i.e. cross functional constraints and binding property constraints. Cross functional constraints refer to \textit{inclusion} and \textit{exclusion} constraints while binding property constraints define the possible state values of binding time and binding mode attributes within configurations. A feature may also contain an aggregation of sub-features. Lastly, every feature is composed of a group, which may comprise of strictly two or more features.
 
 \begin{figure}[H]
 \caption{Feature Meta Model}
@@ -723,8 +723,9 @@ Furthermore, every modelled feature has a set of constraints which define the sc
 \label{femet}
 \end{figure}
 
-The configuration capabilities of a feature reflects the ability of the feature to be adapted to fit multiple contexts. Per our proposed variability management technique,
-feature adaptations are determined by a binding time and binding mode combination, specified or assigned based on end user preferences. Each configuration bears reference to an existing feature by way of an \textit{id} attribute. For each feature, its multiplicity can be described as one or more. Thus, there can exist multiple configurations, provided these configurations are valid with respect to the feature constraints. In each encapsulated instance of a model, it can be observed in Figure \ref{conmet} that configurations are represented as feature compositions. Also, model, feature and configuration functionalities can be generalised into a single named element. 
+The configuration capabilities of a feature reflects its ability to adapt in accordance to variable contexts. Per our proposed variability management technique,
+feature adaptations are determined by a binding time and binding mode combination, specified or assigned based on end user preferences. A configuration can only exists as long as a feature exists. Thus, each configuration bears reference to an existing feature by way of an \textit{id} attribute. This explains the existing compositional relationship between a feature and a configuration, as shown in Figure \ref{conmet}. 
+For each feature, its multiplicity can be described as one or more. Thus, there can exist multiple configurations, provided these configurations are valid with respect to all related constraints. Additionally, feature and configuration attributes, together with their associations and functionalities can be inherited through the generalisation of a single named element. 
 
 \begin{figure}[H]
 \caption{Configuration Meta Model}
@@ -734,9 +735,9 @@ feature adaptations are determined by a binding time and binding mode combinatio
 \end{figure}
 
 \subsubsection{Identifying Binding Mechanisms}
-Realising static, dynamic, early and late bindings in robotic applications can be tricky due to minor inconveniences related to compatibility. For both time and mode based binding, there optimised implementations in both C++ and ROS, that can be used to realise this.
+Realising static, dynamic, early and late bindings in robotic applications can be tricky due to platform and language constraints. For both time and mode based binding, there are a number of optimised implementations and packages found in C++ and ROS, that can be used to realise this.
 
-In Table \ref{tab:realmecha}, we have highlighted some of such implementations, otherwise known as mechanisms, which we could potentially use to realise all possible binding pairs found within our configuration space. These include, the C++ preprocessor or antenna for static, ROS pluginlib for dynamic and ROS parameters\foot{http://wiki.ros.org/rosparam} together with roslaunch\foot{http://wiki.ros.org/roslaunch} for early and late binding.
+In Table \ref{tab:realmecha}, we have highlighted some of such implementations, otherwise known as mechanisms, which could potentially be used to realise all possible binding pairs found within our configuration space. These include, the C++ preprocessor or antenna for static, ROS pluginlib for dynamic and a combination of ROS parameters\foot{http://wiki.ros.org/rosparam} and roslaunch\foot{http://wiki.ros.org/roslaunch} for both early and late binding.
 
 \begin{table}[H]
 	\caption{Static and Dynamic Binding Mechanisms}
@@ -754,7 +755,7 @@ In Table \ref{tab:realmecha}, we have highlighted some of such implementations, 
 \end{table}
 
 \subsubsection{Implementing Binding Mechanisms}
-The binding mechanisms mentioned in Table \ref{tab:realmecha} serve as unique techniques that provide our modelling framework with the capability to handle variability on an implementation level. In that, modelled variation points of robot instances that have been described and implemented with our framework, are able to leverage such internal mechanisms within the development environment i.e. ROS, to demonstrate static, dynamic, early and late binding of implemented features within all user defined programs.
+The binding mechanisms mentioned in Table \ref{tab:realmecha} serve as unique techniques that provide our modelling framework with the capabilities to handle variability on an implementation level. In that, modelled variation points of robot instances that have been described and implemented with our framework, are able to leverage such internal mechanisms within the development environment i.e. ROS, to demonstrate static, dynamic, early and late binding of implemented features within all user defined programs.
 
 These integrated mechanisms are highly optimised, robust and open-sourced implementations that are compatible across a number of platforms. Thus, by utilising their capabilities, we were able to infuse both flexibility and customizability into our implemented feature bindings.
 

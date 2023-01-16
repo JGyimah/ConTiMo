@@ -1,23 +1,24 @@
 #include <iostream>
 #include "../include/motivml_ros/static_base.h"
+#include "Configuration.h"
 
 namespace static_integration{
 
     class Amclros: public static_base::StaticInterface{
         
         public:
+            Feature amclros;
             Amclros(){
-                Feature::setId("amclros");
-                Feature::setName("AmclRos");
-                Feature::setGroup("OR");
-                Feature::setIsMandatory(true);
+                amclros.setId("amclros");
+                amclros.setName("AmclRos");
+                amclros.setGroup("OR");
+                amclros.setIsMandatory(true);
 
-                Configuration::setTimeBinding(Early);
-                Configuration::setModeBinding(Static);
+                Configuration(amclros, Early, Static);
             };
 
             void executeFeature(){
-                std::cout << Feature::getName() << "feature run successfully" << std::endl;
+                std::cout << amclros.getName() << "feature run successfully" << std::endl;
             };
 
     };

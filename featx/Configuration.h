@@ -7,21 +7,16 @@
 enum BindingTimes{Early, Late};
 enum BindingModes{Static, Dynamic};
 
-class Configuration: public motivml_feature::Feature{
+class Configuration{
 private:
+    std::string id;
     BindingTimes time;
     BindingModes mode;
 
 public:
     Configuration(){}
-    
-    void setTimeBinding(BindingTimes time){
-        time = time;
-    }
-
-    void setModeBinding(BindingModes mode){
-        mode = mode;
-    }
+    Configuration(motivml_feature::Feature modelledFeature, BindingTimes timeSetting, BindingModes modeSetting)
+    :id{modelledFeature.getId()}, time{timeSetting}, mode{modeSetting}{}
 };
 
 #endif
