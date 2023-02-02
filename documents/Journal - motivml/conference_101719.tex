@@ -342,7 +342,7 @@ The set of binding pairs indicated above can be generated through an expansion o
 \section{Research Method}
 Our research method of choice for this study is design science. We chose the design science paradigm mainly due to its deep roots in engineering science. In that, it generally offers a problem-solving approach that seeks to create innovations that define the ideas, practices, technical capabilities, and products through which analysis, design, implementation, management, and information system usage can be effectively and efficiently accomplished  \cite{des-res}. Figure \ref{methover} provides a layered and well defined overview of the empirical steps we took to create artefacts that rely on existing theories that are applied, tested, modified, and extended through experience, creativity, intuition, and problem solving, as part of our study.
 
-Our language design and implementation methods, can be broken down into a number of distinct phases. These include domain analysis, abstract syntax definition, concrete syntax derivation, static semantics implementation, system development and evaluation. These phases were performed iteratively in a manner that ensured that outputs obtained from each phase, fulfilled a specific requirement that can be directly traced back to our research questions. In our domain analysis phase, we clarified the core ideas of our language from sources such as domain experts and related documentation. Based on our findings, we conceived our abstract syntax and expressed it with meta-models. Subsequently, we established the concrete syntax of our language in both graphical and textual formats. Our resultant concrete syntax, together with the static semantics of our configuration logic were transformed into a ROS compatible implementation. Finally we evaluated our implementation based on its novelty, correctness and realizability.
+Our language design and its implementation methods, can be broken down into a number of distinct phases. These include domain analysis, abstract syntax definition, concrete syntax derivation, static semantics implementation, system development and evaluation. These phases were performed iteratively in a manner that ensured that outputs obtained from each phase, fulfilled a specific requirement that can be directly traced back to our research questions. In our domain analysis phase, we clarified the core ideas of our language from sources such as domain experts and related documentation. Based on our findings, we conceived our abstract syntax and expressed it with meta-models. Subsequently, we established the concrete syntax of our language in both graphical and textual formats. Our resultant concrete syntax, together with the static semantics of our configuration logic were transformed into a ROS compatible implementation. Finally we evaluated our implementation based on its novelty, correctness and realizability.
 
 \begin{figure*}[h]
 \caption{Methodology Overview}
@@ -430,10 +430,10 @@ Our language, otherwise known as MoTiVML, is a lightweight variability modelling
 	\label{arch-over}
 \end{figure*}
 
-In there, the syntax manager can be seen to contain all implementations related to language tokens, as well as the language's lexical and syntactical schemas. Tokens in this sense, represent the legal keywords or lexemes that are permissible in our language. There are two schema representations offered in MoTiVML; a feature schema and a configuration schema. Features modelled according to our feature schema design are nested within a model collection. All such features possess a set of constraints embedded within their schema definitions. Likewise, uniquely identifiable feature configurations, modelled per our configuration schema, reside within a \textit{properties} collection as \textit{config} documents. For each product line design, a decoupled set of tokenized model and configuration collections can be associated with it. Listings \ref{feat-schema} and \ref{bind-schema} show example data model schemas of a feature and its configuration respectively.
+In there, the syntax manager can be seen to contain all implementations related to language tokens, as well as the language's lexical and syntactical schemas. Tokens in this sense, represent the legal keywords or lexemes that are permissible in our language. There are two main objects that define MoTiVML i.e. that of a feature and that of a configuration. Feature objects modelled according to our unique feature schema design are nested within a model collection. All such features possess a set of constraints embedded within their schema definitions. Likewise, uniquely identifiable feature configurations, modelled per our configuration schema specification, reside within a \textit{properties} collection as \textit{config} documents. For each product line design, a decoupled set of tokenized model and configuration collections can be associated with it. Listings \ref{feat-schema} and \ref{bind-schema} show examples of a feature and configuration object respectively.
 
 \begin{listing}[H]
-\caption{Feature Data Model Schema}
+\caption{Feature Object Schema}
 \begin{minted}[
 framesep=2mm,
 baselinestretch=1,
@@ -460,7 +460,7 @@ tabsize=2
 \end{listing}
 
 \begin{listing}[H]
-\caption{Configuration Data Model Schema}
+\caption{Configuration Object Schema}
 \begin{minted}[
 framesep=2mm,
 baselinestretch=1,
