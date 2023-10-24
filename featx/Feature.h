@@ -19,6 +19,8 @@ namespace motivml_feature{
         BindingTimeAllowed bindingTimeAllowed{Early};
         BindingModeAllowed bindingModeAllowed{Static};
 
+        //TODO: Add group and configuration composition eg Configuration config, Group group
+        //dont forget to use namespace of config
         std::string group;
         bool isMandatory;
 

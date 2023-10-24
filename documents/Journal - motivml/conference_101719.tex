@@ -3,6 +3,8 @@
 % The preceding line is only needed to identify funding in the first footnote. If that is unneeded, please comment it out.
 \usepackage{cite}
 \usepackage{amsmath,amssymb,amsfonts}
+\usepackage{mathtools}
+\usepackage{tabularx}
 \usepackage{algorithmic}
 \usepackage{graphicx}
 \usepackage[inline]{enumitem} 
@@ -97,7 +99,7 @@ patrizio.pelliccione@gu.se}
 
 \begin{abstract}
 Modern technological advancements have led to a growing demand for customized solutions, that can operate under non-deterministic conditions, with a high level of adaptability.
-In the wake of the current pandemic, industries have had to deal with unforeseen challenges that have risen in the form of labour, production and logistical deficits. These incidental challenges have negatively affected human-driven supply systems, through enforced safety regulations and human resource depletion. Undeniably, these challenges have had a resounding effect across the global service industry; and as such, these industrial challenges have also compelled organisations to devise alternative methods to alleviate them. One of such alternatives which has emerged and proven to be useful and feasible over time, is the implementation and deployment of service robots.
+In the wake of the COVID-19 pandemic, industries have had to deal with unforeseen challenges that have risen in the form of labour, production and logistical deficits. These incidental challenges have negatively affected human-driven supply systems, through enforced safety regulations and human resource depletion. Undeniably, these challenges have had a resounding effect across the global service industry; and as such, these industrial challenges have also compelled organisations to devise alternative methods to alleviate them. One of such alternatives which has emerged and proven to be useful and feasible over time, is the implementation and deployment of service robots.
 
 As a category of robots that render specialised services to humans, service robots are often designed to operate in highly heterogeneous environments, in collaboration with humans, or other robots. During operation, the effective completion of tasks by a given service robot may require a combination of specific sets of robotic capabilities. These inbuilt capabilities are more often than not driven by implementations known as robotic features.
 
@@ -113,7 +115,7 @@ Furthermore, this research provides evidence to back the claim that our proposed
 \end{abstract}
 
 \begin{IEEEkeywords}
-variability modelling, service robots, robotics software engineering, domain specific languages, feature reconfiguration, flexible feature binding
+model-driven software engineering, variability, service robots, robotics, domain specific languages, feature reconfiguration, flexible feature binding
 \end{IEEEkeywords}
 
 \section{Introduction}
@@ -712,7 +714,25 @@ The modelling capability of our language provides domain stakeholders with a mea
 \end{itemize}
 
 \subsubsection{Abstract Syntax Definition}
-The abstract syntax of any language refers to the logical representation of that language in memory. In Figure \ref{femet} and \ref{conmet} we provide abstractions to the user interfaces of both feature and configuration objects in the form of class diagrams. In both meta-models, sets of capability related data pertaining to the same concerns are modelled and encapsulated together. These related user-defined types can be instantiated with variable data values that conform to the requisite type assigned to the attribute in question. For instance, upon instantiation, a modelled robotic feature is selected by default. By design, every modelled feature must bear a unique string \textit{id} attribute which serves as a reference point in key aspects of our framework. Every feature must also bear a \textit{name} attribute that describes its intended purpose and capability.
+The abstract syntax of any language refers to the logical representation of that language in memory. For any given feature model, let $\mathsf{Id}$ be a unique finite set of string labels,
+$\mathsf{BTime}$ be the binding time of a feature and $\mathsf{BMode}$, the binding mode of a feature. Upon instantiation, a modelled robotic feature is selected by default. This is represented by a boolean variable $\mathbb{B}$, which is created for each feature, corresponding to a given feature's selected or unselected state in a configuration. In the instance that $\mathsf{FMo}$ is the set of all possible feature models, each model $\mathnormal{Mo} \in$ $\mathsf{FMo}$ is a set of features $\mathcal{F}$. Thus, $\mathsf{FMo}$ = $\mathcal{P}(\mathcal{F})$ where:
+  
+\begin{align*} 
+	\mathcal{F} &= \mathsf{Id_{feature}} \times \lceil \mathsf{Id_{parent}} \rceil \times \mathcal{P}(\mathcal{\mathsf{Id_{children}}}) \times \mathbb{B} \times \lfloor Group \rfloor\\
+	&\times \mathcal{P}(\mathcal{\mathsf{BTime}}) \backslash\{\emptyset\} \times \mathcal{P}(\mathcal{\mathsf{BMode}}\backslash\{\emptyset\}) \\\\
+	&\mathsf{Group} = \{OR, XOR\}\\
+	&\mathsf{BMode} = \{Static, Dynamic\}\\\
+	&\mathsf{BTime} = \{Early, Late\}\\
+	&\mathcal{P}(\mathcal{\mathsf{BTime}}) = \{\{Early\}, \{Late\}, \{Early, Late\}, \{\emptyset\}\}\\
+	&\mathcal{P}(\mathcal{\mathsf{BMode}}) = \{\{Static\}, \{Dynamic\}, \{Static, Dynamic\}, \\
+	&\{\emptyset\}\}\\\\
+	&\mathsf{\lceil X \rceil = X \: U \: \{\top\}} \: and \: \mathsf{\lfloor X \rfloor = X \: U \: \{\bot\}}\\
+	&\mathnormal{f} \in \mathcal{F} = \{\mathnormal{f} : \mathnormal{f} := (\mathsf{Id_{feature}}, \mathsf{Id_{parent}})\}\\
+	& \mathnormal{f_{0}} = ("root", \top)\\
+	& \mathnormal{f_{1}} = ("feature1", \bot)
+\end{align*}
+
+In Figure \ref{femet} and \ref{conmet} we provide abstractions to the user interfaces of both feature and configuration objects in the form of class diagrams. In both meta-models, sets of capability related data pertaining to the same concerns are modelled and encapsulated together. These related user-defined types can be instantiated with variable data values that conform to the requisite types defined in our abstract syntax. For instance,  By design, every modelled feature must bear a unique string \textit{id} attribute which serves as a reference point in key aspects of our framework. Every feature must also bear a \textit{name} attribute that describes its intended purpose and capability.
 
 Furthermore, every modelled feature has a set of constraints which define the scope of the feature in the model configuration space. Feature constraints are categorised into two main groups. i.e. cross functional constraints and binding property constraints. Cross functional constraints refer to \textit{inclusion} and \textit{exclusion} constraints while binding property constraints define the possible state values of binding time and binding mode attributes within configurations. A feature may also contain an aggregation of sub-features. Lastly, every feature is composed of a group, which may comprise of strictly two or more features.
 
@@ -733,6 +753,20 @@ For each feature, its multiplicity can be described as one or more. Thus, there 
 \includegraphics[width=0.45\textwidth]{diagrams/config.png}
 \label{conmet}
 \end{figure}
+
+\subsubsection{Semantic Domain Definition}
+The semantic domain defines the set of all possible configurations. A configuration of a feature model is any model that consists of instantiated features. Let $\mathsf{Configs}$ be the set of all possible configurations and in our domain $\mathsf{D}$ and ($\mathsf{id}$, $\mathsf{mode }$, $\mathsf{time}$) $\in$ $\mathsf{D}$. Therefore:
+
+\begin{align*}
+	&\mathsf{id} \longrightarrow \lfloor \mathsf{Id} \rfloor\\
+	&\mathsf{mode} \longrightarrow \lfloor \mathsf{BMode} \rfloor\\
+	&\mathsf{time} \longrightarrow \lfloor \mathsf{BTime} \rfloor\\
+	&\mathsf{Configs} = \mathsf{D}\\
+\end{align*}
+
+\subsubsection{Semantic Function Definition} Our resultant semantic function $\mathbb{S}$ maps any given feature model from the set of possible feature models to a set of valid configurations.
+
+	\[\mathbb{S} : \mathsf{FMo} \longrightarrow \mathcal{P}(\mathsf{Configs})\]
 
 \subsubsection{Identifying Binding Mechanisms}
 Realising static, dynamic, early and late bindings in robotic applications can be tricky due to platform and language constraints. For both time and mode based binding, there are a number of optimised implementations and packages found in C++ and ROS, that can be used to realise this.
@@ -838,7 +872,7 @@ and techniques to implement variability, we integrated our implemented binding m
 	At runtime, the robot builder listens for specific configuration commands executed on the language tier from the MoTiVML console interface over a ROS topic. For statically bound features, conditional C++ preprocessor statements are used to include or exclude feature classes to and from robot programs. Static features communicate with our framework through a static class interface. This abstract class interface has access to the functionality of any feature class that implements it, through a pure virtual function that has been overloaded through polymorphism. In the case of dynamic binding, there is also a  plugin interface that works in a similar fashion to that of the static class interface.  However, the ROS pluginlib library is used to register, encapsulate, export and load feature classes dynamically into prebuilt robotic programs in this instance. These programs are presented as flexible and cleanly separated feature plug-ins supported by the core logic of ROS's pluginlib implementation. Finally, this component also reads application parameters initialised on the ROS parameter server, in order to retrieve and classify program features into time based categorizations. 
 \end{itemize}
 
-\subsection{Static Semantics}
+\subsection{Language Semantics}
 In the compile time state of our variability modelling language, program syntax is evaluated based on internally established feature relationships and constraints that define the static semantics of our language.
 
 The scope of our static semantics, which can be verified  at compile time, includes data type evaluation i.e. whether or not all tokens have been declared, which token declaration applies to which instances and so on. When it comes to controlling the semantic scope, constraint type declaration and implementation as well as the model level effect of constraints on each other can be inferred from feature interaction in a configuration.
@@ -846,11 +880,22 @@ The scope of our static semantics, which can be verified  at compile time, inclu
 \subsubsection{Describing the Configuration Space}
 As shown in the concrete syntax of our feature modelling language, every instance of a feature has a binding time and binding mode attribute assigned to it. The interaction that occurs between these binding attributes, exits in a scope known as the configuration space. Within this scope, each feature possess dependencies and constraints that validate or invalidate defined feature instances. With the aid of propositional logic, table \ref{tab:propmap} provides a description of all likely dependencies and constraints of any given model instance. Per the results displayed in table \ref{tab:propmap}, mandatory features exhibit a bidirectional logical relationship between features indicating that both features require or depend on each other in all instances in which they are implemented. Conversely, an optional feature indicates a unidirectional behaviour between a parent and child feature, where a child feature may imply a parent feature but the parent feature on the other hand can exist without that child feature. For cross-functional constraints in the form of inclusions and exclusions, feature inclusion translate to an implication constraint while exclusion could be represented as  A $\Rightarrow$ $\neg$ B \ or \ $\neg$ (A $\land$ B).
 
-\begin{table}[H]
+\subsubsection{Denotational Semantics}
+For specific definitions of features and their binding times and modes, one needs to be able to evaluate their existence in a configuration. Using propositional logic, the following denotations were derived with reference to Table \ref{tab:timoconf}.
+
+\begin{itemize}
+	\item \textit{\textbf{Mandatory:}}\\ (A $ \Leftrightarrow $ B) $\equiv$ (SE $\wedge$ SE) $\vee$ (SL $\wedge$ SL)
+	\item \textit{\textbf{Optional:}}\\ (A $ \Rightarrow $ B) $\equiv$ (SE $\wedge$ SE) $\vee$ (SL $\wedge$ SE) $\vee$ (SL $\wedge$ SL) $\vee$ (DE $\wedge$ SE) $\vee$ (DL $\wedge$ SE) $\vee$ (DL $\wedge$ SL)
+	\item \textit{\textbf{Inclusion:}}\\ (A $ \Rightarrow $ B) $\equiv$ (SE $\wedge$ SE) $\vee$ (SL $\wedge$ SE) $\vee$ (SL $\wedge$ SL) $\vee$ (DE $\wedge$ SE) $\vee$ (DL $\wedge$ SE) $\vee$ (DL $\wedge$ SL)
+	\item \textit{\textbf{Exclusion:}}\\ (A $ \Rightarrow $ $ \neg $ B) $\equiv$ (SE $\wedge$ SE) $\vee$ (SL $\wedge$ SL) $\vee$ (SL $\wedge$ SE) $\vee$ (DE $\wedge$ SE) $\vee$ (DL $\wedge$ SL)
+\end{itemize}
+
+\begin{table*}[h]
 \caption{Propositional Logic Mapping for Feature Model Attributes}
+\centering
 \begin{center}
 %\begin{tabular}{|c|c|c|}
-\begin{tabular}{P{2cm} P{2cm} P{2cm}}
+\begin{tabularx}{125mm}{P{2cm} P{4cm} P{6cm}}
 \hline
     Attribute Name & Feature Model Notation & Propositional Logic  \\ \hline
     Mandatory & 
@@ -859,32 +904,41 @@ As shown in the concrete syntax of our feature modelling language, every instanc
     Optional &\vspace{0.3px} \includegraphics[width=10mm, height=12mm]{diagrams/optional.png}  & A $ \Rightarrow $ B \\ \hline
     Includes (requires) & A implies B &  A $ \Rightarrow $ B \\ \hline
     Excludes & A implies (Not B) &  A $ \Rightarrow $ $ \neg $ B \\ \hline
-\end{tabular}
+    OR & A requires ($ B_1 \vee ... \vee B_n $) &  $ B_1 \vee ... \vee B_n \Leftrightarrow  A $ \\ \hline
+    XOR (Alternative) & A requires ($ B_1 \oplus ... \oplus B_n $) &  $ (B_1 \vee ... \vee B_n \Leftrightarrow  A) \wedge \bigwedge \limits_{i < j} \neg(B_i \wedge B_j) $ \\ \hline
+\end{tabularx}
 \label{tab:propmap}
 \end{center}
-\end{table}
+\end{table*}
 
-The underlying logic of this language design requires the interaction of a feature's binding attributes, that serves as a variation mechanism for all feature models defined with this language. Table \ref{tab:timoconf} captures the semantics of possible binding time and binding mode combinations in any given model. This is relevant because, analysing the combined semantic effect of possible binding pairs in a model, gives insight into the feasibility or validity of combinations in the configuration space. Using propositional logic, Table \ref{tab:timoconf} shows the results of every possible interaction between binding pairs with respect to feature attributes such as mandatory, optional, includes and excludes. 
+The underlying logic of this language design requires the interaction of a feature's binding attributes, that serves as a variation mechanism for all feature models defined with this language. Table \ref{tab:timoconf} captures the semantics of possible binding time and binding mode combinations in any given model. This is relevant because, analysing the combined semantic effect of possible binding pairs in a model, gives insight into the feasibility or validity of combinations in the configuration space. Using propositional logic, Table \ref{tab:timoconf} shows the results of every possible interaction between binding pairs with respect to feature attributes such as mandatory, optional, includes, excludes, OR and XOR. 
 
 \begin{table}[H]
 \caption{Feature Model Binding Semantics: \textbf{S = Static, E = Early, L = Late, D = Dynamic}}
+\centering
 \begin{center}
 \begin{tabular}{c c c c c c}
 \hline
-    A & B & B $ \Rightarrow $ A & A $ \Rightarrow $ B & A $ \Leftrightarrow $ B \\\hline
-         SE & SE & 1 & 1 & 1  \\ \hline
-         SE & SL & 1 & 0 & 0  \\ \hline
-         SE & DE & 1 & 0 & 0 \\ \hline
-         SE & DL & 1 & 0 & 0 \\ \hline
-          
-         SL & SL & 1 & 1 & 1 \\ \hline
-         SL & DE & 0 & 0 & 0 \\ \hline
-         SL & DL & 1 & 0 & 0 \\ \hline
+    A & B & $ \neg$ B & A $ \Rightarrow $ $ \neg $ B & A $ \Rightarrow $ B & A $ \Leftrightarrow $ B \\\hline
+         SE & SE & DL & 0 & 1 & 1 \\ \hline
+         SE & SL & DE & 0 & 0 & 0 \\ \hline
+         SE & DE & SL & 0 & 0 & 0 \\ \hline
+         SE & DL & SE & 1 & 0 & 0 \\ \hline
          
-         DE & DE & 0 & 0 & 0 \\ \hline
-         DE & DL & 0 & 0 & 0 \\ \hline
+         SL & SE & DL & 0 & 1 & 0 \\ \hline 
+         SL & SL & DE & 0 & 1 & 1 \\ \hline
+         SL & DE & SL & 1 & 0 & 0 \\ \hline
+         SL & DL & SE & 1 & 0 & 0 \\ \hline
          
-         DL & DL & 0 & 0 & 0 \\ \hline
+         DE & SE & DL & 0 & 1 & 0 \\ \hline
+         DE & SL & DE & 0 & 0 & 0 \\ \hline
+         DE & DE & SL & 0 & 0 & 0 \\ \hline
+         DE & DL & SE & 1 & 0 & 0 \\ \hline
+         
+         DL & SE & DL & 0 & 1 & 0 \\ \hline
+         DL & SL & DE & 0 & 1 & 0 \\ \hline
+         DL & DE & SL & 1 & 0 & 0 \\ \hline
+         DL & DL & SE & 0 & 0 & 0 \\ \hline
          
 \end{tabular}
 \label{tab:timoconf}
@@ -892,7 +946,7 @@ The underlying logic of this language design requires the interaction of a featu
 \end{table}
 
 \subsubsection{Constraining the Configuration Space}
-As part of our static semantics definition to confine our configuration space, we enforced a number of feature level constraints. To implement this, we conceived a number of ground rules or pre-conditions and enforced them as part of our modelled feature capabilities, to serve as our means of managing the scope of robot product lines that can be modelled with our solution. Additionally, we provide a means of validating a feature's constraint settings via an in-built constraint checker mechanism, that parses and interprets configuration attributes, to identify possible constraint violations. The different types of constraints that exist in our language, their purpose, together with their cumulative effect on each other, are described as follows.
+As part of our semantics definition to narrow down the scope of our configuration space, we enforced a number of constraints. To implement this, we conceived a number of ground rules or pre-conditions and enforced them as part of our modelled feature capabilities, to serve as our means of managing the scope of robot product lines that can be modelled with our solution. Additionally, we provide a means of validating a feature's constraint settings via an in-built constraint checker mechanism, that parses and interprets configuration attributes, to identify possible constraint violations. The different types of constraints that exist in our language, their purpose, together with their cumulative effect on each other, are described as follows.
 \begin{itemize}
     \item \textit{\textbf{Inclusion Constraint:}}
     Otherwise referred to as an implies constraint, satisfies the condition that a given robotic feature tends to require others to function. For example, supposing there are two features \textbf{A} and \textbf{B}, \textbf{A} \textit{includes} \textbf{B} would imply that, if feature \textbf{A} is selected, feature \textbf{B} must also be to be selected.
@@ -988,7 +1042,7 @@ This study generally focuses on technique feasibility rather than operational qu
 \section*{Acknowledgment}
 This paper mainly draws inspiration from research materials contributed by Sergio Garc\'{i}a, Claudio Menghi, Patrizio Pelliccione, Thorsten Berger, and Rebekka Wohlrab. This study particularly extends their work concerning SERA; A Self-adaptive dEcentralized Robotic Architecture for building autonomous, heterogeneous and collaborative robotic applications.
 
-\newpage
+%\newpage
 \begin{thebibliography}{00}
 \bibitem{sera} S. Garc\'{i}a, C. Menghi, P. Pelliccione, T. Berger, and R. Wohlrab, ``An Architecture for Decentralized, Collaborative, and Autonomous Robots,'' in Proceedings - 2018 IEEE 15th ICSA, 2018.
 \bibitem{flex-feat-bind} M. Rosenmüller, N. Siegmund, S. Apel, and G. Saake, Flexible feature binding in Software Product Lines, Springer Science + Business Media, LLC 2011.
