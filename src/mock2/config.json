@@ -1,0 +1,187 @@
+{
+    "properties": [
+        {
+            "id": "ctrllayer",
+            "props": {
+                "mode": "Static",
+                "time":"Early"
+            }
+        },
+        {
+            "id": "lclzatn",
+            "props": {
+                "mode": "Static",
+                "time":"Early"
+            }
+        },
+        {
+            "id": "amcl",
+            "props": {
+                "mode": "Static",
+                "time":"Early"
+            }
+        },
+        {
+            "id": "amclros",
+            "props": {
+                "mode": "Static",
+                "time":"Early"
+            }
+        },
+        {
+            "id": "slam",
+            "props": {
+                "mode": "Static",
+                "time":"Early"
+            }
+        },
+        {
+            "id": "hectorslam",
+            "props": {
+                "mode": "Static",
+                "time":"Early"
+            }
+        },
+        {
+            "id": "orbslam",
+            "props": {
+                "mode": "Static",
+                "time":"Early"
+            }
+        },
+        {
+            "id": "kartoslam",
+            "props": {
+                "mode": "Static",
+                "time":"Early"
+            }
+        },
+        {
+            "id": "detexec",
+            "props": {
+                "mode": "Static",
+                "time":"Early"
+            }
+        },
+        {
+            "id": "disinfmgtlayer",
+            "props": {
+                "mode": "Static",
+                "time":"Early"
+            }
+        },
+        {
+            "id": "irrad",
+            "props": {
+                "mode": "Static",
+                "time":"Early"
+            }
+        },
+        {
+            "id": "uvemm",
+            "props": {
+                "mode": "Static",
+                "time":"Early"
+            }
+        },
+        {
+            "id": "intenreg",
+            "props": {
+                "mode": "Static",
+                "time":"Early"
+            }
+        },
+        {
+            "id": "perceplayer",
+            "props": {
+                "mode": "Static",
+                "time":"Early"
+            }
+        },
+        {
+            "id": "imgproc",
+            "props": {
+                "mode": "Static",
+                "time":"Early"
+            }
+        },
+        {
+            "id": "tracn",
+            "props": {
+                "mode": "Static",
+                "time":"Early"
+            }
+        },
+        {
+            "id": "obtracn",
+            "props": {
+                "mode": "Static",
+                "time":"Early"
+            }
+        },
+        {
+            "id": "recogntn",
+            "props": {
+                "mode": "Static",
+                "time":"Early"
+            }
+        },
+        {
+            "id": "grecog",
+            "props": {
+                "mode": "Static",
+                "time":"Early"
+            }
+        },
+        {
+            "id": "orecog",
+            "props": {
+                "mode": "Static",
+                "time":"Early"
+            }
+        },
+        {
+            "id": "matchn",
+            "props": {
+                "mode": "Static",
+                "time":"Early"
+            }
+        },
+        {
+            "id": "seqentl",
+            "props": {
+                "mode": "Static",
+                "time":"Early"
+            }
+        },
+        {
+            "id": "prdictv",
+            "props": {
+                "mode": "Static",
+                "time":"Early"
+            }
+        },
+        {
+            "id": "missmanlayer",
+            "props": {
+                "mode": "Static",
+                "time":"Early"
+            }
+        },
+        {
+            "id": "locmissman",
+            "props": {
+                "mode": "Static",
+                "time":"Early"
+            }
+        },
+        {
+            "id": "comcollabman",
+            "props": {
+                "mode": "Static",
+                "time":"Early"
+            }
+        }
+        
+    ]
+}

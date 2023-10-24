@@ -1,0 +1,7 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+
+\PYG{n+nt}{\PYGZlt{}class} \PYG{n+na}{type=}\PYG{l+s}{\PYGZdq{}motivml\PYGZus{}plugins::MyDynamicClass\PYGZdq{}} \PYG{n+na}{base\PYGZus{}class\PYGZus{}type=}\PYG{l+s}{\PYGZdq{}plugin\PYGZus{}base::PluginInterface\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+	\PYG{n+nt}{\PYGZlt{}description\PYGZgt{}}Description of class goes here\PYG{n+nt}{\PYGZlt{}/description\PYGZgt{}}
+\PYG{n+nt}{\PYGZlt{}/class\PYGZgt{}}
+
+\end{Verbatim}

@@ -1,0 +1,73 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{p}{\PYGZob{}}
+\PYG{+w}{	}\PYG{k}{namespace}\PYG{+w}{ }\PYG{n+nn}{motivml\PYGZus{}feature}\PYG{p}{\PYGZob{}}
+
+\PYG{+w}{		}\PYG{k}{enum}\PYG{+w}{ }\PYG{n+nc}{BindingTimeAllowed}\PYG{p}{\PYGZob{}}\PYG{n}{Early}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{Late}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{Any}\PYG{p}{\PYGZcb{};}
+\PYG{+w}{		}\PYG{k}{enum}\PYG{+w}{ }\PYG{n+nc}{BindingModeAllowed}\PYG{p}{\PYGZob{}}\PYG{n}{Static}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{Dynamic}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{Any}\PYG{p}{\PYGZcb{};}
+
+\PYG{+w}{		}\PYG{k}{class}\PYG{+w}{ }\PYG{n+nc}{Feature}\PYG{p}{\PYGZob{}}
+\PYG{+w}{		}\PYG{k}{private}\PYG{o}{:}
+\PYG{+w}{			}\PYG{n}{std}\PYG{o}{::}\PYG{n}{string}\PYG{+w}{ }\PYG{n}{id}\PYG{p}{;}
+\PYG{+w}{			}\PYG{n}{std}\PYG{o}{::}\PYG{n}{string}\PYG{+w}{ }\PYG{n}{name}\PYG{p}{;}
+
+\PYG{+w}{			}\PYG{n}{std}\PYG{o}{::}\PYG{n}{vector}\PYG{o}{\PYGZlt{}}\PYG{n}{std}\PYG{o}{::}\PYG{n}{string}\PYG{o}{\PYGZgt{}}\PYG{+w}{ }\PYG{n}{featuresIncluded}\PYG{p}{;}
+\PYG{+w}{			}\PYG{n}{std}\PYG{o}{::}\PYG{n}{vector}\PYG{o}{\PYGZlt{}}\PYG{n}{std}\PYG{o}{::}\PYG{n}{string}\PYG{o}{\PYGZgt{}}\PYG{+w}{ }\PYG{n}{featuresExcluded}\PYG{p}{;}
+\PYG{+w}{			}\PYG{n}{BindingTimeAllowed}\PYG{+w}{ }\PYG{n}{bindingTimeAllowed}\PYG{p}{\PYGZob{}}\PYG{n}{Early}\PYG{p}{\PYGZcb{};}
+\PYG{+w}{			}\PYG{n}{BindingModeAllowed}\PYG{+w}{ }\PYG{n}{bindingModeAllowed}\PYG{p}{\PYGZob{}}\PYG{n}{Static}\PYG{p}{\PYGZcb{};}
+
+\PYG{+w}{			}\PYG{n}{std}\PYG{o}{::}\PYG{n}{string}\PYG{+w}{ }\PYG{n}{group}\PYG{p}{;}
+\PYG{+w}{			}\PYG{k+kt}{bool}\PYG{+w}{ }\PYG{n}{isMandatory}\PYG{p}{;}
+
+\PYG{+w}{		}\PYG{k}{public}\PYG{o}{:}
+\PYG{+w}{			}\PYG{n}{Feature}\PYG{p}{()\PYGZob{}\PYGZcb{};}
+
+\PYG{+w}{			}\PYG{c+c1}{//setters}
+\PYG{+w}{			}\PYG{k+kt}{void}\PYG{+w}{ }\PYG{n+nf}{setId}\PYG{p}{(}\PYG{n}{std}\PYG{o}{::}\PYG{n}{string}\PYG{+w}{ }\PYG{n}{id}\PYG{p}{)\PYGZob{}}
+\PYG{+w}{				}\PYG{n}{id}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{id}\PYG{p}{;}
+\PYG{+w}{			}\PYG{p}{\PYGZcb{}}
+
+\PYG{+w}{			}\PYG{k+kt}{void}\PYG{+w}{ }\PYG{n+nf}{setName}\PYG{p}{(}\PYG{n}{std}\PYG{o}{::}\PYG{n}{string}\PYG{+w}{ }\PYG{n}{name}\PYG{p}{)\PYGZob{}}
+\PYG{+w}{				}\PYG{n}{name}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{name}\PYG{p}{;}
+\PYG{+w}{			}\PYG{p}{\PYGZcb{}}
+
+\PYG{+w}{			}\PYG{k+kt}{void}\PYG{+w}{ }\PYG{n+nf}{setBindingTimeAllowed}\PYG{p}{(}\PYG{n}{BindingTimeAllowed}\PYG{+w}{ }\PYG{n}{bindingTimeAllowed}\PYG{p}{)\PYGZob{}}
+\PYG{+w}{				}\PYG{n}{bindingTimeAllowed}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{bindingTimeAllowed}\PYG{p}{;}
+\PYG{+w}{			}\PYG{p}{\PYGZcb{}}
+
+\PYG{+w}{			}\PYG{k+kt}{void}\PYG{+w}{ }\PYG{n+nf}{setBindingModeAllowed}\PYG{p}{(}\PYG{n}{BindingModeAllowed}\PYG{+w}{ }\PYG{n}{bindingModeAllowed}\PYG{p}{)\PYGZob{}}
+\PYG{+w}{				}\PYG{n}{bindingModeAllowed}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{bindingModeAllowed}\PYG{p}{;}
+\PYG{+w}{			}\PYG{p}{\PYGZcb{}}
+
+\PYG{+w}{			}\PYG{k+kt}{void}\PYG{+w}{ }\PYG{n+nf}{setGroup}\PYG{p}{(}\PYG{n}{std}\PYG{o}{::}\PYG{n}{string}\PYG{+w}{ }\PYG{n}{group}\PYG{p}{)\PYGZob{}}
+\PYG{+w}{				}\PYG{n}{group}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{group}\PYG{p}{;}
+\PYG{+w}{			}\PYG{p}{\PYGZcb{}}
+
+\PYG{+w}{			}\PYG{k+kt}{void}\PYG{+w}{ }\PYG{n+nf}{setIsMandatory}\PYG{p}{(}\PYG{k+kt}{bool}\PYG{+w}{ }\PYG{n}{isMandatoory}\PYG{p}{)\PYGZob{}}
+\PYG{+w}{				}\PYG{n}{isMandatoory}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{isMandatoory}\PYG{p}{;}
+\PYG{+w}{			}\PYG{p}{\PYGZcb{}}
+
+\PYG{+w}{			}\PYG{k+kt}{void}\PYG{+w}{ }\PYG{n+nf}{setFeaturesIncluded}\PYG{p}{(}\PYG{n}{std}\PYG{o}{::}\PYG{n}{vector}\PYG{o}{\PYGZlt{}}\PYG{n}{std}\PYG{o}{::}\PYG{n}{string}\PYG{o}{\PYGZgt{}}\PYG{+w}{ }\PYG{n}{inclusions}\PYG{p}{)\PYGZob{}}
+\PYG{+w}{				}\PYG{k}{for}\PYG{p}{(}\PYG{n}{std}\PYG{o}{::}\PYG{n}{string}\PYG{+w}{ }\PYG{o}{\PYGZam{}}\PYG{n}{included}\PYG{+w}{ }\PYG{o}{:}\PYG{+w}{ }\PYG{n}{inclusions}\PYG{p}{)\PYGZob{}}
+\PYG{+w}{					}\PYG{n}{featuresIncluded}\PYG{p}{.}\PYG{n}{push\PYGZus{}back}\PYG{p}{(}\PYG{n}{included}\PYG{p}{);}
+\PYG{+w}{				}\PYG{p}{\PYGZcb{}}
+\PYG{+w}{			}\PYG{p}{\PYGZcb{}}
+
+\PYG{+w}{			}\PYG{k+kt}{void}\PYG{+w}{ }\PYG{n+nf}{setFeaturesExcluded}\PYG{p}{(}\PYG{n}{std}\PYG{o}{::}\PYG{n}{vector}\PYG{o}{\PYGZlt{}}\PYG{n}{std}\PYG{o}{::}\PYG{n}{string}\PYG{o}{\PYGZgt{}}\PYG{+w}{ }\PYG{n}{exclusions}\PYG{p}{)\PYGZob{}}
+\PYG{+w}{				}\PYG{k}{for}\PYG{p}{(}\PYG{n}{std}\PYG{o}{::}\PYG{n}{string}\PYG{+w}{ }\PYG{o}{\PYGZam{}}\PYG{n}{excluded}\PYG{+w}{ }\PYG{o}{:}\PYG{+w}{ }\PYG{n}{exclusions}\PYG{p}{)\PYGZob{}}
+\PYG{+w}{					}\PYG{n}{featuresExcluded}\PYG{p}{.}\PYG{n}{push\PYGZus{}back}\PYG{p}{(}\PYG{n}{excluded}\PYG{p}{);}
+\PYG{+w}{				}\PYG{p}{\PYGZcb{}}
+\PYG{+w}{			}\PYG{p}{\PYGZcb{}}
+
+\PYG{+w}{			}\PYG{c+c1}{//getters}
+\PYG{+w}{			}\PYG{n}{std}\PYG{o}{::}\PYG{n}{string}\PYG{+w}{ }\PYG{n+nf}{getName}\PYG{p}{()}\PYG{+w}{ }\PYG{k}{const}\PYG{p}{\PYGZob{}}
+\PYG{+w}{				}\PYG{k}{return}\PYG{+w}{ }\PYG{n}{name}\PYG{p}{;}
+\PYG{+w}{			}\PYG{p}{\PYGZcb{}}
+
+\PYG{+w}{			}\PYG{n}{std}\PYG{o}{::}\PYG{n}{string}\PYG{+w}{ }\PYG{n+nf}{getId}\PYG{p}{()}\PYG{+w}{ }\PYG{k}{const}\PYG{p}{\PYGZob{}}
+\PYG{+w}{				}\PYG{k}{return}\PYG{+w}{ }\PYG{n}{id}\PYG{p}{;}
+\PYG{+w}{			}\PYG{p}{\PYGZcb{}}
+\PYG{+w}{		}\PYG{p}{\PYGZcb{};}
+\PYG{+w}{	}\PYG{p}{\PYGZcb{};}
+
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

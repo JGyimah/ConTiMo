@@ -1,0 +1,425 @@
+{
+    "id": "root_feature",
+    "name": "RoboExampleOne",
+    "group": "",
+    "isMandatory": true,
+    "isSelected": true,
+    "sub": [
+        {
+            "id": "controllayer",
+                "name": "ControlLayer",
+                "constraints": {
+                    "featuresIncluded": [],
+                    "featuresExcluded": [],
+                    "bindingTimeAllowed":"Early",
+                    "bindingModeAllowed":"Static"
+                },
+                "group": "OR",
+                "isMandatory": false,
+                "sub":[
+                    {
+                        "id": "teleop",
+                        "name": "Teleoperation",
+                        "constraints": {
+                            "featuresIncluded": [],
+                            "featuresExcluded": [],
+                            "bindingTimeAllowed":"Early",
+                            "bindingModeAllowed":"Static"
+                        },
+                        "group": "OR",
+                        "isMandatory": false,
+                        "sub":[
+                            {
+                                
+                                "id": "keyteleop",
+                                "name": "KeyTeleop",
+                                "constraints": {
+                                    "featuresIncluded": [],
+                                    "featuresExcluded": [],
+                                    "bindingTimeAllowed":"Early",
+                                    "bindingModeAllowed":"Static"
+                                },
+                                "group": "OR",
+                                "isMandatory": false
+                            }
+                        ]
+                    },
+                    {
+                        "id": "fullauto",
+                        "name": "FullAutonomy",
+                        "constraints": {
+                            "featuresIncluded": [],
+                            "featuresExcluded": [],
+                            "bindingTimeAllowed":"Early",
+                            "bindingModeAllowed":"Static"
+                        },
+                        "group": "OR",
+                        "isMandatory": false,
+                        "sub":[
+                            {
+                                "id": "jntctrl",
+                                "name": "JointControl",
+                                "constraints": {
+                                    "featuresIncluded": [],
+                                    "featuresExcluded": [],
+                                    "bindingTimeAllowed":"Early",
+                                    "bindingModeAllowed":"Static"
+                                },
+                                "group": "OR",
+                                "isMandatory": false,
+                                "sub":[
+                                    {
+                                        "id": "mvjoint",
+                                        "name": "MoveJoint",
+                                        "constraints": {
+                                            "featuresIncluded": [],
+                                            "featuresExcluded": [],
+                                            "bindingTimeAllowed":"Early",
+                                            "bindingModeAllowed":"Static"
+                                        },
+                                        "group": "OR",
+                                        "isMandatory": false
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "hdctrl",
+                                "name": "HeadControl",
+                                "constraints": {
+                                    "featuresIncluded": [],
+                                    "featuresExcluded": [],
+                                    "bindingTimeAllowed":"Early",
+                                    "bindingModeAllowed":"Static"
+                                },
+                                "group": "OR",
+                                "isMandatory": false,
+                                "sub":[
+                                    {
+                                        "id": "gazectrl",
+                                        "name": "GazeControl",
+                                        "constraints": {
+                                            "featuresIncluded": [],
+                                            "featuresExcluded": [],
+                                            "bindingTimeAllowed":"Early",
+                                            "bindingModeAllowed":"Static"
+                                        },
+                                        "group": "OR",
+                                        "isMandatory": false
+                                    },
+                                    {
+                                        "id": "attfocus",
+                                        "name": "AttentionFocus",
+                                        "constraints": {
+                                            "featuresIncluded": [],
+                                            "featuresExcluded": [],
+                                            "bindingTimeAllowed":"Early",
+                                            "bindingModeAllowed":"Static"
+                                        },
+                                        "group": "OR",
+                                        "isMandatory": false
+                                    },
+                                    {
+                                        "id": "ltp",
+                                        "name": "LookToPoint",
+                                        "constraints": {
+                                            "featuresIncluded": [],
+                                            "featuresExcluded": [],
+                                            "bindingTimeAllowed":"Early",
+                                            "bindingModeAllowed":"Static"
+                                        },
+                                        "group": "OR",
+                                        "isMandatory": false
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "armctrl",
+                                "name": "ArmControl",
+                                "constraints": {
+                                    "featuresIncluded": [],
+                                    "featuresExcluded": [],
+                                    "bindingTimeAllowed":"Early",
+                                    "bindingModeAllowed":"Static"
+                                },
+                                "group": "OR",
+                                "isMandatory": false,
+                                "sub":[
+                                    {
+                                        "id": "pgripper",
+                                        "name": "ParallelGripper",
+                                        "constraints": {
+                                            "featuresIncluded": [],
+                                            "featuresExcluded": [],
+                                            "bindingTimeAllowed":"Early",
+                                            "bindingModeAllowed":"Static"
+                                        },
+                                        "group": "OR",
+                                        "isMandatory": false
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "mtncontrol",
+                                "name": "MotionControl",
+                                "constraints": {
+                                    "featuresIncluded": [],
+                                    "featuresExcluded": [],
+                                    "bindingTimeAllowed":"Early",
+                                    "bindingModeAllowed":"Static"
+                                },
+                                "group": "OR",
+                                "isMandatory": false,
+                                "sub":[
+                                    {
+                                        "id": "quick",
+                                        "name": "Quick",
+                                        "constraints": {
+                                            "featuresIncluded": [],
+                                            "featuresExcluded": [],
+                                            "bindingTimeAllowed":"Early",
+                                            "bindingModeAllowed":"Static"
+                                        },
+                                        "group": "OR",
+                                        "isMandatory": false
+                                    },
+                                    {
+                                        "id": "optimised",
+                                        "name": "Optimised",
+                                        "constraints": {
+                                            "featuresIncluded": [],
+                                            "featuresExcluded": [],
+                                            "bindingTimeAllowed":"Early",
+                                            "bindingModeAllowed":"Static"
+                                        },
+                                        "group": "OR",
+                                        "isMandatory": false
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "id": "lclsation",
+                        "name": "Localisation",
+                        "constraints": {
+                            "featuresIncluded": [],
+                            "featuresExcluded": [],
+                            "bindingTimeAllowed":"Early",
+                            "bindingModeAllowed":"Static"
+                        },
+                        "group": "OR",
+                        "isMandatory": false,
+                        "sub":[
+                            {
+                                "id": "slam",
+                                "name": "SLAM",
+                                "constraints": {
+                                    "featuresIncluded": [],
+                                    "featuresExcluded": [],
+                                    "bindingTimeAllowed":"Early",
+                                    "bindingModeAllowed":"Static"
+                                },
+                                "group": "OR",
+                                "isMandatory": false,
+                                "sub":[
+                                    {
+                                        "id": "hectorslam",
+                                        "name": "HectorSLAM",
+                                        "constraints": {
+                                            "featuresIncluded": [],
+                                            "featuresExcluded": [],
+                                            "bindingTimeAllowed":"Early",
+                                            "bindingModeAllowed":"Static"
+                                        },
+                                        "group": "OR",
+                                        "isMandatory": false
+                                    },
+                                    {
+                                        "id": "orbslam",
+                                        "name": "OrbSLAM",
+                                        "constraints": {
+                                            "featuresIncluded": [],
+                                            "featuresExcluded": [],
+                                            "bindingTimeAllowed":"Early",
+                                            "bindingModeAllowed":"Static"
+                                        },
+                                        "group": "OR",
+                                        "isMandatory": false
+                                    },
+                                    {
+                                        "id": "kartoslam",
+                                        "name": "KartoSLAM",
+                                        "constraints": {
+                                            "featuresIncluded": [],
+                                            "featuresExcluded": [],
+                                            "bindingTimeAllowed":"Early",
+                                            "bindingModeAllowed":"Static"
+                                        },
+                                        "group": "OR",
+                                        "isMandatory": false
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "amcl",
+                                "name": "AMCL",
+                                "constraints": {
+                                    "featuresIncluded": [],
+                                    "featuresExcluded": [],
+                                    "bindingTimeAllowed":"Early",
+                                    "bindingModeAllowed":"Static"
+                                },
+                                "group": "OR",
+                                "isMandatory": false,
+                                "sub":[
+                                    {
+                                        "id": "amclros",
+                                        "name": "AMCLROS",
+                                        "constraints": {
+                                            "featuresIncluded": [],
+                                            "featuresExcluded": [],
+                                            "bindingTimeAllowed":"Early",
+                                            "bindingModeAllowed":"Static"
+                                        },
+                                        "group": "OR",
+                                        "isMandatory": false
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+        },
+        {
+            "id": "perceptnlayer",
+                "name": "PerceptionLayer",
+                "constraints": {
+                    "featuresIncluded": [],
+                    "featuresExcluded": [],
+                    "bindingTimeAllowed":"Early",
+                    "bindingModeAllowed":"Static"
+                },
+                "group": "OR",
+                "isMandatory": false,
+                "sub":[
+                    {
+                        "id": "imgproc",
+                        "name": "ImageProcessing",
+                        "constraints": {
+                            "featuresIncluded": [],
+                            "featuresExcluded": [],
+                            "bindingTimeAllowed":"Early",
+                            "bindingModeAllowed":"Static"
+                        },
+                        "group": "OR",
+                        "isMandatory": false,
+                        "sub":[
+                            {
+                                "id": "tracn",
+                                "name": "Tracing",
+                                "constraints": {
+                                    "featuresIncluded": [],
+                                    "featuresExcluded": [],
+                                    "bindingTimeAllowed":"Early",
+                                    "bindingModeAllowed":"Static"
+                                },
+                                "group": "OR",
+                                "isMandatory": false,
+                                "sub":[
+                                    {
+                                        "id": "obtracn",
+                                        "name": "ObjectTracking",
+                                        "constraints": {
+                                            "featuresIncluded": [],
+                                            "featuresExcluded": [],
+                                            "bindingTimeAllowed":"Early",
+                                            "bindingModeAllowed":"Static"
+                                        },
+                                        "group": "OR",
+                                        "isMandatory": false
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "recogntn",
+                                "name": "Recognition",
+                                "constraints": {
+                                    "featuresIncluded": [],
+                                    "featuresExcluded": [],
+                                    "bindingTimeAllowed":"Early",
+                                    "bindingModeAllowed":"Static"
+                                },
+                                "group": "OR",
+                                "isMandatory": false,
+                                "sub":[
+                                    {
+                                        "id": "grecog",
+                                        "name": "GestureRecognition",
+                                        "constraints": {
+                                            "featuresIncluded": [],
+                                            "featuresExcluded": [],
+                                            "bindingTimeAllowed":"Early",
+                                            "bindingModeAllowed":"Static"
+                                        },
+                                        "group": "OR",
+                                        "isMandatory": false
+                                    },
+                                    {
+                                        "id": "orecog",
+                                        "name": "ObjectRecognition",
+                                        "constraints": {
+                                            "featuresIncluded": [],
+                                            "featuresExcluded": [],
+                                            "bindingTimeAllowed":"Early",
+                                            "bindingModeAllowed":"Static"
+                                        },
+                                        "group": "OR",
+                                        "isMandatory": false
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "matchn",
+                                "name": "Matching",
+                                "constraints": {
+                                    "featuresIncluded": [],
+                                    "featuresExcluded": [],
+                                    "bindingTimeAllowed":"Early",
+                                    "bindingModeAllowed":"Static"
+                                },
+                                "group": "OR",
+                                "isMandatory": false,
+                                "sub":[
+                                    {
+                                        "id": "seqentl",
+                                        "name": "Sequential",
+                                        "constraints": {
+                                            "featuresIncluded": [],
+                                            "featuresExcluded": [],
+                                            "bindingTimeAllowed":"Early",
+                                            "bindingModeAllowed":"Static"
+                                        },
+                                        "group": "OR",
+                                        "isMandatory": false
+                                    },
+                                    {
+                                            "id": "prdictv",
+                                            "name": "Predictive",
+                                            "constraints": {
+                                                "featuresIncluded": [],
+                                                "featuresExcluded": [],
+                                                "bindingTimeAllowed":"Early",
+                                                "bindingModeAllowed":"Static"
+                                            },
+                                            "group": "OR",
+                                            "isMandatory": false
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+        }
+                 
+    ]
+}

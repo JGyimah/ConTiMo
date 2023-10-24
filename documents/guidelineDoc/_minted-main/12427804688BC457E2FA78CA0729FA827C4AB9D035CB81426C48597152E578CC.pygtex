@@ -1,0 +1,5 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+
+\PYG{n}{PLUGINLIB\PYGZus{}EXPORT\PYGZus{}CLASS}\PYG{p}{(}\PYG{n}{static\PYGZus{}integration}\PYG{o}{::}\PYG{n}{MyStaticLateClass}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{static\PYGZus{}base}\PYG{o}{::}\PYG{n}{StaticInterface}\PYG{p}{)}
+
+\end{Verbatim}

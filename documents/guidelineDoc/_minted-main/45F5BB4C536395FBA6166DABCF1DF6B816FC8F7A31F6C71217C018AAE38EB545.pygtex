@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{p}{\PYGZob{}}
+\PYG{+w}{	}\PYG{k}{class}\PYG{+w}{ }\PYG{n+nc}{Configuration}\PYG{o}{:}\PYG{+w}{ }\PYG{k}{public}\PYG{+w}{ }\PYG{n}{motivml\PYGZus{}feature}\PYG{o}{::}\PYG{n}{Feature}\PYG{p}{\PYGZob{}}
+\PYG{+w}{	}\PYG{k}{private}\PYG{o}{:}
+\PYG{+w}{		}\PYG{n}{std}\PYG{o}{::}\PYG{n}{string}\PYG{+w}{ }\PYG{n}{id}\PYG{p}{;}
+\PYG{+w}{		}\PYG{n}{BindingTimes}\PYG{+w}{ }\PYG{n}{time}\PYG{p}{;}
+\PYG{+w}{		}\PYG{n}{BindingModes}\PYG{+w}{ }\PYG{n}{mode}\PYG{p}{;}
+
+\PYG{+w}{	}\PYG{k}{public}\PYG{o}{:}
+\PYG{+w}{		}\PYG{n}{Configuration}\PYG{p}{()\PYGZob{}\PYGZcb{}}
+\PYG{+w}{		}\PYG{n}{Configuration}\PYG{p}{(}\PYG{n}{motivml\PYGZus{}feature}\PYG{o}{::}\PYG{n}{Feature}\PYG{+w}{ }\PYG{n}{modelledFeature}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{BindingTimes}\PYG{+w}{ }\PYG{n}{timeSetting}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{BindingModes}\PYG{+w}{ }\PYG{n}{modeSetting}\PYG{p}{)}
+\PYG{+w}{		}\PYG{o}{:}\PYG{n}{id}\PYG{p}{\PYGZob{}}\PYG{n}{modelledFeature}\PYG{p}{.}\PYG{n}{getId}\PYG{p}{()\PYGZcb{},}\PYG{+w}{ }\PYG{n}{time}\PYG{p}{\PYGZob{}}\PYG{n}{timeSetting}\PYG{p}{\PYGZcb{},}\PYG{+w}{ }\PYG{n}{mode}\PYG{p}{\PYGZob{}}\PYG{n}{modeSetting}\PYG{p}{\PYGZcb{}\PYGZob{}\PYGZcb{}}
+\PYG{p}{\PYGZcb{};}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

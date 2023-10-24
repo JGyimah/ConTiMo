@@ -1,0 +1,102 @@
+{
+    "properties": [
+        {
+            "id": "componentcontrol",
+            "props": {
+                "time":"Early",
+                "mode":"Static"
+            }
+        },
+        {
+            "id": "localisation",
+            "props": {
+                "time":"Early",
+                "mode":"Static"
+            }
+        },
+        {
+            "id": "gestrec",
+            "props": {
+                "time":"Early",
+                "mode":"Static"
+            }
+        },
+        {
+            "id": "motionplanningcontrol",
+            "props": {
+                "time":"Early",
+                "mode":"Static"
+            }
+        },
+        {
+            "id": "amcl",
+            "props": {
+                "time":"Early",
+                "mode":"Static"
+            }
+        },
+        {
+            "id": "amclros",
+            "props": {
+                "time":"Late",
+                "mode":"Static"
+            }
+        },
+        {
+            "id": "slam",
+            "props": {
+                "time":"Early",
+                "mode":"Dynamic"
+            }
+        },
+        {
+            "id": "hectorslam",
+            "props": {
+                "time":"Late",
+                "mode":"Dynamic"
+            }
+        },
+        {
+            "id": "kartoslam",
+            "props": {
+                "time":"Late",
+                "mode":"Dynamic"
+            }
+        },
+        {
+            "id": "orbslam",
+            "props": {
+                "time":"Late",
+                "mode":"Dynamic"
+            }
+        },
+        {
+            "id": "hands",
+            "props": {
+                "time":"late",
+                "mode":"Dynamic"
+            }
+        },
+        {
+            "id": "pointscloud",
+            "props": {
+                "time":"Late",
+                "mode":"Dynamic"
+            }
+        },
+        {
+            "id": "quick",
+            "props": {
+                "time":"Late",
+                "mode":"Dynamic"
+            }
+        },
+        {
+            "id": "optimised",
+            "props": {
+                "time":"Late",
+                "mode":"Dynamic"
+            }
+        }
+    ]
+}

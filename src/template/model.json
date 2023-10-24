@@ -1,0 +1,8 @@
+{
+    "id": "root_feature",
+    "name": "ModelNameGoesHere",
+    "group": "",
+    "isMandatory": true,
+    "isSelected": true,
+    "sub": []
+}
