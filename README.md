@@ -1,49 +1,14 @@
-# MoTiVML
+# featX
 
 ## Description
 
-An open-source ROS-based framework that extends the capabilities of the [SERA](https://www.cse.chalmers.se/~bergert/paper/2018-icsa-sera.pdf) architecture to include variability management, with a high level of flexibility and customizability of robotic product line entities, while improving practices currently present in the robotics applications development domain.
+An open-source ROS-based framework for modelling and implementing controlled robot configurations with Flexible feature bindings.
 
-With this framework, roboticists can model robotic `FEATURES`, create `MODEL` configurations using binding time and binding mode and plug in source code implementations for modelled `FEATURES`
-
-## Prerequisites
-
-1. This application was developed and tested on Ubuntu 20 LTS or higher
-
-2. [ROS](http://wiki.ros.org/ROS/Installation) installation. This application was developed and tested with ROS Neotic 1.15.9.
-
-3. This application supports [Python3](https://www.python.org/)
-
-4. C++ 11 or higher
-
-5. [Pluginlib](http://wiki.ros.org/pluginlib) 1.13.0
-
-## Installation
-
-Go to your workspace project, type catkin_make and press enter on your keyboard.
-
-## Usage: How To:
-
-### Create and Validate `MODEL`:
-
-1. Create a project in a directory in the parent directory
-2. In the project, specify a model.json and config.json file
-3. In the model.json file of your project, add your nested features according to your preferences
-NB: Each feature specification must have the keys `id`, `name`, `constraints`, `group`, `isMandatory`. Likewise the `constraints`
-object must contain `featureIncluded`, `featureExcluded`, `bindingTimeAllowed`, `bindingModeAllowed`
-4. In the config.json file of your project, for every feature added in your model.json file, a corresponding configuration object must be added.
-NB: Each featue config object must have the keys `id` which references a feature ID in your model.json file, and `props.` The `props` attribute must contain `time` and `mode` attributes.
-
-5. Validate your model schema and constraints with the standalone validator compoent which can be invoked with the command `python validator.py <project_directory_name>`
-6. Alternatively, you can also use the in-built command line interface. Launch the MoTiVML commannd line interface with the command `python mmconsole.py <project_directory_name>`
-7. In the MoTiVML commandline interface,  use the command `show <project_name>` to view a graphical representation of your project model.
-
-## Guideline Document
-For the purpose of providing an indepth explanation as to what functionalities exist within our library, as well as prerequisites and installation, we have provided a guideline artifact to provide key and detailed information on our library, its usage and its functionalities. To access our guideline document, click [here](https://github.com/SergioGarG/sera-extension/tree/master/documents/guidelineDoc/main.pdf)
+With this framework, roboticists can model robotic `FEATURES`, specify and implement `MODEL` configurations with binding time and binding mode mechanisms.
 
 ## Publication
 To be updated soon
 
-## Website
-Click [here](https://sites.google.com/view/sled-dsl/home) to visit website.
+## Documentation
+Click [here](https://sites.google.com/view/sled-dsl/documentation) for docs.
 
