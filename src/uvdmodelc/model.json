@@ -1,0 +1,236 @@
+{
+    "id": "root_feature",
+    "name": "uvdmodelc",
+    "group": "",
+    "isMandatory": true,
+    "isSelected": true,
+    "sub": [
+        {
+            "id": "light",
+            "name": "Light",
+            "constraints": {
+                "featuresIncluded": [],
+                "featuresExcluded": [],
+                "bindingTimeAllowed": "Early",
+                "bindingModeAllowed": "Static"
+            },
+            "group": "OR",
+            "isMandatory": false,
+            "sub": [
+                {
+                    "id": "uvc",
+                    "name": "Uvc",
+                    "constraints": {
+                        "featuresIncluded": [],
+                        "featuresExcluded": [],
+                        "bindingTimeAllowed": "Early",
+                        "bindingModeAllowed": "Dynamic"
+                    },
+                    "group": "OR",
+                    "isMandatory": false,
+                    "sub": []
+                },
+                {
+                    "id": "indicator",
+                    "name": "Indicator",
+                    "constraints": {
+                        "featuresIncluded": [],
+                        "featuresExcluded": [],
+                        "bindingTimeAllowed": "Late",
+                        "bindingModeAllowed": "Dynamic"
+                    },
+                    "group": "OR",
+                    "isMandatory": false,
+                    "sub": []
+                }
+            ]
+        },
+        {
+            "id": "motion",
+            "name": "motion",
+            "constraints": {
+                "featuresIncluded": [],
+                "featuresExcluded": [],
+                "bindingTimeAllowed": "Early",
+                "bindingModeAllowed": "Static"
+            },
+            "group": "XOR",
+            "isMandatory": true,
+            "sub": [
+                {
+                    "id": "linear",
+                    "name": "linear",
+                    "constraints": {
+                        "featuresIncluded": [],
+                        "featuresExcluded": [],
+                        "bindingTimeAllowed": "Late",
+                        "bindingModeAllowed": "Dynamic"
+                    },
+                    "group": "OR",
+                    "isMandatory": false,
+                    "sub": []
+                },
+                {
+                    "id": "joint",
+                    "name": "joint",
+                    "constraints": {
+                        "featuresIncluded": [],
+                        "featuresExcluded": [],
+                        "bindingTimeAllowed": "Late",
+                        "bindingModeAllowed": "Dynamic"
+                    },
+                    "group": "OR",
+                    "isMandatory": false,
+                    "sub": []
+                }
+            ]
+        },
+        {
+            "id": "pcptn",
+            "name": "perception",
+            "constraints": {
+                "featuresIncluded": [],
+                "featuresExcluded": [],
+                "bindingTimeAllowed": "Early",
+                "bindingModeAllowed": "Static"
+            },
+            "group": "OR",
+            "isMandatory": true,
+            "sub": [
+                {
+                    "id": "imgrec",
+                    "name": "ImageRecognition",
+                    "constraints": {
+                        "featuresIncluded": [],
+                        "featuresExcluded": [],
+                        "bindingTimeAllowed": "Late",
+                        "bindingModeAllowed": "Dynamic"
+                    },
+                    "group": "OR",
+                    "isMandatory": false,
+                    "sub": []
+                }
+            ]
+        },
+        {
+            "id": "sensor",
+            "name": "Sensor",
+            "constraints": {
+                "featuresIncluded": [],
+                "featuresExcluded": [],
+                "bindingTimeAllowed": "Early",
+                "bindingModeAllowed": "Static"
+            },
+            "group": "OR",
+            "isMandatory": true,
+            "sub": [
+                {
+                    "id": "lidar",
+                    "name": "Lidar",
+                    "constraints": {
+                        "featuresIncluded": [],
+                        "featuresExcluded": [],
+                        "bindingTimeAllowed": "Late",
+                        "bindingModeAllowed": "Dynamic"
+                    },
+                    "group": "OR",
+                    "isMandatory": false,
+                    "sub": []
+                },
+                {
+                    "id": "camera",
+                    "name": "Camera",
+                    "constraints": {
+                        "featuresIncluded": [],
+                        "featuresExcluded": [],
+                        "bindingTimeAllowed": "Late",
+                        "bindingModeAllowed": "Dynamic"
+                    },
+                    "group": "OR",
+                    "isMandatory": false,
+                    "sub": []
+                }
+            ]
+        },
+        {
+            "id": "nav",
+            "name": "Navigation",
+            "constraints": {
+                "featuresIncluded": [],
+                "featuresExcluded": [],
+                "bindingTimeAllowed": "Early",
+                "bindingModeAllowed": "Static"
+            },
+            "group": "OR",
+            "isMandatory": true,
+            "sub": [
+                {
+                    "id": "pathplan",
+                    "name": "PathPlanning",
+                    "constraints": {
+                        "featuresIncluded": [],
+                        "featuresExcluded": [],
+                        "bindingTimeAllowed": "Late",
+                        "bindingModeAllowed": "Dynamic"
+                    },
+                    "group": "OR",
+                    "isMandatory": false,
+                    "sub": []
+                },
+                {
+                    "id": "obstav",
+                    "name": "ObstacleAvoidance",
+                    "constraints": {
+                        "featuresIncluded": [],
+                        "featuresExcluded": [],
+                        "bindingTimeAllowed": "Late",
+                        "bindingModeAllowed": "Dynamic"
+                    },
+                    "group": "OR",
+                    "isMandatory": false,
+                    "sub": []
+                }
+            ]
+        },
+        {
+            "id": "ctrl",
+            "name": "Control",
+            "constraints": {
+                "featuresIncluded": [],
+                "featuresExcluded": [],
+                "bindingTimeAllowed": "Late",
+                "bindingModeAllowed": "Dynamic"
+            },
+            "group": "OR",
+            "isMandatory": false,
+            "sub": [
+                {
+                    "id": "teleop",
+                    "name": "TeleOperation",
+                    "constraints": {
+                        "featuresIncluded": [],
+                        "featuresExcluded": [],
+                        "bindingTimeAllowed": "Late",
+                        "bindingModeAllowed": "Dynamic"
+                    },
+                    "group": "OR",
+                    "isMandatory": false,
+                    "sub": []
+                },
+                {
+                    "id": "auto",
+                    "name": "Autonomy",
+                    "constraints": {
+                        "featuresIncluded": [],
+                        "featuresExcluded": [],
+                        "bindingTimeAllowed": "Late",
+                        "bindingModeAllowed": "Dynamic"
+                    },
+                    "group": "OR",
+                    "isMandatory": false,
+                    "sub": []
+                }
+            ]
+        }
+    ]
+}

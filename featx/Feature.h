@@ -6,8 +6,8 @@
 
 namespace motivml_feature{
 
-    enum BindingTimeAllowed{Early, Late, Any};
-    enum BindingModeAllowed{Static, Dynamic, Any};
+    enum class BindingTimeAllowed{Early, Late, Any};
+    enum class BindingModeAllowed{Static, Dynamic, Any};
 
     class Feature{
     private:
@@ -16,8 +16,8 @@ namespace motivml_feature{
 
         std::vector<std::string> featuresIncluded;
         std::vector<std::string> featuresExcluded;
-        BindingTimeAllowed bindingTimeAllowed{Early};
-        BindingModeAllowed bindingModeAllowed{Static};
+        BindingTimeAllowed bindingTimeAllowed = BindingTimeAllowed::Early;
+        BindingModeAllowed bindingModeAllowed = BindingModeAllowed::Static;
 
         //TODO: Add group and configuration composition eg Configuration config, Group group
         //dont forget to use namespace of config

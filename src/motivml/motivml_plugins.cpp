@@ -6,9 +6,11 @@
 
 PLUGINLIB_EXPORT_CLASS(motivml_plugins::Slam, plugin_base::PluginInterface)
 
-PLUGINLIB_EXPORT_CLASS(motivml_plugins::Hands, plugin_base::PluginInterface)
-
 PLUGINLIB_EXPORT_CLASS(motivml_plugins::Pointscloud, plugin_base::PluginInterface)
+
+PLUGINLIB_EXPORT_CLASS(motivml_plugins::Uvc, plugin_base::PluginInterface)
+
+PLUGINLIB_EXPORT_CLASS(motivml_plugins::Indicator, plugin_base::PluginInterface)
 
 PLUGINLIB_EXPORT_CLASS(static_integration::Amclros, static_base::StaticInterface)
 

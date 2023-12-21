@@ -10,4 +10,8 @@
     #include "../../featx/ComponentControl.h"
 #endif
 
+#ifdef LIGHT
+    #include "../../featx/Light.h"
+#endif
+
 

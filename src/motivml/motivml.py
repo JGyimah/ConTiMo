@@ -83,7 +83,8 @@ class Dsl(FeatureModel):
             if propertyObject["props"]["time"].lower() == "late" and propertyObject["props"]["mode"].lower() == "dynamic":
                 dlateBound.append(propertyObject['id'])
 
-        #Save to config param server yaml
+        #Save to config param server yaml       
+        #rospy.set_param("/motivml/active_robot", selectedProject)
         rospy.set_param("/motivml/static_early", searlyBound)
         rospy.set_param("/motivml/static_late", slateBound)
         rospy.set_param("/motivml/dynamic_early", dearlyBound)

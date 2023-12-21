@@ -2,6 +2,7 @@
 #define AMCL
 #define MTNPLNCTRL
 #define COMPCTRL
+#define LIGHT
 //Static early definitions end
 #include <pluginlib/class_loader.h>
 #include <cctype>
@@ -124,6 +125,10 @@ void callback_load_plugin_features(const motivml_ros::ConfigCommand& msg){
                             ROS_INFO("## Found static early feature");
                             static_integration::MotionPlanningControl motplctrl;
                             motplctrl.executeFeature();
+                        }else if(featureid == "light"){
+                            ROS_INFO("## Found static early feature");
+                            static_integration::Light light;
+                            light.executeFeature();
                         }
 
                     }else if(btime == "Late"){
