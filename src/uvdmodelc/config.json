@@ -1,0 +1,123 @@
+{
+    "properties": [
+        {
+            "id": "light",
+            "props": {
+                "time": "Early",
+                "mode": "Static"
+            }
+        },
+        {
+            "id": "uvc",
+            "props": {
+                "time": "Late",
+                "mode": "Dynamic"
+            }
+        },
+        {
+            "id": "indicator",
+            "props": {
+                "time": "Late",
+                "mode": "Dynamic"
+            }
+        },
+        {
+            "id": "motion",
+            "props": {
+                "time": "Early",
+                "mode": "Static"
+            }
+        },
+        {
+            "id": "linear",
+            "props": {
+                "time": "Early",
+                "mode": "Static"
+            }
+        },
+        {
+            "id": "joint",
+            "props": {
+                "time": "Early",
+                "mode": "Static"
+            }
+        },
+        {
+            "id": "pcptn",
+            "props": {
+                "time": "Early",
+                "mode": "Static"
+            }
+        },
+        {
+            "id": "imgrec",
+            "props": {
+                "time": "Early",
+                "mode": "Static"
+            }
+        },
+        {
+            "id": "sensor",
+            "props": {
+                "time": "Early",
+                "mode": "Static"
+            }
+        },
+        {
+            "id": "lidar",
+            "props": {
+                "time": "Early",
+                "mode": "Static"
+            }
+        },
+        {
+            "id": "camera",
+            "props": {
+                "time": "Early",
+                "mode": "Static"
+            }
+        },
+        {
+            "id": "obstav",
+            "props": {
+                "time": "Early",
+                "mode": "Static"
+            }
+        },
+        {
+            "id": "nav",
+            "props": {
+                "time": "Early",
+                "mode": "Static"
+            }
+        },
+        {
+            "id": "pathplan",
+            "props": {
+                "time": "Early",
+                "mode": "Static"
+            }
+        },
+        {
+            "id": "ctrl",
+            "props": {
+                "time": "Early",
+                "mode": "Static"
+            }
+        },
+        {
+            "id": "teleop",
+            "props": {
+                "time": "Early",
+                "mode": "Static"
+            }
+        },
+        {
+            "id": "auto",
+            "props": {
+                "time": "Early",
+                "mode": "Static"
+            }
+        }
+    ]
+}

@@ -51,55 +51,7 @@
 \PYG{+w}{			}\PYG{n+nt}{\PYGZdq{}mode\PYGZdq{}}\PYG{p}{:}\PYG{l+s+s2}{\PYGZdq{}Static\PYGZdq{}}
 \PYG{+w}{		}\PYG{p}{\PYGZcb{}}
 \PYG{+w}{	}\PYG{p}{\PYGZcb{},}
-\PYG{+w}{	}\PYG{p}{\PYGZob{}}
-\PYG{+w}{		}\PYG{n+nt}{\PYGZdq{}id\PYGZdq{}}\PYG{p}{:}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}hectorslam\PYGZdq{}}\PYG{p}{,}
-\PYG{+w}{		}\PYG{n+nt}{\PYGZdq{}props\PYGZdq{}}\PYG{p}{:}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
-\PYG{+w}{			}\PYG{n+nt}{\PYGZdq{}time\PYGZdq{}}\PYG{p}{:}\PYG{l+s+s2}{\PYGZdq{}Late\PYGZdq{}}\PYG{p}{,}
-\PYG{+w}{			}\PYG{n+nt}{\PYGZdq{}mode\PYGZdq{}}\PYG{p}{:}\PYG{l+s+s2}{\PYGZdq{}Dynamic\PYGZdq{}}
-\PYG{+w}{		}\PYG{p}{\PYGZcb{}}
-\PYG{+w}{	}\PYG{p}{\PYGZcb{},}
-\PYG{+w}{	}\PYG{p}{\PYGZob{}}
-\PYG{+w}{		}\PYG{n+nt}{\PYGZdq{}id\PYGZdq{}}\PYG{p}{:}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}kartoslam\PYGZdq{}}\PYG{p}{,}
-\PYG{+w}{		}\PYG{n+nt}{\PYGZdq{}props\PYGZdq{}}\PYG{p}{:}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
-\PYG{+w}{			}\PYG{n+nt}{\PYGZdq{}time\PYGZdq{}}\PYG{p}{:}\PYG{l+s+s2}{\PYGZdq{}Late\PYGZdq{}}\PYG{p}{,}
-\PYG{+w}{			}\PYG{n+nt}{\PYGZdq{}mode\PYGZdq{}}\PYG{p}{:}\PYG{l+s+s2}{\PYGZdq{}Dynamic\PYGZdq{}}
-\PYG{+w}{		}\PYG{p}{\PYGZcb{}}
-\PYG{+w}{	}\PYG{p}{\PYGZcb{},}
-\PYG{+w}{	}\PYG{p}{\PYGZob{}}
-\PYG{+w}{		}\PYG{n+nt}{\PYGZdq{}id\PYGZdq{}}\PYG{p}{:}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}orbslam\PYGZdq{}}\PYG{p}{,}
-\PYG{+w}{		}\PYG{n+nt}{\PYGZdq{}props\PYGZdq{}}\PYG{p}{:}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
-\PYG{+w}{			}\PYG{n+nt}{\PYGZdq{}time\PYGZdq{}}\PYG{p}{:}\PYG{l+s+s2}{\PYGZdq{}Late\PYGZdq{}}\PYG{p}{,}
-\PYG{+w}{			}\PYG{n+nt}{\PYGZdq{}mode\PYGZdq{}}\PYG{p}{:}\PYG{l+s+s2}{\PYGZdq{}Dynamic\PYGZdq{}}
-\PYG{+w}{		}\PYG{p}{\PYGZcb{}}
-\PYG{+w}{	}\PYG{p}{\PYGZcb{},}
-\PYG{+w}{	}\PYG{p}{\PYGZob{}}
-\PYG{+w}{		}\PYG{n+nt}{\PYGZdq{}id\PYGZdq{}}\PYG{p}{:}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}hands\PYGZdq{}}\PYG{p}{,}
-\PYG{+w}{		}\PYG{n+nt}{\PYGZdq{}props\PYGZdq{}}\PYG{p}{:}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
-\PYG{+w}{			}\PYG{n+nt}{\PYGZdq{}time\PYGZdq{}}\PYG{p}{:}\PYG{l+s+s2}{\PYGZdq{}late\PYGZdq{}}\PYG{p}{,}
-\PYG{+w}{			}\PYG{n+nt}{\PYGZdq{}mode\PYGZdq{}}\PYG{p}{:}\PYG{l+s+s2}{\PYGZdq{}Dynamic\PYGZdq{}}
-\PYG{+w}{		}\PYG{p}{\PYGZcb{}}
-\PYG{+w}{	}\PYG{p}{\PYGZcb{},}
-\PYG{+w}{	}\PYG{p}{\PYGZob{}}
-\PYG{+w}{		}\PYG{n+nt}{\PYGZdq{}id\PYGZdq{}}\PYG{p}{:}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}pointscloud\PYGZdq{}}\PYG{p}{,}
-\PYG{+w}{		}\PYG{n+nt}{\PYGZdq{}props\PYGZdq{}}\PYG{p}{:}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
-\PYG{+w}{			}\PYG{n+nt}{\PYGZdq{}time\PYGZdq{}}\PYG{p}{:}\PYG{l+s+s2}{\PYGZdq{}Late\PYGZdq{}}\PYG{p}{,}
-\PYG{+w}{			}\PYG{n+nt}{\PYGZdq{}mode\PYGZdq{}}\PYG{p}{:}\PYG{l+s+s2}{\PYGZdq{}Dynamic\PYGZdq{}}
-\PYG{+w}{		}\PYG{p}{\PYGZcb{}}
-\PYG{+w}{	}\PYG{p}{\PYGZcb{},}
-\PYG{+w}{	}\PYG{p}{\PYGZob{}}
-\PYG{+w}{		}\PYG{n+nt}{\PYGZdq{}id\PYGZdq{}}\PYG{p}{:}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}quick\PYGZdq{}}\PYG{p}{,}
-\PYG{+w}{		}\PYG{n+nt}{\PYGZdq{}props\PYGZdq{}}\PYG{p}{:}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
-\PYG{+w}{			}\PYG{n+nt}{\PYGZdq{}time\PYGZdq{}}\PYG{p}{:}\PYG{l+s+s2}{\PYGZdq{}Late\PYGZdq{}}\PYG{p}{,}
-\PYG{+w}{			}\PYG{n+nt}{\PYGZdq{}mode\PYGZdq{}}\PYG{p}{:}\PYG{l+s+s2}{\PYGZdq{}Dynamic\PYGZdq{}}
-\PYG{+w}{		}\PYG{p}{\PYGZcb{}}
-\PYG{+w}{	}\PYG{p}{\PYGZcb{},}
-\PYG{+w}{	}\PYG{p}{\PYGZob{}}
-\PYG{+w}{		}\PYG{n+nt}{\PYGZdq{}id\PYGZdq{}}\PYG{p}{:}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}optimised\PYGZdq{}}\PYG{p}{,}
-\PYG{+w}{		}\PYG{n+nt}{\PYGZdq{}props\PYGZdq{}}\PYG{p}{:}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
-\PYG{+w}{			}\PYG{n+nt}{\PYGZdq{}time\PYGZdq{}}\PYG{p}{:}\PYG{l+s+s2}{\PYGZdq{}Late\PYGZdq{}}\PYG{p}{,}
-\PYG{+w}{			}\PYG{n+nt}{\PYGZdq{}mode\PYGZdq{}}\PYG{p}{:}\PYG{l+s+s2}{\PYGZdq{}Dynamic\PYGZdq{}}
-\PYG{+w}{		}\PYG{p}{\PYGZcb{}}
-\PYG{+w}{	}\PYG{p}{\PYGZcb{}}
+\PYG{+w}{	}\PYG{p}{\PYGZob{}}\PYG{err}{...}\PYG{p}{\PYGZcb{}}
 \PYG{+w}{	}\PYG{p}{]}
 \PYG{p}{\PYGZcb{}}
 \end{Verbatim}

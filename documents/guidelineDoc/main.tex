@@ -1,5 +1,6 @@
 \documentclass{article}
 \usepackage[legalpaper, margin=1in]{geometry}
+\usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{hyperref}
 \usepackage{graphicx}
@@ -8,6 +9,7 @@
 \usepackage{minted}
 \usepackage{xcolor}
 \usepackage{caption}
+\usepackage{parcolumns}
 \definecolor{LightGray}{gray}{0.9}
 \setminted{
 	linenos=true,
@@ -23,14 +25,14 @@
 % Create a new environment for breaking code listings across pages.
 \newenvironment{longlisting}{\captionsetup{type=listing}}{}
 
-\title{\underline{\textbf{MoTiVML} Guideline Document}}
+\title{\underline{\textbf{featX} Guideline Documentation}}
 \author{}
 \date{}
 
 \begin{document}
-
+\fontfamily{century}\selectfont
 \maketitle
-\textit{This is a guideline document for the MoTiVML language and framework as a whole. This guideline document assists end users in modelling variability in robotic systems as well as implementing the features they have defined in their models. As a supporting artifact to the language,  this document serves as a form of verification for the MoTiVML language and its capabilities.}\\
+\textit{This is the official guideline documentation for the featX language and framework. This guideline documentation assists end users to flexibly model and control features in robotic systems. It also assists in implementing modelled features. As a supporting artefact to the language,  this document serves as a form of verification for the featX language and its capabilities.}\\
 \noindent\rule{17cm}{0.6pt}
 \\\\\\
 \tableofcontents
@@ -54,38 +56,39 @@
 	\item Model visualizer
 	\item Syntax and Semantics Validator
 	\item Feature Plugin Interface
-	\item MoTiVML Shell
+	\item featX Shell
 \end{itemize}
 
-\section{Setup and Installation of MoTiVML}
+\section{Setup and Installation of featX}
 \begin{itemize}
-    \item Clone MoTiVML from \href{https://github.com/SergioGarG/sera-extension}{here} into your catkin workspace.
-    \item Go the MoTiVML workspace project directory and build the cloned project with the command catkin\_make and press enter on your keyboard.
+    \item Clone featX from \href{https://github.com/SergioGarG/sera-extension}{here} into your catkin workspace.
+    \item Go the featX workspace project directory and build the cloned project with the command catkin\_make and press enter on your keyboard.
 \end{itemize}
 
 \section{How To}
-This section gives a step-by-step walk-through of how MoTiVML can be used to instantiate a model or configuration, how it can be used to validate a model as well as the capability to link source code implementations with feature definitions. We also give a brief tutorial of our in-built MoTiVML console interface. Throughout our demonstrations in this guideline document, we use a sample model of a robotic system that is shown graphically in figure \ref{simplebot}. This graphical representation of a simple robot model will also serve as our running example throughout this document.
+This section gives a step-by-step walk-through of how featX can be used to instantiate a model or configuration, how it can be used to validate a model as well as the capability to link source code implementations with feature definitions. We also give a brief tutorial of our in-built featX console interface. Throughout our demonstrations in this guideline document, we use a sample model of a robotic system that is shown graphically in figure \ref{simplebot}. This graphical representation of a simple robot model will also serve as our running example throughout this document.
 
 \begin{figure}[H]
 	\caption{Graphical Model of a Simple Robot}
 	\centering
-	\includegraphics[width=\columnwidth]{images/simpleBot.png}
+	\includegraphics[width=0.6\columnwidth]{images/simpleBot.png}
 	\label{simplebot}
 \end{figure}
 
-\subsection{Instantiate a MoTiVML Model}
+\subsection{Instantiate a featX Model}
 \begin{itemize}
-	\item To create an instance of a model in MoTiVML, in the \textbf{src} folder of the cloned application, make a copy of the template folder provided and rename it to suit your product preference.
+	\item To create an instance of a model in featX, in the \textbf{src} folder of the cloned application, make a copy of the template folder provided and rename it to suit your product preference.
 	
 	\item In your new product instance folder, there is a \textbf{model.json} with an existing root feature, wrapped in a object.
 	
-	\item The model definition can be extended by appending sub features to the root feature. You can add nested feature objects according to your preferences.Note that each feature specification must have attributes such as \textbf{id}, \textbf{name}, \textbf{constraints}, \textbf{group}, \textbf{isMandatory}. The constraints attribute must contain sub attributes \textbf{featureIncluded}, \textbf{featureExcluded}, \textbf{bindingTimeAllowed}, \textbf{bindingModeAllowed}. Listing \ref{feat-schema} shows a demonstrated example of an extended MoTiVML model instance, for the feature model captured in Figure \ref{simplebot}.
+	\item The model definition can be extended by appending sub features to the root feature. You can add nested feature objects according to your preferences.Note that each feature specification must have attributes such as \textbf{id}, \textbf{name}, \textbf{constraints}, \textbf{group}, \textbf{isMandatory}. The constraints attribute must contain sub attributes \textbf{featureIncluded}, \textbf{featureExcluded}, \textbf{bindingTimeAllowed}, \textbf{bindingModeAllowed}. Listing \ref{feat-schema} shows a demonstrated example of an extended featX model instance, for the feature model captured in Figure \ref{simplebot}.
 	
-	\item The value of each feature attribute in a model must conform to strict type systems defined within MoTiVML. A list of all the attributes together with their expected values is provided below in Table \ref{tab:valueTypes}.
+	\item The value of each feature attribute in a model must conform to strict type systems defined within featX. A list of all the attributes together with their expected values is provided below in Table \ref{tab:valueTypes}.
 	
 	\begin{table}[H]
+		\centering
 		\caption{Feature Attributes and Types}
-			\begin{tabular}{|l|p{10cm}|}
+			\begin{tabular}{l|p{10cm}}
 				\hline
 				Attribute & Expected Value \\\hline
 				id & Alphanumeric characters. No spaces allowed.   \\ \hline
@@ -94,11 +97,11 @@ This section gives a step-by-step walk-through of how MoTiVML can be used to ins
 				featureIncluded & Array of existing feature "ids" \\ \hline
 				
 				featureExcluded & Array of existing feature "ids" \\ \hline
-				bindingTimeAllowed & Early / Late / Any \\ \hline
-				bindingModeAllowed & Static / Dynamic / Any \\ \hline
+				bindingTimeAllowed & Early or Late or Any \\ \hline
+				bindingModeAllowed & Static or Dynamic or Any \\ \hline
 				
-				group & XOR / OR \\ \hline
-				isMandatory & True or False \\ \hline
+				group & XOR or OR \\ \hline
+				isMandatory & True or False \\
 				
 			\end{tabular}
 			\label{tab:valueTypes}
@@ -108,12 +111,13 @@ This section gives a step-by-step walk-through of how MoTiVML can be used to ins
 	
 \end{itemize}
 
-
+\begin{minipage}{.45\textwidth}
 \begin{longlisting}
-	\caption{SimpleRobot Model Instantiation in MoTiVML}
+	\caption{featX Model Instance of SimpleRobot (Compressed)}
 	\begin{minted}[
 		framesep=1mm,
 		baselinestretch=1.2,
+		tabsize=4,
 		%bgcolor=LightGray,
 		fontsize=\footnotesize
 		]{Json}
@@ -148,84 +152,7 @@ This section gives a step-by-step walk-through of how MoTiVML can be used to ins
 					},
 					"group": "OR",
 					"isMandatory": true,
-					"sub":[
-					{
-						"id": "amcl",
-						"name": "AMCL",
-						"constraints": {
-							"featuresIncluded": [],
-							"featuresExcluded": [],
-							"bindingTimeAllowed":"Early",
-							"bindingModeAllowed":"Static"
-						},
-						"group": "XOR",
-						"isMandatory": false,
-						"sub":[
-						{
-							"id": "amclros",
-							"name": "AmclRos",
-							"constraints": {
-								"featuresIncluded": [],
-								"featuresExcluded": [],
-								"bindingTimeAllowed":"Early",
-								"bindingModeAllowed":"Static"
-							},
-							"group": "OR",
-							"isMandatory": true
-						}
-						]
-					},
-					{
-						"id": "slam",
-						"name": "SLAM",
-						"constraints": {
-							"featuresIncluded": [],
-							"featuresExcluded": [],
-							"bindingTimeAllowed":"Early",
-							"bindingModeAllowed":"Static"
-						},
-						"group": "XOR",
-						"isMandatory": false,
-						"sub":[
-						{
-							"id": "hectorslam",
-							"name": "HectorSLAM",
-							"constraints": {
-								"featuresIncluded": [],
-								"featuresExcluded": ["kartoslam", "orbslam"],
-								"bindingTimeAllowed":"Late",
-								"bindingModeAllowed":"Dynamic"
-							},
-							"group": "XOR",
-							"isMandatory": false
-						},
-						{
-							"id": "kartoslam",
-							"name": "KartoSLAM",
-							"constraints": {
-								"featuresIncluded": [],
-								"featuresExcluded": ["orbslam", "hectorslam"],
-								"bindingTimeAllowed":"Late",
-								"bindingModeAllowed":"Dynamic"
-							},
-							"group": "XOR",
-							"isMandatory": false
-						},
-						{
-							"id": "orbslam",
-							"name": "OrbSLAM",
-							"constraints": {
-								"featuresIncluded": [],
-								"featuresExcluded": ["kartoslam", "hectorslam"],
-								"bindingTimeAllowed":"Late",
-								"bindingModeAllowed":"Dynamic"
-							},
-							"group": "XOR",
-							"isMandatory": false
-						}
-						]
-					}
-					]
+					"sub":[...]
 				},
 				{
 					"id": "gestrec",
@@ -238,71 +165,9 @@ This section gives a step-by-step walk-through of how MoTiVML can be used to ins
 					},
 					"group": "OR",
 					"isMandatory": false,
-					"sub":[
-					{
-						"id": "hands",
-						"name": "Hands",
-						"constraints": {
-							"featuresIncluded": [],
-							"featuresExcluded": ["pointscloud"],
-							"bindingTimeAllowed":"Late",
-							"bindingModeAllowed":"Dynamic"
-						},
-						"group": "XOR",
-						"isMandatory": false
-					},
-					{
-						"id": "pointscloud",
-						"name": "PointsCloud",
-						"constraints": {
-							"featuresIncluded": [],
-							"featuresExcluded": ["hands"],
-							"bindingTimeAllowed":"Late",
-							"bindingModeAllowed":"Dynamic"
-						},
-						"group": "XOR",
-						"isMandatory": false
-					}
-					]
+					"sub":[...]
 				},
-				{
-					"id": "motplannctrl",
-					"name": "MotionPlanningAndControl",
-					"constraints": {
-						"featuresIncluded": [],
-						"featuresExcluded": [],
-						"bindingTimeAllowed":"Early",
-						"bindingModeAllowed":"Static"
-					},
-					"group": "OR",
-					"isMandatory": true,
-					"sub":[
-					{
-						"id": "quick",
-						"name": "Quick",
-						"constraints": {
-							"featuresIncluded": [],
-							"featuresExcluded": ["optimised"],
-							"bindingTimeAllowed":"Late",
-							"bindingModeAllowed":"Dynamic"
-						},
-						"group": "XOR",
-						"isMandatory": false
-					},
-					{
-						"id": "optimised",
-						"name": "Optimised",
-						"constraints": {
-							"featuresIncluded": [],
-							"featuresExcluded": ["quick"],
-							"bindingTimeAllowed":"Late",
-							"bindingModeAllowed":"Dynamic"
-						},
-						"group": "XOR",
-						"isMandatory": false
-					}
-					]
-				}
+				{...}
 				]
 			}
 			]
@@ -311,151 +176,106 @@ This section gives a step-by-step walk-through of how MoTiVML can be used to ins
 	\end{minted}
 	\label{feat-schema}
 \end{longlisting}
+\end{minipage}
+\begin{minipage}{.45\textwidth}
+	\begin{longlisting}
+		\caption{featX Configuration Instance of SimpleRobot (Compressed)}
+		\begin{minted}[
+			framesep=2mm,
+			baselinestretch=1,
+			%bgcolor=LightGray,
+			fontsize=\footnotesize
+			]{Json}
+			
+			{
+				"properties": [
+				{
+					"id": "compcontrol",
+					"props": {
+						"time":"Early",
+						"mode":"Static"
+					}
+				},
+				{
+					"id": "localztn",
+					"props": {
+						"time":"Early",
+						"mode":"Static"
+					}
+				},
+				{
+					"id": "gestrec",
+					"props": {
+						"time":"Early",
+						"mode":"Static"
+					}
+				},
+				{
+					"id": "motplannctrl",
+					"props": {
+						"time":"Early",
+						"mode":"Static"
+					}
+				},
+				{
+					"id": "amcl",
+					"props": {
+						"time":"Early",
+						"mode":"Static"
+					}
+				},
+				{
+					"id": "amclros",
+					"props": {
+						"time":"Early",
+						"mode":"Static"
+					}
+				},
+				{
+					"id": "slam",
+					"props": {
+						"time":"Early",
+						"mode":"Static"
+					}
+				},
+				{...}
+				]
+			}
+		\end{minted}
+		\label{conf-schema}
+	\end{longlisting}
+\end{minipage}
 
-\subsection{Instantiate a MoTiVML Configuration}
+\subsection{Instantiate a featX Configuration}
 
 \begin{itemize}
 	\item Again in your instance folder, there is a \textbf{config.json} with an empty \textbf{properties} array value.
 	
-	\item In the config.json file of your project, for every feature added in your model.json file, a corresponding configuration object must be added. For each feature configuration object, there must be an \textbf{id} attribute which references the \textbf{id} of a feature in your model.json file. The \textbf{props} attribute must contain \textbf{time} and \textbf{mode} attributes.  Listing \ref{conf-schema} shows a MoTiVML configuration translation of the features present in Figure \ref{simplebot}.
+	\item In the config.json file of your project, for every feature added in your model.json file, a corresponding configuration object must be added. For each feature configuration object, there must be an \textbf{id} attribute which references the \textbf{id} of a feature in your model.json file. The \textbf{props} attribute must contain \textbf{time} and \textbf{mode} attributes.  Listing \ref{conf-schema} shows a featX configuration translation of the features present in Figure \ref{simplebot}.
 	
-	\item The values of each configuration attribute for your model must conform to strict type systems defined within MoTiVML. A list of all the configuration attributes together with their expected values is provided below in Table \ref{tab:confvalueTypes}.
+	\item The values of each configuration attribute for your model must conform to strict type systems defined within featX. A list of all the configuration attributes together with their expected values is provided below in Table \ref{tab:confvalueTypes}.
 	
 	\begin{table}[H]
+		\centering
 		\caption{Configuration Attributes and Types}
-		\begin{tabular}{|l|p{10cm}|}
+		\begin{tabular}{l|p{7cm}}
 			\hline
 			Attribute & Expected Value \\\hline
 			id & Alphanumeric characters. No spaces allowed.   \\ \hline
 			props & Object containing attributes \textbf{time} and \textbf{mode} \\ \hline
-			time & Early / Late  \\ \hline
-			mode & Static / Dynamic \\ \hline
+			time & Early or Late  \\ \hline
+			mode & Static or Dynamic \\ 
 		\end{tabular}
 		\label{tab:confvalueTypes}
 	\end{table}
 	
 \end{itemize}
 
-\begin{longlisting}
-	\caption{SimpleRobot Model Configuration Instantiation in MoTiVML}
-	\begin{minted}[
-		framesep=2mm,
-		baselinestretch=1,
-		%bgcolor=LightGray,
-		fontsize=\footnotesize
-		]{Json}
-		
-		{
-			"properties": [
-			{
-				"id": "compcontrol",
-				"props": {
-					"time":"Early",
-					"mode":"Static"
-				}
-			},
-			{
-				"id": "localztn",
-				"props": {
-					"time":"Early",
-					"mode":"Static"
-				}
-			},
-			{
-				"id": "gestrec",
-				"props": {
-					"time":"Early",
-					"mode":"Static"
-				}
-			},
-			{
-				"id": "motplannctrl",
-				"props": {
-					"time":"Early",
-					"mode":"Static"
-				}
-			},
-			{
-				"id": "amcl",
-				"props": {
-					"time":"Early",
-					"mode":"Static"
-				}
-			},
-			{
-				"id": "amclros",
-				"props": {
-					"time":"Early",
-					"mode":"Static"
-				}
-			},
-			{
-				"id": "slam",
-				"props": {
-					"time":"Early",
-					"mode":"Static"
-				}
-			},
-			{
-				"id": "hectorslam",
-				"props": {
-					"time":"Late",
-					"mode":"Dynamic"
-				}
-			},
-			{
-				"id": "kartoslam",
-				"props": {
-					"time":"Late",
-					"mode":"Dynamic"
-				}
-			},
-			{
-				"id": "orbslam",
-				"props": {
-					"time":"Late",
-					"mode":"Dynamic"
-				}
-			},
-			{
-				"id": "hands",
-				"props": {
-					"time":"late",
-					"mode":"Dynamic"
-				}
-			},
-			{
-				"id": "pointscloud",
-				"props": {
-					"time":"Late",
-					"mode":"Dynamic"
-				}
-			},
-			{
-				"id": "quick",
-				"props": {
-					"time":"Late",
-					"mode":"Dynamic"
-				}
-			},
-			{
-				"id": "optimised",
-				"props": {
-					"time":"Late",
-					"mode":"Dynamic"
-				}
-			}
-			]
-		}
-	\end{minted}
-	\label{conf-schema}
-\end{longlisting}
-
 \subsection{Use the Standalone Model Validator Tool}
-The inbuilt motivml model validator tool aids in validating models together with their corresponding configurations. To validate your model and its configuration, navigate to the \textbf{/src/motivml} directory and run the following command in the ROS console:
+The inbuilt featX model validator tool aids in validating models together with their corresponding configurations. To validate your model and its configuration, navigate to the \textbf{/src/motivml} directory and run the following command in the ROS console:
 
 \begin{longlisting}
-	\caption{MoTiVML Validation Command}
+	\caption{featX Validation Command}
 	\begin{minted}[
 		framesep=1mm,
 		baselinestretch=1,
@@ -469,7 +289,7 @@ The inbuilt motivml model validator tool aids in validating models together with
 \label{valcomm}
 \end{longlisting}
 
-All models created in the MoTiVML language are validated on two distinct levels. i.e. syntax validation and semantic validation. Syntactical validation has to do with feature and configuration schemas being evaluated for errors, while semantic validation has to do with modelling and binding constraints evaluation.
+All models created in the featX language are validated on two distinct levels. i.e. syntax validation and semantic validation. Syntactical validation has to do with feature and configuration schemas being evaluated for errors, while semantic validation has to do with modelling and binding constraints evaluation.
 
 To demonstrate this we evaluate our constructed model and configuration shown in Listing \ref{feat-schema} and \ref{conf-schema} and discuss the results accordingly. A careful observation of  the console output generated from the validation indicates the presence of zero errors.
 
@@ -478,13 +298,13 @@ When our in-built schema and constraint checker identify an error in either a mo
 \begin{figure}[H]
 	\caption{Simplebot Validation Output}
 	\centering
-	\includegraphics[width=\columnwidth]{images/validate.png}
+	\includegraphics[width=0.7\columnwidth]{images/validate.png}
 	\label{validation}
 \end{figure}
 
 \subsection{Feature Class Implementation}
 \begin{longlisting}
-	\caption{Implementation of MoTiVML Feature Class}
+	\caption{Implementation of featX Feature Class}
 	\begin{minted}[
 		framesep=1mm,
 		baselinestretch=1,
@@ -567,12 +387,12 @@ When our in-built schema and constraint checker identify an error in either a mo
 	
 \end{longlisting}
 
-The a capabilities of a MoTiVML feature are wrapped in a \textbf{motivml\_feature} name space with a set of private attributes abstracted through a bunch of getters and setters. Within a feature, we can identify both descriptive and constraint attributes, implemented using c++ constructs.
+The a capabilities of a featX feature are wrapped in a \textbf{motivml\_feature} name space with a set of private attributes abstracted through a bunch of getters and setters. Within a feature, we can identify both descriptive and constraint attributes, implemented using c++ constructs.
 
 \subsection{Configuration Class Implementation}
 
 \begin{longlisting}
-	\caption{Implementation of MoTiVML Configuration Class}
+	\caption{Implementation of featX Configuration Class}
 	\begin{minted}[
 		framesep=1mm,
 		baselinestretch=1,
@@ -644,7 +464,7 @@ To decouple relevant features necessary for binding a feature, our time and mode
 		\end{minted}
 		\label{samplestaticearly}
 	\end{longlisting}
-	\item Statically set the feature class attributes \textbf{id} to the same value as the \textbf{id} attribute in the MoTiVML model.
+	\item Statically set the feature class attributes \textbf{id} to the same value as the \textbf{id} attribute in the featX model.
 	\item Set configuration binding time and binding mode to \textbf{Early} and \textbf{Static} respectively.
 	\item Set other class attributes to values of your choice that represent the feature you are implementing.
 	\item For all included and excluded features in relation to the said feature, add their ids to a vector and pass them to the setter for either inclusion or exclusion constraints.
@@ -749,7 +569,7 @@ To decouple relevant features necessary for binding a feature, our time and mode
 		\end{minted}
 		\label{samplestaticlate}
 	\end{longlisting}
-	\item Statically set the feature class attributes \textbf{id} to the same value as the \textbf{id} attribute in the MoTiVML model.
+	\item Statically set the feature class attributes \textbf{id} to the same value as the \textbf{id} attribute in the featX model.
 	\item Set configuration binding time and binding mode to \textbf{Late} and \textbf{Static} respectively.
 	\item Set other class attributes to values of your choice that represent the feature you are implementing.
 	\item For all included and excluded features in relation to the said feature, add their ids to a vector and pass them to the setter for either inclusion or exclusion constraints.
@@ -810,7 +630,7 @@ To decouple relevant features necessary for binding a feature, our time and mode
 
 \subsection{Implement a Dynamically Bound Feature}
 \begin{itemize}
-	\item In the \textbf{featx} directory, create a static class in the namespace \textbf{static\_integration} which inherits from the class \textbf{public static\_base::StaticInterface}. NB: The feature id in your model must match your class name. For Example:
+	\item In the \textbf{featx} directory, create a dynamic class in the namespace \textbf{motivml\_plugins} which inherits from the class \textbf{public plugin\_base::PluginInterface}. NB: The feature id in your model must match your class name. For Example:
 	
 	\begin{longlisting}
 		\caption{Sample Dynamic Class}
@@ -872,7 +692,7 @@ To decouple relevant features necessary for binding a feature, our time and mode
 		\label{sampstaticlateinclude}
 	\end{longlisting}
 
-	\item \textbf{Encapsulate Feature As Plugin}: In order to allow a class to be dynamically loaded, it must be marked as an exported class. This is done through the special macro PLUGINLIB\_EXPORT\_CLASS  \cite{pluginlib}. For example
+	\item \textbf{Encapsulate Feature As Plugin}: In order to allow a class to be dynamically loaded, it must be marked as an exported class. This is done through the special macro PLUGINLIB\_EXPORT\_CLASS  \cite{pluginlib}. Make an entry into the "/motivml/motivml\_plugins.cpp" source file. For example
 	
 	\begin{longlisting}
 		\caption{Sample Dynamic Class Export}
@@ -912,13 +732,13 @@ To decouple relevant features necessary for binding a feature, our time and mode
 
 
 
-\subsection{MoTiVML Console Interface}
-To add some interactivity to our variability modelling language, we have provided an in-built console interface for interacting with models and features through MoTiVML specific commands.
+\subsection{featX Console Interface}
+To add some interactivity to our variability modelling language, we have provided an in-built console interface for interacting with models and features through featX specific commands.
 
-To launch the MoTiVML console interface, navigate to the \textbf{/src/motivml} directory and run the following command in Listing \ref{console}:
+To launch the featX console interface, navigate to the \textbf{/src/motivml} directory and run the following command in Listing \ref{console}:
 
 \begin{longlisting}
-	\caption{MoTiVML Console Launch Command}
+	\caption{featX Console Launch Command}
 	\begin{minted}[
 		framesep=1mm,
 		baselinestretch=1.2,
@@ -937,13 +757,13 @@ When the above command is run, the model and configuration defined in the \textb
 \begin{figure}[H]
 	\caption{Simplebot Console}
 	\centering
-	\includegraphics[width=\columnwidth]{images/console.png}
+	\includegraphics[width=0.7\columnwidth]{images/console.png}
 	\label{consolelaunch}
 \end{figure}
 
-In Figure \ref{consolelaunch} we can observe the launched MoTiVML console. As highlighted in the figure above, the console prompt always bears the name of the project which was launched with the console. For this reason, all MoTiVML console commands that are run will be affiliated with the model highlighted in the console prompt.
+In Figure \ref{consolelaunch} we can observe the launched featX console. As highlighted in the figure above, the console prompt always bears the name of the project which was launched with the console. For this reason, all featX console commands that are run will be affiliated with the model highlighted in the console prompt.
 
-\subsection{MoTiVML Console Commands}
+\subsection{featX Console Commands}
 \begin{itemize}
 	\item \textbf{show $<parameter>$}: The show command invokes the motivml model visualizer. The show command is used to display graphically a user constructed model. This command prints the hierarchical structure of a selected model while displaying details such as its mandatory status, group and binding mode. The show command takes a single parameter. This parameter can either be \textbf{all} or  \textbf{config}. \\
 	
@@ -952,7 +772,7 @@ In Figure \ref{consolelaunch} we can observe the launched MoTiVML console. As hi
 	\begin{figure}[H]
 		\caption{show all Command}
 		\centering
-		\includegraphics[width=\columnwidth]{images/showall.png}
+		\includegraphics[width=0.7\columnwidth]{images/showall.png}
 		\label{showall}
 	\end{figure}
 
@@ -961,7 +781,7 @@ In Figure \ref{consolelaunch} we can observe the launched MoTiVML console. As hi
 	\begin{figure}[H]
 		\caption{show config Command}
 		\centering
-		\includegraphics[width=\columnwidth]{images/showconfig.png}
+		\includegraphics[width=0.7\columnwidth]{images/showconfig.png}
 		\label{showconfig}
 	\end{figure}
 	
@@ -981,7 +801,7 @@ In Figure \ref{consolelaunch} we can observe the launched MoTiVML console. As hi
 \end{itemize}
 
 \section{Launching a Configuration in the Framework}
-After modelling your robot with MoTiVML and implementing all the modelled features, the robot configuration can be launched to simulate loading and unloading of features. To launch the configuration, the following steps must be performed in the exact sequence presented. 
+After modelling your robot with featX and implementing all the modelled features, the robot configuration can be launched to simulate loading and unloading of features. To launch the configuration, the following steps must be performed in the exact sequence presented. 
 
 The output of all commands executed in the console interface can be viewed in the plugin manager console.
 \begin{enumerate}
@@ -1020,7 +840,7 @@ The output of all commands executed in the console interface can be viewed in th
 		\label{ui}
 	\end{longlisting}
 
-	\item \textbf{Launch Plugin Manager Interface: } The plugin interface represents the live version of the robot configuration defined in your MoTiVML model instance. In here users can display all statically and dynamically bound features. Users can also observe the output of feature load and unload attempts. To launch this interface, run the following ROS command. \\\\
+	\item \textbf{Launch Plugin Manager Interface: } The plugin interface represents the live version of the robot configuration defined in your featX model instance. In here users can display all statically and dynamically bound features. Users can also observe the output of feature load and unload attempts. To launch this interface, run the following ROS command. \\\\
 	
 	\begin{longlisting}
 		\caption{Application Cole Interface Launch Command}

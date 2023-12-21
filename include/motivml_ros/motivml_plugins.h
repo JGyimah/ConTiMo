@@ -5,8 +5,9 @@
 #include "plugin_base.h"
 
 #include "../../featx/Slam.h"
-#include "../../featx/Hands.h"
 #include "../../featx/Pointscloud.h"
+#include "../../featx/Uvc.h"
 #include "../../featx/Amclros.h"
+#include "../../featx/Indicator.h"
 
 #endif

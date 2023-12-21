@@ -11,7 +11,7 @@ namespace plugin_base{
             virtual ~PluginInterface(){};
 
         protected:
-            PluginInterface();
+            PluginInterface(){};
     };
 
 };
