@@ -1,3 +1,4 @@
 <launch>
     <rosparam command="load" file="$(find motivml_ros)/config/tbinding.yaml" />
+    <node pkg="motivml_ros" type="pathplan.py" name="pathplan" output="screen"/>
 </launch>

@@ -4,9 +4,11 @@
 #define COMPCTRL
 #define LIGHT
 //Static early definitions end
+#include <stdlib.h>
 #include <pluginlib/class_loader.h>
 #include <cctype>
 #include <map>
+#include <sys/stat.h>
 #include <algorithm>
 #include <ros/ros.h>
 #include <std_msgs/String.h>
@@ -146,16 +148,25 @@ void callback_load_plugin_features(const motivml_ros::ConfigCommand& msg){
                             ROS_INFO("-- Dynamic feature doesnot exist in configuration");
                             std::string recievedID = featureid;
                             recievedID[0] = toupper(recievedID[0]);
-                            std::string classInstance = "motivml_plugins::"+ recievedID;
-                            try{
-                                ROS_INFO("-- Loading dynamic feature into configuration");
-                                dynamic_objects[featureid] = dynamic_plugin_loader.createInstance(classInstance);
-                                dynamic_objects[featureid]->executeFeature();
-                            }catch(pluginlib::PluginlibException& ex){
-                                ROS_INFO("Dynamic Plugin Instance Creation Error. Error: %s", ex.what());
+                            std::string CPP_FEATURE_CLASS_PATH = "../../"+recievedID+".h";
+                            struct stat sb;
+                            if(stat(CPP_FEATURE_CLASS_PATH.c_str(), &sb) == 0){
+                                //if there exists a c++ feature header with said name
+                                std::string classInstance = "motivml_plugins::"+ recievedID;
+                                try{
+                                    ROS_INFO("-- Loading dynamic feature into configuration");
+                                    dynamic_objects[featureid] = dynamic_plugin_loader.createInstance(classInstance);
+                                    dynamic_objects[featureid]->executeFeature();
+                                }catch(pluginlib::PluginlibException& ex){
+                                    ROS_INFO("Dynamic Plugin Instance Creation Error. Error: %s", ex.what());
+                                }
+                            }else{
+                                //else if there exists NO c++ feature header with said name
+                                ROS_INFO("-- No feature class of type Cpp found");
                             }
+
                         }else{
-                            //if exists, ruun it
+                            //if exists, run it
                             ROS_INFO("-- Found dynamic feature");
                             ROS_INFO("-- Executing dynamic feature");
                             dynamic_objects[featureid]->executeFeature();
@@ -173,11 +184,16 @@ void callback_load_plugin_features(const motivml_ros::ConfigCommand& msg){
                     ROS_INFO("-- Static configuration cannot be altered at runtime");
 
                 }else if(bmode == "Dynamic"){
+                    
                     //check if exists in dynamic_objects
-                    //if exists, unload and print unload success message
-                    //if doesnot exist, print "the feature you are attemping to unload does not exist in the configuratiion"
-                    dynamic_objects.erase(featureid);
-                    ROS_INFO("-- Dynamic feature unloaded successfully");
+                    if(dynamic_objects.find(featureid) == dynamic_objects.end()){
+                         //if doesnot exist in cpp form
+                        ROS_INFO("-- No corresponding Cpp feature exists for specified unload");
+                    }else{
+                        //if exists, unload and print unload success message
+                        dynamic_objects.erase(featureid);
+                        ROS_INFO("-- Dynamic Cpp feature unloaded successfully");
+                    }
                 }
 
             }else if(command == "dump"){
@@ -223,9 +239,11 @@ int main(int argc, char** argv){
     nh.getParam("/motivml/static_early", static_early_server_params);
 
     ROS_INFO("## Loading Static");
-
+    //load py early features from launchfile
+    //std::system("roslaunch motivml_ros py_early.launch");
     //load all features bound at dynamic early
     ROS_INFO("## Initialising dynamic early features");
+    //load cpp-based dynamic early features
     load_dynamic_early();
     
     ROS_INFO("## Feature Plugin Loader is Listening for Configuration Interface Commands");

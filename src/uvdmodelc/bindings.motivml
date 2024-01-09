@@ -7,7 +7,6 @@ imgrec
 sensor
 lidar
 camera
-obstav
 nav
 pathplan
 ctrl

@@ -80,8 +80,8 @@
         {
             "id": "obstav",
             "props": {
-                "time": "Early",
-                "mode": "Static"
+                "time": "Late",
+                "mode": "Dynamic"
             }
         },
         {
