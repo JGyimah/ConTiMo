@@ -170,8 +170,8 @@
                     "constraints": {
                         "featuresIncluded": [],
                         "featuresExcluded": [],
-                        "bindingTimeAllowed": "Late",
-                        "bindingModeAllowed": "Dynamic"
+                        "bindingTimeAllowed": "Early",
+                        "bindingModeAllowed": "Static"
                     },
                     "group": "OR",
                     "isMandatory": false,
