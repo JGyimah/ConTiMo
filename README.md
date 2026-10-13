@@ -1,14 +1,7 @@
-# featX
+# Variability Modelling Language For Robotic Systems (ROS 1)
 
 ## Description
 
-An open-source ROS-based framework for modelling and implementing controlled robot configurations with Flexible feature bindings.
+A Variability-Modelling Language That Implements Variation Points Based On Binding Time and Binding Mode
 
-With this framework, roboticists can model robotic `FEATURES`, specify and implement `MODEL` configurations with binding time and binding mode mechanisms.
-
-## Publication
-To be updated soon
-
-## Documentation
-Click [here](https://sites.google.com/view/sled-dsl/documentation) for docs.
 
